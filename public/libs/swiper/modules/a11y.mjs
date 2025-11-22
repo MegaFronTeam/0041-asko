@@ -1,13 +1,12 @@
 import { g as getDocument } from '../shared/ssr-window.esm.mjs';
 import { c as classesToSelector } from '../shared/classes-to-selector.mjs';
-import { c as createElement, h as elementIndex, m as makeElementsArray } from '../shared/utils.mjs';
+import { c as createElement, j as elementIndex, m as makeElementsArray, s as setInnerHTML } from '../shared/utils.mjs';
 
-function A11y(_ref) {
-  let {
-    swiper,
-    extendParams,
-    on
-  } = _ref;
+function A11y({
+  swiper,
+  extendParams,
+  on
+}) {
   extendParams({
     a11y: {
       enabled: true,
@@ -24,7 +23,8 @@ function A11y(_ref) {
       itemRoleDescriptionMessage: null,
       slideRole: 'group',
       id: null,
-      scrollOnFocus: true
+      scrollOnFocus: true,
+      wrapperLiveRegion: true
     }
   });
   swiper.a11y = {
@@ -37,13 +37,9 @@ function A11y(_ref) {
   function notify(message) {
     const notification = liveRegion;
     if (notification.length === 0) return;
-    notification.innerHTML = '';
-    notification.innerHTML = message;
+    setInnerHTML(notification, message);
   }
-  function getRandomNumber(size) {
-    if (size === void 0) {
-      size = 16;
-    }
+  function getRandomNumber(size = 16) {
     const randomChar = () => Math.round(16 * Math.random()).toString(16);
     return 'x'.repeat(size).replace(/x/g, randomChar);
   }
@@ -237,9 +233,9 @@ function A11y(_ref) {
     requestAnimationFrame(() => {
       if (preventFocusHandler) return;
       if (swiper.params.loop) {
-        swiper.slideToLoop(parseInt(slideEl.getAttribute('data-swiper-slide-index')), 0);
+        swiper.slideToLoop(swiper.getSlideIndexWhenGrid(parseInt(slideEl.getAttribute('data-swiper-slide-index'))), 0);
       } else {
-        swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
+        swiper.slideTo(swiper.getSlideIndexWhenGrid(swiper.slides.indexOf(slideEl)), 0);
       }
       preventFocusHandler = false;
     });
@@ -280,9 +276,11 @@ function A11y(_ref) {
     // Wrapper
     const wrapperEl = swiper.wrapperEl;
     const wrapperId = params.id || wrapperEl.getAttribute('id') || `swiper-wrapper-${getRandomNumber(16)}`;
-    const live = swiper.params.autoplay && swiper.params.autoplay.enabled ? 'off' : 'polite';
     addElId(wrapperEl, wrapperId);
-    addElLive(wrapperEl, live);
+    if (params.wrapperLiveRegion) {
+      const live = swiper.params.autoplay && swiper.params.autoplay.enabled ? 'off' : 'polite';
+      addElLive(wrapperEl, live);
+    }
 
     // Slide
     initSlides();

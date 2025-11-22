@@ -1,16 +1,21 @@
 extends ../layout/main.pug
 
 include ../blocks/headerBlock/_headerBlock.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sContent/_sContent.pug
- 
-include ../blocks/sContact/_sContact.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sForm/_sForm.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sCategories/_sCategories.pug
 include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sSets/_sSets.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sVideoAbout/_sVideoAbout.pug
+include ../blocks/sClientsService/_sClientsService.pug
+include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sAppliances/_sAppliances.pug
+include ../blocks/sAbout/_sAbout.pug
 
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= '' 
 	- let  bg= 'main.jpg'
 
 block title
@@ -25,8 +30,17 @@ block pagecontent
 		+icon("truck")
 		//- iframe( src="https://kinescope.io/e2XNJwJpavG2tdvfcveMaD", width="900", height="500", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)
 		+headerBlock 
+		+sIcons
+		+sCategories
 		+sCatalog
-		+sForm()
-		+sContact()
+		+sSets
+		+sPopular
+		+sNews
+		+sReviews
+		+sVideoAbout
+		+sClientsService
+		+sAddresses
+		+sAppliances
+		+sAbout
 		
 	+parts('footer')

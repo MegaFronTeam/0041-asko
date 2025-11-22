@@ -2,14 +2,13 @@ import { g as getDocument } from '../shared/ssr-window.esm.mjs';
 
 /* eslint no-underscore-dangle: "off" */
 /* eslint no-use-before-define: "off" */
-function Autoplay(_ref) {
-  let {
-    swiper,
-    extendParams,
-    on,
-    emit,
-    params
-  } = _ref;
+function Autoplay({
+  swiper,
+  extendParams,
+  on,
+  emit,
+  params
+}) {
   swiper.autoplay = {
     running: false,
     paused: false,
@@ -66,7 +65,7 @@ function Autoplay(_ref) {
   const getSlideDelay = () => {
     let activeSlideEl;
     if (swiper.virtual && swiper.params.virtual.enabled) {
-      activeSlideEl = swiper.slides.filter(slideEl => slideEl.classList.contains('swiper-slide-active'))[0];
+      activeSlideEl = swiper.slides.find(slideEl => slideEl.classList.contains('swiper-slide-active'));
     } else {
       activeSlideEl = swiper.slides[swiper.activeIndex];
     }

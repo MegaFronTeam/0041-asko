@@ -1,12 +1,11 @@
 import { g as getDocument } from '../shared/ssr-window.esm.mjs';
-import { l as isObject, e as elementChildren } from '../shared/utils.mjs';
+import { p as isObject, e as elementChildren } from '../shared/utils.mjs';
 
-function Thumb(_ref) {
-  let {
-    swiper,
-    extendParams,
-    on
-  } = _ref;
+function Thumb({
+  swiper,
+  extendParams,
+  on
+}) {
   extendParams({
     thumbs: {
       swiper: null,
@@ -48,6 +47,10 @@ function Thumb(_ref) {
     initialized = true;
     const SwiperClass = swiper.constructor;
     if (thumbsParams.swiper instanceof SwiperClass) {
+      if (thumbsParams.swiper.destroyed) {
+        initialized = false;
+        return false;
+      }
       swiper.thumbs.swiper = thumbsParams.swiper;
       Object.assign(swiper.thumbs.swiper.originalParams, {
         watchSlidesProgress: true,
@@ -107,7 +110,7 @@ function Thumb(_ref) {
       let newThumbsIndex;
       let direction;
       if (thumbsSwiper.params.loop) {
-        const newThumbsSlide = thumbsSwiper.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') === `${swiper.realIndex}`)[0];
+        const newThumbsSlide = thumbsSwiper.slides.find(slideEl => slideEl.getAttribute('data-swiper-slide-index') === `${swiper.realIndex}`);
         newThumbsIndex = thumbsSwiper.slides.indexOf(newThumbsSlide);
         direction = swiper.activeIndex > swiper.previousIndex ? 'next' : 'prev';
       } else {

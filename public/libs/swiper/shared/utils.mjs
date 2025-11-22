@@ -1,9 +1,6 @@
 import { a as getWindow, g as getDocument } from './ssr-window.esm.mjs';
 
-function classesToTokens(classes) {
-  if (classes === void 0) {
-    classes = '';
-  }
+function classesToTokens(classes = '') {
   return classes.trim().split(' ').filter(c => !!c.trim());
 }
 
@@ -22,10 +19,7 @@ function deleteProps(obj) {
     }
   });
 }
-function nextTick(callback, delay) {
-  if (delay === void 0) {
-    delay = 0;
-  }
+function nextTick(callback, delay = 0) {
   return setTimeout(callback, delay);
 }
 function now() {
@@ -45,10 +39,7 @@ function getComputedStyle(el) {
   }
   return style;
 }
-function getTranslate(el, axis) {
-  if (axis === void 0) {
-    axis = 'x';
-  }
+function getTranslate(el, axis = 'x') {
   const window = getWindow();
   let matrix;
   let curTransform;
@@ -94,11 +85,11 @@ function isNode(node) {
   }
   return node && (node.nodeType === 1 || node.nodeType === 11);
 }
-function extend() {
-  const to = Object(arguments.length <= 0 ? undefined : arguments[0]);
+function extend(...args) {
+  const to = Object(args[0]);
   const noExtend = ['__proto__', 'constructor', 'prototype'];
-  for (let i = 1; i < arguments.length; i += 1) {
-    const nextSource = i < 0 || arguments.length <= i ? undefined : arguments[i];
+  for (let i = 1; i < args.length; i += 1) {
+    const nextSource = args[i];
     if (nextSource !== undefined && nextSource !== null && !isNode(nextSource)) {
       const keysArray = Object.keys(Object(nextSource)).filter(key => noExtend.indexOf(key) < 0);
       for (let nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex += 1) {
@@ -130,12 +121,11 @@ function extend() {
 function setCSSProperty(el, varName, varValue) {
   el.style.setProperty(varName, varValue);
 }
-function animateCSSModeScroll(_ref) {
-  let {
-    swiper,
-    targetPosition,
-    side
-  } = _ref;
+function animateCSSModeScroll({
+  swiper,
+  targetPosition,
+  side
+}) {
   const window = getWindow();
   const startPosition = -swiper.translate;
   let startTime = null;
@@ -180,12 +170,10 @@ function animateCSSModeScroll(_ref) {
 function getSlideTransformEl(slideEl) {
   return slideEl.querySelector('.swiper-slide-transform') || slideEl.shadowRoot && slideEl.shadowRoot.querySelector('.swiper-slide-transform') || slideEl;
 }
-function elementChildren(element, selector) {
-  if (selector === void 0) {
-    selector = '';
-  }
+function elementChildren(element, selector = '') {
+  const window = getWindow();
   const children = [...element.children];
-  if (element instanceof HTMLSlotElement) {
+  if (window.HTMLSlotElement && element instanceof HTMLSlotElement) {
     children.push(...element.assignedElements());
   }
   if (!selector) {
@@ -193,11 +181,26 @@ function elementChildren(element, selector) {
   }
   return children.filter(el => el.matches(selector));
 }
+function elementIsChildOfSlot(el, slot) {
+  // Breadth-first search through all parent's children and assigned elements
+  const elementsQueue = [slot];
+  while (elementsQueue.length > 0) {
+    const elementToCheck = elementsQueue.shift();
+    if (el === elementToCheck) {
+      return true;
+    }
+    elementsQueue.push(...elementToCheck.children, ...(elementToCheck.shadowRoot ? elementToCheck.shadowRoot.children : []), ...(elementToCheck.assignedElements ? elementToCheck.assignedElements() : []));
+  }
+}
 function elementIsChildOf(el, parent) {
-  const isChild = parent.contains(el);
-  if (!isChild && parent instanceof HTMLSlotElement) {
+  const window = getWindow();
+  let isChild = parent.contains(el);
+  if (!isChild && window.HTMLSlotElement && parent instanceof HTMLSlotElement) {
     const children = [...parent.assignedElements()];
-    return children.includes(el);
+    isChild = children.includes(el);
+    if (!isChild) {
+      isChild = elementIsChildOfSlot(el, parent);
+    }
   }
   return isChild;
 }
@@ -209,10 +212,7 @@ function showWarning(text) {
     // err
   }
 }
-function createElement(tag, classes) {
-  if (classes === void 0) {
-    classes = [];
-  }
+function createElement(tag, classes = []) {
   const el = document.createElement(tag);
   el.classList.add(...(Array.isArray(classes) ? classes : classesToTokens(classes)));
   return el;
@@ -311,5 +311,14 @@ function getRotateFix(swiper) {
     return v;
   };
 }
+function setInnerHTML(el, html = '') {
+  if (typeof trustedTypes !== 'undefined') {
+    el.innerHTML = trustedTypes.createPolicy('html', {
+      createHTML: s => s
+    }).createHTML(html);
+  } else {
+    el.innerHTML = html;
+  }
+}
 
-export { elementParents as a, elementOffset as b, createElement as c, now as d, elementChildren as e, elementOuterSize as f, getSlideTransformEl as g, elementIndex as h, classesToTokens as i, getTranslate as j, elementTransitionEnd as k, isObject as l, makeElementsArray as m, nextTick as n, getRotateFix as o, elementStyle as p, elementNextAll as q, elementPrevAll as r, setCSSProperty as s, animateCSSModeScroll as t, showWarning as u, elementIsChildOf as v, extend as w, deleteProps as x };
+export { getRotateFix as a, setCSSProperty as b, createElement as c, elementParents as d, elementChildren as e, elementOffset as f, getSlideTransformEl as g, now as h, elementOuterSize as i, elementIndex as j, classesToTokens as k, getTranslate as l, makeElementsArray as m, nextTick as n, elementTransitionEnd as o, isObject as p, elementStyle as q, elementNextAll as r, setInnerHTML as s, elementPrevAll as t, animateCSSModeScroll as u, showWarning as v, elementIsChildOf as w, extend as x, deleteProps as y };

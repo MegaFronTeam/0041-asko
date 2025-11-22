@@ -1,14 +1,13 @@
 import { a as getWindow } from '../shared/ssr-window.esm.mjs';
-import { n as nextTick, d as now } from '../shared/utils.mjs';
+import { n as nextTick, h as now } from '../shared/utils.mjs';
 
 /* eslint-disable consistent-return */
-function Mousewheel(_ref) {
-  let {
-    swiper,
-    extendParams,
-    on,
-    emit
-  } = _ref;
+function Mousewheel({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
   const window = getWindow();
   extendParams({
     mousewheel: {
@@ -335,7 +334,7 @@ function Mousewheel(_ref) {
         if (!ignoreWheelEvents) emit('scroll', e);
 
         // Stop autoplay
-        if (swiper.params.autoplay && swiper.params.autoplayDisableOnInteraction) swiper.autoplay.stop();
+        if (swiper.params.autoplay && swiper.params.autoplay.disableOnInteraction) swiper.autoplay.stop();
         // Return page scroll on edge positions
         if (params.releaseOnEdges && (position === swiper.minTranslate() || position === swiper.maxTranslate())) {
           return true;
