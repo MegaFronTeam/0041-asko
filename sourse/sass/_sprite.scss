@@ -7,25 +7,105 @@
 	fill: currentColor;
 }
 
-.icon-basket {
-	$h: 24;
+.icon-arrow-down {
+	$h: 17;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
-	width: calc(22 / #{$h} *1em );
+	width: calc(13 / #{$h} *1em );
+}
+.icon-basket {
+	$h: 23;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
+.icon-burger {
+	$h: 14;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(20 / #{$h} *1em );
+}
+.icon-chart {
+	$h: 14;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(14 / #{$h} *1em );
 }
 .icon-check {
-	$h: 27;
+	$h: 8;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
-	width: calc(27 / #{$h} *1em );
+	width: calc(11 / #{$h} *1em );
+}
+.icon-chevron-down {
+	$h: 7;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(11 / #{$h} *1em );
+}
+.icon-chevron-left {
+	$h: 15;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(10 / #{$h} *1em );
+}
+.icon-chevron-right {
+	$h: 15;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(10 / #{$h} *1em );
 }
 .icon-fb {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-heart {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(22 / #{$h} *1em );
+}
 .icon-instagram {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
+}
+.icon-play {
+	$h: 59;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(52 / #{$h} *1em );
+}
+.icon-plus {
+	$h: 9;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(9 / #{$h} *1em );
+}
+.icon-profile {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
+.icon-search {
+	$h: 21;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21 / #{$h} *1em );
+}
+.icon-service-1 {
+	$h: 30;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(30 / #{$h} *1em );
+}
+.icon-service-2 {
+	$h: 30;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(30 / #{$h} *1em );
+}
+.icon-service-3 {
+	$h: 30;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(30 / #{$h} *1em );
+}
+.icon-service-4 {
+	$h: 30;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(30 / #{$h} *1em );
+}
+.icon-star {
+	$h: 14;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(15 / #{$h} *1em );
 }
 .icon-telegram {
 	$h: 16;

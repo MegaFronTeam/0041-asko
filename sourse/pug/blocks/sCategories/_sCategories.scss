@@ -3,26 +3,101 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	
-	&__row{
+
+	&__row {
 		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
+		--bs-gutter-y: var(--bs-gutter-x);
 	}
-	.section-title{
-		
+	.section-title {
 	}
-	&__col{
-		
+	&__col {
 	}
-	&__item{
-		
+	&__item {
+		border-radius: 16px;
+		position: relative;
+		height: 250px;
+		display: flex;
+		align-items: flex-end;
+		padding: 30px;
+		box-shadow: 0px 10px 30px rgba(38, 51, 77, 0.05);
+		position: relative;
+		.img-bg {
+			border-radius: inherit;
+		}
+		&:hover {
+			--op: 1;
+		}
+	}
+	&__title {
+		font-size: 24px;
+		color: #fff;
+		max-width: 185px;
+		line-height: 1;
+	}
+	&__caption {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: calc(200% + var(--bs-gutter-y));
+		@include mt;
+		scale: 1 var(--op, 0);
+		opacity: var(--op, 0);
+		z-index: 2;
+		background: linear-gradient(148.53deg, #1d273a 0%, #bd2539 100.03%);
+		box-shadow: 0px 10px 30px rgba(189, 37, 57, 0.3);
+		border-radius: inherit;
+		padding: inherit;
+		transform-origin: top;
+		img {
+			max-width: 102px;
+		}
+		ul {
+			padding-top: 30px;
+		}
+		li {
+			list-style: none;
+			margin-bottom: 12px;
+			a {
+				color: #fff;
+				text-wrap: balance;
+				display: inline-block;
+				&:not(:hover) {
+					opacity: 0.7;
+				}
+			}
+		}
+		.row {
+			height: 100%;
+		}
+		.col {
+			display: flex;
+			flex-direction: column;
+		}
+		.btn {
+			width: 200px;
+			margin-top: auto;
+		}
 	}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	&__col:nth-last-child(-n + 3) &__caption {
+		top: auto;
+		bottom: 0;
+		transform-origin: bottom;
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sCategories

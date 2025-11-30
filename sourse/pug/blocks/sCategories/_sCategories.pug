@@ -1,9 +1,32 @@
 mixin sCategories(data)
 	// start sCategories
-	+b.SECTION.sCategories.section#sCategories&attributes(attributes)
+	+b.sCategories.section#sCategories&attributes(attributes).d-none.d-lg-block
 		.container
-			+b.section-title.text-center
-				h2 sCategories
-				
 			+e.row.row
+				mixin item(i,t)
+					+e.col.col-xl-4.col-lg-6
+						+e.item
+							+img(`img/cat-${i}.jpg`, 'bg').img-bg
+							+e.title= t
+							+e.caption
+								.row
+									.col
+										+e.title= t
+										ul
+											li: a(href="#") Однокамерные 
+											li: a(href="#") Двухкамерные 
+											li: a(href="#") Встраиваемые 
+											li: a(href="#") Холодильник  с морозильником
+											li: a(href="#") Морозильная камера
+											li: a(href="#") Холодильная камера
+											li: a(href="#") Винный шкаф
+										a.btn.btn-outline-white(href="#") Смотреть всё
+									.col-auto
+										+img('img/cat.png')
+				+item(1,'Стиральные машины')
+				+item(2,'Холодильники')
+				+item(3,'Варочные панели')
+				+item(4,'Духовые шкафы')
+				+item(5,'Посудомоечные машины')
+				+item(6,'Сушильные машины')
 	// end sCategories

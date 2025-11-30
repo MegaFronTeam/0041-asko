@@ -2,10 +2,25 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-				+icon('telegram')
-				+iconC('telegram')
-			.row
-						
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 0; x < 3; x++)
+						+e.slide.swiper-slide
+							+e.img-wrap
+								+img("img/header-slide.jpg")
+							+e.caption
+								+e.head 
+									.row
+										.col
+											.h1 Стиральные машины
+										.col-auto
+											img(src="img/flag.svg", alt="")
+											+e.small Inspired <br> in Sweden
+								+e.body
+									p Стиральные машины Аско — детище известного шведского бренда, уже многие десятилетия сочетающего во всех своих продуктах знаменитый скандинавский дизайн и высочайшую функциональность, надежность, безопасность, экологичность и инновационные разработки.
+								+e.footer
+									+e.btn(href="#").btn.btn-success Выбрать
+				.arrow-wrap
+					+arrow
+
 	// end headerBlock

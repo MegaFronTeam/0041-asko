@@ -3,26 +3,67 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	
-	&__row{
+
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
-	.section-title{
-		
+	.section-title {
 	}
-	&__col{
-		
+	&__col {
 	}
-	&__item{
-		
+	&__item {
 	}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	&__slider {
+		overflow: visible;
+	}
+	&__slide {
+		@include media-breakpoint-down(md) {
+			width: auto;
+			.cat-btns {
+				max-width: var(--cat-w-mobile);
+			}
+		}
+	}
+
+	.swiper-scrollbar {
+		height: 19px;
+		width: 86px;
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+		.d-none-js {
+			display: none;
+		}
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sPopular
+
+.cat-btn-toggle {
+	border-radius: 50%;
+	aspect-ratio: 1;
+	width: 48px;
+	display: flex;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	.icon {
+		fill: none;
+		stroke: #fff;
+	}
+	&.clicked {
+		scale: 1 -1;
+	}
+}

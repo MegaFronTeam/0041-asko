@@ -3,26 +3,97 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	
-	&__row{
+
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
-	.section-title{
-		
+	.section-title {
 	}
-	&__col{
-		
+	&__col {
 	}
-	&__item{
-		
+	&__slider {
+		@include media-breakpoint-down(sm) {
+			margin-inline: -15px;
+		}
+		padding-bottom: 20px;
+	}
+	&__item {
 	}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	&__row-control {
+		// margin-top: 20px;
+		// padding-bottom: 20px;
+		.swiper-pagination {
+			text-align: left;
+		}
+		.arrow-wrap {
+			position: relative;
+			bottom: auto;
+			right: auto;
+		}
+	}
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sNews
+
+.news-item {
+	display: block;
+	color: $body-color;
+	@include media-breakpoint-down(sm) {
+		aspect-ratio: 380 / 253;
+		color: #fff;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		border-radius: 16px;
+		position: relative;
+		overflow: hidden;
+		&::after {
+			content: "";
+			inset: 0;
+			position: absolute;
+			z-index: 2;
+			background: linear-gradient(
+				180deg,
+				rgba(80, 108, 160, 0) 50.2%,
+				#1d273a 100%
+			);
+		}
+	}
+	&__caption {
+		position: relative;
+		z-index: 3;
+	}
+	@include media-breakpoint-up(sm) {
+		.small {
+			color: $secondary;
+		}
+	}
+	&__img-wrap {
+		@include media-breakpoint-up(sm) {
+			aspect-ratio: 3 / 2;
+			box-shadow: 0px 10px 30px rgba(38, 51, 77, 0.05);
+			display: block;
+			border-radius: 16px;
+			overflow: hidden;
+			margin-bottom: 20px;
+		}
+		@include media-breakpoint-down(sm) {
+			position: static;
+		}
+	}
+}

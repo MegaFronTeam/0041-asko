@@ -15,8 +15,6 @@ class JSCCommon {
 	}
 	static modalCall() {
 		const link = '[data-fancybox="modal"], .link-modal-js';
-		Fancybox.defaults.autoFocus = false;
-		Fancybox.defaults.placeFocusBack = false;
 
 		Fancybox.bind(link, {
 			arrows: false,
@@ -47,33 +45,9 @@ class JSCCommon {
 				IFRAME_ERROR: "Ошибка загрузки iframe",
 			},
 		});
-		document.querySelectorAll(".modal-close-js").forEach(el => {
-			el.addEventListener("click", event => {
-				event.preventDefault();
-				const instance = Fancybox.getInstance();
-				if (instance) {
-					instance.close();
-				}
-			});
-		});
 
-		document.addEventListener("click", event => {
-			let element = event.target.closest(link);
-			if (!element) return;
-			let modal = document.querySelector(element.dataset.src);
-			const data = element.dataset;
-
-			function setValue(val, elem) {
-				if (elem && val) {
-					const el = modal.querySelector(elem);
-					el.tagName == "INPUT" ? (el.value = val) : (el.innerHTML = val);
-					// console.log(modal.querySelector(elem).tagName)
-				}
-			}
-			setValue(data.title, ".ttu");
-			setValue(data.text, ".after-headline");
-			setValue(data.btn, ".btn");
-			setValue(data.order, ".order");
+		Fancybox.bind("[data-fancybox]", {
+			// Your custom options
 		});
 	}
 	// /modalCall

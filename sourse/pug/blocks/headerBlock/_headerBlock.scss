@@ -1,66 +1,190 @@
 // start .headerBlock
+:root {
+	@include media-breakpoint-up(lg) {
+		--slide-y: 40px;
+		--slide-x: 60px;
+	}
+	--slide-y: 20px;
+	--slide-x: 20px;
+}
 .headerBlock {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
-	// --sTPB: #{rem()}; 
-	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	
-	
-	&__row{
+	--sPT: #{rem(0)};
+	--sPB: #{rem(30)};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(40)};
+	}
+
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
-
 	}
-	.section-title{
-		
+	.section-title {
 	}
-	&__col{
-
+	&__col {
 	}
-	&__item{
-
+	&__item {
 	}
-	&__slide{
+	&__slider {
+		@include media-breakpoint-up(lg) {
+			border-radius: 20px;
+		}
+	}
+	&__slide {
 		height: auto;
+		z-index: 2;
+		// aspect-ratio: 1380 / 480;
+		min-height: 480px;
+		&:hover {
+			--sc: 1.12;
+		}
+		@include media-breakpoint-up(lg) {
+			padding: var(--slide-x) var(--slide-x) var(--slide-y);
+			&::before {
+				content: "";
+				position: absolute;
+				width: 50%;
+				left: 0;
+				top: 0;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					#1d273a 0%,
+					rgba(29, 39, 58, 0) 100%
+				);
+			}
+		}
+	}
+	&__img-wrap {
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+		}
+		position: relative;
+		@include media-breakpoint-down(lg) {
+			aspect-ratio: 400 / 226;
+		}
+		transition: 0.3s transform ease-out;
+		transform: scale(var(--sc));
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
 	}
 
-	@include media-breakpoint-up(xl) {}
+	&__caption {
+		@include media-breakpoint-up(lg) {
+			color: #fff;
+			height: 100%;
+			max-width: 460px;
+		}
+		@include media-breakpoint-down(lg) {
+			padding: 20px;
+			background-color: #fff;
+			margin-top: -20px;
+			box-shadow: inset 0px 10px 30px rgba(38, 51, 77, 0.05);
+			border-radius: 16px 16px 0 0;
+		}
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 2;
+	}
+	&__footer {
+		margin-top: auto;
+	}
 
-	@include media-breakpoint-up(lg) {}
+	&__smallest {
+		font-size: 10px;
+	}
 
-	@include media-breakpoint-up(md) {}
+	&__btn {
+		min-width: 175px;
+		@include media-breakpoint-down(lg) {
+			padding-block: 0;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			height: var(--swiperArrowSize);
+		}
+		@include media-breakpoint-up(lg) {
+			min-width: 200px;
+			background: none;
+			border-color: #fff;
+		}
+	}
 
-	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xxl) {
+		.container {
+			max-width: 1420px;
+		}
+	}
 
-	@include media-breakpoint-up(xs) {}
+	@include media-breakpoint-up(lg) {
+	}
+
+	@include media-breakpoint-up(md) {
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+
+	@include media-breakpoint-up(xs) {
+	}
 
 	//
-	@include media-breakpoint-between(md, xl) {}
-
-
-	//
-	@include media-breakpoint-only(xs) {}
-
-	@include media-breakpoint-only(sm) {}
-
-	@include media-breakpoint-only(md) {}
-
-	@include media-breakpoint-only(lg) {}
-
-	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-between(md, xl) {
+	}
 
 	//
-	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-only(xs) {
+	}
 
-	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-only(sm) {
+	}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-only(md) {
+	}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-only(lg) {
+	}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-only(xl) {
+	}
 
+	//
+	@include media-breakpoint-down(xl) {
+	}
+
+	@include media-breakpoint-down(lg) {
+	}
+
+	@include media-breakpoint-down(md) {
+	}
+
+	@include media-breakpoint-down(sm) {
+		.arrow-wrap {
+			right: 0;
+		}
+	}
+
+	@include media-breakpoint-down(xs) {
+	}
 }
 
 // end.headerBlock
+
+.arrow-wrap {
+	position: absolute;
+	right: var(--slide-x);
+	bottom: var(--slide-y);
+	height: var(--swiperArrowSize);
+	width: calc(var(--swiperArrowSize) * 2 + 10px);
+	--swiperArrowPosition: 0;
+	z-index: 3;
+	@include media-breakpoint-down(lg) {
+		--swiperBorderColorDef: #c9d1e2;
+		--swiperBorderColorDefHover: #c9d1e2;
+	}
+}

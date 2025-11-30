@@ -2,8 +2,34 @@ mixin topLine()
 	// start topLine
 	+b.topLine.section#topLine&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 topLine
-				
-			.row
+			+e.row.row
+				+e.col-logo.col-lg-auto
+					a(href="#")
+						img(src="img/logo-full.svg", alt="")
+				+e.col-contact.col-xl-3.col-auto.d-none.d-lg-block
+					div
+						+e.location
+							img(src="img/gerb.svg", alt="")
+							| Москва
+						a(href="#").small Заказать звонок
+				.col-auto.d-none.d-lg-block
+						+e.label Ежедневно с 10:00 до 21:00
+						+e.phone-link(href="tel:8(495)646-09-31") 8 (495) 646-09-31
+				.col.d-none.d-lg-block
+					+e.label Звонок бесплатный
+					+e.phone-link(href="tel:8(800)555-17-98") 8 (800) 555-17-98
+				+e.col-icons.col-auto.d-none.d-lg-block
+					+b.icons-block
+						+e.item(href="#")
+							+icon("search")
+						+e.divider
+						+e.item(href="#").active
+							+icon("heart")
+						+e.item(href="#").active
+							+icon("burger")
+						+e.item(href="#").active
+							+icon("basket")
+						+e.item(href="#").active
+							+icon("profile")
+
 	// end topLine

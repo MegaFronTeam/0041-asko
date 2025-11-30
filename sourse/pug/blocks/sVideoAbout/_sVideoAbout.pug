@@ -2,8 +2,25 @@ mixin sVideoAbout(data)
 	// start sVideoAbout
 	+b.SECTION.sVideoAbout.section#sVideoAbout&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sVideoAbout
+			+b.section-title
+				.row
+					.col
+						h2 Видео о товарах Asko
+					.col-auto
+						a(href="#") Все видео
 				
-			+e.row.row
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 0; x < 6; x++)
+						+e.slide.swiper-slide
+							+b.A.video-item.bg-wrap(href="https://www.youtube.com/watch?v=fJLiP2Ulyjk" data-fancybox="gallery")
+								+e.btn
+									+icon("play")
+								+img("img/header-slide.jpg",'bg').img-bg
+								+e.caption  Комплект встраиваемой бытовой техники для кухни
+			+e.row-control.row.d-md-none
+				.col
+					.swiper-pagination
+				.col-auto
+					a(href="#") Все видео
 	// end sVideoAbout

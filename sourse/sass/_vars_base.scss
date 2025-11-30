@@ -1,4 +1,4 @@
-$default-font: "roboto";
+$default-font: "HelveticaNeueCyr";
 $addr: '../fonts/';
 $file-format: woff2;
 $rfs-rem-value: 16 !default;
@@ -8,6 +8,18 @@ $url: '../img/';
 $path2: '@2x/';
 $path1: '@1x/';
 $rfs-breakpoint: 1200px !default;
+
+@include font-face(
+	$default-font,
+	$addr + "HelveticaNeueCyr-Roman",
+	$file-formats: woff2
+);
+@include font-face(
+	$default-font,
+	$addr + "HelveticaNeueCyr-Medium",
+  500,
+	$file-formats: woff2
+);
 
 // $themeColor: $primary !default;
 // $colors: (
@@ -21,7 +33,7 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mon
 
 $link-decoration: inherit;
 
-$spacers: ( 0: 0, );
+// $spacers: ( 0: 0, );
 $position-values: ( 100: 100% );
 $border-widths: ( 1: 1px,  );
 $aspect-ratios: ( );

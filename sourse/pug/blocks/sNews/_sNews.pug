@@ -2,8 +2,29 @@ mixin sNews(data)
 	// start sNews
 	+b.SECTION.sNews.section#sNews&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sNews
+			+b.section-title
+				.row
+					.col
+						h2 Новости и статьи о бытовой технике Asko
+					.col-auto
+						a(href="#") Все новости
 				
-			+e.row.row
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 0; x < 6; x++)
+						+e.slide.swiper-slide
+							+b.A.news-item.bg-wrap(href="#")
+								+e.img-wrap.bg-wrap
+									+img("img/header-slide.jpg",'bg').img-bg
+								+e.caption
+									.small 11.05.2025
+									+e.title Серии сушильных машин Asko
+			+e.row-control.row
+				.col
+					.swiper-pagination
+				.col-auto.d-none.d-md-block
+					.arrow-wrap
+						+arrow
+				.col-auto.d-md-none
+					a(href="#") Все новости
 	// end sNews

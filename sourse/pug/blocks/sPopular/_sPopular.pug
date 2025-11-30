@@ -2,8 +2,24 @@ mixin sPopular(data)
 	// start sPopular
 	+b.SECTION.sPopular.section#sPopular&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sPopular
-				
-			+e.row.row
+			+b.section-title
+				h2 Подборки популярных запросов
+			
+			+e.slider--js.swiper
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+b.cat-btns--js
+							- const arr = ["Сушильные машины с тепловым насосом", "Стиральные машины для дома", "Сушильные машины с конденсационной сушкой", "Винные шкафы", "Сушильные машины с функцией глажки белья", "Стиральные машины с функцией пара", "Стиральные машины с функцией удаления пятен"]
+							each item in arr
+								+e.btn(href="#")= item
+							each item in arr
+								+e.btn(href="#")= item
+							.btn.btn-light.cat-btn-toggle.cat-btn-toggle--js.d-none.d-md-flex
+								+icon("arrow-down")
+								//- .d-none
+				.swiper-scrollbar
+			.row.d-md-none
+				.col
+					a(href="#") Все запросы
+				.col-auto
 	// end sPopular

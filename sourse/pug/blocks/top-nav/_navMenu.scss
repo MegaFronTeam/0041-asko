@@ -3,6 +3,7 @@
 		@include media-breakpoint-up(lg) {
 			display: flex;
 			text-align: center;
+			justify-content: space-between;
 			@include roww(20px);
 			flex-wrap: wrap;
 		}
@@ -20,6 +21,7 @@
 		padding: 0;
 	}
 	a {
+		color: #000;
 		display: block;
 		padding: rem(20) calc(var(--bs-gutter-x) / 2);
 	}

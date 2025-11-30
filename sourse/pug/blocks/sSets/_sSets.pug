@@ -2,8 +2,100 @@ mixin sSets(data)
 	// start sSets
 	+b.SECTION.sSets.section#sSets&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sSets
-				
-			+e.row.row
+			+b.section-title
+				h2 Комплекты техники
+				+e.text.row
+					.col-auto
+						p Выберите готовый или соберите комплект техники для
+					.col
+						+b.cat-btns
+							+e.btn.active Советуем
+							+e.btn Новинка
+			+e.block.bg-wrap
+				+img("img/set-bg.jpg",'bg').img-bg
+				+e.row.row
+					+e.caption.col-xl-4
+						+e.body
+							.h1 Домашняя прачечная
+							p Аско предлагает элегантное дизайнерское решение — возможность устанавливать сверху сушильную машину, а рядом сушильный шкаф.
+						+e.footer.d-none.d-xl-block
+							.row
+								.col
+									+e.btn.btn-outline-white.btn(href="#") Смотреть всё
+								.col-auto
+									.arrow-wrap
+										+arrow
+					.col-xl-8
+						+e.slider--js.swiper
+							.swiper-wrapper
+								- for (var x = 0; x < 3; x++)
+									.swiper-slide
+										+b.ARTICLE.product-item--set
+											+e.head.row
+												.col
+													+e.promo.active Акция
+												+e.head-btns.col-auto.row
+													.col-auto
+														+e.head-btn(href="#")
+															+icon("burger")
+															+e.small-icon
+																+icon("plus")
+																+icon("check")
+													.col-auto
+														+e.head-btn(href="#")
+															+icon("heart")
+											+e.img-wrap(href="#")
+												//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
+												.img-wrap-center 
+													+img(`img/prod-set.png`)
+											+e.caption
+												+e.head.d-xl-none
+													+e.price-row
+														+e.price-new 86 900 ₽
+														+e.price-old 89 000 ₽
+													+e.purchase
+														+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
+														+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
+												+e.text--lg Комплект
+												+e.title--lg
+													a.text-body(href="#")  Аsco Classik №1
+												+e.icons.row
+													+e.icon--rating.col-auto
+														+icon("star")
+														| 4.8
+													+e.icon--comments.col-auto
+														+icon("chat")
+														| 4
+													+e.icon--status.col-auto
+														+e.ball(style="background: #35BE73")
+														| В наличии
+												.d-none.d-xl-block.mb-5
+													p Комплект Asko Classic 1 — это отличное решение для тех, кто ценит качество, функциональность и стильный дизайн. Произведенный в Словении, этот комплект обеспечивает все потребности.
+													+e.products.row
+														.col-auto
+															+e.text Стиральная машина
+															+e.title
+																a.text-body(href="#") Asco W2084.W/3
+														.col-auto
+															+e.text Сушильная машина
+															+e.title
+																a.text-body(href="#") Asco T208C. W.
+												+e.footer.row
+													.col.d-xl-block.d-none
+														+e.head
+															+e.price-row
+																+e.price-new 86 900 ₽
+																+e.price-old 89 000 ₽
+															+e.purchase
+																+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
+																+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
+													.col-xl-auto
+														+e.btn.btn.btn-success(href='#')
+															span В корзину
+					+e.footer.d-xl-none
+							.row
+								.col
+									.swiper-pagination
+								.col-auto
+									a.text-white(href="#") Все комплекты
 	// end sSets

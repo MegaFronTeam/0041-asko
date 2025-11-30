@@ -1,9 +1,17 @@
 mixin sIcons(data)
 	// start sIcons
-	+b.SECTION.sIcons.section#sIcons&attributes(attributes)
+	+b.sIcons.section#sIcons&attributes(attributes).d-none.d-md-block
 		.container
-			+b.section-title.text-center
-				h2 sIcons
-				
 			+e.row.row
+				mixin item(i,t,p)
+					+e.col.col-3
+						+e.icon-wrap
+							+img(`img/sIcons-${i}.svg`)
+						div
+							+e.title= t
+							p!= p
+				+item(1,`Бесплатная доставка` , `по всей России`)
+				+item(2,`Бесплатная установка` , `на готовые коммуникации`)
+				+item(3,`Фирменный магазин` , `официальный партнер`)
+				+item(4,`Гарантия от производителя` , `до 24 месяцев`)
 	// end sIcons

@@ -1,41 +1,75 @@
 mixin product-item(i, t, p ,pr)
 	+b.ARTICLE.product-item
+		+e.head.row
+			.col
+				+e.promo.active Акция
+			+e.head-btns.col-auto.row
+				.col-auto
+					+e.head-btn(href="#").active
+						+icon("burger")
+						+e.small-icon
+							+icon("plus")
+							+icon("check")
+				.col-auto
+					+e.head-btn(href="#").active
+						+icon("heart")
 		+e.img-wrap(href="#")
 			//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
 			.img-wrap-center 
-				+img(`img/prod-${i}.jpg`)
+				+img(`img/prod-${i}.png`)
 		+e.caption
-			+e.title!= t
-			+e.text!= p
-			+e.price!= pr
-			+e.btn(href='#')
+			+e.head
+				+e.price-row
+					+e.price-new 86 900 ₽
+					+e.price-old 89 000 ₽
+				+e.purchase
+					+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
+					+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
+			+e.text Встраиваемая вытяжка
+			+e.title
+				a.text-body(href="#")  Asko CC4527S
+			+e.icons.row
+				+e.icon--rating.col-auto
+					+icon("star")
+					| 4.8
+				+e.icon--comments.col-auto
+					+icon("chat")
+					| 4
+				+e.icon--status.col-auto
+					+e.ball(style="background: #35BE73")
+					| В наличии
+			+e.btn.btn.btn-success(href='#')
+				span В корзину
 	// /.product-item
 
 mixin sCatalog(h2)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCatalog
-				p Выкупаем проблемные автомобили в день обращения
-
-			+e.row.row
-				- const wrapClass="col-3"
-				+e.col(class= wrapClass)
-					+product-item(`1`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`2`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`3`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`4`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`5`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`6`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`7`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`8`,``,``,``) 
-
+			+b.section-title
+				h2 Лучшие предложения
+			+b.cat-btns
+				+e.btn.active Советуем
+				+e.btn Новинка
+				+e.btn Хит
+				+e.btn Акция
+			+e.slider--js.swiper.auto-slider-js
+				.swiper-wrapper
+					- const wrapClass="swiper-slide"
+					+e.col--slide(class= wrapClass)
+						+product-item(`1`,``,``,``) 
+					+e.col--slide(class= wrapClass)
+						+product-item(`2`,``,``,``) 
+					+e.col--slide(class= wrapClass)
+						+product-item(`3`,``,``,``) 
+					+e.col--slide(class= wrapClass)
+						+product-item(`4`,``,``,``)
+					+e.col--slide(class= wrapClass)
+						+product-item(`4`,``,``,``)
+			+e.row-control.row
+				.col
+					.swiper-pagination
+				.col-auto.d-none.d-md-block
+					.arrow-wrap
+						+arrow
 	// end sCatalog

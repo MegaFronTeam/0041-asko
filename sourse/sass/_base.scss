@@ -11,7 +11,7 @@
 	text-align: center;
 
 	opacity: 0;
-	opacity: 0.7;
+	// opacity: 0.7;
 	content: var(--screen);
 }
 
@@ -259,7 +259,7 @@ ul {
 	height: var(--swiperArrowSize);
 	border-radius: 50%;
 	background-color: var(--swiperBgDef);
-	border: 2px solid var(--swiperBorderColorDef);
+	border: 0.6px solid var(--swiperBorderColorDef);
 	color: var(--swiperColorDef);
 	@include bgs;
 	outline: none !important;
@@ -278,7 +278,11 @@ ul {
 	}
 
 	.icon {
-		font-size: rem(12);
+		font-size: rem(14);
+		fill: none;
+		stroke: currentColor;
+		position: absolute;
+		@include a-cent;
 	}
 
 	&::after {
@@ -441,5 +445,29 @@ iframe {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+}
+
+.btn-outline-white {
+	--bs-btn-color: #fff;
+	--bs-btn-border-width: var(--bs-border-width);
+	--bs-btn-border-color: var(--bs-btn-color);
+	--bs-btn-hover-border-color: var(--bs-success);
+	--bs-btn-hover-bg: var(--bs-success);
+	--bs-btn-active-border-color: var(--bs-success);
+	--bs-btn-active-bg: var(--bs-success);
+}
+
+.btn-light {
+	--bs-btn-hover-border-color: var(--bs-success);
+	--bs-btn-hover-bg: var(--bs-success);
+	--bs-btn-active-border-color: var(--bs-success);
+	--bs-btn-active-bg: var(--bs-success);
+}
+
+h2,
+.h2 {
+	@include media-breakpoint-down(md) {
+		font-size: 24px;
 	}
 }

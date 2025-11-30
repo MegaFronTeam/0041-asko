@@ -2,36 +2,48 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	&__row{
+	background-color: #fff;
+	border-top: 0.6px solid #c9d1e2;
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		// @include media-breakpoint-up(md) {
-			--bs-gutter-y: var(--bs-gutter-x);
+		--bs-gutter-y: var(--bs-gutter-x);
+		align-items: center;
 		// }
-
 	}
-	.section-title{
-		
+	.section-title {
 	}
-	&__col{
-
+	&__col {
 	}
-	&__item{
-
+	&__item {
 	}
-	&__slide{
+	&__slide {
 		height: auto;
 	}
+	&__col-catalog {
+		max-width: min(330px, 33.3%);
+	}
+	&__catalog-button {
+		font-weight: 500;
+		font-size: rem(20);
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+		gap: 10px;
+	}
 
+	@include media-breakpoint-up(sm) {
+	}
 
-	@include media-breakpoint-up(sm) {}
-	
-	@include media-breakpoint-up(xs) {}
-	// 
-	@include media-breakpoint-between(md, xl) {}
-	// 
-	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-up(xs) {
+	}
+	//
+	@include media-breakpoint-between(md, xl) {
+	}
+	//
+	@include media-breakpoint-only(xs) {
+	}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-down(xs) {
+	}
 }
-
-
