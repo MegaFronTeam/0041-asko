@@ -1,0 +1,39 @@
+mixin sRew(data)
+	// start sRew
+	+b.SECTION.sRew.section#sRew&attributes(attributes)
+		.container
+			+b.section-title
+				.row
+					.col
+						h2 Отзывы об интернет-магазине Asko-Shop
+					.col-auto
+						a(href="#") Все отзывы о нас
+				
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 0; x < 6; x++)
+						+e.slide.swiper-slide
+							+b.rew-item.card
+								.small.text-secondary 11.05.2025
+								.row.mb-3
+									.col Соня
+									.col-auto
+										+b.stars-block(data-star="4")
+											+icon("star")
+											+icon("star")
+											+icon("star")
+											+icon("star")
+											+icon("star")
+								+e.caption
+									p Сейчас сложно найти технику из Европы, и Аско приятная неожиданность. У меня на старой квартире была варочная панель Аско, я еще узнала, что это мужское имя и в переводе означает "Ясень". Мы дома 
+								.text-end
+									a(href="#") Отзыв полностью
+			+e.row-control.row
+				.col
+					.swiper-pagination
+				.col-auto.d-none.d-md-block
+					.arrow-wrap
+						+arrow
+				.col-auto.d-md-none
+					a(href="#") Все отзывы о нас
+	// end sRew

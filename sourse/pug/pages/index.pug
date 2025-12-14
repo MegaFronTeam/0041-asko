@@ -13,6 +13,8 @@ include ../blocks/sClientsService/_sClientsService.pug
 include ../blocks/sAddresses/_sAddresses.pug
 include ../blocks/sAppliances/_sAppliances.pug
 include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sRew/_sRew.pug
+
 
 block variables
 	- let  mainPage= '' 
@@ -37,8 +39,12 @@ block pagecontent
 		+sReviews
 		+sVideoAbout
 		+sClientsService
-		+sAddresses
-		+sAppliances
-		+sAbout
+		.row
+			.col-12
+				+sRew
+				+sAppliances
+				+sAbout
+			.col-12.order-md-first
+				+sAddresses
 		
 	+parts('footer')

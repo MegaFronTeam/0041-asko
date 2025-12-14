@@ -3,26 +3,162 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	
-	&__row{
+	.container {
+		@include media-breakpoint-down(sm) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
-	.section-title{
-		
+	.cat-btns {
+		&__btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 4px;
+			// &:not(.active) {
+			// 	color: #79859e;
+			// }
+		}
+		.icon {
+			fill: var(--icon-color);
+		}
 	}
-	&__col{
-		
+	.section-title {
 	}
-	&__item{
-		
+	&__col {
+	}
+	&__item {
+	}
+	&__block {
+		@include media-breakpoint-up(lg) {
+			box-shadow: 0 10px 30px 0 rgba(38, 51, 77, 0.05);
+			background: #fff;
+		}
+		border-radius: 16px;
+		font-size: 18px;
+	}
+	--px: 30px;
+	&__head {
+		padding: 20px var(--px);
+		@include media-breakpoint-up(lg) {
+			border-bottom: 1px solid #c9d1e2;
+		}
+		font-weight: 400;
+		margin: 0;
+	}
+	&__body {
+		@include media-breakpoint-up(lg) {
+			padding: 30px var(--px);
+		}
+	}
+	&__title {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		margin-bottom: 20px;
+		.icon {
+			fill: var(--icon-color);
+		}
 	}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	&__icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+	}
+	&__ball {
+		width: 12px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		display: inline-block;
+	}
+
+	&__group {
+		margin-bottom: 30px;
+	}
+
+	&__chat {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		color: #000;
+		img {
+			max-width: 24px;
+		}
+	}
+
+	&__btn {
+		width: 100%;
+		max-width: 260px;
+	}
+
+	.tabs {
+		&__caption {
+			display: flex;
+			@include media-breakpoint-up(sm) {
+				gap: 10px 30px;
+			}
+			gap: 10px 20px;
+			margin-bottom: 20px;
+		}
+		&__btn {
+			@include mt;
+			&:hover,
+			&.active {
+				color: var(--bs-primary);
+			}
+		}
+	}
+
+	&__caption {
+		@include media-breakpoint-down(lg) {
+			text-align: center;
+			position: relative;
+			z-index: 2;
+			padding-block: 1rem;
+			.row {
+				justify-content: center;
+			}
+		}
+		@include media-breakpoint-down(lg) {
+			// box-shadow: 0 10px 30px 0 rgba(38, 51, 77, 0.05);
+			background: #fff;
+			border-radius: 16px 16px 0 0;
+			margin-top: -20px;
+		}
+	}
+
+	&__map {
+		aspect-ratio: 850 / 500;
+		position: relative;
+		background-color: $light;
+		border-radius: 16px;
+		& > * {
+			position: absolute;
+			inset: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(md) {
+		--sPB: #{rem(0)};
+	}
 } // end.sAddresses

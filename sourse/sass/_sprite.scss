@@ -62,6 +62,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-metro {
+	$h: 15;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21 / #{$h} *1em );
+}
 .icon-play {
 	$h: 59;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);

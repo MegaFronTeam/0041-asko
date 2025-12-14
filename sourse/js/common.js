@@ -158,6 +158,32 @@ function eventHandler() {
 			// }
 		},
 	});
+	new Swiper(".sRew__slider--js", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+		},
+		navigation: {
+			nextEl: ".sRew .swiper-button-next",
+			prevEl: ".sRew .swiper-button-prev",
+		},
+		pagination: {
+			el: " .sRew .swiper-pagination",
+			type: "bullets",
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+	});
 
 	new Swiper(".sVideoAbout__slider--js", {
 		slidesPerView: 1,

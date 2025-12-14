@@ -2,8 +2,117 @@ mixin sAddresses(data)
 	// start sAddresses
 	+b.SECTION.sAddresses.section#sAddresses&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sAddresses
-				
-			+e.row.row
+			+b.section-title.d-none.d-lg-block  
+				h2 Фирменные Шоурумы Asko в Москве
+			+b.cat-btns.d-none.d-lg-flex 
+				+e.btn.active(style="--icon-color: #894E35") 
+					+icon("metro")
+					| Курская
+				+e.btn(style="--icon-color: #40C1F3")
+					+icon("metro")
+					| Кутузовская
+			+e.block
+				+e.head.h5 Шоу-рум на Курской
+				+e.body
+					+e.row.row
+						.col-lg-8.order-lg-last
+							.tabs
+								.tabs__caption
+									.tabs__btn.active На карте
+									.tabs__btn Вход
+									.tabs__btn Внутри
+									.tabs__btn 3D тур по шоу-руму
+								.tabs__wrap
+									.tabs__content.active
+										+e.map
+											#map(data-mark="img/svg/mark.svg")
+											//- <div id="map"style="width:100%; height:360px"></div>
+											//- <script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+											//- script. 
+											//- 	const map = document.querySelector('#map');
+											//- 	document.addEventListener('DOMContentLoaded', function(event) {
+											//- 		ymaps.ready(init);
+											//- 	});
+											//- 	function init () {
+											//- 		//- var center = [55.75322550427434,37.65589449999999];
+											//- 		var center = [55.803299806784906,37.59322146673064];
+											//- 		var myMap = new ymaps.Map("map", {
+											//- 						center: center,
+											//- 						zoom: 17
+											//- 				}),
+											//- 				myPlacemark2 = new ymaps.Placemark(center, {
+											//- 						// Свойства.
+											//- 						// hintContent: 'Собственный значок метки'
+											//- 				}, {
+											//- 						// Опции.
+											//- 						// Своё изображение иконки метки.
+											//- 						iconImageHref: map.dataset.mark,
+											//- 						//- iconImageHref: 'img/svg/map-marker.svg',
+											//- 						// Размеры метки.
+											//- 						iconImageSize: [42, 60],
+											//- 						// Смещение левого верхнего угла иконки относительно
+											//- 						// её "ножки" (точки привязки).
+											//- 						iconImageOffset: [-21, -30]
+											//- 						//- [-38, -76]
+											//- 				});
+											//- 		myMap.behaviors.disable('scrollZoom');
+											//- 		//на мобильных устройствах... (проверяем по userAgent браузера)
+											//- 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+											//- 		//... отключаем перетаскивание карты
+											//- 			myMap.behaviors.disable('drag');
+											//- 		}
+											//- 		// Добавляем все метки на карту.
+											//- 		myMap.geoObjects
+											//- 			.add(myPlacemark2)
+											//- 	}
+									.tabs__content 2
+									.tabs__content 3
+									.tabs__content 4
+						.col-lg-4
+							+e.caption
+								+e.group
+									.small.text-secondary.mb-4.d-none.d-lg-block Адрес
+									div
+										+e.title(style="--icon-color: #894E35") 
+											+icon("metro")
+											| Курская
+									p г. Москва,  <br> Дмитровское шоссе, д.62, с.5
+									+e.icons.row.mb-4
+										+e.icon--status.col-auto
+											+e.ball(style="background: #35BE73")
+											| Открыт
+										+e.icon--rating.col-auto
+											+img("img/parking.svg")
+											| Бесплатная парковка
+								+e.group.d-none.d-lg-block
+									+e.time
+										.mb-1
+											span.text-secondary Пн. - пт.: 
+											| 9:00 — 20:00
+										.mb-1
+											span.text-secondary Сб. - вс.: 
+											| 10:00 — 18:00
+								+e.group
+									.mb-4.d-none.d-lg-block
+										.text-secondary.mb-1 Телефон
+										a.text-body.h6.fw-400(href="tel:+7(495)120-80-90") +7 (495) 120-80-90 
+									.mb-4.d-lg-none
+										.text-secondary.mb-1 Ежедневно с 10:00 до 21:00
+										a.text-body.h6.fw-400(href="tel:8(495)646-09-31") 8 (495) 646-09-31
+									.mb-4.d-lg-none
+										.text-secondary.mb-1 Звонок бесплатный
+										a.text-body.h6.fw-400(href="tel:8(800)555-17-98") 8 (800) 555-17-98
+								+e.group.d-none.d-lg-block
+									.text-secondary.mb-1 Мессенджеры
+									+e.chat(href="#")
+										+img("img/tg.png")
+										| Написать в Telegram
+									br
+									+e.chat(href="#")
+										+img("img/whatsap.png")
+										| Написать в WhatsApp
+								+e.btn.btn.btn-success(href="#").d-none.d-lg-block Записаться на показ
+
+						
+
 	// end sAddresses
