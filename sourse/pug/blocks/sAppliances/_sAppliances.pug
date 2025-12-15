@@ -4,5 +4,24 @@ mixin sAppliances(data)
 		.container
 			+b.section-title
 				h2 Техника Asko
-			+e.row.row
+			+e.slider-wrap
+				+e.slider-gal--js
+					.swiper-wrapper
+						+e.slide.swiper-slide.bg-wrap
+							+img("img/gal-slide.jpg")
+						+e.slide.swiper-slide.bg-wrap
+							+img("img/gal-slide.jpg")
+				+e.caption
+					+e.slider-caption--js
+						.swiper-wrapper
+							- for (var x = 0; x < 3; x++)
+								+e.slide.swiper-slide.bg-wrap
+									h4 Комплект встраиваемой бытовой техники для кухни
+									p Комплект встраиваемой бытовой техники для кухни — это современные духовые шкафы и варочные панели, холодильники и посудомоечные машины, кофеварки и вытяжки и другие виды устройств, идеально сочетающиеся и дополняющие друг друга и с точки зрения дизайна, и по функционалу. Это десятки моделей качественной и надежной скандинавских оборудований, которые легко монтируются в кухонный гарнитур. Хранение продуктов, приготовление еды и напитков, поддержание чистоты и комфорта — комплекты встраиваемых бытовых приборов возьмут на себя всю совокупность любых задач и забот на вашей кухне.
+					+e.row-control.row
+						.col
+							.arrow-wrap
+								+arrow
+						.col-auto
+							a.btn.btn-outline-white(href="#") Подробнее
 	// end sAppliances
