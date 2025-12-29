@@ -1,0 +1,15 @@
+mixin sCategoriesSm(data)
+	// start sCategoriesSm
+	+b.sCategoriesSm.section#sCategoriesSm&attributes(attributes)
+		.container
+			.mb-3.text-secondary.small Популярные подборки 
+			+e.row
+				mixin item(i, t)
+					+b.sCategoriesSm-item(href="#").card
+						+img(`img/cat-sm-${i}.png`)
+						+e.title= t
+				+item(1, 'Отдельностоящие стиральные машины')
+				+item(2, 'Стиральные машины с фронтальной загрузкой')
+				+item(3, 'Маленькие стиральные машины с загрузкой 6-8 кг')
+				+item(4, 'Большие стиральные машины с загрузкой 9-10 кг')
+	// end sCategoriesSm

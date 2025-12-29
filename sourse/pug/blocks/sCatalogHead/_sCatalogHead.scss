@@ -1,0 +1,49 @@
+// start .sCatalogHead
+.sCatalogHead {
+	// --sPT: #{rem()};
+	--sPB: #{rem(0)};
+	--sTPB: #{rem(0)};
+	border-bottom: 0.5px solid #c9d1e2;
+
+	&__row {
+		@include media-breakpoint-up(xl) {
+			--bs-gutter-x: #{rem(110)};
+		}
+		// --bs-gutter-y: #{rem(30)};
+	}
+	.section-title {
+	}
+	&__col {
+	}
+	&__item {
+	}
+
+	.head-img {
+		max-width: 540px;
+	}
+
+	&__caption {
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 58px;
+		}
+		padding-bottom: 30px;
+	}
+	&__img-wrap {
+		text-align: center;
+		@include media-breakpoint-down(lg) {
+			padding-inline: 0;
+		}
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sCatalogHead

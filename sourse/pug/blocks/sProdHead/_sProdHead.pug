@@ -1,0 +1,103 @@
+mixin sProdHead(data)
+	// start sProdHead
+	+b.SECTION.sProdHead.section#sProdHead&attributes(attributes)
+		.container
+			+e.row.row.gy-3
+				.col-xl-6.col-lg-5
+					.product-item__head.row.mb-3.d-lg-none
+						.col
+							.product-item__promo.active Акция
+							.product-item__promo.active Акция
+							.product-item__promo.active Акция
+						.product-item__head-btns.col-auto.row
+							.col-auto
+								.product-item__head-btn(href="#")
+									+icon("burger")
+									.product-item__small-icon
+										+icon("plus")
+										+icon("check")
+							.col-auto
+								.product-item__head-btn(href="#")
+									+icon("heart")
+					+e.slider-wrap
+						+e.slider-sm-wrap.d-none.d-md-block
+							+e.slider-sm.swiper
+								.swiper-wrapper
+									.swiper-slide
+										a.img-wrap-center.img-wrap-center--video(data-fancybox="gallery" href="https://www.youtube.com/watch?v=2p9a9lJhBnU")
+											+img(`img/prod-5.png`,'bg').img-bg
+											.img-wrap-center__play-btn
+												+icon("play")
+									- for (var i = 1; i < 17; i++)
+										.swiper-slide
+											.img-wrap-center
+												+img(`img/prod-5.png`,'bg').img-bg
+							.swiper-button-next Ещё
+						+e.slider-lg.swiper
+							.swiper-wrapper
+								.swiper-slide
+									a.img-wrap-center.img-wrap-center--video(data-fancybox="gallery" href="https://www.youtube.com/watch?v=2p9a9lJhBnU")
+										+img(`img/prod-5.png`,'bg').img-bg
+										.img-wrap-center__play-btn
+											+icon("play")
+								- for (var i = 1; i < 17; i++)
+									.swiper-slide
+										.img-wrap-center 
+											img(src=`img/prod-5.png`)
+				.col
+					+e.caption
+						.product-item__head.row.mb-5.d-none.d-lg-flex
+							.col
+								.product-item__promo.active Акция
+								.product-item__promo.active Акция
+								.product-item__promo.active Акция
+							.product-item__head-btns.col-auto.row
+								.col-auto
+									.product-item__head-btn(href="#")
+										+icon("burger")
+										.product-item__small-icon
+											+icon("plus")
+											+icon("check")
+								.col-auto
+									.product-item__head-btn(href="#")
+										+icon("heart")
+						.row.mb-4
+							.col-md-auto.order-md-last Артикул: 1670225
+							.col
+								.h5.fw-400.text-secondary Встраиваемая посудомоечная машина
+								.row.g-2.mb-2
+									.col-auto
+										h1.h2.mb-0 Asko CC4527S
+									.col-auto.d-flex.align-items-center
+										+country-prod()
+								.product-item__icons.row
+									.product-item__icon.product-item__icon--rating.col-auto
+										+icon("star")
+										| 4.8
+									.product-item__icon.product-item__icon--comments.col-auto
+										+icon("chart")
+										| 4
+									.product-item__icon.product-item__icon--status.col-auto
+										.product-item__ball(style="background: #35BE73")
+										| В наличии
+							
+						.row.mb-4.gy-2
+							.col-md-auto.text-secondary.lh-110.small Ключевые <br class="d-none d-md-block"> преимущества
+							.col
+								+icon-description()
+						p.mb-4.d-none.d-md-block Встраиваемая посудомоечная машина Asko DSD544B на 14 комплектов посуды, оснащённая корзинами Flexiracks™, с зоной усиленной мойки PowerZone и системой очистки SuperCleaningSystem™.
+						.row.g-2
+							.col-md.col-auto
+								.product-item__price-row.d-block
+									.product-item__price-old 89 000 ₽
+									.product-item__price-new 86 900 ₽
+							.col-md-12.product-item__purchase.order-md-last.col-auto
+								.product-item__purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
+								.product-item__purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
+							.col-auto.d-none.d-md-block
+								+e.btn.btn.btn-outline-secondary(href='#')
+									span Купить в 1 клик
+							.col-md-auto
+								+e.btn.btn.btn-success(href='#')
+									span В корзину
+	// end sProdHead

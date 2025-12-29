@@ -1,0 +1,49 @@
+// start .sCategoriesSm
+.sCategoriesSm {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 20px;
+	}
+	.section-title {
+	}
+	&__col {
+	}
+	&__item {
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sCategoriesSm
+
+.sCategoriesSm-item {
+	display: flex;
+	color: #000;
+	gap: 20px;
+	padding: 20px;
+	text-wrap: balance;
+	img {
+		max-width: 60px;
+		max-height: 60px;
+		object-fit: contain;
+		flex: 0 0 auto;
+	}
+}

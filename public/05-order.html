@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>05 - order</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<div class="section pb-0">
+					<div class="container">
+						<div class="pb-2">
+							<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
+								<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+									<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Корзина</span>
+											<meta itemprop="position" content="1"/></a></li>
+									<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Оформление</span>
+											<meta itemprop="position" content="2"/></a></li>
+								</ol>
+							</nav>
+						</div>
+						<h1>Оформление</h1>
+					</div>
+				</div>
+				<!-- start sCart-->
+				<section class="sCart section" id="sCart">
+					<div class="container">
+						<div class="sCart__row row"> 
+							<div class="col-lg-8 col-xxl-9 mb-3">
+								<div class="row">
+									<div class="col"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+<path d="M10.2679 3C11.0377 1.66667 12.9623 1.66667 13.7321 3L20.6603 15C21.4301 16.3333 20.4678 18 18.9282 18H5.0718C3.5322 18 2.56995 16.3333 3.33975 15L10.2679 3Z" fill="#E5AC1A" />
+<path d="M12.498 5.74194L12.344 12.7419H11.28L11.126 5.74194H12.498ZM11.868 15.5839C11.6253 15.5839 11.42 15.4999 11.252 15.3319C11.084 15.1639 11 14.9586 11 14.7159C11 14.4733 11.084 14.2679 11.252 14.0999C11.42 13.9319 11.6253 13.8479 11.868 13.8479C12.1013 13.8479 12.2973 13.9319 12.456 14.0999C12.624 14.2679 12.708 14.4733 12.708 14.7159C12.708 14.9586 12.624 15.1639 12.456 15.3319C12.2973 15.4999 12.1013 15.5839 11.868 15.5839Z" fill="white" />
+</svg><span class="text-primary">*</span><span class="text-secondary"> Обязательно к заполнению.</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-8 col-xxl-9">
+								<div class="mw-680"></div>
+								<div class="cart-item card">
+									<div class="row g-3">
+										<div class="col-auto"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="12" fill="#437663" />
+<path d="M6 11.5556L10.6429 16L19 8" stroke="white" />
+</svg>
+										</div>
+										<div class="col h5 mb-0 fw-400">Покупатель</div>
+										<div class="col-auto">
+											 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.49995 1C4.72876 1 2.84317 1 1.6716 2.17155C1.67158 2.17156 1.67156 2.17158 1.67155 2.1716C0.5 3.34317 0.5 5.22878 0.5 9" stroke="#C9D1E2" />
+<path d="M12.5 21C16.2712 21 18.1568 21 19.3284 19.8285C19.3284 19.8284 19.3284 19.8284 19.3285 19.8284C20.5 18.6568 20.5 16.7712 20.5 13" stroke="#C9D1E2" />
+<path d="M0.500001 13C0.500001 16.7712 0.5 18.6568 1.67155 19.8284C1.67156 19.8284 1.67158 19.8284 1.6716 19.8285C2.84317 21 4.72876 21 8.49995 21" stroke="#C9D1E2" />
+<path d="M20.8275 3.00324C21.0228 3.1985 21.0228 3.51508 20.8275 3.71035L11.3997 13.1382C11.3448 13.1931 11.2778 13.2345 11.2043 13.259L7.66872 14.4385C7.48919 14.4983 7.29091 14.4513 7.15703 14.3176C7.02322 14.1838 6.97651 13.9855 7.03619 13.806L8.21493 10.2697C8.23949 10.1962 8.28096 10.1291 8.33577 10.0743L17.7636 0.646447C17.9589 0.451184 18.2755 0.451184 18.4707 0.646447L20.8275 3.00324Z" stroke="#C9D1E2" stroke-linejoin="round" />
+</svg>
+										</div>
+									</div>
+								</div>
+								<div class="cart-item card">
+								</div>
+							</div>
+							<div class="sCart__aside col">
+								<div class="mb-4">
+									<div class="card card--info">
+										<div class="h4 fw-400">Ваш заказ</div>
+										<table>
+											<tr>
+												<td>Товары</td>
+												<td class="text-end">× 4</td>
+											</tr>
+											<tr>
+												<td>Вес</td>
+												<td class="text-end"> 345.5 кг</td>
+											</tr>
+											<tr>
+												<td>Сумма</td>
+												<td class="text-end">199 000 ₽</td>
+											</tr>
+											<tr>
+												<td>Скидка</td>
+												<td class="text-end">-15 000 ₽</td>
+											</tr>
+											<tr>
+												<td>Установка</td>
+												<td class="text-end">10 000 ₽</td>
+											</tr>
+											<tr>
+												<td>Подключение</td>
+												<td class="text-end">15 000 ₽</td>
+											</tr>
+											<tr>
+												<td>Демонтаж</td>
+												<td class="text-end">15 000 ₽</td>
+											</tr>
+										</table>
+									</div>
+									<div class="card">
+										<div class="promocode-block">
+											<input type="text" placeholder="Промокод"/>
+											<button class="btn btn-light"><svg width="22" height="9" viewBox="0 0 22 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.8141 0V8H2.41406L6.01406 4.4" stroke="white" stroke-width="2" />
+</svg>
+											</button>
+										</div>
+									</div>
+									<div class="card card--total">
+										<div class="row pb-4"> 
+											<div class="col">
+												<div class="h5 fw-400">Итого</div>
+											</div>
+											<div class="col-auto text-end">
+												<h5 class="fw-400 mb-0">86 900 ₽</h5>
+												<div class="smallest text-secondary">Включая НДС</div>
+											</div>
+										</div>
+										<button class="btn btn-success w-100">Оформить</button>
+									</div>
+								</div>
+								<div class="mb-4">
+									<div class="card dd-group__item border-0 py-0">
+										<div class="dd-group__head dd-head-js">
+											<div class="sCart__icon-wrap"><svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.3748 11.2333C9.08239 11.2333 8.03792 12.3015 8.03792 13.6186C8.03792 14.9318 9.08239 16 10.3748 16C11.6673 16 12.7117 14.9318 12.7117 13.6186C12.7117 12.3015 11.6673 11.2333 10.3748 11.2333ZM10.3748 14.8093C9.72858 14.8093 9.20633 14.2732 9.20633 13.6185C9.20633 12.96 9.72858 12.4278 10.3748 12.4278C11.021 12.4278 11.5433 12.96 11.5433 13.6185C11.5432 14.2732 11.021 14.8093 10.3748 14.8093ZM28 9.47148V12.0144C28 12.6487 27.4954 13.1629 26.8729 13.1629H25.6669C25.4489 11.6391 24.1603 10.4675 22.6048 10.4675C21.0532 10.4675 19.7645 11.6391 19.5466 13.1629H13.4338C13.2159 11.6391 11.9272 10.4675 10.3756 10.4675C8.82389 10.4675 7.5352 11.6391 7.31733 13.1629H5.80698C5.18448 13.1629 4.67989 12.6487 4.67989 12.0144V9.47148H28ZM22.6078 11.2333C21.3154 11.2333 20.2672 12.3015 20.2672 13.6186C20.2672 14.9318 21.3155 16 22.6078 16C23.8965 16 24.9447 14.9318 24.9447 13.6186C24.9447 12.3015 23.8965 11.2333 22.6078 11.2333ZM22.6078 14.8093C21.9616 14.8093 21.4394 14.2732 21.4394 13.6185C21.4394 12.96 21.9616 12.4278 22.6078 12.4278C23.2503 12.4278 23.7763 12.96 23.7763 13.6185C23.7763 14.2732 23.2503 14.8093 22.6078 14.8093ZM27.5559 6.91074L23.1264 2.44651C22.8446 2.16318 22.4651 2.00238 22.0706 2.00238H19.8352V1.14856C19.8352 0.513043 19.3317 0 18.7081 0H5.8062C5.18627 0 4.67911 0.513089 4.67911 1.14856V1.32853L0.105229 1.86572L8.20995 2.94123L0 3.77234L8.18103 4.95764L0 5.68049L4.67939 6.57985L4.67907 8.83656H27.9992V7.99804C27.9992 7.58836 27.8377 7.19789 27.5559 6.91074ZM25.6248 7.06003H21.338C21.2403 7.06003 21.1614 6.97965 21.1614 6.88011V3.50705C21.1614 3.40751 21.2403 3.32709 21.338 3.32709H22.1533C22.1983 3.32709 22.2434 3.34625 22.2772 3.37688L25.745 6.74993C25.8614 6.86094 25.7825 7.06003 25.6248 7.06003Z" fill="#C9D1E2" />
+</svg>
+											</div><span>Доставка</span>
+											<svg class="icon icon-chevron-down ">
+												<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+											</svg>
+										</div>
+										<div class="dd-group__content dd-content-js">
+											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, doloremque? Molestiae delectus pariatur quasi modi eaque mollitia tempore in sapiente.</p>
+										</div>
+									</div>
+								</div>
+								<div class="mb-4">
+									<div class="card dd-group__item border-0 py-0">
+										<div class="dd-group__head dd-head-js">
+											<div class="sCart__icon-wrap"><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 6.90388C0 5.65619 0 4.49168 0 3.24399C0 3.07763 0.0831792 2.99445 0.166359 2.99445C2.91128 1.9963 5.65619 0.998152 8.40111 0C8.48429 0 8.65065 0 8.73383 0C11.4787 0.998152 14.1405 1.9963 16.8854 2.99445C17.0518 3.07763 17.1349 3.16081 17.1349 3.32717C17.1349 5.48983 17.1349 7.6525 17.1349 9.81516C17.1349 13.475 15.5545 16.22 12.5601 18.2163C11.3956 18.9649 10.1479 19.5471 8.81701 19.963C8.73383 19.963 8.56747 20.0462 8.48429 19.963C5.73937 19.1312 3.41035 17.7172 1.74677 15.3882C0.665434 13.8909 0.0831792 12.1442 0.0831792 10.2311C-8.05654e-08 9.14972 0 8.06839 0 6.90388ZM7.15342 13.8078C9.2329 11.7283 11.2292 9.73198 13.3087 7.65249C12.976 7.31978 12.6433 6.98706 12.3105 6.65434C10.5638 8.40111 8.90018 10.0647 7.15342 11.8115C6.40481 11.0628 5.57301 10.2311 4.8244 9.48244C4.49168 9.81516 4.15897 10.1479 3.82625 10.4806C4.90758 11.5619 6.07209 12.7264 7.15342 13.8078Z" fill="#C9D1E2" />
+<path d="M7.15334 13.8077C6.07201 12.7264 4.9075 11.5619 3.82617 10.4805C4.15889 10.1478 4.49161 9.81511 4.82432 9.48239C5.57294 10.231 6.32155 10.9796 7.15334 11.8114C8.90011 10.0646 10.6469 8.31788 12.3105 6.6543C12.6432 6.98701 12.9759 7.31973 13.3086 7.65245C11.2291 9.64875 9.23283 11.7282 7.15334 13.8077Z" fill="white" />
+</svg>
+											</div><span>Гарантия</span>
+											<svg class="icon icon-chevron-down ">
+												<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+											</svg>
+										</div>
+										<div class="dd-group__content dd-content-js">
+											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, doloremque? Molestiae delectus pariatur quasi modi eaque mollitia tempore in sapiente.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sCart-->
+				<!-- start sAddresses-->
+				<section class="sAddresses section d-md-none" id="sAddresses">
+					<div class="container">
+						<div class="section-title d-none d-lg-block"> 
+							<h2>Фирменные Шоурумы Asko в Москве</h2>
+						</div>
+						<div class="cat-btns d-none d-lg-flex"> 
+							<div class="cat-btns__btn active" style="--icon-color: #894E35"> 
+								<svg class="icon icon-metro ">
+									<use xlink:href="img/svg/sprite.svg#metro"></use>
+								</svg>Курская
+							</div>
+							<div class="cat-btns__btn" style="--icon-color: #40C1F3">
+								<svg class="icon icon-metro ">
+									<use xlink:href="img/svg/sprite.svg#metro"></use>
+								</svg>Кутузовская
+							</div>
+						</div>
+						<div class="sAddresses__block">
+							<div class="sAddresses__head h5">Шоу-рум на Курской
+							</div>
+							<div class="sAddresses__body">
+								<div class="sAddresses__row row">
+									<div class="col-lg-8 order-lg-last">
+										<div class="tabs">
+											<div class="tabs__caption">
+												<div class="tabs__btn active">На карте</div>
+												<div class="tabs__btn">Вход</div>
+												<div class="tabs__btn">Внутри</div>
+												<div class="tabs__btn">3D тур по шоу-руму</div>
+											</div>
+											<div class="tabs__wrap">
+												<div class="tabs__content active">
+													<div class="sAddresses__map">
+														<div id="map" data-mark="img/svg/mark.svg"></div>
+													</div>
+												</div>
+												<div class="tabs__content">2</div>
+												<div class="tabs__content">3</div>
+												<div class="tabs__content">4</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="sAddresses__caption">
+											<div class="sAddresses__group">
+												<div class="small text-secondary mb-4 d-none d-lg-block">Адрес</div>
+												<div>
+													<div class="sAddresses__title" style="--icon-color: #894E35"> 
+														<svg class="icon icon-metro ">
+															<use xlink:href="img/svg/sprite.svg#metro"></use>
+														</svg>Курская
+													</div>
+												</div>
+												<p>г. Москва,  <br> Дмитровское шоссе, д.62, с.5</p>
+												<div class="sAddresses__icons row mb-4">
+													<div class="sAddresses__icon sAddresses__icon--status col-auto">
+														<div class="sAddresses__ball" style="background: #35BE73">
+														</div>Открыт
+													</div>
+													<div class="sAddresses__icon sAddresses__icon--rating col-auto"><img src="img/parking.svg" alt="" loading="lazy"/>Бесплатная парковка
+													</div>
+												</div>
+											</div>
+											<div class="sAddresses__group d-none d-lg-block">
+												<div class="sAddresses__time">
+													<div class="mb-1"><span class="text-secondary">Пн. - пт.: </span>9:00 — 20:00</div>
+													<div class="mb-1"><span class="text-secondary">Сб. - вс.: </span>10:00 — 18:00</div>
+												</div>
+											</div>
+											<div class="sAddresses__group">
+												<div class="mb-4 d-none d-lg-block">
+													<div class="text-secondary mb-1">Телефон</div><a class="text-body h6 fw-400" href="tel:+7(495)120-80-90">+7 (495) 120-80-90 </a>
+												</div>
+												<div class="mb-4 d-lg-none">
+													<div class="text-secondary mb-1">Ежедневно с 10:00 до 21:00</div><a class="text-body h6 fw-400" href="tel:8(495)646-09-31">8 (495) 646-09-31</a>
+												</div>
+												<div class="mb-4 d-lg-none">
+													<div class="text-secondary mb-1">Звонок бесплатный</div><a class="text-body h6 fw-400" href="tel:8(800)555-17-98">8 (800) 555-17-98</a>
+												</div>
+											</div>
+											<div class="sAddresses__group d-none d-lg-block">
+												<div class="text-secondary mb-1">Мессенджеры</div>
+												<a class="sAddresses__chat" href="#"><img src="img/tg.png" alt="" loading="lazy"/>Написать в Telegram
+												</a><br/>
+												<a class="sAddresses__chat" href="#"><img src="img/whatsap.png" alt="" loading="lazy"/>Написать в WhatsApp
+												</a>
+											</div>
+											<a class="sAddresses__btn btn btn-success d-none d-lg-block" href="#">Записаться на показ
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sAddresses-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<!--  start modals-->
+		<div id="modal-call" style="display: none">
+			<div class="modal-win">
+				<div class="form-wrap">
+					<form>
+						<div class="text-center">
+							<div class="form-wrap__title form-data h3 ttu">Обратный звонок
+							</div>
+							<p class="after-headline">Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут</p>
+						</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Ваше Имя" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<button class="form-wrap__btn btn" type="submit">submit
+						</button>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- #modal-call-->
+		<!-- end modals-->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script>
+		<script src="libs/select2/js/i18n/ru.js"> </script>
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"> </script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

@@ -13,6 +13,7 @@ mixin ddGroupItem(txt, activeClasses='')
 	//-!!! они должни вкладиваться в 1 контейнер(+e.item) header стилизируеться от етого контейнера, внутри хедера втавлять что душе угодно
 	+e.item(class=activeClasses)
 		+e.head.dd-head-js=txt
+			+icon('chevron-down')
 		+e.content.dd-content-js(class=activeClasses)
 			if block
 				block

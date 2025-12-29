@@ -44,3 +44,21 @@ mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+
+
+mixin range(c1, c2, fromTxt='От', toTxt='До', title='Расстояние от МКАД :')
+	+b.range-wrap.price_slider_amount&attributes(attributes)
+		+e.row.row.gx-0
+			+e.col.col-6
+				.form-group(data-ph='от')
+					+b.INPUT.input_from.form-control(type="text")
+			+e.col.col-6
+				.form-group(data-ph='до')
+					+b.INPUT.input_to.form-control(type="text")
+		input.range-slider.slider-js(type='text'  data-min=c1  data-max=c2)
+
+mixin country-prod()
+	+b.country-prod
+			+img('img/flag-2.svg')
+			+e.title Произведено <br> в Словении

@@ -1,0 +1,17 @@
+mixin sCatalogHead(data)
+	// start sCatalogHead
+	+b.SECTION.sCatalogHead.section#sCatalogHead&attributes(attributes)
+		.container
+			+e.row.row
+				+e.caption.col
+					h1 Встраиваемые посудомоечные машины
+					p Преимущество встраиваемых посудомоечных машин Asko выражается в сочетании элегантного скандинавского дизайна, расширенного функционала и уникальной системой безопасности. Камера из нержавеющей стали гарантирует надежность при эксплуатировании. Индикатор Status Light™ информирует о завершении цикла и неполадках. Система AquaSafe исключает возможность протечек.
+					.row
+						.col
+							+e.btn(href="#").btn.btn-primary.btn-gradient Преимущества
+						.col-auto
+							img(src="img/flag.svg", alt="")
+							.headerBlock__smallest.text-secondary Inspired <br> in Sweden
+				+e.img-wrap.col-lg-auto.align-self-end
+					+img("img/catalog-head.png").head-img
+	// end sCatalogHead

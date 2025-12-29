@@ -58,3 +58,67 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 	/* <-- Apparently some margin are still there even though it's hidden */
 }
+
+.custom-input--square:checked[type="checkbox"] {
+	--bs-form-check-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><rect x='-3' y='-3' width='6' height='6' rx='1' fill='#{$form-check-input-checked-color}'/></svg>");
+	background-size: 90%;
+}
+
+.custom-input--color[type="checkbox"] {
+}
+
+.custom-input--color {
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	// border: var(--bs-border-width) solid var(--bs-border-color);
+	input {
+		float: none;
+		margin-left: 0 !important;
+		// position: absolute;
+		// left: 0;
+		// top: 0;
+		// opacity: 0 !important;
+		border-radius: 50% !important;
+	}
+	.form-check-label {
+		--gutter: #{rem(3)};
+		width: calc(100% - var(--gutter) * 2);
+		left: var(--gutter);
+		top: var(--gutter);
+		position: absolute;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background: var(--color);
+		border: 1px solid #c9d1e2;
+	}
+}
+.custom-input--text {
+	padding-left: 0;
+	display: inline-block;
+	.custom-input__text {
+		background-color: var(--bs-form-check-bg);
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		border: var(--bs-border-width) solid var(--bs-border-color);
+		flex-shrink: 0;
+		height: $form-check-min-height;
+		margin-top: 0;
+		display: inline-flex;
+		padding-inline: rem(5);
+		border-radius: 100px;
+		pointer-events: none;
+	}
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0 !important;
+	}
+	input:checked + .custom-input__text {
+		color: #fff;
+		background-color: $primary;
+		border-color: $primary;
+	}
+}

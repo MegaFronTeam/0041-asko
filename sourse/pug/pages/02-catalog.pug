@@ -1,0 +1,29 @@
+extends ../layout/main.pug
+
+include ../blocks/sCatalogHead/_sCatalogHead.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sCategoriesSm/_sCategoriesSm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sSets/_sSets.pug
+block variables
+	- let  mainPage= '' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= "02 - catalog"
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+	.container.py-2
+		+breadcrumb("Бытовая техника ASKO", 'Посудомоечные машины ASKO')
+	+sCatalogHead
+	+sPopular02.d-none.d-md-block
+	+sCategoriesSm
+	+sCatalog02
+	+sAddresses.d-md-none
+	+parts('footer')

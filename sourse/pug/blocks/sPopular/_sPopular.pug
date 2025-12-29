@@ -23,3 +23,22 @@ mixin sPopular(data)
 					a(href="#") Все запросы
 				.col-auto
 	// end sPopular
+mixin sPopular02(data)
+	// start sPopular
+	+b.SECTION.sPopular.section#sPopular&attributes(attributes)
+		.container
+			.mb-3.text-secondary.small Популярные запросы 
+			+e.slider--js.swiper
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+b.cat-btns--js
+							- const arr = ["Сушильные машины с тепловым насосом", "Стиральные машины для дома", "Сушильные машины с конденсационной сушкой", "Винные шкафы", "Сушильные машины с функцией глажки белья", "Стиральные машины с функцией пара", "Стиральные машины с функцией удаления пятен"]
+							each item in arr
+								+e.btn(href="#")= item
+							each item in arr
+								+e.btn(href="#")= item
+							.btn.btn-light.cat-btn-toggle.cat-btn-toggle--js.d-none.d-md-flex
+								+icon("arrow-down")
+								//- .d-none
+				.swiper-scrollbar
+	// end sPopular

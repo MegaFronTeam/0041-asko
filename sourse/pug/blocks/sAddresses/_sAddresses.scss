@@ -44,8 +44,9 @@
 	}
 	--px: 30px;
 	&__head {
-		padding: 20px var(--px);
+		padding: 20px 0;
 		@include media-breakpoint-up(lg) {
+			padding: 20px var(--px);
 			border-bottom: 1px solid #c9d1e2;
 		}
 		font-weight: 400;

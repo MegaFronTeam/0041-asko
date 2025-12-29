@@ -60,31 +60,57 @@ function eventHandler() {
 		freeModeMomentum: true,
 	});
 
-	new Swiper(".sCatalog__slider--js", {
-		slidesPerView: 2,
-		spaceBetween: 10,
-		breakpoints: {
-			768: {
-				slidesPerView: 3,
-				spaceBetween: 20,
+	document.querySelectorAll(".sCatalog").forEach(el => {
+		const swiper = el.querySelector(".sCatalog__slider--js");
+		new Swiper(swiper, {
+			slidesPerView: 2,
+			spaceBetween: 10,
+			breakpoints: {
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1200: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
 			},
-			1200: {
-				slidesPerView: 4,
-				spaceBetween: 20,
+			navigation: {
+				nextEl: el.querySelector(".sCatalog .swiper-button-next"),
+				prevEl: el.querySelector(".sCatalog .swiper-button-prev"),
 			},
-		},
-		navigation: {
-			nextEl: ".sCatalog .swiper-button-next",
-			prevEl: ".sCatalog .swiper-button-prev",
-		},
-		pagination: {
-			el: " .sCatalog .swiper-pagination",
-			type: "bullets",
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
+			pagination: {
+				el: el.querySelector(" .swiper-pagination"),
+				type: "bullets",
+				clickable: true,
+				// renderBullet: function (index, className) {
+				// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+				// }
+			},
+		});
+		const swiper2 = el.querySelector(".sCatalog__slider--2js");
+		new Swiper(swiper2, {
+			slidesPerView: 2,
+			spaceBetween: 10,
+			breakpoints: {
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+			},
+			navigation: {
+				nextEl: el.querySelector(".sCatalog .swiper-button-next"),
+				prevEl: el.querySelector(".sCatalog .swiper-button-prev"),
+			},
+			pagination: {
+				el: el.querySelector(" .swiper-pagination"),
+				type: "bullets",
+				clickable: true,
+				// renderBullet: function (index, className) {
+				// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+				// }
+			},
+		});
 	});
 
 	new Swiper(".sSets__slider--js", {
@@ -229,7 +255,7 @@ function eventHandler() {
 		);
 
 		document
-			.querySelector(".cat-btn-toggle")
+			.querySelector(".cat-btn-toggle--js")
 			.addEventListener("click", function () {
 				this.classList.toggle("clicked");
 				document.querySelectorAll(".cat-btns__btn-hidden").forEach(el => {
@@ -241,6 +267,99 @@ function eventHandler() {
 	$(".sClientsService").on("click", ".sClientsService__head", function () {
 		$(this).parent().toggleClass("active");
 		$(this).next().slideToggle();
+	});
+
+	function currencyFormat(num) {
+		return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+	}
+	$(".range-wrap").each(function () {
+		let _this = $(this);
+
+		var $range = _this.find(".slider-js");
+
+		var $inputFrom = _this.find(".input_from");
+
+		var $inputTo = _this.find(".input_to");
+
+		var instance,
+			from,
+			to,
+			min = $range.data("min"),
+			max = $range.data("max");
+		$range.ionRangeSlider({
+			skin: "round",
+			type: "double",
+			grid: false,
+			grid_snap: false,
+			hide_min_max: false,
+			hide_from_to: true,
+			//here
+			onStart: updateInputs,
+			onChange: updateInputs,
+			onFinish: updateInputs,
+		});
+		instance = $range.data("ionRangeSlider");
+
+		function updateInputs(data) {
+			from = data.from;
+			to = data.to;
+			$inputFrom.prop("value", currencyFormat(from));
+			$inputTo.prop("value", currencyFormat(to)); // InputFormat();
+		}
+
+		$inputFrom.on("change input ", function () {
+			var val = +$(this).prop("value").replace(/\s/g, ""); // validate
+
+			if (val < min) {
+				val = min;
+			} else if (val > to) {
+				val = to;
+			}
+
+			instance.update({
+				from: val,
+			});
+			$(this).prop("value", currencyFormat(val));
+			console.log(val);
+		});
+		$inputTo.on("change input ", function () {
+			var val = +$(this).prop("value").replace(/\s/g, ""); // validate
+
+			if (val < from) {
+				val = from;
+			} else if (val > max) {
+				val = max;
+			}
+
+			instance.update({
+				to: val,
+			});
+			$(this).prop("value", currencyFormat(val));
+		});
+	}); //end
+
+	$(".filter-item__head").on("click", function () {
+		$(this).parent().toggleClass("active");
+		$(this).next().slideToggle();
+	});
+
+	// Product gallery slider - vertical thumbnails and horizontal main slider
+	const prodThumbsSlider = new Swiper(".sProdHead__slider-sm", {
+		spaceBetween: 10,
+		slidesPerView: 6,
+		direction: "vertical",
+		watchSlidesProgress: true,
+		navigation: {
+			nextEl: ".sProdHead .swiper-button-next",
+			prevEl: ".sProdHead .swiper-button-prev",
+		},
+	});
+
+	const prodMainSlider = new Swiper(".sProdHead__slider-lg", {
+		spaceBetween: 10,
+		thumbs: {
+			swiper: prodThumbsSlider,
+		},
 	});
 }
 if (document.readyState !== "loading") {
