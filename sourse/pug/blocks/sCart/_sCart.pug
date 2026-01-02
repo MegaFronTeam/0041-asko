@@ -1,3 +1,5 @@
+mixin info()
+	span.info-btn.ms-1 i
 mixin cart-aside()
 	+e.aside.col
 			.mb-4
@@ -40,6 +42,7 @@ mixin cart-aside()
 								h5.fw-400.mb-0 86 900 ₽
 								.smallest.text-secondary Включая НДС
 					button.btn.btn-success.w-100 Оформить
+
 			.mb-4
 				.card.dd-group__item.border-0.py-0
 					.dd-group__head.dd-head-js
@@ -63,6 +66,48 @@ mixin cart-aside()
 							+icon("chevron-down").ms-auto
 					.dd-group__content.dd-content-js
 						p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, doloremque? Molestiae delectus pariatur quasi modi eaque mollitia tempore in sapiente.
+mixin cart-aside05()
+	+e.aside.col
+			.mb-4
+				.card.card--info
+					.h4.fw-400 Ваш заказ
+					table
+						tr
+							td Товары
+							td.text-end × 4
+						tr
+							td Вес
+							td.text-end  345.5 кг
+						tr
+							td Сумма
+							td.text-end 199 000 ₽
+						tr
+							td Скидка
+							td.text-end -15 000 ₽
+						tr
+							td Установка
+							td.text-end 10 000 ₽
+						tr
+							td Подключение
+							td.text-end 15 000 ₽
+						tr
+							td Демонтаж
+							td.text-end 15 000 ₽
+				.card
+					.text-secondary.small.mb-2 Промокод
+					table
+						tr
+							td.text-success ASKOKSA
+							td.text-end -15 000 ₽
+				.card.card--total
+					.row.pb-4 
+						.col
+							.h5.fw-400 Итого
+						.col-auto.text-end
+								h5.fw-400.mb-0 86 900 ₽
+								.smallest.text-secondary Включая НДС
+					button.btn.btn-success.w-100(disabled) Оформить
+
 mixin sCart(data)
 	// start sCart
 	+b.SECTION.sCart.section#sCart&attributes(attributes)
@@ -134,19 +179,19 @@ mixin sCart(data)
 										+e.sub-check.col-auto
 											+in-c("checkbox", '')
 										+e.accessory-info.col-auto Установка
-											span.info-btn.ms-1 i
+											+info()
 										+e.sub-price.col-auto 15 000 ₽
 									+e.sub-item.row.mb-2
 										+e.sub-check.col-auto
 											+in-c("checkbox", '')
 										+e.accessory-info.col-auto Подключение
-											span.info-btn.ms-1 i
+											+info()
 										+e.sub-price.col-auto 10 000 ₽
 									+e.sub-item.row.mb-2
 										+e.sub-check.col-auto
 											+in-c("checkbox", '')
 										+e.accessory-info.col-auto Демонтаж старой техники
-											span.info-btn.ms-1 i
+											+info()
 										+e.sub-price.col-auto 15 000 ₽
 							.card.dd-group__item.py-0
 								.dd-group__head.dd-head-js
@@ -241,23 +286,114 @@ mixin sCart05(data)
 							span.text-secondary  Обязательно к заполнению.
 				.col-lg-8.col-xxl-9
 					.mw-680
-					+b.cart-item.card
-						.row.g-3
-							.col-auto
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="12" cy="12" r="12" fill="#437663" />
-									<path d="M6 11.5556L10.6429 16L19 8" stroke="white" />
-								</svg>
-							.col.h5.mb-0.fw-400 Покупатель
-							.col-auto 
-								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M8.49995 1C4.72876 1 2.84317 1 1.6716 2.17155C1.67158 2.17156 1.67156 2.17158 1.67155 2.1716C0.5 3.34317 0.5 5.22878 0.5 9" stroke="#C9D1E2" />
-									<path d="M12.5 21C16.2712 21 18.1568 21 19.3284 19.8285C19.3284 19.8284 19.3284 19.8284 19.3285 19.8284C20.5 18.6568 20.5 16.7712 20.5 13" stroke="#C9D1E2" />
-									<path d="M0.500001 13C0.500001 16.7712 0.5 18.6568 1.67155 19.8284C1.67156 19.8284 1.67158 19.8284 1.6716 19.8285C2.84317 21 4.72876 21 8.49995 21" stroke="#C9D1E2" />
-									<path d="M20.8275 3.00324C21.0228 3.1985 21.0228 3.51508 20.8275 3.71035L11.3997 13.1382C11.3448 13.1931 11.2778 13.2345 11.2043 13.259L7.66872 14.4385C7.48919 14.4983 7.29091 14.4513 7.15703 14.3176C7.02322 14.1838 6.97651 13.9855 7.03619 13.806L8.21493 10.2697C8.23949 10.1962 8.28096 10.1291 8.33577 10.0743L17.7636 0.646447C17.9589 0.451184 18.2755 0.451184 18.4707 0.646447L20.8275 3.00324Z" stroke="#C9D1E2" stroke-linejoin="round" />
-								</svg>
-					+b.cart-item.card
-						
+
+						+b.cart-item.card
+							.row.g-3
+								.col-auto
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="12" cy="12" r="12" fill="#437663" />
+										<path d="M6 11.5556L10.6429 16L19 8" stroke="white" />
+									</svg>
+								.col.h5.mb-0.fw-400 Покупатель
+								.col-auto 
+									<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M8.49995 1C4.72876 1 2.84317 1 1.6716 2.17155C1.67158 2.17156 1.67156 2.17158 1.67155 2.1716C0.5 3.34317 0.5 5.22878 0.5 9" stroke="#C9D1E2" />
+										<path d="M12.5 21C16.2712 21 18.1568 21 19.3284 19.8285C19.3284 19.8284 19.3284 19.8284 19.3285 19.8284C20.5 18.6568 20.5 16.7712 20.5 13" stroke="#C9D1E2" />
+										<path d="M0.500001 13C0.500001 16.7712 0.5 18.6568 1.67155 19.8284C1.67156 19.8284 1.67158 19.8284 1.6716 19.8285C2.84317 21 4.72876 21 8.49995 21" stroke="#C9D1E2" />
+										<path d="M20.8275 3.00324C21.0228 3.1985 21.0228 3.51508 20.8275 3.71035L11.3997 13.1382C11.3448 13.1931 11.2778 13.2345 11.2043 13.259L7.66872 14.4385C7.48919 14.4983 7.29091 14.4513 7.15703 14.3176C7.02322 14.1838 6.97651 13.9855 7.03619 13.806L8.21493 10.2697C8.23949 10.1962 8.28096 10.1291 8.33577 10.0743L17.7636 0.646447C17.9589 0.451184 18.2755 0.451184 18.4707 0.646447L20.8275 3.00324Z" stroke="#C9D1E2" stroke-linejoin="round" />
+									</svg>
+						+b.cart-item.card.p-0
+							.card__head
+								h5.fw-400.mb-4 Покупатель
+								.row
+									.col-auto.text-secondary Тип плательщика
+									.col.row.gy-3
+										.col-auto
+											+in-c("radio", 'Физическое лицо')(checked=true)
+										.col-auto
+											+in-c("radio", 'Юридическое лицо')
+									
+							.card__body
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Ф.И.О. #[span.text-danger *]
+									.col
+										+input('Введите Ф.И.О.')
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 E-Mail #[span.text-danger *]
+									.col
+										+input('Введите E-Mail', "email")
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Телефон #[span.text-danger *]
+									.col
+										+input('Введите Телефон', "tel")#phone
+										.mb-3.mt-4: +in-c("checkbox", 'Receive offers from our partners').custom-input--square
+										.mb-3: +in-c("checkbox", 'Sign up for our newsletter').custom-input--square
+										.mb-3: +in-c("checkbox", 'I agree to the terms and conditions and the privacy policy').custom-input--square
+								.text-end
+									button.btn.btn-success Подтвердить
+							
+						+b.cart-item.card.p-0
+							.card__body
+								h5.fw-400.mb-4 Способ оплаты
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Город #[span.text-danger *]
+									.col
+										+input('Введите Город')
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Адрес #[span.text-danger *]
+									.col
+										+input('Введите Адрес')
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Этаж #[span.text-danger *]
+									.col-auto
+										+input('Этаж')(style="width: 100px;")
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Лифт #[span.text-danger *]
+									.col-auto
+										+input('Пассажирский', 'select')
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Комментарий
+									.col
+										+input('Введите Комментарий', 'textarea')
+								.text-end
+									button.btn.btn-success Подтвердить
+						+b.cart-item.card.p-0
+							.card__body
+								h5.fw-400.mb-4 Способ оплаты
+								.row.mb-3.gy-3
+									mixin item(i, t, p)
+										+e.col.col-sm-6
+											+b.LABEL.payment-item
+												input(type="radio", name="")
+												+e.block
+													+e.icon-wrap
+														+icon(i)
+													div.d-block
+														+e.title= t
+														+e.text= p
+									+item("wallet", "Наличными курьеру", "В рублях РФ")
+									+item("card", "Банковской картой", "Visa, MasterCard, МИР")
+									+item("online", "Онлайн", "Безопасные платежи")
+									+item("qr", "QR-код", "Безопасные платежи")
+									+e.col.col-sm-6
+										+b.LABEL.payment-item
+											input(type="radio", name="")
+											+e.block
+												div.d-block
+													img(src="img/purchase-1.svg", alt="").d-block
+													+e.text от 8 690 ₽ в месяц#[span.text-danger *]
+												+info()
+									+e.col.col-sm-6
+										+b.LABEL.payment-item
+											input(type="radio", name="")
+											+e.block
+												div.d-block
+													img(src="img/purchase-2.svg", alt="").d-block
+													+e.text от 8 690 ₽ в месяц#[span.text-danger *]
+												+info()
+
+								.text-end
+									button.btn.btn-success Подтвердить
 					block
-				+cart-aside()
+				+cart-aside05()
 	// end sCart

@@ -480,10 +480,22 @@ h2,
 }
 
 .card {
-	padding: 30px;
+	@include media-breakpoint-up(sm) {
+		--sp: 30px;
+	}
+	--sp: 20px;
+	padding: var(--sp);
 	box-shadow: 0 10px 20px 0 rgba(38, 51, 77, 0.05);
 	background: #fff;
 	border-radius: 16px;
+	&__head {
+		border-bottom: 1px solid #e6e6e6;
+	}
+	&__head,
+	&__body,
+	&__foot {
+		padding: var(--sp);
+	}
 }
 
 ul {
@@ -513,6 +525,9 @@ ul {
 	font-size: rem(12);
 	border: 1px solid #c9d1e2;
 	border-radius: 50%;
+	&:hover {
+		background-color: #f8f9fa;
+	}
 }
 
 .smallest {
@@ -545,4 +560,11 @@ ul {
 
 .p-20 {
 	padding: 20px;
+}
+
+.btn {
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: #c9d1e2;
+	--bs-btn-disabled-border-color: #c9d1e2;
+	opacity: 1;
 }

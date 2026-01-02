@@ -6,7 +6,7 @@
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
-		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/css/intlTelInput.css">
 		<link href="css/main.min.css" rel="stylesheet"/>
 		<script>
 			function addBlock(elem) {
@@ -55,26 +55,211 @@
 								</div>
 							</div>
 							<div class="col-lg-8 col-xxl-9">
-								<div class="mw-680"></div>
-								<div class="cart-item card">
-									<div class="row g-3">
-										<div class="col-auto"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<div class="mw-680">
+									<div class="cart-item card">
+										<div class="row g-3">
+											<div class="col-auto"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="12" cy="12" r="12" fill="#437663" />
 <path d="M6 11.5556L10.6429 16L19 8" stroke="white" />
 </svg>
-										</div>
-										<div class="col h5 mb-0 fw-400">Покупатель</div>
-										<div class="col-auto">
-											 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											</div>
+											<div class="col h5 mb-0 fw-400">Покупатель</div>
+											<div class="col-auto">
+												 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.49995 1C4.72876 1 2.84317 1 1.6716 2.17155C1.67158 2.17156 1.67156 2.17158 1.67155 2.1716C0.5 3.34317 0.5 5.22878 0.5 9" stroke="#C9D1E2" />
 <path d="M12.5 21C16.2712 21 18.1568 21 19.3284 19.8285C19.3284 19.8284 19.3284 19.8284 19.3285 19.8284C20.5 18.6568 20.5 16.7712 20.5 13" stroke="#C9D1E2" />
 <path d="M0.500001 13C0.500001 16.7712 0.5 18.6568 1.67155 19.8284C1.67156 19.8284 1.67158 19.8284 1.6716 19.8285C2.84317 21 4.72876 21 8.49995 21" stroke="#C9D1E2" />
 <path d="M20.8275 3.00324C21.0228 3.1985 21.0228 3.51508 20.8275 3.71035L11.3997 13.1382C11.3448 13.1931 11.2778 13.2345 11.2043 13.259L7.66872 14.4385C7.48919 14.4983 7.29091 14.4513 7.15703 14.3176C7.02322 14.1838 6.97651 13.9855 7.03619 13.806L8.21493 10.2697C8.23949 10.1962 8.28096 10.1291 8.33577 10.0743L17.7636 0.646447C17.9589 0.451184 18.2755 0.451184 18.4707 0.646447L20.8275 3.00324Z" stroke="#C9D1E2" stroke-linejoin="round" />
 </svg>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="cart-item card">
+									<div class="cart-item card p-0">
+										<div class="card__head">
+											<h5 class="fw-400 mb-4">Покупатель</h5>
+											<div class="row">
+												<div class="col-auto text-secondary">Тип плательщика</div>
+												<div class="col row gy-3">
+													<div class="col-auto">
+														<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio" checked="checked"/><span class="custom-input__text form-check-label">Физическое лицо</span>
+														</label>
+													</div>
+													<div class="col-auto">
+														<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Юридическое лицо</span>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card__body">
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Ф.И.О. <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="Введите Ф.И.О."/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">E-Mail <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="email" name="email" type="email" placeholder="Введите E-Mail"/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Телефон <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Введите Телефон" id="phone"/>
+													</div>
+													<!-- +e.input-wrap-->
+													<div class="mb-3 mt-4">
+														<label class="custom-input form-check"><input class="custom-input__input form-check-input custom-input custom-input--square" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">Receive offers from our partners</span>
+														</label>
+													</div>
+													<div class="mb-3">
+														<label class="custom-input form-check"><input class="custom-input__input form-check-input custom-input custom-input--square" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">Sign up for our newsletter</span>
+														</label>
+													</div>
+													<div class="mb-3">
+														<label class="custom-input form-check"><input class="custom-input__input form-check-input custom-input custom-input--square" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">I agree to the terms and conditions and the privacy policy</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="text-end">
+												<button class="btn btn-success">Подтвердить</button>
+											</div>
+										</div>
+									</div>
+									<div class="cart-item card p-0">
+										<div class="card__body">
+											<h5 class="fw-400 mb-4">Способ оплаты</h5>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Город <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="Введите Город"/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Адрес <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="Введите Адрес"/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Этаж <span class="text-danger">*</span>
+												</div>
+												<div class="col-auto">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="Этаж" style="width: 100px;"/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Лифт <span class="text-danger">*</span>
+												</div>
+												<div class="col-auto">
+													<div class="cart-item__input-wrap form-group custom-select-wrap">
+														<select class="cart-item__input form-select custom-select-js" name="select" data-placeholder="Пассажирский">
+															<option value="Пассажирский">Пассажирский</option>
+															<option value="Пассажирский1">Пассажирский1</option>
+															<option value="Пассажирский2">Пассажирский2</option>
+															<option value="Пассажирский3">Пассажирский3</option>
+															<option value="Пассажирский4">Пассажирский4</option>
+														</select>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Комментарий
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><textarea class="cart-item__input form-control" name="textarea" placeholder="Введите Комментарий"></textarea>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="text-end">
+												<button class="btn btn-success">Подтвердить</button>
+											</div>
+										</div>
+									</div>
+									<div class="cart-item card p-0">
+										<div class="card__body">
+											<h5 class="fw-400 mb-4">Способ оплаты</h5>
+											<div class="row mb-3 gy-3">
+														<div class="cart-item__col col-sm-6">
+															<label class="payment-item">
+																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
+																<svg class="icon icon-wallet ">
+																	<use xlink:href="img/svg/sprite.svg#wallet"></use>
+																</svg></span>
+																<div class="d-block"><span class="payment-item__title">Наличными курьеру</span><span class="payment-item__text">В рублях РФ</span>
+																</div></span>
+															</label>
+														</div>
+														<div class="cart-item__col col-sm-6">
+															<label class="payment-item">
+																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
+																<svg class="icon icon-card ">
+																	<use xlink:href="img/svg/sprite.svg#card"></use>
+																</svg></span>
+																<div class="d-block"><span class="payment-item__title">Банковской картой</span><span class="payment-item__text">Visa, MasterCard, МИР</span>
+																</div></span>
+															</label>
+														</div>
+														<div class="cart-item__col col-sm-6">
+															<label class="payment-item">
+																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
+																<svg class="icon icon-online ">
+																	<use xlink:href="img/svg/sprite.svg#online"></use>
+																</svg></span>
+																<div class="d-block"><span class="payment-item__title">Онлайн</span><span class="payment-item__text">Безопасные платежи</span>
+																</div></span>
+															</label>
+														</div>
+														<div class="cart-item__col col-sm-6">
+															<label class="payment-item">
+																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
+																<svg class="icon icon-qr ">
+																	<use xlink:href="img/svg/sprite.svg#qr"></use>
+																</svg></span>
+																<div class="d-block"><span class="payment-item__title">QR-код</span><span class="payment-item__text">Безопасные платежи</span>
+																</div></span>
+															</label>
+														</div>
+												<div class="cart-item__col col-sm-6">
+													<label class="payment-item">
+														<input type="radio" name=""/><span class="payment-item__block">
+														<div class="d-block"><img class="d-block" src="img/purchase-1.svg" alt=""/><span class="payment-item__text">от 8 690 ₽ в месяц<span class="text-danger">*</span></span>
+														</div><span class="info-btn ms-1">i</span></span>
+													</label>
+												</div>
+												<div class="cart-item__col col-sm-6">
+													<label class="payment-item">
+														<input type="radio" name=""/><span class="payment-item__block">
+														<div class="d-block"><img class="d-block" src="img/purchase-2.svg" alt=""/><span class="payment-item__text">от 8 690 ₽ в месяц<span class="text-danger">*</span></span>
+														</div><span class="info-btn ms-1">i</span></span>
+													</label>
+												</div>
+											</div>
+											<div class="text-end">
+												<button class="btn btn-success">Подтвердить</button>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="sCart__aside col">
@@ -113,13 +298,13 @@
 										</table>
 									</div>
 									<div class="card">
-										<div class="promocode-block">
-											<input type="text" placeholder="Промокод"/>
-											<button class="btn btn-light"><svg width="22" height="9" viewBox="0 0 22 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20.8141 0V8H2.41406L6.01406 4.4" stroke="white" stroke-width="2" />
-</svg>
-											</button>
-										</div>
+										<div class="text-secondary small mb-2">Промокод</div>
+										<table>
+											<tr>
+												<td class="text-success">ASKOKSA</td>
+												<td class="text-end">-15 000 ₽</td>
+											</tr>
+										</table>
 									</div>
 									<div class="card card--total">
 										<div class="row pb-4"> 
@@ -131,40 +316,7 @@
 												<div class="smallest text-secondary">Включая НДС</div>
 											</div>
 										</div>
-										<button class="btn btn-success w-100">Оформить</button>
-									</div>
-								</div>
-								<div class="mb-4">
-									<div class="card dd-group__item border-0 py-0">
-										<div class="dd-group__head dd-head-js">
-											<div class="sCart__icon-wrap"><svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.3748 11.2333C9.08239 11.2333 8.03792 12.3015 8.03792 13.6186C8.03792 14.9318 9.08239 16 10.3748 16C11.6673 16 12.7117 14.9318 12.7117 13.6186C12.7117 12.3015 11.6673 11.2333 10.3748 11.2333ZM10.3748 14.8093C9.72858 14.8093 9.20633 14.2732 9.20633 13.6185C9.20633 12.96 9.72858 12.4278 10.3748 12.4278C11.021 12.4278 11.5433 12.96 11.5433 13.6185C11.5432 14.2732 11.021 14.8093 10.3748 14.8093ZM28 9.47148V12.0144C28 12.6487 27.4954 13.1629 26.8729 13.1629H25.6669C25.4489 11.6391 24.1603 10.4675 22.6048 10.4675C21.0532 10.4675 19.7645 11.6391 19.5466 13.1629H13.4338C13.2159 11.6391 11.9272 10.4675 10.3756 10.4675C8.82389 10.4675 7.5352 11.6391 7.31733 13.1629H5.80698C5.18448 13.1629 4.67989 12.6487 4.67989 12.0144V9.47148H28ZM22.6078 11.2333C21.3154 11.2333 20.2672 12.3015 20.2672 13.6186C20.2672 14.9318 21.3155 16 22.6078 16C23.8965 16 24.9447 14.9318 24.9447 13.6186C24.9447 12.3015 23.8965 11.2333 22.6078 11.2333ZM22.6078 14.8093C21.9616 14.8093 21.4394 14.2732 21.4394 13.6185C21.4394 12.96 21.9616 12.4278 22.6078 12.4278C23.2503 12.4278 23.7763 12.96 23.7763 13.6185C23.7763 14.2732 23.2503 14.8093 22.6078 14.8093ZM27.5559 6.91074L23.1264 2.44651C22.8446 2.16318 22.4651 2.00238 22.0706 2.00238H19.8352V1.14856C19.8352 0.513043 19.3317 0 18.7081 0H5.8062C5.18627 0 4.67911 0.513089 4.67911 1.14856V1.32853L0.105229 1.86572L8.20995 2.94123L0 3.77234L8.18103 4.95764L0 5.68049L4.67939 6.57985L4.67907 8.83656H27.9992V7.99804C27.9992 7.58836 27.8377 7.19789 27.5559 6.91074ZM25.6248 7.06003H21.338C21.2403 7.06003 21.1614 6.97965 21.1614 6.88011V3.50705C21.1614 3.40751 21.2403 3.32709 21.338 3.32709H22.1533C22.1983 3.32709 22.2434 3.34625 22.2772 3.37688L25.745 6.74993C25.8614 6.86094 25.7825 7.06003 25.6248 7.06003Z" fill="#C9D1E2" />
-</svg>
-											</div><span>Доставка</span>
-											<svg class="icon icon-chevron-down ">
-												<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
-											</svg>
-										</div>
-										<div class="dd-group__content dd-content-js">
-											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, doloremque? Molestiae delectus pariatur quasi modi eaque mollitia tempore in sapiente.</p>
-										</div>
-									</div>
-								</div>
-								<div class="mb-4">
-									<div class="card dd-group__item border-0 py-0">
-										<div class="dd-group__head dd-head-js">
-											<div class="sCart__icon-wrap"><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 6.90388C0 5.65619 0 4.49168 0 3.24399C0 3.07763 0.0831792 2.99445 0.166359 2.99445C2.91128 1.9963 5.65619 0.998152 8.40111 0C8.48429 0 8.65065 0 8.73383 0C11.4787 0.998152 14.1405 1.9963 16.8854 2.99445C17.0518 3.07763 17.1349 3.16081 17.1349 3.32717C17.1349 5.48983 17.1349 7.6525 17.1349 9.81516C17.1349 13.475 15.5545 16.22 12.5601 18.2163C11.3956 18.9649 10.1479 19.5471 8.81701 19.963C8.73383 19.963 8.56747 20.0462 8.48429 19.963C5.73937 19.1312 3.41035 17.7172 1.74677 15.3882C0.665434 13.8909 0.0831792 12.1442 0.0831792 10.2311C-8.05654e-08 9.14972 0 8.06839 0 6.90388ZM7.15342 13.8078C9.2329 11.7283 11.2292 9.73198 13.3087 7.65249C12.976 7.31978 12.6433 6.98706 12.3105 6.65434C10.5638 8.40111 8.90018 10.0647 7.15342 11.8115C6.40481 11.0628 5.57301 10.2311 4.8244 9.48244C4.49168 9.81516 4.15897 10.1479 3.82625 10.4806C4.90758 11.5619 6.07209 12.7264 7.15342 13.8078Z" fill="#C9D1E2" />
-<path d="M7.15334 13.8077C6.07201 12.7264 4.9075 11.5619 3.82617 10.4805C4.15889 10.1478 4.49161 9.81511 4.82432 9.48239C5.57294 10.231 6.32155 10.9796 7.15334 11.8114C8.90011 10.0646 10.6469 8.31788 12.3105 6.6543C12.6432 6.98701 12.9759 7.31973 13.3086 7.65245C11.2291 9.64875 9.23283 11.7282 7.15334 13.8077Z" fill="white" />
-</svg>
-											</div><span>Гарантия</span>
-											<svg class="icon icon-chevron-down ">
-												<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
-											</svg>
-										</div>
-										<div class="dd-group__content dd-content-js">
-											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, doloremque? Molestiae delectus pariatur quasi modi eaque mollitia tempore in sapiente.</p>
-										</div>
+										<button class="btn btn-success w-100" disabled="disabled">Оформить</button>
 									</div>
 								</div>
 							</div>
@@ -315,7 +467,7 @@
 		<script src="libs/inputmask/inputmask.min.js"> </script>
 		<script src="libs/select2/js/select2.min.js"> </script>
 		<script src="libs/select2/js/i18n/ru.js"> </script>
-		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"> </script>
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script><script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/js/intlTelInput.min.js"></script>
 		<script src="js/JSCCommon.js"></script>
 		<script src="js/common.js"></script>
 	</body>

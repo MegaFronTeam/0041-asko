@@ -456,3 +456,46 @@
 .mw-680 {
 	max-width: 680px;
 }
+
+@include media-breakpoint-up(md) {
+	.cart-item__col-label {
+		width: 145px;
+	}
+}
+
+.payment-item {
+	display: block;
+	position: relative;
+	input {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+	}
+	&__block {
+		display: flex;
+		gap: 10px;
+		border: 0.5px solid #c9d1e2;
+		border-radius: 12px;
+		padding: rem(15) rem(20);
+		color: $secondary;
+	}
+
+	&__block:hover,
+	input:checked + &__block {
+		color: $primary;
+		border-color: $primary;
+		cursor: pointer;
+	}
+	&__title {
+		color: $body-color;
+		display: block;
+	}
+	.info-btn {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	img {
+		margin-bottom: 10px;
+	}
+}

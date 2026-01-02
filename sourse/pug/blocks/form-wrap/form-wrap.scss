@@ -96,7 +96,9 @@ input::-webkit-inner-spin-button {
 .custom-input--text {
 	padding-left: 0;
 	display: inline-block;
+	height: 100%;
 	.custom-input__text {
+		height: 100%;
 		background-color: var(--bs-form-check-bg);
 		background-position: 50%;
 		background-repeat: no-repeat;

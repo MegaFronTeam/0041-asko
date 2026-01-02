@@ -361,6 +361,22 @@ function eventHandler() {
 			swiper: prodThumbsSlider,
 		},
 	});
+
+	const input = document.querySelector("#phone");
+	if (input) {
+		const iti = window.intlTelInput(input, {
+			initialCountry: "ru", // стартовая страна
+			separateDialCode: true, // код страны отдельно слева
+			preferredCountries: ["ru", "pl", "ua"],
+			autoPlaceholder: "polite", // авто-плейсхолдер с примером формата
+			nationalMode: false,
+		});
+	}
+
+	// Пример: получить номер в полном формате
+	// function getPhone() {
+	// 	console.log(iti.getNumber()); // +79161760512
+	// }
 }
 if (document.readyState !== "loading") {
 	eventHandler();

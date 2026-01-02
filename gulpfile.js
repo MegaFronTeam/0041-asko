@@ -191,6 +191,7 @@ class gs {
 	}
 	static svg() {
 		return src("./" + source + "/svg/*.svg")
+			.pipe(plumber())
 			.pipe(
 				svgmin({
 					js2svg: {
@@ -237,7 +238,7 @@ class gs {
 					},
 				})
 			)
-
+			.pipe(plumber.stop())
 			.pipe(dest(`${source}/sass/`));
 	}
 
