@@ -45,15 +45,6 @@
 				<section class="sCart section" id="sCart">
 					<div class="container">
 						<div class="sCart__row row"> 
-							<div class="col-lg-8 col-xxl-9 mb-3">
-								<div class="row">
-									<div class="col"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-<path d="M10.2679 3C11.0377 1.66667 12.9623 1.66667 13.7321 3L20.6603 15C21.4301 16.3333 20.4678 18 18.9282 18H5.0718C3.5322 18 2.56995 16.3333 3.33975 15L10.2679 3Z" fill="#E5AC1A" />
-<path d="M12.498 5.74194L12.344 12.7419H11.28L11.126 5.74194H12.498ZM11.868 15.5839C11.6253 15.5839 11.42 15.4999 11.252 15.3319C11.084 15.1639 11 14.9586 11 14.7159C11 14.4733 11.084 14.2679 11.252 14.0999C11.42 13.9319 11.6253 13.8479 11.868 13.8479C12.1013 13.8479 12.2973 13.9319 12.456 14.0999C12.624 14.2679 12.708 14.4733 12.708 14.7159C12.708 14.9586 12.624 15.1639 12.456 15.3319C12.2973 15.4999 12.1013 15.5839 11.868 15.5839Z" fill="white" />
-</svg><span class="text-primary">*</span><span class="text-secondary"> Обязательно к заполнению.</span>
-									</div>
-								</div>
-							</div>
 							<div class="col-lg-8 col-xxl-9">
 								<div class="mw-680">
 									<div class="cart-item card">
@@ -81,17 +72,55 @@
 												<div class="col-auto text-secondary">Тип плательщика</div>
 												<div class="col row gy-3">
 													<div class="col-auto">
-														<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio" checked="checked"/><span class="custom-input__text form-check-label">Физическое лицо</span>
+														<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Физическое лицо</span>
 														</label>
 													</div>
 													<div class="col-auto">
-														<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Юридическое лицо</span>
+														<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio" checked="checked"/><span class="custom-input__text form-check-label">Юридическое лицо</span>
 														</label>
 													</div>
 												</div>
 											</div>
 										</div>
 										<div class="card__body">
+											<div class="fw-500 mb-2">Компания</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Название <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder=""/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Юр. адрес <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder=""/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">ИНН <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="" style="max-width: 230px;"/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">БИК <span class="text-danger">*</span>
+												</div>
+												<div class="col">
+													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="" style="max-width: 230px;"/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<div class="fw-500 mb-2 mt-3">Получатель</div>
 											<div class="row mb-3">
 												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Ф.И.О. <span class="text-danger">*</span>
 												</div>
@@ -144,11 +173,11 @@
 												<div class="col">
 													<div class="row gy-3">
 														<div class="col-auto">
-															<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio" checked="checked"/><span class="custom-input__text form-check-label">Автокурьером</span>
+															<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Автокурьером</span>
 															</label>
 														</div>
 														<div class="col-auto">
-															<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Самовывоз</span>
+															<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio" checked="checked"/><span class="custom-input__text form-check-label">Самовывоз</span>
 															</label>
 														</div>
 													</div>
@@ -157,55 +186,39 @@
 										</div>
 										<div class="card__body">
 											<div class="row mb-3">
-												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Город <span class="text-danger">*</span>
-												</div>
-												<div class="col">
-													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="Введите Город"/>
-													</div>
-													<!-- +e.input-wrap-->
-												</div>
-											</div>
-											<div class="row mb-3">
-												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Адрес <span class="text-danger">*</span>
-												</div>
-												<div class="col">
-													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="Введите Адрес"/>
-													</div>
-													<!-- +e.input-wrap-->
-												</div>
-											</div>
-											<div class="row mb-3">
-												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Этаж <span class="text-danger">*</span>
+												<div class="col-auto">
+													<label class="addr-item">
+														<input type="radio" name="place"/><span class="addr-item__block"><span class="addr-item__circle" style="background-color: #894e35;"></span><span class="addr-item__title">Курская</span></span>
+													</label>
 												</div>
 												<div class="col-auto">
-													<div class="cart-item__input-wrap form-group"><input class="cart-item__input form-control" inputmode="text" name="text" type="text" placeholder="Этаж" style="width: 100px;"/>
-													</div>
-													<!-- +e.input-wrap-->
+													<label class="addr-item">
+														<input type="radio" name="place"/><span class="addr-item__block"><span class="addr-item__circle" style="background-color: #40c1f3;"></span><span class="addr-item__title">Кутузовская</span></span>
+													</label>
 												</div>
 											</div>
-											<div class="row mb-3">
-												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Лифт <span class="text-danger">*</span>
-												</div>
-												<div class="col-auto">
-													<div class="cart-item__input-wrap form-group custom-select-wrap">
-														<select class="cart-item__input form-select custom-select-js" name="select" data-placeholder="Пассажирский">
-															<option value="Пассажирский">Пассажирский</option>
-															<option value="Пассажирский1">Пассажирский1</option>
-															<option value="Пассажирский2">Пассажирский2</option>
-															<option value="Пассажирский3">Пассажирский3</option>
-															<option value="Пассажирский4">Пассажирский4</option>
-														</select>
-													</div>
-													<!-- +e.input-wrap-->
-												</div>
+											<div class="cart-item__map-wrap mb-3">
 											</div>
-											<div class="row mb-3">
-												<div class="cart-item__col-label col-md-auto text-secondary mt-md-3 mt-2">Комментарий
+											<div class="row gy-3 mb-3">
+												<div class="col-auto d-none d-md-block">
+													<div class="cart-item__img-wrap bg-wrap"><img class="object-fit-js" src="img/addr.jpg" alt="" loading="lazy"/>
+													</div>
 												</div>
 												<div class="col">
-													<div class="cart-item__input-wrap form-group"><textarea class="cart-item__input form-control" name="textarea" placeholder="Введите Комментарий"></textarea>
+													<div>г. Москва, <br/>Дмитровское шоссе, д.62, с.5</div>
+													<div class="sAddresses__icons row">
+														<div class="sAddresses__icon sAddresses__icon--status col-auto">
+															<div class="sAddresses__ball" style="background: #35BE73"></div>Открыт до 20:00
+														</div>
+														<div class="sAddresses__icon sAddresses__icon--rating col-auto"><img src="img/parking.svg" alt="" loading="lazy"/>Бесплатная парковка
+														</div>
 													</div>
-													<!-- +e.input-wrap-->
+												</div>
+												<div class="col-md-auto">
+													<div class="sAddresses__time">
+														<div class="mb-1"><span class="text-secondary">Пн. - пт.: </span>9:00 — 20:00</div>
+														<div class="mb-1"><span class="text-secondary">Сб. - вс.: </span>10:00 — 18:00</div>
+													</div>
 												</div>
 											</div>
 											<div class="text-end">
@@ -220,57 +233,23 @@
 														<div class="cart-item__col col-sm-6">
 															<label class="payment-item">
 																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
-																<svg class="icon icon-wallet ">
-																	<use xlink:href="img/svg/sprite.svg#wallet"></use>
+																<svg class="icon icon-bill ">
+																	<use xlink:href="img/svg/sprite.svg#bill"></use>
 																</svg></span>
-																<div class="d-block"><span class="payment-item__title">Наличными курьеру</span><span class="payment-item__text">В рублях РФ</span>
-																</div></span>
+																<div class="d-block"><span class="payment-item__title">Счёт</span><span class="payment-item__text">Безналичный перевод</span>
+																</div><span class="info-btn ms-1">i</span></span>
 															</label>
 														</div>
 														<div class="cart-item__col col-sm-6">
 															<label class="payment-item">
 																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
-																<svg class="icon icon-card ">
-																	<use xlink:href="img/svg/sprite.svg#card"></use>
+																<svg class="icon icon-factura ">
+																	<use xlink:href="img/svg/sprite.svg#factura"></use>
 																</svg></span>
-																<div class="d-block"><span class="payment-item__title">Банковской картой</span><span class="payment-item__text">Visa, MasterCard, МИР</span>
-																</div></span>
+																<div class="d-block"><span class="payment-item__title">Наложенный платёж</span><span class="payment-item__text">Оплата после получения</span>
+																</div><span class="info-btn ms-1">i</span></span>
 															</label>
 														</div>
-														<div class="cart-item__col col-sm-6">
-															<label class="payment-item">
-																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
-																<svg class="icon icon-online ">
-																	<use xlink:href="img/svg/sprite.svg#online"></use>
-																</svg></span>
-																<div class="d-block"><span class="payment-item__title">Онлайн</span><span class="payment-item__text">Безопасные платежи</span>
-																</div></span>
-															</label>
-														</div>
-														<div class="cart-item__col col-sm-6">
-															<label class="payment-item">
-																<input type="radio" name=""/><span class="payment-item__block"><span class="payment-item__icon-wrap">
-																<svg class="icon icon-qr ">
-																	<use xlink:href="img/svg/sprite.svg#qr"></use>
-																</svg></span>
-																<div class="d-block"><span class="payment-item__title">QR-код</span><span class="payment-item__text">Безопасные платежи</span>
-																</div></span>
-															</label>
-														</div>
-												<div class="cart-item__col col-sm-6">
-													<label class="payment-item">
-														<input type="radio" name=""/><span class="payment-item__block">
-														<div class="d-block"><img class="d-block" src="img/purchase-1.svg" alt=""/><span class="payment-item__text">от 8 690 ₽ в месяц<span class="text-danger">*</span></span>
-														</div><span class="info-btn ms-1">i</span></span>
-													</label>
-												</div>
-												<div class="cart-item__col col-sm-6">
-													<label class="payment-item">
-														<input type="radio" name=""/><span class="payment-item__block">
-														<div class="d-block"><img class="d-block" src="img/purchase-2.svg" alt=""/><span class="payment-item__text">от 8 690 ₽ в месяц<span class="text-danger">*</span></span>
-														</div><span class="info-btn ms-1">i</span></span>
-													</label>
-												</div>
 											</div>
 											<div class="text-end">
 												<button class="btn btn-success">Подтвердить</button>

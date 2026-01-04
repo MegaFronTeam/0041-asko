@@ -1,0 +1,26 @@
+extends ../layout/main.pug
+
+include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCart/_sCart.pug
+block variables
+	- let  mainPage= '' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= "05 - order"
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		.section.pb-0
+			.container
+				.pb-2
+					+breadcrumb("Корзина", 'Оформление')
+				h1 Оформление
+		+sCart05-2
+		+sAddresses.d-md-none
+	+parts('footer')

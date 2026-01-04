@@ -333,8 +333,17 @@ mixin sCart05(data)
 									button.btn.btn-success Подтвердить
 							
 						+b.cart-item.card.p-0
+							.card__head
+								h5.fw-400.mb-4 Доставка
+								.row
+									.col-auto.text-secondary Способ
+									.col
+										.row.gy-3
+											.col-auto
+												+in-c("radio", 'Автокурьером')(checked=true)
+											.col-auto
+												+in-c("radio", 'Самовывоз')
 							.card__body
-								h5.fw-400.mb-4 Способ оплаты
 								.row.mb-3
 									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Город #[span.text-danger *]
 									.col
@@ -392,6 +401,152 @@ mixin sCart05(data)
 													+e.text от 8 690 ₽ в месяц#[span.text-danger *]
 												+info()
 
+								.text-end
+									button.btn.btn-success Подтвердить
+					block
+				+cart-aside05()
+	// end sCart
+mixin sCart05-2(data)
+	// start sCart
+	+b.SECTION.sCart.section#sCart&attributes(attributes)
+		.container
+			+e.row.row 
+				.col-lg-8.col-xxl-9
+					.mw-680
+
+						+b.cart-item.card
+							.row.g-3
+								.col-auto
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="12" cy="12" r="12" fill="#437663" />
+										<path d="M6 11.5556L10.6429 16L19 8" stroke="white" />
+									</svg>
+								.col.h5.mb-0.fw-400 Покупатель
+								.col-auto 
+									<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M8.49995 1C4.72876 1 2.84317 1 1.6716 2.17155C1.67158 2.17156 1.67156 2.17158 1.67155 2.1716C0.5 3.34317 0.5 5.22878 0.5 9" stroke="#C9D1E2" />
+										<path d="M12.5 21C16.2712 21 18.1568 21 19.3284 19.8285C19.3284 19.8284 19.3284 19.8284 19.3285 19.8284C20.5 18.6568 20.5 16.7712 20.5 13" stroke="#C9D1E2" />
+										<path d="M0.500001 13C0.500001 16.7712 0.5 18.6568 1.67155 19.8284C1.67156 19.8284 1.67158 19.8284 1.6716 19.8285C2.84317 21 4.72876 21 8.49995 21" stroke="#C9D1E2" />
+										<path d="M20.8275 3.00324C21.0228 3.1985 21.0228 3.51508 20.8275 3.71035L11.3997 13.1382C11.3448 13.1931 11.2778 13.2345 11.2043 13.259L7.66872 14.4385C7.48919 14.4983 7.29091 14.4513 7.15703 14.3176C7.02322 14.1838 6.97651 13.9855 7.03619 13.806L8.21493 10.2697C8.23949 10.1962 8.28096 10.1291 8.33577 10.0743L17.7636 0.646447C17.9589 0.451184 18.2755 0.451184 18.4707 0.646447L20.8275 3.00324Z" stroke="#C9D1E2" stroke-linejoin="round" />
+									</svg>
+						+b.cart-item.card.p-0
+							.card__head
+								h5.fw-400.mb-4 Покупатель
+								.row
+									.col-auto.text-secondary Тип плательщика
+									.col.row.gy-3
+										.col-auto
+											+in-c("radio", 'Физическое лицо')
+										.col-auto
+											+in-c("radio", 'Юридическое лицо')(checked=true)
+									
+							.card__body
+								.fw-500.mb-2 Компания
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Название #[span.text-danger *]
+									.col
+										+input('')
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Юр. адрес #[span.text-danger *]
+									.col
+										+input('')
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 ИНН #[span.text-danger *]
+									.col
+										+input('')(style="max-width: 230px;")
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 БИК #[span.text-danger *]
+									.col
+										+input('')(style="max-width: 230px;")
+								.fw-500.mb-2.mt-3 Получатель
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Ф.И.О. #[span.text-danger *]
+									.col
+										+input('Введите Ф.И.О.')
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 E-Mail #[span.text-danger *]
+									.col
+										+input('Введите E-Mail', "email")
+								.row.mb-3
+									+e.col-label.col-md-auto.text-secondary.mt-md-3.mt-2 Телефон #[span.text-danger *]
+									.col
+										+input('Введите Телефон', "tel")#phone
+										.mb-3.mt-4: +in-c("checkbox", 'Receive offers from our partners').custom-input--square
+										.mb-3: +in-c("checkbox", 'Sign up for our newsletter').custom-input--square
+										.mb-3: +in-c("checkbox", 'I agree to the terms and conditions and the privacy policy').custom-input--square
+								.text-end
+									button.btn.btn-success Подтвердить
+							
+						+b.cart-item.card.p-0
+							.card__head
+								h5.fw-400.mb-4 Доставка
+								.row
+									.col-auto.text-secondary Способ
+									.col
+										.row.gy-3
+											.col-auto
+												+in-c("radio", 'Автокурьером')
+											.col-auto
+												+in-c("radio", 'Самовывоз')(checked=true)
+							.card__body
+								.row.mb-3
+									.col-auto
+										+b.LABEL.addr-item
+											input(type="radio", name="place")
+											+e.block
+												+e.circle(style="background-color: #894e35;")
+												+e.title Курская
+									.col-auto
+										+b.LABEL.addr-item
+											input(type="radio", name="place")
+											+e.block
+												+e.circle(style="background-color: #40c1f3;")
+												+e.title Кутузовская
+								+e.map-wrap.mb-3
+
+
+								.row.gy-3.mb-3
+									.col-auto.d-none.d-md-block
+										+e.img-wrap.bg-wrap
+											+img("img/addr.jpg",'bg')
+									.col
+										div г. Москва, 
+											br
+											|Дмитровское шоссе, д.62, с.5
+										.sAddresses__icons.row
+											.sAddresses__icon.sAddresses__icon--status.col-auto
+												.sAddresses__ball(style="background: #35BE73")
+												| Открыт до 20:00
+											.sAddresses__icon.sAddresses__icon--rating.col-auto
+												+img("img/parking.svg")
+												| Бесплатная парковка
+									.col-md-auto
+										.sAddresses__time
+											.mb-1
+												span.text-secondary Пн. - пт.: 
+												| 9:00 — 20:00
+											.mb-1
+												span.text-secondary Сб. - вс.: 
+												| 10:00 — 18:00
+								.text-end
+									button.btn.btn-success Подтвердить
+						+b.cart-item.card.p-0
+							.card__body
+								h5.fw-400.mb-4 Способ оплаты
+								.row.mb-3.gy-3
+									mixin item(i, t, p)
+										+e.col.col-sm-6
+											+b.LABEL.payment-item
+												input(type="radio", name="")
+												+e.block
+													+e.icon-wrap
+														+icon(i)
+													div.d-block
+														+e.title= t
+														+e.text= p
+													+info()
+									+item("bill", "Счёт", "Безналичный перевод")
+									+item("factura", "Наложенный платёж", "Оплата после получения")
 								.text-end
 									button.btn.btn-success Подтвердить
 					block

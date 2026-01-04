@@ -17,6 +17,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-bill {
+	$h: 16;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(20 / #{$h} *1em );
+}
 .icon-burger {
 	$h: 14;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -51,6 +56,11 @@
 	$h: 15;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(10 / #{$h} *1em );
+}
+.icon-factura {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
 }
 .icon-fb {
 	$h: 24;
