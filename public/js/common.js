@@ -377,6 +377,10 @@ function eventHandler() {
 	// function getPhone() {
 	// 	console.log(iti.getNumber()); // +79161760512
 	// }
+	$(".order-set-title--js").on("click", function () {
+		$(this).toggleClass("active");
+		$(this).next(".order-set-items--js").slideToggle();
+	});
 }
 if (document.readyState !== "loading") {
 	eventHandler();

@@ -66,6 +66,7 @@ mixin cart-aside()
 							+icon("chevron-down").ms-auto
 					.dd-group__content.dd-content-js
 						p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, doloremque? Molestiae delectus pariatur quasi modi eaque mollitia tempore in sapiente.
+
 mixin cart-aside05()
 	+e.aside.col
 			.mb-4
@@ -108,6 +109,48 @@ mixin cart-aside05()
 								.smallest.text-secondary Включая НДС
 					button.btn.btn-success.w-100(disabled) Оформить
 
+mixin cart-aside05-2()
+	+e.aside.col
+			.mb-4
+				.card.card--info
+					.h4.fw-400 Ваш заказ
+					table
+						tr
+							td Товары
+								span.text-secondary × 4
+							td.text-end 999 000 ₽
+						tr
+							td Услуги
+								span.text-secondary × 4
+							td.text-end 999 000 ₽
+						tr
+							td Доставка
+							td.text-end  800 ₽
+						tr
+							td Скидка
+							td.text-end  800 ₽
+				.card.card--total.mb-3
+					.row.pb-4 
+						.col
+							.h5.fw-400 Итого
+						.col-auto.text-end
+								h5.fw-400.mb-0 86 900 ₽
+								.smallest.text-secondary Включая НДС
+					button.btn.btn-success.w-100()
+						<svg class="me-2"  width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect x="10.5" y="0.5" width="17" height="23" rx="1.5" fill="white" stroke="#C9D1E2" />
+							<rect y="8" width="24" height="12" rx="2" fill="#BD2539" />
+							<path d="M4.58945 10.4C5.47383 10.4 6.11914 10.5906 6.52539 10.9719C6.93164 11.35 7.13477 11.8719 7.13477 12.5375C7.13477 12.8375 7.08945 13.125 6.99883 13.4C6.9082 13.6719 6.75977 13.9141 6.55352 14.1266C6.35039 14.3391 6.07852 14.5078 5.73789 14.6328C5.39727 14.7547 4.97695 14.8156 4.47695 14.8156H3.85352V17.2531H2.40039V10.4H4.58945ZM4.51445 11.5906H3.85352V13.625H4.33164C4.60352 13.625 4.83945 13.5891 5.03945 13.5172C5.23945 13.4453 5.39414 13.3328 5.50352 13.1797C5.61289 13.0266 5.66758 12.8297 5.66758 12.5891C5.66758 12.2516 5.57383 12.0016 5.38633 11.8391C5.19883 11.6735 4.9082 11.5906 4.51445 11.5906Z" fill="white" />
+							<path d="M15.0745 13.761C15.0745 14.5328 14.926 15.1781 14.6291 15.6969C14.3354 16.2125 13.9088 16.6016 13.3495 16.8641C12.7901 17.1235 12.1166 17.2531 11.3291 17.2531H9.38852V10.4H11.5401C12.2588 10.4 12.8823 10.5281 13.4104 10.7844C13.9385 11.0375 14.3479 11.4141 14.6385 11.9141C14.9291 12.411 15.0745 13.0266 15.0745 13.761ZM13.5651 13.7985C13.5651 13.2922 13.4901 12.8766 13.3401 12.5516C13.1932 12.2235 12.9745 11.9813 12.6838 11.825C12.3963 11.6688 12.0401 11.5906 11.6151 11.5906H10.8416V16.0531H11.4651C12.1745 16.0531 12.701 15.8641 13.0448 15.486C13.3916 15.1078 13.5651 14.5453 13.5651 13.7985Z" fill="white" />
+							<path d="M18.8845 17.2531H17.4548V10.4H21.3829V11.5906H18.8845V13.3578H21.2095V14.5438H18.8845V17.2531Z" fill="white" />
+						</svg>
+						| Скачать счёт
+				+b.card.card--link(href="#").mb-3
+					+icon("print").me-2
+					span Распечатать заказ
+				+b.card.card--link(href="#").mb-3
+					+icon("close").me-2
+					span Отменить заказ
 mixin sCart(data)
 	// start sCart
 	+b.SECTION.sCart.section#sCart&attributes(attributes)
@@ -551,4 +594,125 @@ mixin sCart05-2(data)
 									button.btn.btn-success Подтвердить
 					block
 				+cart-aside05()
+	// end sCart
+mixin sCart05-3(data)
+	// start sCart
+	+b.SECTION.sCart.section#sCart&attributes(attributes)
+		.container
+			+e.row.row 
+				.col-lg-8.col-xxl-9
+
+					+b.cart-item--final.card
+						.cart-item.p-lg-0.card
+							.row.gy-3.mb-4
+								.col
+									.row.g-3.mb-3
+										.h2.col-auto.mb-0 Заказ № 2370
+										.col-auto.align-self-end.mb-1 от 02.11.2025
+									.row.gy-3.mb-3
+										.col
+										.col-xl-4
+									+b.status-block
+										.badge.text-bg-danger Не оплачен
+										.badge.text-bg-outline-light В обработке
+								.col-xl-4
+									.small.text-secondary.mb-3 Способ оплаты
+									+b.order-final-item
+										.row.g-2
+											.col-auto
+												+e.icon-wrap
+													+icon("bill")
+											.col
+												.mb-1 Счёт
+												.small.text-secondary Безналичный перевод
+										+e.btn-edit(type="button").btn
+											+icon("edit")
+							.row.gy-3.mb-4
+								.col-xl-4.order-xl-1
+									.small.text-secondary.mb-3 Получатель
+									+b.order-final-item
+										.h5.fw-400.mb-4 Неретин Николай Игоревич
+
+										.row.g-2
+											.col-auto.text-secondary.small Телефон
+											.col +7 (999) 999-99-99
+
+											
+										.row.g-2
+											.col-auto.text-secondary Почта
+											.col.small nicolomelodini@gmail.com
+										+e.btn-edit(type="button").btn
+											+icon("edit")
+								.col
+									.small.text-secondary.mb-3 Доставка
+									+b.order-final-item
+										.row.gy-4
+											.col-sm-auto
+												.small.text-secondary.mb-1 Дата доставки
+												.h4.fw-400 11.06.2025
+											.col
+												.small.text-secondary Адрес
+												p.mt-2 1117463, Москва, Паустовского, 4
+										.row
+											.col-auto
+												.small.text-secondary.mb-1 Статус
+												| В пути
+											.col-auto
+												.small.text-secondary.mb-1 Способ 
+												| Автокурьер 
+											.col-auto
+												.small.text-secondary.mb-1 Стоимость
+												| 800 ₽
+										+e.btn-edit(type="button").btn
+											+icon("edit")
+
+
+						.cart-item.card.p-0
+							.order-set-title.order-set-title--js Состав заказа
+								+icon("chevron-down").ms-auto.d-lg-none
+							.order-set-items.order-set-items--js
+								- for (var x = 0; x < 2; x++)
+									+b.order-final-item--product
+										.row
+											+e.img-wrap.col-auto
+												img(src="img/prod-5.png" alt="" width="80")
+											.col
+												+e.caption
+													.smallest.mb-1 Артикул: 1670225
+													.small.mb-1.text-secondary Встраиваемая посудомоечная машина
+													.h6.fw-400 Asko CC4527S
+											.col-12.d-md-none.p-0.m-0
+											.col-auto.mt-md-5 × 1 шт.
+											.col.text-end.mt-md-4
+												.small(style="text-decoration: line-through;") 85 000 ₽
+												.h4.fw-400.text-danger 45 000 ₽
+											+e.col-table.col-12
+												.small.mb-1.text-secondary Услуги
+												table.table-bdb
+													tr
+														td: span Установка 
+														td: span 15 000 ₽
+													tr
+														td: span Подключение
+														td: span 10 000 ₽
+													tr
+														td: span Демонтаж старой техники
+														td: span 15 000 ₽
+								.small.mb-2.text-secondary Аксессуары
+								+b.order-final-item--product
+									.row
+										+e.img-wrap.col-auto
+											img(src="img/prod-5.png" alt="" width="80")
+										.col
+											+e.caption
+												.smallest.mb-1 Артикул: 1670225
+												.small.mb-1.text-secondary Встраиваемая посудомоечная машина
+												.h6.fw-400 Asko CC4527S
+										.col-12.d-md-none.p-0.m-0
+										.col-auto.mt-md-5 × 1 шт.
+										.col.text-end.mt-md-4
+											.small(style="text-decoration: line-through;") 85 000 ₽
+											.h4.fw-400.text-danger 45 000 ₽
+					block
+				+cart-aside05-2()
 	// end sCart

@@ -568,3 +568,47 @@ ul {
 	--bs-btn-disabled-border-color: #c9d1e2;
 	opacity: 1;
 }
+
+.table-bdb {
+	width: 100%;
+	td {
+		border-bottom: 1px solid #c9d1e2;
+	}
+	td:last-child {
+		text-align: right;
+	}
+	span {
+		line-height: 1;
+		position: relative;
+		z-index: 2;
+		&:before {
+			background-color: #fff;
+			bottom: -0.625em;
+			content: "";
+			height: 100%;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			z-index: -1;
+		}
+	}
+}
+
+.card--link {
+	cursor: pointer;
+	color: var(--bs-body-color);
+	display: flex;
+	align-items: center;
+	padding: rem(10) rem(0);
+	border-bottom: 1px solid #e6e6e6;
+	.icon {
+		font-size: 20px;
+		flex: 0 0 auto;
+		fill: #c9d1e2;
+		margin-right: 15px;
+	}
+	&:hover {
+		text-decoration: none;
+		background-color: #f8f9fa;
+	}
+}

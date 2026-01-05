@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Ваш заказ принят</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/css/intlTelInput.css">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<div class="section pb-0">
+					<div class="container">
+						<div class="pb-2">
+							<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
+								<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+									<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Корзина</span>
+											<meta itemprop="position" content="1"/></a></li>
+									<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Оформление</span>
+											<meta itemprop="position" content="2"/></a></li>
+								</ol>
+							</nav>
+						</div>
+						<h1>Ваш заказ принят</h1>
+					</div>
+				</div>
+				<!-- start sCart-->
+				<section class="sCart section" id="sCart">
+					<div class="container">
+						<div class="sCart__row row"> 
+							<div class="col-lg-8 col-xxl-9">
+								<div class="cart-item cart-item--final card">
+									<div class="cart-item p-lg-0 card">
+										<div class="row gy-3 mb-4">
+											<div class="col">
+												<div class="row g-3 mb-3">
+													<div class="h2 col-auto mb-0">Заказ № 2370</div>
+													<div class="col-auto align-self-end mb-1">от 02.11.2025</div>
+												</div>
+												<div class="row gy-3 mb-3">
+													<div class="col"></div>
+													<div class="col-xl-4"></div>
+												</div>
+												<div class="status-block">
+													<div class="badge text-bg-danger">Не оплачен</div>
+													<div class="badge text-bg-outline-light">В обработке</div>
+												</div>
+											</div>
+											<div class="col-xl-4">
+												<div class="small text-secondary mb-3">Способ оплаты</div>
+												<div class="order-final-item">
+													<div class="row g-2">
+														<div class="col-auto">
+															<div class="order-final-item__icon-wrap">
+																<svg class="icon icon-bill ">
+																	<use xlink:href="img/svg/sprite.svg#bill"></use>
+																</svg>
+															</div>
+														</div>
+														<div class="col">
+															<div class="mb-1">Счёт</div>
+															<div class="small text-secondary">Безналичный перевод</div>
+														</div>
+													</div>
+													<button class="order-final-item__btn-edit btn" type="button">
+														<svg class="icon icon-edit ">
+															<use xlink:href="img/svg/sprite.svg#edit"></use>
+														</svg>
+													</button>
+												</div>
+											</div>
+										</div>
+										<div class="row gy-3 mb-4">
+											<div class="col-xl-4 order-xl-1">
+												<div class="small text-secondary mb-3">Получатель</div>
+												<div class="order-final-item">
+													<div class="h5 fw-400 mb-4">Неретин Николай Игоревич</div>
+													<div class="row g-2">
+														<div class="col-auto text-secondary small">Телефон</div>
+														<div class="col">+7 (999) 999-99-99</div>
+													</div>
+													<div class="row g-2">
+														<div class="col-auto text-secondary">Почта</div>
+														<div class="col small">nicolomelodini@gmail.com</div>
+													</div>
+													<button class="order-final-item__btn-edit btn" type="button">
+														<svg class="icon icon-edit ">
+															<use xlink:href="img/svg/sprite.svg#edit"></use>
+														</svg>
+													</button>
+												</div>
+											</div>
+											<div class="col">
+												<div class="small text-secondary mb-3">Доставка</div>
+												<div class="order-final-item">
+													<div class="row gy-4">
+														<div class="col-sm-auto">
+															<div class="small text-secondary mb-1">Дата доставки</div>
+															<div class="h4 fw-400">11.06.2025</div>
+														</div>
+														<div class="col">
+															<div class="small text-secondary">Адрес</div>
+															<p class="mt-2">1117463, Москва, Паустовского, 4</p>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-auto">
+															<div class="small text-secondary mb-1">Статус</div>В пути
+														</div>
+														<div class="col-auto">
+															<div class="small text-secondary mb-1">Способ </div>Автокурьер 
+														</div>
+														<div class="col-auto">
+															<div class="small text-secondary mb-1">Стоимость</div>800 ₽
+														</div>
+													</div>
+													<button class="order-final-item__btn-edit btn" type="button">
+														<svg class="icon icon-edit ">
+															<use xlink:href="img/svg/sprite.svg#edit"></use>
+														</svg>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="cart-item card p-0">
+										<div class="order-set-title order-set-title--js">Состав заказа
+											<svg class="icon icon-chevron-down ">
+												<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+											</svg>
+										</div>
+										<div class="order-set-items order-set-items--js">
+											<div class="order-final-item order-final-item--product">
+												<div class="row">
+													<div class="order-final-item__img-wrap col-auto"><img src="img/prod-5.png" alt="" width="80"/>
+													</div>
+													<div class="col">
+														<div class="order-final-item__caption">
+															<div class="smallest mb-1">Артикул: 1670225</div>
+															<div class="small mb-1 text-secondary">Встраиваемая посудомоечная машина</div>
+															<div class="h6 fw-400">Asko CC4527S</div>
+														</div>
+													</div>
+													<div class="col-12 d-md-none p-0 m-0"></div>
+													<div class="col-auto mt-md-5">× 1 шт.</div>
+													<div class="col text-end mt-md-4">
+														<div class="small" style="text-decoration: line-through;">85 000 ₽</div>
+														<div class="h4 fw-400 text-danger">45 000 ₽</div>
+													</div>
+													<div class="order-final-item__col-table col-12">
+														<div class="small mb-1 text-secondary">Услуги</div>
+														<table class="table-bdb">
+															<tr>
+																<td><span>Установка </span></td>
+																<td><span>15 000 ₽</span></td>
+															</tr>
+															<tr>
+																<td><span>Подключение</span></td>
+																<td><span>10 000 ₽</span></td>
+															</tr>
+															<tr>
+																<td><span>Демонтаж старой техники</span></td>
+																<td><span>15 000 ₽</span></td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="order-final-item order-final-item--product">
+												<div class="row">
+													<div class="order-final-item__img-wrap col-auto"><img src="img/prod-5.png" alt="" width="80"/>
+													</div>
+													<div class="col">
+														<div class="order-final-item__caption">
+															<div class="smallest mb-1">Артикул: 1670225</div>
+															<div class="small mb-1 text-secondary">Встраиваемая посудомоечная машина</div>
+															<div class="h6 fw-400">Asko CC4527S</div>
+														</div>
+													</div>
+													<div class="col-12 d-md-none p-0 m-0"></div>
+													<div class="col-auto mt-md-5">× 1 шт.</div>
+													<div class="col text-end mt-md-4">
+														<div class="small" style="text-decoration: line-through;">85 000 ₽</div>
+														<div class="h4 fw-400 text-danger">45 000 ₽</div>
+													</div>
+													<div class="order-final-item__col-table col-12">
+														<div class="small mb-1 text-secondary">Услуги</div>
+														<table class="table-bdb">
+															<tr>
+																<td><span>Установка </span></td>
+																<td><span>15 000 ₽</span></td>
+															</tr>
+															<tr>
+																<td><span>Подключение</span></td>
+																<td><span>10 000 ₽</span></td>
+															</tr>
+															<tr>
+																<td><span>Демонтаж старой техники</span></td>
+																<td><span>15 000 ₽</span></td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="small mb-2 text-secondary">Аксессуары</div>
+											<div class="order-final-item order-final-item--product">
+												<div class="row">
+													<div class="order-final-item__img-wrap col-auto"><img src="img/prod-5.png" alt="" width="80"/>
+													</div>
+													<div class="col">
+														<div class="order-final-item__caption">
+															<div class="smallest mb-1">Артикул: 1670225</div>
+															<div class="small mb-1 text-secondary">Встраиваемая посудомоечная машина</div>
+															<div class="h6 fw-400">Asko CC4527S</div>
+														</div>
+													</div>
+													<div class="col-12 d-md-none p-0 m-0"></div>
+													<div class="col-auto mt-md-5">× 1 шт.</div>
+													<div class="col text-end mt-md-4">
+														<div class="small" style="text-decoration: line-through;">85 000 ₽</div>
+														<div class="h4 fw-400 text-danger">45 000 ₽</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sCart__aside col">
+								<div class="mb-4">
+									<div class="card card--info">
+										<div class="h4 fw-400">Ваш заказ</div>
+										<table>
+											<tr>
+												<td>Товары<span class="text-secondary">× 4</span></td>
+												<td class="text-end">999 000 ₽</td>
+											</tr>
+											<tr>
+												<td>Услуги<span class="text-secondary">× 4</span></td>
+												<td class="text-end">999 000 ₽</td>
+											</tr>
+											<tr>
+												<td>Доставка</td>
+												<td class="text-end"> 800 ₽</td>
+											</tr>
+											<tr>
+												<td>Скидка</td>
+												<td class="text-end"> 800 ₽</td>
+											</tr>
+										</table>
+									</div>
+									<div class="card card--total mb-3">
+										<div class="row pb-4"> 
+											<div class="col">
+												<div class="h5 fw-400">Итого</div>
+											</div>
+											<div class="col-auto text-end">
+												<h5 class="fw-400 mb-0">86 900 ₽</h5>
+												<div class="smallest text-secondary">Включая НДС</div>
+											</div>
+										</div>
+										<button class="btn btn-success w-100">
+											<svg class="me-2"  width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="10.5" y="0.5" width="17" height="23" rx="1.5" fill="white" stroke="#C9D1E2" />
+<rect y="8" width="24" height="12" rx="2" fill="#BD2539" />
+<path d="M4.58945 10.4C5.47383 10.4 6.11914 10.5906 6.52539 10.9719C6.93164 11.35 7.13477 11.8719 7.13477 12.5375C7.13477 12.8375 7.08945 13.125 6.99883 13.4C6.9082 13.6719 6.75977 13.9141 6.55352 14.1266C6.35039 14.3391 6.07852 14.5078 5.73789 14.6328C5.39727 14.7547 4.97695 14.8156 4.47695 14.8156H3.85352V17.2531H2.40039V10.4H4.58945ZM4.51445 11.5906H3.85352V13.625H4.33164C4.60352 13.625 4.83945 13.5891 5.03945 13.5172C5.23945 13.4453 5.39414 13.3328 5.50352 13.1797C5.61289 13.0266 5.66758 12.8297 5.66758 12.5891C5.66758 12.2516 5.57383 12.0016 5.38633 11.8391C5.19883 11.6735 4.9082 11.5906 4.51445 11.5906Z" fill="white" />
+<path d="M15.0745 13.761C15.0745 14.5328 14.926 15.1781 14.6291 15.6969C14.3354 16.2125 13.9088 16.6016 13.3495 16.8641C12.7901 17.1235 12.1166 17.2531 11.3291 17.2531H9.38852V10.4H11.5401C12.2588 10.4 12.8823 10.5281 13.4104 10.7844C13.9385 11.0375 14.3479 11.4141 14.6385 11.9141C14.9291 12.411 15.0745 13.0266 15.0745 13.761ZM13.5651 13.7985C13.5651 13.2922 13.4901 12.8766 13.3401 12.5516C13.1932 12.2235 12.9745 11.9813 12.6838 11.825C12.3963 11.6688 12.0401 11.5906 11.6151 11.5906H10.8416V16.0531H11.4651C12.1745 16.0531 12.701 15.8641 13.0448 15.486C13.3916 15.1078 13.5651 14.5453 13.5651 13.7985Z" fill="white" />
+<path d="M18.8845 17.2531H17.4548V10.4H21.3829V11.5906H18.8845V13.3578H21.2095V14.5438H18.8845V17.2531Z" fill="white" />
+</svg>Скачать счёт
+										</button>
+									</div>
+									<a class="card card card--link mb-3" href="#">
+										<svg class="icon icon-print ">
+											<use xlink:href="img/svg/sprite.svg#print"></use>
+										</svg><span>Распечатать заказ</span>
+									</a>
+									<a class="card card card--link mb-3" href="#">
+										<svg class="icon icon-close ">
+											<use xlink:href="img/svg/sprite.svg#close"></use>
+										</svg><span>Отменить заказ</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sCart-->
+				<!-- start sAddresses-->
+				<section class="sAddresses section d-md-none" id="sAddresses">
+					<div class="container">
+						<div class="section-title d-none d-lg-block"> 
+							<h2>Фирменные Шоурумы Asko в Москве</h2>
+						</div>
+						<div class="cat-btns d-none d-lg-flex"> 
+							<div class="cat-btns__btn active" style="--icon-color: #894E35"> 
+								<svg class="icon icon-metro ">
+									<use xlink:href="img/svg/sprite.svg#metro"></use>
+								</svg>Курская
+							</div>
+							<div class="cat-btns__btn" style="--icon-color: #40C1F3">
+								<svg class="icon icon-metro ">
+									<use xlink:href="img/svg/sprite.svg#metro"></use>
+								</svg>Кутузовская
+							</div>
+						</div>
+						<div class="sAddresses__block">
+							<div class="sAddresses__head h5">Шоу-рум на Курской
+							</div>
+							<div class="sAddresses__body">
+								<div class="sAddresses__row row">
+									<div class="col-lg-8 order-lg-last">
+										<div class="tabs">
+											<div class="tabs__caption">
+												<div class="tabs__btn active">На карте</div>
+												<div class="tabs__btn">Вход</div>
+												<div class="tabs__btn">Внутри</div>
+												<div class="tabs__btn">3D тур по шоу-руму</div>
+											</div>
+											<div class="tabs__wrap">
+												<div class="tabs__content active">
+													<div class="sAddresses__map">
+														<div id="map" data-mark="img/svg/mark.svg"></div>
+													</div>
+												</div>
+												<div class="tabs__content">2</div>
+												<div class="tabs__content">3</div>
+												<div class="tabs__content">4</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="sAddresses__caption">
+											<div class="sAddresses__group">
+												<div class="small text-secondary mb-4 d-none d-lg-block">Адрес</div>
+												<div>
+													<div class="sAddresses__title" style="--icon-color: #894E35"> 
+														<svg class="icon icon-metro ">
+															<use xlink:href="img/svg/sprite.svg#metro"></use>
+														</svg>Курская
+													</div>
+												</div>
+												<p>г. Москва,  <br> Дмитровское шоссе, д.62, с.5</p>
+												<div class="sAddresses__icons row mb-4">
+													<div class="sAddresses__icon sAddresses__icon--status col-auto">
+														<div class="sAddresses__ball" style="background: #35BE73">
+														</div>Открыт
+													</div>
+													<div class="sAddresses__icon sAddresses__icon--rating col-auto"><img src="img/parking.svg" alt="" loading="lazy"/>Бесплатная парковка
+													</div>
+												</div>
+											</div>
+											<div class="sAddresses__group d-none d-lg-block">
+												<div class="sAddresses__time">
+													<div class="mb-1"><span class="text-secondary">Пн. - пт.: </span>9:00 — 20:00</div>
+													<div class="mb-1"><span class="text-secondary">Сб. - вс.: </span>10:00 — 18:00</div>
+												</div>
+											</div>
+											<div class="sAddresses__group">
+												<div class="mb-4 d-none d-lg-block">
+													<div class="text-secondary mb-1">Телефон</div><a class="text-body h6 fw-400" href="tel:+7(495)120-80-90">+7 (495) 120-80-90 </a>
+												</div>
+												<div class="mb-4 d-lg-none">
+													<div class="text-secondary mb-1">Ежедневно с 10:00 до 21:00</div><a class="text-body h6 fw-400" href="tel:8(495)646-09-31">8 (495) 646-09-31</a>
+												</div>
+												<div class="mb-4 d-lg-none">
+													<div class="text-secondary mb-1">Звонок бесплатный</div><a class="text-body h6 fw-400" href="tel:8(800)555-17-98">8 (800) 555-17-98</a>
+												</div>
+											</div>
+											<div class="sAddresses__group d-none d-lg-block">
+												<div class="text-secondary mb-1">Мессенджеры</div>
+												<a class="sAddresses__chat" href="#"><img src="img/tg.png" alt="" loading="lazy"/>Написать в Telegram
+												</a><br/>
+												<a class="sAddresses__chat" href="#"><img src="img/whatsap.png" alt="" loading="lazy"/>Написать в WhatsApp
+												</a>
+											</div>
+											<a class="sAddresses__btn btn btn-success d-none d-lg-block" href="#">Записаться на показ
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sAddresses-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<!--  start modals-->
+		<div id="modal-call" style="display: none">
+			<div class="modal-win">
+				<div class="form-wrap">
+					<form>
+						<div class="text-center">
+							<div class="form-wrap__title form-data h3 ttu">Обратный звонок
+							</div>
+							<p class="after-headline">Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут</p>
+						</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Ваше Имя" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<button class="form-wrap__btn btn" type="submit">submit
+						</button>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- #modal-call-->
+		<!-- end modals-->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script>
+		<script src="libs/select2/js/i18n/ru.js"> </script>
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script><script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/js/intlTelInput.min.js"></script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>
