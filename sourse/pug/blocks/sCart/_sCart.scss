@@ -59,6 +59,11 @@
 
 	.card {
 		padding: 20px;
+		.card {
+			@include media-breakpoint-up(lg) {
+				box-shadow: none;
+			}
+		}
 	}
 	@include media-breakpoint-up(xl) {
 	}
@@ -571,7 +576,11 @@
 	position: relative;
 	padding: rem(20);
 	border: 1px solid #c9d1e2;
+	background-color: #fff;
 	border-radius: 16px;
+	@include media-breakpoint-up(lg) {
+		min-height: calc(100% - #{rem(37)});
+	}
 	// height: 100%;
 	&__btn-edit {
 		position: absolute;

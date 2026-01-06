@@ -8,4 +8,5 @@
 6. <https://megafronteam.github.io/0041-asko/05-order-2>
 7. <https://megafronteam.github.io/0041-asko/05-order-3>
 8. <https://megafronteam.github.io/0041-asko/06-cabinet>
+9. <https://megafronteam.github.io/0041-asko/06-cabinet-2>
    <!-- 5. <https://megafronteam.github.io/0041-asko/00-modal.html> -->
