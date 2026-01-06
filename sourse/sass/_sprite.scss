@@ -7,6 +7,11 @@
 	fill: currentColor;
 }
 
+.icon-adress {
+	$h: 23;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21 / #{$h} *1em );
+}
 .icon-arrow-down {
 	$h: 17;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -77,6 +82,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-feadback {
+	$h: 22;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21 / #{$h} *1em );
+}
 .icon-heart {
 	$h: 20;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -86,6 +96,16 @@
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
+}
+.icon-logout {
+	$h: 21;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(22 / #{$h} *1em );
+}
+.icon-mark {
+	$h: 23;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(19 / #{$h} *1em );
 }
 .icon-metro {
 	$h: 15;
@@ -116,6 +136,11 @@
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
+}
+.icon-profile2 {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(18 / #{$h} *1em );
 }
 .icon-qr {
 	$h: 16;

@@ -1,0 +1,70 @@
+// start .sCabinetAside
+.sCabinetAside {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	.section-title {
+	}
+	&__col {
+	}
+	&__item {
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sCabinetAside
+
+.cabinet-menu {
+	list-style: none;
+	li {
+		margin-bottom: rem(20);
+		&.logout-li {
+			margin-top: 37px;
+		}
+	}
+	&__icon-wrap {
+		margin-right: rem(12);
+		flex: 0 0 auto;
+		width: rem(20);
+		text-align: center;
+	}
+	a {
+		&:not(:hover) {
+			color: $body-color;
+		}
+		&.active {
+			color: $primary;
+		}
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		.icon {
+			fill: none;
+			stroke: $secondary;
+			font-size: rem(20);
+			&-burger {
+				font-size: rem(12);
+			}
+			&-adress {
+				font-size: rem(22);
+			}
+		}
+	}
+}

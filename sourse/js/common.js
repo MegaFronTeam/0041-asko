@@ -48,6 +48,9 @@ function eventHandler() {
 		freeMode: true,
 		watchOverflow: true,
 	});
+	new Swiper(".auto-slider-js", {
+		slidesPerView: "auto",
+	});
 
 	const swiper4 = new Swiper(".sBanners__slider--js", {
 		// slidesPerView: 5,

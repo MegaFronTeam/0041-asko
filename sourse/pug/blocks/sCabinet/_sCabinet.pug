@@ -1,0 +1,64 @@
+mixin sCabinet(data)
+	// start sCabinet
+	+b.sCabinet&attributes(attributes) 
+		+e.orders-table
+			+e.table-head
+				+e.table-row
+					+e.table-cell Номер заказа
+					+e.table-cell Дата заказа
+					+e.table-cell Статус
+					+e.table-cell Способ оплаты
+					+e.table-cell Сумма
+			+e.table-body
+				- for (var x = 0; x < 3; x++)
+					//- Первый заказ - не оплачен
+					+e.order-row
+						+e.table-cell
+							+e.order-number Заказ № 2370
+							.d-md-none.small.text-secondary Итого
+						+e.table-cell
+							+e.order-date.d-md-block.d-none 11.06.2025
+						+e.table-cell
+							+b.status-block
+								.badge.text-bg-danger Не оплачен
+								.badge.text-bg-outline-light В обработке
+						+e.table-cell
+							+e.payment
+								+e.payment-icon
+									+img("img/doc-i.svg")
+								+e.payment-text Счёт №124146
+						+e.table-cell--price
+							.d-md-none.small.text-secondary Итого
+							+e.order-price 207 900 ₽
+						+e.order-products
+							.auto-slider-js.swiper
+								.swiper-wrapper
+									.swiper-slide
+										+e.product-thumb
+											.img-wrap-center
+												img(src="img/prod-5.png" alt="").res-i
+									.swiper-slide
+										+e.product-thumb
+											.img-wrap-center
+												img(src="img/prod-5.png" alt="").res-i
+									.swiper-slide
+										+e.product-thumb
+											.img-wrap-center
+												img(src="img/prod-5.png" alt="").res-i
+									.swiper-slide
+										+e.product-thumb
+											.img-wrap-center
+												img(src="img/prod-5.png" alt="").res-i
+									.swiper-slide
+										+e.product-thumb
+											.img-wrap-center
+												img(src="img/prod-5.png" alt="").res-i
+									.swiper-slide
+										+e.product-thumb
+											.img-wrap-center
+												img(src="img/prod-5.png" alt="").res-i
+									.swiper-slide
+										+e.product-thumb
+											.img-wrap-center
+												img(src="img/prod-5.png" alt="").res-i
+	// end sCabinet

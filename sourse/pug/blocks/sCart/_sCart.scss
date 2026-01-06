@@ -639,6 +639,10 @@
 		@include rfs(20px);
 		font-weight: 500;
 		pointer-events: none;
+		margin-bottom: 10px;
+		.icon {
+			display: none;
+		}
 	}
 	@include media-breakpoint-down(lg) {
 		display: flex;

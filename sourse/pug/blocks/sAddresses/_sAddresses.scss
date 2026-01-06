@@ -161,5 +161,13 @@
 	}
 	@include media-breakpoint-down(md) {
 		--sPB: #{rem(0)};
+		.tabs__caption {
+			text-wrap: nowrap;
+		}
+		.tabs__caption,
+		&__head {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 	}
 } // end.sAddresses
