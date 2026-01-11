@@ -33,6 +33,7 @@
 	}
 
 	--chevron-down: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.353516 0.353554L5.35352 5.35355L10.3535 0.353554' stroke='%2379859E'/%3E%3C/svg%3E%0A");
+	--chevron-down-primary: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.353516 0.353554L5.35352 5.35355L10.3535 0.353554' stroke='#{$primary}'/%3E%3C/svg%3E%0A");
 }
 .fancybox__container {
 	--fancybox-bg: rgba(58, 59, 60, 0.77);

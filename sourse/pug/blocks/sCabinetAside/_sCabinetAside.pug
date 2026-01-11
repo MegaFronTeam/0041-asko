@@ -1,45 +1,56 @@
 mixin sCabinetAside(data)
 	// start sCabinetAside
 	+b.sCabinetAside&attributes(attributes)
-		ul.cabinet-menu
+		ul.aside-menu
 			li
 				a(href="#").active
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('basket')
 					| Заказы
 			li
 				a(href="#")
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('heart')
 					|  Избранное
 			li
 				a(href="#")
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('burger')
 					|  Сравнение
 			li
 				a(href="#")
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('profile2')
 					|  Профиль
 			li
 				a(href="#")
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('adress')
 					|  Данные компании
 			li
 				a(href="#")
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('mark')
 					|  Адреса
 			li
 				a(href="#")
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('feadback')
 					|  Мои отзывы
 			li.logout-li
 				a(href="#")
-					.cabinet-menu__icon-wrap
+					.aside-menu__icon-wrap
 						+icon('logout')
 					|  Выйти
 	// end sCabinetAside
+
+mixin sCabinetAside-07(data)
+	// start sCabinetAside
+	+b.sCabinetAside&attributes(attributes)
+		ul.aside-menu
+			li: a(href="#").active О нас
+			li: a(href="#") Сотрудничество
+			li: a(href="#") Документы
+			li: a(href="#") Отзывы
+	// end sCabinetAside
+

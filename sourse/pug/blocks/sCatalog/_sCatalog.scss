@@ -3,8 +3,11 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	&__row {
+	.row {
 		// --bs-gutter-x: #{rem()};
+		@include media-breakpoint-down(sm) {
+			--bs-gutter-x: 10px;
+		}
 		--bs-gutter-y: var(--bs-gutter-x);
 	}
 	.section-title {
@@ -293,6 +296,13 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-inline: -15px;
+	&.swiper {
+		overflow: visible;
+	}
+	.swiper-slide {
+		width: auto;
+		margin-right: em(10);
+	}
 	@include media-breakpoint-down(md) {
 		font-size: 14px;
 	}
@@ -307,6 +317,9 @@
 		&.active {
 			color: $body-color;
 		}
+	}
+	sup {
+		color: $primary;
 	}
 }
 

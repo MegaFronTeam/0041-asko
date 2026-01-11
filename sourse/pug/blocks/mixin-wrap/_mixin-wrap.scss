@@ -77,29 +77,119 @@
 
 .search-block {
 	position: relative;
+	padding: 0;
+	position: absolute;
+	padding-top: calc(var(--sPT) + 4px);
+	z-index: 2;
+	background-color: #fff;
+	@include media-breakpoint-up(xxl) {
+		--left: 14%;
+		top: calc(var(--sPT) * -1);
+	}
+
+	@include media-breakpoint-up(xl) {
+		--left: 15%;
+		--right: -26%;
+		top: calc(var(--sPT) * -1 + 1px);
+	}
+
+	left: var(--left);
+	width: calc(100% - var(--left) + var(--right));
+	display: none;
+	&.active {
+		display: block;
+	}
+	form {
+		border-radius: 12px;
+		padding-right: 4px;
+		border: 0.5px solid #c9d1e2;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding-left: 0;
+	}
 	input {
 		font-size: 14px;
 		width: 100%;
 		border: none !important;
 		outline: none !important;
-		padding-left: rem(30);
+		padding-left: rem(20);
 		padding-top: rem(14);
 		padding-bottom: rem(14);
+		border-radius: 12px;
 	}
 	.icon {
 		font-size: rem(20);
 		border: none !important;
 	}
-	button {
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
+	.btn-success {
+		height: rem(40);
+		width: rem(40);
+		border-radius: rem(10);
+		.icon {
+			fill: none;
+			stroke: #fff;
+			font-size: 18px;
+		}
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: none !important;
-		border: none !important;
+		// background: none !important;
+		// border: none !important;
+	}
+	.btn {
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 0 0 auto;
+	}
+	.btn-close {
+		width: rem(24);
+		height: rem(24);
+		border-radius: 50%;
+		color: $primary;
+	}
+	&__dropdown {
+		position: absolute;
+		top: calc(100% + 10px);
+		left: 0;
+		width: 100%;
+		box-shadow: 0 0 30px 0 rgba(38, 51, 77, 0.1);
+		background: #fff;
+		border-top: none;
+		border-radius: 12px;
+		z-index: 10;
+		max-height: min(400px, calc(100vh - 100px));
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		&-inner {
+			padding: 10px 20px;
+			height: 100%;
+			position: relative;
+			overflow-y: auto;
+		}
+	}
+	&__item {
+		display: flex;
+		gap: rem(10);
+		padding: 10px;
+		&:not(:hover) {
+			color: $body-color;
+		}
+	}
+	&__img-wrap {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
 	}
 }
 

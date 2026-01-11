@@ -29,12 +29,112 @@ mixin top-nav()
 							</svg>
 						| Каталог 
 						span.d-none.d-xl-inline товаров
-				.col.order-lg-0.order-last
+				+e.menu-col.col.order-lg-0.order-last
+					+search()
 					+mnu()
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
 							+menu-toggle()
-					
+				+e.col-icons.col-auto.d-none.d-lg-block
+					+b.icons-block
+						+e.item(href="#").active
+							+icon("heart")
+						+e.item(href="#").active
+							+icon("burger")
+						+e.item(href="#").active
+							+icon("basket")
+						+e.item()
+							+icon("profile")
+							ul.aside-menu
+								li
+									a(href="#").active
+										.aside-menu__icon-wrap
+											+icon('basket')
+										| Заказы
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('heart')
+										|  Избранное
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('burger')
+										|  Сравнение
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('profile2')
+										|  Профиль
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('adress')
+										|  Данные компании
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('mark')
+										|  Адреса
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('feadback')
+										|  Мои отзывы
+								li.logout-li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('logout')
+										|  Выйти
 				.col-auto.d-lg-none
 					+menu-toggle()
+		+b.catalog-modal
+			+e.close
+				+icon('close2')
+			+e.group--promo.pb-0
+				.container
+					.row
+						.col-3
+							.text-secondary Акции
+						.col-9
+							.promo-block
+								.row
+									- for (var x = 0; x < 3; x++)
+										.col-lg-4
+											a(href="#").promo-item
+												+img("img/stock.png").res-i 
+			+e.group--menu
+				.container
+					.row
+						.col-3
+							+e.aside.h4
+								ul
+									li: a(href="#")  Техника для кухни
+									li: a(href="#")  Уход за бельем
+									li: a(href="#")  Asko Professional
+									li: a(href="#")  Аксессуары
+						.col-9
+							+e.menu-block
+								ul
+									- for (var x = 0; x < 3; x++)
+										li
+											+e.menu-img
+												+img('img/prod-1.png')
+											ul
+												li: a(href="#").h5 Встраиваемая посудомоечная машина
+												li: a(href="#")  Встраиваемые холодильники
+												li: a(href="#")  Встраиваемые духовые шкафы
+												li: a(href="#")  Встраиваемые варочные панели
+												li: a(href="#")  Встраиваемые кофемашины
+										li
+											+e.menu-img
+												+img('img/prod-2.png')
+											ul
+												li: a(href="#").h5 Встраиваемая посудомоечная машина
+												li: a(href="#")  Встраиваемые холодильники
+												li: a(href="#")  Встраиваемые холодильники
+												li: a(href="#")  Встраиваемые холодильники
+												li: a(href="#")  Встраиваемые духовые шкафы
+												li: a(href="#")  Встраиваемые варочные панели
+												li: a(href="#")  Встраиваемые кофемашины
 	// end top-nav

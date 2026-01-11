@@ -384,6 +384,16 @@ function eventHandler() {
 		$(this).toggleClass("active");
 		$(this).next(".order-set-items--js").slideToggle();
 	});
+
+	$(".icons-block__item--search").on("click", function () {
+		$(this).toggleClass("active");
+		$(".search-block").toggleClass("active");
+	});
+
+	$(".top-nav__catalog-button, .catalog-modal__close").on("click", function () {
+		$(this).toggleClass("active");
+		$(".catalog-modal").toggleClass("active");
+	});
 }
 if (document.readyState !== "loading") {
 	eventHandler();

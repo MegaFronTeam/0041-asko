@@ -18,10 +18,12 @@ mixin topLine()
 				.col.d-none.d-lg-block
 					+e.label Звонок бесплатный
 					+e.phone-link(href="tel:8(800)555-17-98") 8 (800) 555-17-98
+				
 				+e.col-icons.col-auto.d-none.d-lg-block
 					+b.icons-block
-						+e.item(href="#")
+						+e.item--search
 							+icon("search")
+							+icon("close2")
 						+e.divider
 						+e.item(href="#").active
 							+icon("heart")
@@ -29,7 +31,48 @@ mixin topLine()
 							+icon("burger")
 						+e.item(href="#").active
 							+icon("basket")
-						+e.item(href="#").active
+						+e.item()
 							+icon("profile")
-
+							ul.aside-menu
+								li
+									a(href="#").active
+										.aside-menu__icon-wrap
+											+icon('basket')
+										| Заказы
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('heart')
+										|  Избранное
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('burger')
+										|  Сравнение
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('profile2')
+										|  Профиль
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('adress')
+										|  Данные компании
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('mark')
+										|  Адреса
+								li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('feadback')
+										|  Мои отзывы
+								li.logout-li
+									a(href="#")
+										.aside-menu__icon-wrap
+											+icon('logout')
+										|  Выйти
+				+search()
 	// end topLine

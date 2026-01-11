@@ -374,7 +374,7 @@ class JSCCommon {
 	static setFixedNav() {
 		let topNav = document.querySelector(".top-nav  ");
 		if (!topNav) return;
-		window.scrollY > 0
+		window.scrollY > 200
 			? topNav.classList.add("fixed")
 			: topNav.classList.remove("fixed");
 	}

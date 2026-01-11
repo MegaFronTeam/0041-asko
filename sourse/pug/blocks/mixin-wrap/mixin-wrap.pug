@@ -29,8 +29,18 @@ mixin search()
 	+b.search-block
 		form
 			input(type="text" placeholder="Поиск по номеру или названию запчасти" inputmode='search')
-			button 
-				+icon("search")
+			button.btn.btn-close.btn-outline-secondary(type="button")  ×
+			button.btn.btn-success 
+				+icon("search")å
+		+e.dropdown
+			+e.dropdown-inner
+				- for (var x = 0; x < 13; x++)
+					+e.item(href="#")
+						+e.img-wrap
+							+img('img/prod-1.png')
+						+e.caption
+							+e.title.small.text-secondary Встраиваемая посудомоечная машина
+							+e.name Код: 123456
 
 mixin page-head(t,...items)
 	+b.page-head

@@ -15,21 +15,6 @@
 	}
 
 	&__remove-all {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		color: var(--bs-secondary);
-		cursor: pointer;
-		transition: color 0.3s;
-
-		&:hover {
-			color: var(--bs-danger);
-		}
-
-		svg {
-			width: 20px;
-			height: 20px;
-		}
 	}
 
 	&__icon-wrap {
@@ -674,5 +659,23 @@
 	@include media-breakpoint-down(lg) {
 		padding: 0 20px 20px;
 		display: none;
+	}
+}
+
+.btn-remove-all {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--bs-secondary);
+	cursor: pointer;
+	transition: color 0.3s;
+
+	&:hover {
+		color: var(--bs-danger);
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
 	}
 }
