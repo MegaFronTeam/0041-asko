@@ -31,8 +31,8 @@ mixin search()
 			input(type="text" placeholder="Поиск по номеру или названию запчасти" inputmode='search')
 			button.btn.btn-close.btn-outline-secondary(type="button")  ×
 			button.btn.btn-success 
-				+icon("search")å
-		+e.dropdown
+				+icon("search")
+		+e.dropdown(style="display: none;")
 			+e.dropdown-inner
 				- for (var x = 0; x < 13; x++)
 					+e.item(href="#")

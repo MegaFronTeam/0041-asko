@@ -196,9 +196,34 @@ mixin icon-description()
 					<path d="M17.0068 8.67093C15.3111 9.55137 13.9285 9.12745 12.2394 7.21659C10.4133 5.15572 7.85675 4.51006 5.66545 6.5318C5.43067 6.73854 5.40458 7.09528 5.60675 7.33398C5.82849 7.5355 6.1598 7.55963 6.40893 7.39267C8.00219 6.40072 10.0689 6.64137 11.3915 7.97311C12.3233 9.02217 13.6522 10.2405 15.4108 10.2427C15.4125 10.2427 15.4134 10.2406 15.4122 10.2394C15.4109 10.2382 15.4118 10.2361 15.4135 10.2361C16.1534 10.2236 16.8796 10.0306 17.5285 9.67528C17.5539 9.66419 17.5781 9.6518 17.6015 9.63745C17.8683 9.47311 17.9518 9.12354 17.7874 8.8568C17.6231 8.59006 17.2735 8.50659 17.0068 8.67093Z" fill="#31B64B" />
 					<path d="M17.0659 6.2968C16.7855 6.11419 15.4681 7.67941 13.805 5.72289C12.905 4.65985 11.6072 3.73376 10.192 3.94245C10.1894 3.94311 10.1874 3.94311 10.1848 3.94376C9.8757 3.99398 9.6657 4.2855 9.71592 4.59463C9.76157 4.90767 10.3616 4.99245 10.6746 4.9468C11.5485 4.80985 12.2072 5.80115 13.0485 6.57072C13.8861 7.3369 14.6914 8.05783 15.5802 8.06415C15.5879 8.06421 15.5954 8.06192 15.6018 8.05767C15.6082 8.05342 15.6157 8.05115 15.6233 8.05115H15.7604C15.7872 8.05115 15.814 8.04909 15.8404 8.04421C16.4134 7.938 16.913 7.58893 17.2094 7.08593C17.3874 6.82832 17.3235 6.4755 17.0659 6.2968Z" fill="#31B64B" />
 				</svg>
-
+mixin catalog-head()
+	+b.catalog-head
+		block
+		.row.align-items-end
+			.col-auto
+				.smallest.text-secondary Сортировка
+				+input("Цена по возрастанию", "select")
+			.col
+			.col-auto
+				+e.btns.d-none.d-lg-block
+					+e.BUTTON.btn.btn.btn-light
+						+icon("burger-2")
+					+e.BUTTON.btn.btn.btn-light.active
+						+icon("burger-3")
+				+e.btns.d-lg-none
+					+e.BUTTON.btn--mob.btn.btn-light 
+					+e.BUTTON.btn--mob.btn.btn-light.active
 mixin filter()
 	+b.filter-block
+		+e.head.d-xl-none
+			| Фильтр параметров
+			+icon("close2")
+		+b.catalog-head.d-xl-none
+			+e.filter-list
+				+e.filter-item Classic
+				+e.filter-item 1200
+			.text-end
+				+e.filter-item--reset Сбросить
 		+e.body
 			mixin item(t)
 				+b.filter-item
@@ -235,6 +260,17 @@ mixin filter()
 			+item('Сушильная машина может быть установлена сверху')
 		+e.footer
 			+e.btn.btn.btn-gradient(type='button') Применить
+	+b.filter-toggle--js.d-xl-none
+		span Фильтр
+		+e.count 99
+		<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M0.5 2H20.5" stroke="white" stroke-linecap="round" />
+			<path d="M0.5 10H20.5" stroke="white" stroke-linecap="round" />
+			<path d="M0.5 18H20.5" stroke="white" stroke-linecap="round" />
+			<rect x="4.5" width="4" height="4" rx="2" fill="white" />
+			<rect x="14.5" y="8" width="4" height="4" rx="2" fill="white" />
+			<rect x="9.5" y="16" width="4" height="4" rx="2" fill="white" />
+		</svg>
 mixin sCatalog02(h2)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
@@ -243,6 +279,11 @@ mixin sCatalog02(h2)
 				.col-xl-3
 					+filter()
 				.col-xl-9
+					+catalog-head()
+						+e.filter-list
+							+e.filter-item Classic
+							+e.filter-item 1200
+							+e.filter-item--reset Сбросить
 					.row.gy-4.mb-4
 						- const wrapClass="col-xl-4 col-6"
 						+e.col(class= wrapClass)
@@ -352,6 +393,8 @@ mixin sCatalog06(h2)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
 		.container
+			+catalog-head()
+				
 			.row.gy-4.mb-4
 				+e.col(class= wrapClass)
 					+product-item(`1`,``,``,``) 

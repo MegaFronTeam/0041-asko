@@ -80,7 +80,7 @@
 	padding: 0;
 	position: absolute;
 	padding-top: calc(var(--sPT) + 4px);
-	z-index: 2;
+	z-index: 101;
 	background-color: #fff;
 	@include media-breakpoint-up(xxl) {
 		--left: 14%;

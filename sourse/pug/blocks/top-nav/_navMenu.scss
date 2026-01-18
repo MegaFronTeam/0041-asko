@@ -41,6 +41,9 @@
 			right: 0;
 			top: 50%;
 			translate: 0 -50%;
+			@include media-breakpoint-down(lg) {
+				transform: rotate(-90deg);
+			}
 		}
 		&:hover {
 			&::after {
@@ -55,26 +58,28 @@
 	}
 }
 .sub-menu {
-	visibility: hidden;
-	opacity: 0;
-	transition:
-		opacity 0.3s ease,
-		visibility 0.3s ease;
-	position: absolute;
-	left: 0;
-	top: 100%;
-	box-shadow: 0 0 30px 0 rgba(38, 51, 77, 0.1);
-	background: #fff;
-	z-index: 2;
-	min-width: rem(154);
-	// white-space: nowrap;
-	border-radius: 12px;
-	li {
-		margin-bottom: 0;
-	}
-	a {
-		display: block;
-		padding: 8px 15px;
+	@include media-breakpoint-up(lg) {
+		visibility: hidden;
+		opacity: 0;
+		transition:
+			opacity 0.3s ease,
+			visibility 0.3s ease;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		box-shadow: 0 0 30px 0 rgba(38, 51, 77, 0.1);
+		background: #fff;
+		z-index: 2;
+		min-width: rem(154);
+		// white-space: nowrap;
+		border-radius: 12px;
+		li {
+			margin-bottom: 0;
+		}
+		a {
+			display: block;
+			padding: 8px 15px;
+		}
 	}
 }
 

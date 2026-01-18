@@ -32,15 +32,35 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(20 / #{$h} *1em );
 }
+.icon-burger-2 {
+	$h: 18;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(20 / #{$h} *1em );
+}
+.icon-burger-3 {
+	$h: 17;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(19 / #{$h} *1em );
+}
 .icon-card {
 	$h: 15;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(21 / #{$h} *1em );
 }
+.icon-catalog {
+	$h: 21;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(29 / #{$h} *1em );
+}
 .icon-chart {
 	$h: 14;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(14 / #{$h} *1em );
+}
+.icon-chat-solid {
+	$h: 25;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(26 / #{$h} *1em );
 }
 .icon-check {
 	$h: 8;
@@ -92,10 +112,20 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(21 / #{$h} *1em );
 }
+.icon-filter {
+	$h: 20;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21 / #{$h} *1em );
+}
 .icon-heart {
 	$h: 20;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(22 / #{$h} *1em );
+}
+.icon-home {
+	$h: 21;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(19 / #{$h} *1em );
 }
 .icon-instagram {
 	$h: 24;

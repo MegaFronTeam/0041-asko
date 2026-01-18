@@ -1,6 +1,6 @@
 
 mixin mnu()
-	nav
+	nav&attributes(attributes)
 		ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
 			each link in nav
 				if link.subnav

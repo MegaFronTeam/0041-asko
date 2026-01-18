@@ -342,8 +342,11 @@ function eventHandler() {
 	}); //end
 
 	$(".filter-item__head").on("click", function () {
-		$(this).parent().toggleClass("active");
-		$(this).next().slideToggle();
+		$(this)
+			.next()
+			.slideToggle(function () {
+				$(this).parent().toggleClass("active");
+			});
 	});
 
 	// Product gallery slider - vertical thumbnails and horizontal main slider
@@ -385,15 +388,54 @@ function eventHandler() {
 		$(this).next(".order-set-items--js").slideToggle();
 	});
 
-	$(".icons-block__item--search").on("click", function () {
+	$(document).on("click", ".icons-block__item--search", function () {
 		$(this).toggleClass("active");
 		$(".search-block").toggleClass("active");
 	});
 
-	$(".top-nav__catalog-button, .catalog-modal__close").on("click", function () {
-		$(this).toggleClass("active");
-		$(".catalog-modal").toggleClass("active");
+	$("body").on(
+		"click",
+		".top-nav__catalog-button--js, .catalog-modal__close--catalog-js, .icons-block__item--catalog-js",
+		function () {
+			$(this).toggleClass("active");
+			$(".catalog-modal").toggleClass("active");
+		}
+	);
+
+	$(document).on("click", ".catalog-modal li:has(.sub-menu) a", function (e) {
+		e.preventDefault();
+		if (!$(this).next().find(".catalog-modal__title").length) {
+			$(this)
+				.next()[0]
+				.insertAdjacentHTML(
+					"afterbegin",
+					`<li class="catalog-modal__title h4 row mb-4 align-items-center">
+				<div class="col"><a class="text-body" href="${this.href}"> ${this.textContent} </a></div>
+				<div class="col-auto">
+				<div class="catalog-modal__close catalog-modal__close--catalog-mob-js">×</div>
+				</div>
+				</li>`
+				);
+		}
+		$(this).next().toggleClass("active");
 	});
+
+	$("body").on("click", ".catalog-modal__close--catalog-mob-js", function (e) {
+		e.preventDefault();
+		$(
+			".catalog-modal .search-block__dropdown.active, .catalog-modal .sub-menu.active, .catalog-modal__menu-block.active "
+		).removeClass("active");
+	});
+
+	$("body").on(
+		"click",
+		".filter-toggle--js, .filter-block__head",
+		function (e) {
+			e.preventDefault();
+			$(".filter-block ").toggleClass("active");
+			$("body ").toggleClass("fixed");
+		}
+	);
 }
 if (document.readyState !== "loading") {
 	eventHandler();

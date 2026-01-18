@@ -19,11 +19,11 @@ mixin mob-mnu()
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy.d-none.d-lg-block
+	+b.top-nav.block-with-lazy
 		.container
 			+e.row.row
-				+e.col-catalog.col-xl-4.col-auto
-					+e.catalog-button
+				+e.col-catalog.col-xl-4.col-auto.d-none.d-lg-block
+					+e.catalog-button--js
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M24 0V17.9391C24 17.9391 24 23.9695 18.0152 23.9695V15.0152H6.01525V18H15.0229C15.0229 18 15.0229 24 9.00758 24H0V14.9543C0 8.98479 6.01525 8.98479 6.01525 8.98479H15.0229C18.0152 8.98479 18.0152 6.03045 18.0152 6.03045H0.0305343C0.0305343 6.03045 0 0 6.01525 0H24Z" fill="#C9D1E2"/>
 							</svg>
@@ -31,21 +31,22 @@ mixin top-nav()
 						span.d-none.d-xl-inline товаров
 				+e.menu-col.col.order-lg-0.order-last
 					+search()
-					+mnu()
-					.menu-mobile.menu-mobile--js
-						.menu-mobile__inner
-							+menu-toggle()
-				+e.col-icons.col-auto.d-none.d-lg-block
+					+mnu().d-none.d-lg-block
+				+e.col-icons.col-lg-auto
 					+b.icons-block
+						+e.item--search.d-lg-none
+							+icon("home")
+						+e.item--catalog-js.d-lg-none.text-primary 
+							+icon("catalog")
 						+e.item(href="#").active
 							+icon("heart")
-						+e.item(href="#").active
+						+e.item(href="#").active.d-none.d-lg-block
 							+icon("burger")
 						+e.item(href="#").active
 							+icon("basket")
 						+e.item()
 							+icon("profile")
-							ul.aside-menu
+							ul.aside-menu.cabinet-menu.cabinet-menu--js
 								li
 									a(href="#").active
 										.aside-menu__icon-wrap
@@ -86,55 +87,83 @@ mixin top-nav()
 										.aside-menu__icon-wrap
 											+icon('logout')
 										|  Выйти
-				.col-auto.d-lg-none
-					+menu-toggle()
+						+e.item
+							<svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<mask id="path-1-inside-1_1549_33813" fill="white">
+								<path d="M20 0C23.3137 0 26 2.68629 26 6V14C26 17.3137 23.3137 20 20 20H10.6895L4 25V19.6572C1.66984 18.8334 1.0158e-07 16.6123 0 14V6C1.28855e-07 2.68629 2.68629 1.61064e-08 6 0H20Z"/>
+								</mask>
+								<path d="M26 6H27H26ZM26 14H27H26ZM20 20V21V20ZM10.6895 20V19H10.357L10.0908 19.199L10.6895 20ZM4 25H3V26.9959L4.59869 25.801L4 25ZM4 19.6572H5V18.9501L4.33332 18.7144L4 19.6572ZM0 14H-1H0ZM0 6H-1H0ZM6 0V-1V0ZM20 0V1C22.7614 1 25 3.23858 25 6H26H27C27 2.13401 23.866 -1 20 -1V0ZM26 6H25V14H26H27V6H26ZM26 14H25C25 16.7614 22.7614 19 20 19V20V21C23.866 21 27 17.866 27 14H26ZM20 20V19H10.6895V20V21H20V20ZM10.6895 20L10.0908 19.199L3.40131 24.199L4 25L4.59869 25.801L11.2881 20.801L10.6895 20ZM4 25H5V19.6572H4H3V25H4ZM4 19.6572L4.33332 18.7144C2.38983 18.0273 1 16.175 1 14H0H-1C-1 17.0496 0.949848 19.6395 3.66668 20.6L4 19.6572ZM0 14H1V6H0H-1V14H0ZM0 6H1C1 3.23858 3.23858 1 6 1V0V-1C2.13401 -1 -1 2.13401 -1 6H0ZM6 0V1H20V0V-1H6V0Z" fill="#79859E" mask="url(#path-1-inside-1_1549_33813)"/>
+								<circle cx="8" cy="10" r="1" fill="#79859E"/>
+								<circle cx="13" cy="10" r="1" fill="#79859E"/>
+								<circle cx="18" cy="10" r="1" fill="#79859E"/>
+								</svg>
+
 		+b.catalog-modal
-			+e.close
+			+e.head.d-lg-none
+				.container
+					+search()
+			+e.close--catalog-js.d-none.d-lg-flex
 				+icon('close2')
-			+e.group--promo.pb-0
-				.container
-					.row
-						.col-3
-							.text-secondary Акции
-						.col-9
-							.promo-block
-								.row
+			
+			+e.body
+				+e.group--menu
+					.container
+						.row
+							.col-lg-3
+								+e.aside.h4
+									ul
+										li: a(href="#")  Техника для кухни
+										li: a(href="#")  Уход за бельем
+										li: a(href="#")  Asko Professional
+										li: a(href="#")  Аксессуары
+									.d-lg-none
+										+mnu()
+							.col-lg-9
+								+e.menu-block
 									- for (var x = 0; x < 3; x++)
-										.col-lg-4
-											a(href="#").promo-item
-												+img("img/stock.png").res-i 
-			+e.group--menu
-				.container
-					.row
-						.col-3
-							+e.aside.h4
-								ul
-									li: a(href="#")  Техника для кухни
-									li: a(href="#")  Уход за бельем
-									li: a(href="#")  Asko Professional
-									li: a(href="#")  Аксессуары
-						.col-9
-							+e.menu-block
-								ul
-									- for (var x = 0; x < 3; x++)
-										li
-											+e.menu-img
-												+img('img/prod-1.png')
+										+e.menu-block-item
+											+e.title.d-lg-none.h4.row.mb-4.align-items-center
+												.col
+													a(href="#").text-body  Техника для кухни
+												.col-auto
+													+e.close--catalog-mob-js ×
 											ul
-												li: a(href="#").h5 Встраиваемая посудомоечная машина
-												li: a(href="#")  Встраиваемые холодильники
-												li: a(href="#")  Встраиваемые духовые шкафы
-												li: a(href="#")  Встраиваемые варочные панели
-												li: a(href="#")  Встраиваемые кофемашины
-										li
-											+e.menu-img
-												+img('img/prod-2.png')
-											ul
-												li: a(href="#").h5 Встраиваемая посудомоечная машина
-												li: a(href="#")  Встраиваемые холодильники
-												li: a(href="#")  Встраиваемые холодильники
-												li: a(href="#")  Встраиваемые холодильники
-												li: a(href="#")  Встраиваемые духовые шкафы
-												li: a(href="#")  Встраиваемые варочные панели
-												li: a(href="#")  Встраиваемые кофемашины
+												- for (var x = 0; x < 3; x++) 
+													li
+														ul
+															li.menu-title
+																a(href="#").h5 Встраиваемая посудомоечная машина
+																+e.menu-img
+																	+img('img/prod-1.png')
+														ul
+															li: a(href="#")  Встраиваемые холодильники
+															li: a(href="#")  Встраиваемые духовые шкафы
+															li: a(href="#")  Встраиваемые варочные панели
+															li: a(href="#")  Встраиваемые кофемашины
+													li
+														ul
+															li.menu-title
+																a(href="#").h5 Встраиваемая посудомоечная машина
+																+e.menu-img
+																	+img('img/prod-2.png')
+														ul
+															li: a(href="#")  Встраиваемые холодильники
+															li: a(href="#")  Встраиваемые холодильники
+															li: a(href="#")  Встраиваемые холодильники
+															li: a(href="#")  Встраиваемые духовые шкафы
+															li: a(href="#")  Встраиваемые варочные панели
+															li: a(href="#")  Встраиваемые кофемашины
+
+				+e.group--promo.order-lg-first.pb-0
+					.container
+						.row.gy-3
+							.col-lg-3
+								.text-secondary Акции
+							.col-lg-9
+								.promo-block
+									.row
+										- for (var x = 0; x < 3; x++)
+											.col-md-4.col-sm-6
+												a(href="#").promo-item
+													+img("img/stock.png").res-i 
 	// end top-nav
