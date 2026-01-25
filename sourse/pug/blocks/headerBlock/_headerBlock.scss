@@ -10,7 +10,7 @@
 .headerBlock {
 	--sPT: #{rem(0)};
 	--sPB: #{rem(30)};
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(xl) {
 		--sPT: #{rem(40)};
 	}
 

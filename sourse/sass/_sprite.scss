@@ -52,6 +52,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(29 / #{$h} *1em );
 }
+.icon-change-index {
+	$h: 21;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(33 / #{$h} *1em );
+}
 .icon-chart {
 	$h: 14;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -91,6 +96,11 @@
 	$h: 17;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(17 / #{$h} *1em );
+}
+.icon-download {
+	$h: 21;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(21 / #{$h} *1em );
 }
 .icon-edit {
 	$h: 22;

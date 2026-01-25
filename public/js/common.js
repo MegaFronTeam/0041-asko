@@ -423,8 +423,26 @@ function eventHandler() {
 	$("body").on("click", ".catalog-modal__close--catalog-mob-js", function (e) {
 		e.preventDefault();
 		$(
-			".catalog-modal .search-block__dropdown.active, .catalog-modal .sub-menu.active, .catalog-modal__menu-block.active "
+			".catalog-modal .search-block__dropdown.active, .catalog-modal .sub-menu.active, .catalog-modal__menu-block.active, .catalog-modal__menu-block-item.active "
 		).removeClass("active");
+	});
+
+	$("body").on("click mouseover", ".catalog-menu-js li", function (e) {
+		e.preventDefault();
+		const index = $(this).index();
+		$(".catalog-menu-js li").removeClass("active");
+		$(this).addClass("active");
+		$(`.catalog-modal__menu-block-item.active`).removeClass("active");
+		$(`.catalog-modal__menu-block-item:nth-child(${index + 1})`).addClass(
+			"active"
+		);
+	});
+
+	$("body").on("click ", ".icons-block__item--profile-js .icon", function (e) {
+		e.preventDefault();
+		const index = $(this).index();
+		$(this).toggleClass("active");
+		$(".cabinet-menu--js").toggleClass("active");
 	});
 
 	$("body").on(
@@ -436,7 +454,102 @@ function eventHandler() {
 			$("body ").toggleClass("fixed");
 		}
 	);
+	$(".product-accordion").on("click", function (e) {
+		const target = e.target.closest(
+			".product-accordion__img-wrap, .product-accordion__title"
+		);
+		e.preventDefault();
+		if (target) {
+			$(this).toggleClass("active");
+		}
+	});
+
+	// Compare sliders with sync
+	const compareHeadSlider = new Swiper(".sCompare__slider--head-js", {
+		slidesPerView: "auto",
+		freeMode: true,
+		watchSlidesProgress: true,
+		scrollbar: {
+			el: ".sCompare .swiper-scrollbar",
+			draggable: true,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+	});
+
+	const compareBodySlider = new Swiper(".sCompare__slider--body-js", {
+		slidesPerView: "auto",
+		freeMode: true,
+		thumbr: {
+			swiper: compareHeadSlider,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+	});
+
+	// Sync sliders
+	compareHeadSlider.controller.control = compareBodySlider;
+	compareBodySlider.controller.control = compareHeadSlider;
+
+	$(".compare-item").on("click", ".compare-item__group-title--js", function () {
+		$(this).toggleClass("active");
+		const index = $(this).parent().index();
+		$(
+			`.compare-item__group:nth-child(${index + 1}) .compare-item__toggle-block`
+		).slideToggle();
+	});
+
+	// Function to update hide-btn class based on --order-index
+	function updateHideBtnClass() {
+		const slides = $(".sCompare__slide--head");
+		const slidesCount = slides.length;
+
+		// Remove hide-btn from all slides
+		slides.removeClass("hide-btn");
+
+		// Add hide-btn to the slide with --order-index equal to slidesCount
+		slides.each(function () {
+			const orderIndex = +$(this).css("--order-index");
+			console.log(orderIndex, slidesCount);
+
+			if (orderIndex === slidesCount) {
+				$(this).addClass("hide-btn");
+			}
+		});
+	}
+
+	// Run on page load
+	updateHideBtnClass();
+
+	$(".compare-item").on(
+		"click",
+		".compare-item__btn-switch-index--js",
+		function () {
+			const index = $(this).parents(".sCompare__slide").index();
+			const orderIndex = $(this)
+				.parents(".sCompare__slide")
+				.css("--order-index");
+
+			console.log(index, orderIndex);
+
+			$(`.sCompare__slide[style*="--order-index: ${+orderIndex + 1}"]`).css({
+				"--order-index": +orderIndex,
+			});
+
+			$(`.sCompare__slide:nth-child(${index + 1})`).css({
+				"--order-index": +orderIndex + 1,
+			});
+
+			// Update hide-btn class after swap
+			updateHideBtnClass();
+		}
+	);
 }
+
 if (document.readyState !== "loading") {
 	eventHandler();
 } else {

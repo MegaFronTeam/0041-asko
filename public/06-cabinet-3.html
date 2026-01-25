@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>06 - cabinet</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/css/intlTelInput.css">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<div class="section pb-0">
+					<div class="container">
+						<div class="row section-title">
+							<div class="col">
+								<div class="row">
+									<div class="col-auto">
+										<h1 class="h2 mb-0">Сравнение</h1>
+									</div>
+									<div class="col-auto mt-2">
+										<label class="custom-input form-check"><input class="custom-input__input form-check-input custom-input custom-input--square" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">Показывать только отличия</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto align-items-center mt-2">
+								<div class="btn-remove-all">
+									Удалить все<svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.16667 20L0.5 6.15384H15.5L13.8333 20L2.16667 20Z" fill="#C9D1E2" stroke="#C9D1E2" stroke-linejoin="round" />
+<path d="M15.5 3.84616H11.1579M0.5 3.84616H4.84211M4.84211 3.84616L4.90853 3.76526C6.50874 1.81628 9.49126 1.81628 11.0915 3.76526L11.1579 3.84616M4.84211 3.84616H11.1579" stroke="#C9D1E2" stroke-linejoin="round" />
+<path d="M8 18.4616V7.69232" stroke="white" />
+<path d="M11 18.4616L11.375 13.0769L11.75 7.69232M5 18.4616L4.25 7.69232" stroke="white" />
+</svg>
+								</div>
+							</div>
+						</div>
+						<div class="cat-btns mb-3 auto-slider-js swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a class="cat-btns__btn active" href="#">Стиральные машины <sup>5</sup>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a class="cat-btns__btn" href="#">Сушильные машины <sup>3</sup>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- start sCompare-->
+				<div class="sCompare section" id="sCompare">
+					<div class="container">
+						<div class="sCompare__head">
+							<div class="sCompare__slider sCompare__slider--head-js swiper"><!-- Fixed slide to keep titles aligned. В идеале сюда выводить карточку, в которой больше  всего текста   -->
+								<div class="sCompare__slide sCompare__slide--fixed swiper-slide">
+									<div class="compare-item compare-item--head">
+										<article class="product-item product-item--ac">
+											<div class="product-item__head row">
+												<div class="col">
+													<div class="product-item__promo active">Акция
+													</div>
+												</div>
+												<div class="product-item__head-btns col-auto row">
+													<div class="col-auto">
+														<a class="product-item__head-btn active" href="#">
+															<svg class="icon icon-burger ">
+																<use xlink:href="img/svg/sprite.svg#burger"></use>
+															</svg>
+															<div class="product-item__small-icon">
+																<svg class="icon icon-plus ">
+																	<use xlink:href="img/svg/sprite.svg#plus"></use>
+																</svg>
+																<svg class="icon icon-check ">
+																	<use xlink:href="img/svg/sprite.svg#check"></use>
+																</svg>
+															</div>
+														</a>
+													</div>
+													<div class="col-auto">
+														<a class="product-item__head-btn active" href="#">
+															<svg class="icon icon-heart ">
+																<use xlink:href="img/svg/sprite.svg#heart"></use>
+															</svg>
+														</a>
+													</div>
+												</div>
+											</div>
+											<a class="product-item__img-wrap" href="#">
+												<div class="img-wrap-center"> <img src="img/prod-1.png" alt="" loading="lazy"/>
+												</div>
+											</a>
+											<div class="product-item__caption">
+												<div class="product-item__head">
+													<div class="product-item__price-row d-lg-none">
+														<div class="product-item__price-new">86 900 ₽
+														</div>
+														<div class="product-item__price-old">89 000 ₽
+														</div>
+													</div>
+												</div>
+												<div class="product-item__text">Встраиваемая вытяжка
+												</div>
+												<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+												</div>
+												<div class="product-item__icons row">
+													<div class="product-item__icon product-item__icon--rating col-auto">
+														<svg class="icon icon-star ">
+															<use xlink:href="img/svg/sprite.svg#star"></use>
+														</svg>4.8
+													</div>
+													<div class="product-item__icon product-item__icon--comments col-auto">
+														<svg class="icon icon-chart ">
+															<use xlink:href="img/svg/sprite.svg#chart"></use>
+														</svg>4
+													</div>
+													<div class="product-item__icon product-item__icon--status col-auto">
+														<div class="product-item__ball" style="background: #35BE73">
+														</div>В наличии
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="product-item__price-row d-none d-lg-flex">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="col-auto">
+														<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</article>
+										<!-- /.product-item-->
+									</div>
+								</div>
+								<div class="swiper-wrapper">
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 1">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-1.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 2">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-2.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 3">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-3.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 4">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-4.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 5">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-5.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 6">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-1.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 7">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-2.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 8">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-3.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 9">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-4.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide sCompare__slide--head swiper-slide" style="--order-index: 10">
+										<div class="compare-item compare-item--head">
+											<article class="product-item product-item--ac">
+												<div class="product-item__head row">
+													<div class="col">
+														<div class="product-item__promo active">Акция
+														</div>
+													</div>
+													<div class="product-item__head-btns col-auto row">
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-burger ">
+																	<use xlink:href="img/svg/sprite.svg#burger"></use>
+																</svg>
+																<div class="product-item__small-icon">
+																	<svg class="icon icon-plus ">
+																		<use xlink:href="img/svg/sprite.svg#plus"></use>
+																	</svg>
+																	<svg class="icon icon-check ">
+																		<use xlink:href="img/svg/sprite.svg#check"></use>
+																	</svg>
+																</div>
+															</a>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__head-btn active" href="#">
+																<svg class="icon icon-heart ">
+																	<use xlink:href="img/svg/sprite.svg#heart"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+												</div>
+												<a class="product-item__img-wrap" href="#">
+													<div class="img-wrap-center"> <img src="img/prod-5.png" alt="" loading="lazy"/>
+													</div>
+												</a>
+												<div class="product-item__caption">
+													<div class="product-item__head">
+														<div class="product-item__price-row d-lg-none">
+															<div class="product-item__price-new">86 900 ₽
+															</div>
+															<div class="product-item__price-old">89 000 ₽
+															</div>
+														</div>
+													</div>
+													<div class="product-item__text">Встраиваемая вытяжка
+													</div>
+													<div class="product-item__title"><a class="text-body" href="#"> Asko CC4527S</a>
+													</div>
+													<div class="product-item__icons row">
+														<div class="product-item__icon product-item__icon--rating col-auto">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>4.8
+														</div>
+														<div class="product-item__icon product-item__icon--comments col-auto">
+															<svg class="icon icon-chart ">
+																<use xlink:href="img/svg/sprite.svg#chart"></use>
+															</svg>4
+														</div>
+														<div class="product-item__icon product-item__icon--status col-auto">
+															<div class="product-item__ball" style="background: #35BE73">
+															</div>В наличии
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="product-item__price-row d-none d-lg-flex">
+																<div class="product-item__price-new">86 900 ₽
+																</div>
+																<div class="product-item__price-old">89 000 ₽
+																</div>
+															</div>
+														</div>
+														<div class="col-auto">
+															<a class="product-item__btn btn btn-success btn-circle" href="#"> <span class="d-none d-lg-inline">+</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</article>
+											<!-- /.product-item-->
+											<div class="text-ends"></div>
+											<div class="compare-item__btn-switch-index compare-item__btn-switch-index--js">
+												<svg class="icon icon-change-index ">
+													<use xlink:href="img/svg/sprite.svg#change-index"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sCompare__row-control row">
+							<div class="col">
+								<div class="swiper-scrollbar"></div>
+							</div>
+							<div class="col-auto d-none d-lg-flex">
+								<div class="arrow-wrap">
+									<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+										<svg class="icon icon-chevron-left ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+										</svg>
+									</div>
+									<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+										<svg class="icon icon-chevron-right ">
+											<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sCompare__body">
+							<div class="sCompare__slider sCompare__slider--body-js swiper"><!-- Fixed slide to keep titles aligned. В идеале сюда выводить карточку, в которой больше  всего текста   -->
+								<div class="sCompare__slide sCompare__slide--fixed swiper-slide">
+									<div class="compare-item compare-item--body">
+										<div class="compare-item__group">
+											<div class="compare-item__group-title compare-item__group-title--js visibility-el h4">Основные характеристики
+												<svg class="icon icon-chevron-down ">
+													<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+												</svg>
+											</div>
+											<div class="compare-item__toggle-block">
+												<div class="compare-item__group-sub-title visibility-el">Тип
+												</div>
+												<div class="compare-item__group-text">Бытовая
+												</div>
+												<div class="compare-item__group-sub-title visibility-el">Тип сушки
+												</div>
+												<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+												</div>
+												<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+												</div>
+												<div class="compare-item__group-text">Фронтальная
+												</div>
+												<div class="compare-item__group-sub-title visibility-el">Дверца
+												</div>
+												<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+												</div>
+												<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+												</div>
+												<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+												</div>
+											</div>
+										</div>
+										<div class="compare-item__group">
+											<div class="compare-item__group-title compare-item__group-title--js visibility-el h4">Безопасность
+												<svg class="icon icon-chevron-down ">
+													<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+												</svg>
+											</div>
+											<div class="compare-item__toggle-block">
+												<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+												</div>
+												<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+												</div>
+												<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+												</div>
+												<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-wrapper">
+									<div class="sCompare__slide swiper-slide" style="--order-index: 0">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 1">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 2">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 3">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 4">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 5">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 6">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 7">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 8">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sCompare__slide swiper-slide" style="--order-index: 9">
+										<div class="compare-item compare-item--body">
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Основные характеристики
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Тип
+													</div>
+													<div class="compare-item__group-text">Бытовая
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип сушки
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Тип загрузки
+													</div>
+													<div class="compare-item__group-text">Фронтальная
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Дверца
+													</div>
+													<div class="compare-item__group-text">Фронтальная перенавешиваемаясо стеклом
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"> <img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+												</div>
+											</div>
+											<div class="compare-item__group">
+												<div class="compare-item__group-title compare-item__group-title--js visibility-el h4"><span>Безопасность
+														<svg class="icon icon-chevron-down ">
+															<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+														</svg></span>
+												</div>
+												<div class="compare-item__toggle-block">
+													<div class="compare-item__group-sub-title visibility-el">Подсветка барабана
+													</div>
+													<div class="compare-item__group-text"><img src="img/true.svg" alt=""/><img src="img/false.svg" alt=""/>
+													</div>
+													<div class="compare-item__group-sub-title visibility-el">Подготовлена для подключения к внешним дозировочным системам	
+													</div>
+													<div class="compare-item__group-text">Конденсационная<span class="info-btn ms-1">i</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end sCompare-->
+				<!-- start sAddresses-->
+				<section class="sAddresses section d-md-none" id="sAddresses">
+					<div class="container">
+						<div class="section-title d-none d-lg-block"> 
+							<h2>Фирменные Шоурумы Asko в Москве</h2>
+						</div>
+						<div class="cat-btns d-none d-lg-flex"> 
+							<div class="cat-btns__btn active" style="--icon-color: #894E35"> 
+								<svg class="icon icon-metro ">
+									<use xlink:href="img/svg/sprite.svg#metro"></use>
+								</svg>Курская
+							</div>
+							<div class="cat-btns__btn" style="--icon-color: #40C1F3">
+								<svg class="icon icon-metro ">
+									<use xlink:href="img/svg/sprite.svg#metro"></use>
+								</svg>Кутузовская
+							</div>
+						</div>
+						<div class="sAddresses__block">
+							<div class="sAddresses__head h5">Шоу-рум на Курской
+							</div>
+							<div class="sAddresses__body">
+								<div class="sAddresses__row row">
+									<div class="col-lg-8 order-lg-last">
+										<div class="tabs">
+											<div class="tabs__caption">
+												<div class="tabs__btn active">На карте</div>
+												<div class="tabs__btn">Вход</div>
+												<div class="tabs__btn">Внутри</div>
+												<div class="tabs__btn">3D тур по шоу-руму</div>
+											</div>
+											<div class="tabs__wrap">
+												<div class="tabs__content active">
+													<div class="sAddresses__map">
+														<div id="map" data-mark="img/svg/mark.svg"></div>
+													</div>
+												</div>
+												<div class="tabs__content">2</div>
+												<div class="tabs__content">3</div>
+												<div class="tabs__content">4</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="sAddresses__caption">
+											<div class="sAddresses__group">
+												<div class="small text-secondary mb-4 d-none d-lg-block">Адрес</div>
+												<div>
+													<div class="sAddresses__title" style="--icon-color: #894E35"> 
+														<svg class="icon icon-metro ">
+															<use xlink:href="img/svg/sprite.svg#metro"></use>
+														</svg>Курская
+													</div>
+												</div>
+												<p>г. Москва,  <br> Дмитровское шоссе, д.62, с.5</p>
+												<div class="sAddresses__icons row mb-4">
+													<div class="sAddresses__icon sAddresses__icon--status col-auto">
+														<div class="sAddresses__ball" style="background: #35BE73">
+														</div>Открыт
+													</div>
+													<div class="sAddresses__icon sAddresses__icon--rating col-auto"><img src="img/parking.svg" alt="" loading="lazy"/>Бесплатная парковка
+													</div>
+												</div>
+											</div>
+											<div class="sAddresses__group d-none d-lg-block">
+												<div class="sAddresses__time">
+													<div class="mb-1"><span class="text-secondary">Пн. - пт.: </span>9:00 — 20:00</div>
+													<div class="mb-1"><span class="text-secondary">Сб. - вс.: </span>10:00 — 18:00</div>
+												</div>
+											</div>
+											<div class="sAddresses__group">
+												<div class="mb-4 d-none d-lg-block">
+													<div class="text-secondary mb-1">Телефон</div><a class="text-body h6 fw-400" href="tel:+7(495)120-80-90">+7 (495) 120-80-90 </a>
+												</div>
+												<div class="mb-4 d-lg-none">
+													<div class="text-secondary mb-1">Ежедневно с 10:00 до 21:00</div><a class="text-body h6 fw-400" href="tel:8(495)646-09-31">8 (495) 646-09-31</a>
+												</div>
+												<div class="mb-4 d-lg-none">
+													<div class="text-secondary mb-1">Звонок бесплатный</div><a class="text-body h6 fw-400" href="tel:8(800)555-17-98">8 (800) 555-17-98</a>
+												</div>
+											</div>
+											<div class="sAddresses__group d-none d-lg-block">
+												<div class="text-secondary mb-1">Мессенджеры</div>
+												<a class="sAddresses__chat" href="#"><img src="img/tg.png" alt="" loading="lazy"/>Написать в Telegram
+												</a><br/>
+												<a class="sAddresses__chat" href="#"><img src="img/whatsap.png" alt="" loading="lazy"/>Написать в WhatsApp
+												</a>
+											</div>
+											<a class="sAddresses__btn btn btn-success d-none d-lg-block" href="#">Записаться на показ
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sAddresses-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<!--  start modals-->
+		<div id="modal-call" style="display: none">
+			<div class="modal-win">
+				<div class="form-wrap">
+					<form>
+						<div class="text-center">
+							<div class="form-wrap__title form-data h3 ttu">Обратный звонок
+							</div>
+							<p class="after-headline">Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут</p>
+						</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Ваше Имя" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<button class="form-wrap__btn btn" type="submit">submit
+						</button>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- #modal-call-->
+		<!-- end modals-->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script>
+		<script src="libs/select2/js/i18n/ru.js"> </script>
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script><script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/js/intlTelInput.min.js"></script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

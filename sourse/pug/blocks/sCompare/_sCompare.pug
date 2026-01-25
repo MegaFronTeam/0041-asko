@@ -1,0 +1,95 @@
+mixin sCompare(data)
+	// start sCompare
+	+b.sCompare.section#sCompare&attributes(attributes)
+		.container
+			+e.head
+				+e.slider--head-js.swiper
+					<!-- Fixed slide to keep titles aligned. В идеале сюда выводить карточку, в которой больше  всего текста   -->
+					+e.slide--fixed.swiper-slide
+						+b.compare-item--head
+							+product-item-compare(1)
+					.swiper-wrapper
+						- for (var y = 0; y < 2; y++)
+							- for (var x = 1; x <= 5; x++)
+								+e.slide--head.swiper-slide(style=`--order-index: ${(y*5 + x)}`)
+									+b.compare-item--head
+										+product-item-compare(x)
+										.text-ends
+										+e.btn-switch-index--js
+											+icon("change-index")
+			+e.row-control.row
+				.col
+					.swiper-scrollbar
+				.col-auto.d-none.d-lg-flex
+					.arrow-wrap
+						+arrow
+			+e.body
+				+e.slider--body-js.swiper
+					<!-- Fixed slide to keep titles aligned. В идеале сюда выводить карточку, в которой больше  всего текста   -->
+					+e.slide--fixed.swiper-slide
+						+b.compare-item--body
+							+e.group
+								+e.group-title--js.visibility-el.h4 Основные характеристики
+									+icon("chevron-down")
+								+e.toggle-block
+									+e.group-sub-title.visibility-el Тип
+									+e.group-text Бытовая
+									+e.group-sub-title.visibility-el Тип сушки
+									+e.group-text Конденсационная
+										+info()
+									+e.group-sub-title.visibility-el Тип загрузки
+									+e.group-text Фронтальная
+									+e.group-sub-title.visibility-el Дверца
+									+e.group-text Фронтальная перенавешиваемаясо стеклом
+									+e.group-sub-title.visibility-el Подсветка барабана
+									+e.group-text 
+										img(src="img/true.svg", alt="")
+										img(src="img/false.svg", alt="")
+							+e.group
+								+e.group-title--js.visibility-el.h4 Безопасность
+									+icon("chevron-down")
+								+e.toggle-block
+									+e.group-sub-title.visibility-el Подсветка барабана
+									+e.group-text
+										img(src="img/true.svg", alt="")
+										img(src="img/false.svg", alt="")
+									+e.group-sub-title.visibility-el Подготовлена для подключения к внешним дозировочным системам	
+										
+									+e.group-text Конденсационная
+										+info()
+					.swiper-wrapper
+						- for (var y = 0; y < 2; y++)
+							- for (var x = 0; x < 5; x++)
+								+e.slide.swiper-slide(style=`--order-index: ${(y*5 + x)}`)
+									+b.compare-item--body
+										+e.group
+											+e.group-title--js.visibility-el.h4: span Основные характеристики
+												+icon("chevron-down")
+											+e.toggle-block
+												+e.group-sub-title.visibility-el Тип
+												+e.group-text Бытовая
+												+e.group-sub-title.visibility-el Тип сушки
+												+e.group-text Конденсационная
+													+info()
+												+e.group-sub-title.visibility-el Тип загрузки
+												+e.group-text Фронтальная
+												+e.group-sub-title.visibility-el Дверца
+												+e.group-text Фронтальная перенавешиваемаясо стеклом
+												+e.group-sub-title.visibility-el Подсветка барабана
+												+e.group-text 
+													img(src="img/true.svg", alt="")
+													img(src="img/false.svg", alt="")
+										+e.group
+											+e.group-title--js.visibility-el.h4: span Безопасность
+												+icon("chevron-down")
+											+e.toggle-block
+												+e.group-sub-title.visibility-el Подсветка барабана
+												+e.group-text
+													img(src="img/true.svg", alt="")
+													img(src="img/false.svg", alt="")
+												+e.group-sub-title.visibility-el Подготовлена для подключения к внешним дозировочным системам	
+													
+												+e.group-text Конденсационная
+													+info()
+
+	// end sCompare

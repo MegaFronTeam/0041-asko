@@ -34,7 +34,7 @@ mixin top-nav()
 					+mnu().d-none.d-lg-block
 				+e.col-icons.col-lg-auto
 					+b.icons-block
-						+e.item--search.d-lg-none
+						+e.item.d-lg-none
 							+icon("home")
 						+e.item--catalog-js.d-lg-none.text-primary 
 							+icon("catalog")
@@ -44,9 +44,14 @@ mixin top-nav()
 							+icon("burger")
 						+e.item(href="#").active
 							+icon("basket")
-						+e.item()
+						+e.item--profile-js
 							+icon("profile")
 							ul.aside-menu.cabinet-menu.cabinet-menu--js
+								li.aside-menu__header
+									.topLine__location
+										img(src="img/gerb.svg", alt="")
+										| Москва
+									.h2 Констанин 
 								li
 									a(href="#").active
 										.aside-menu__icon-wrap
@@ -57,6 +62,7 @@ mixin top-nav()
 										.aside-menu__icon-wrap
 											+icon('heart')
 										|  Избранное
+										.aside-menu__count 99
 								li
 									a(href="#")
 										.aside-menu__icon-wrap
@@ -87,6 +93,7 @@ mixin top-nav()
 										.aside-menu__icon-wrap
 											+icon('logout')
 										|  Выйти
+									a(href="#").btn.btn-success Вход или регистрация
 						+e.item
 							<svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<mask id="path-1-inside-1_1549_33813" fill="white">
@@ -111,7 +118,7 @@ mixin top-nav()
 						.row
 							.col-lg-3
 								+e.aside.h4
-									ul
+									ul.catalog-menu-js
 										li: a(href="#")  Техника для кухни
 										li: a(href="#")  Уход за бельем
 										li: a(href="#")  Asko Professional
@@ -120,7 +127,7 @@ mixin top-nav()
 										+mnu()
 							.col-lg-9
 								+e.menu-block
-									- for (var x = 0; x < 3; x++)
+									- for (var x = 0; x < 4; x++)
 										+e.menu-block-item
 											+e.title.d-lg-none.h4.row.mb-4.align-items-center
 												.col

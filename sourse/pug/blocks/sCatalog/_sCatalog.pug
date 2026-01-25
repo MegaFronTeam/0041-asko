@@ -88,6 +88,53 @@ mixin product-item-ac(i, t, p ,pr)
 				span В корзину
 	// /.product-item
 
+mixin product-item-compare(i, t, p ,pr)
+	+b.ARTICLE.product-item--ac
+		+e.head.row
+			.col
+				+e.promo.active Акция
+			+e.head-btns.col-auto.row
+				.col-auto
+					+e.head-btn(href="#").active
+						+icon("burger")
+						+e.small-icon
+							+icon("plus")
+							+icon("check")
+				.col-auto
+					+e.head-btn(href="#").active
+						+icon("heart")
+		+e.img-wrap(href="#")
+			//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
+			.img-wrap-center 
+				+img(`img/prod-${i}.png`)
+		+e.caption
+			+e.head
+				+e.price-row.d-lg-none
+					+e.price-new 86 900 ₽
+					+e.price-old 89 000 ₽
+			+e.text Встраиваемая вытяжка
+			+e.title
+				a.text-body(href="#")  Asko CC4527S
+			+e.icons.row
+				+e.icon--rating.col-auto
+					+icon("star")
+					| 4.8
+				+e.icon--comments.col-auto
+					+icon("chart")
+					| 4
+				+e.icon--status.col-auto
+					+e.ball(style="background: #35BE73")
+					| В наличии
+			.row
+				.col
+					+e.price-row.d-none.d-lg-flex
+						+e.price-new 86 900 ₽
+						+e.price-old 89 000 ₽
+				.col-auto
+					+e.btn.btn.btn-success.btn-circle(href='#') 
+						span.d-none.d-lg-inline +
+	// /.product-item
+
 mixin sCatalog(h2)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)

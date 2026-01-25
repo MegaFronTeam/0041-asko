@@ -1,0 +1,44 @@
+extends ../layout/main.pug
+
+include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCompare/_sCompare.pug
+block variables
+	- let  mainPage= '' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= "06 - cabinet"
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		.section.pb-0
+			.container
+				.row.section-title
+					.col
+						.row
+							.col-auto
+								h1.h2.mb-0 Сравнение
+							.col-auto.mt-2
+								+in-c("checkbox",'Показывать только отличия').custom-input--square
+					.col-auto.align-items-center.mt-2
+						+b.btn-remove-all() Удалить все
+							<svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M2.16667 20L0.5 6.15384H15.5L13.8333 20L2.16667 20Z" fill="#C9D1E2" stroke="#C9D1E2" stroke-linejoin="round" />
+								<path d="M15.5 3.84616H11.1579M0.5 3.84616H4.84211M4.84211 3.84616L4.90853 3.76526C6.50874 1.81628 9.49126 1.81628 11.0915 3.76526L11.1579 3.84616M4.84211 3.84616H11.1579" stroke="#C9D1E2" stroke-linejoin="round" />
+								<path d="M8 18.4616V7.69232" stroke="white" />
+								<path d="M11 18.4616L11.375 13.0769L11.75 7.69232M5 18.4616L4.25 7.69232" stroke="white" />
+							</svg>
+				+b.cat-btns.mb-3.auto-slider-js.swiper
+					.swiper-wrapper
+						.swiper-slide
+							+e.btn.active(href="#") Стиральные машины #[sup 5]
+						.swiper-slide
+							+e.btn(href="#") Сушильные машины #[sup 3]
+		+sCompare
+		+sAddresses.d-md-none
+	+parts('footer')

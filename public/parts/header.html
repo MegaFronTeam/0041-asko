@@ -437,7 +437,7 @@
 				</div>
 				<div class="top-nav__col-icons col-lg-auto">
 					<div class="icons-block">
-						<div class="icons-block__item icons-block__item--search d-lg-none">
+						<div class="icons-block__item d-lg-none">
 							<svg class="icon icon-home ">
 								<use xlink:href="img/svg/sprite.svg#home"></use>
 							</svg>
@@ -462,11 +462,15 @@
 								<use xlink:href="img/svg/sprite.svg#basket"></use>
 							</svg>
 						</a>
-						<div class="icons-block__item">
+						<div class="icons-block__item icons-block__item--profile-js">
 							<svg class="icon icon-profile ">
 								<use xlink:href="img/svg/sprite.svg#profile"></use>
 							</svg>
 							<ul class="aside-menu cabinet-menu cabinet-menu--js">
+								<li class="aside-menu__header">
+									<div class="topLine__location"><img src="img/gerb.svg" alt=""/>Москва</div>
+									<div class="h2">Констанин </div>
+								</li>
 								<li><a class="active" href="#">
 										<div class="aside-menu__icon-wrap">
 											<svg class="icon icon-basket ">
@@ -478,7 +482,8 @@
 											<svg class="icon icon-heart ">
 												<use xlink:href="img/svg/sprite.svg#heart"></use>
 											</svg>
-										</div> Избранное</a></li>
+										</div> Избранное
+										<div class="aside-menu__count">99</div></a></li>
 								<li><a href="#">
 										<div class="aside-menu__icon-wrap">
 											<svg class="icon icon-burger ">
@@ -514,7 +519,7 @@
 											<svg class="icon icon-logout ">
 												<use xlink:href="img/svg/sprite.svg#logout"></use>
 											</svg>
-										</div> Выйти</a></li>
+										</div> Выйти</a><a class="btn btn-success" href="#">Вход или регистрация</a></li>
 							</ul>
 						</div>
 						<div class="icons-block__item"><svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -692,7 +697,7 @@
 						<div class="row">
 							<div class="col-lg-3">
 								<div class="catalog-modal__aside h4">
-									<ul>
+									<ul class="catalog-menu-js">
 										<li><a href="#"> Техника для кухни</a></li>
 										<li><a href="#"> Уход за бельем</a></li>
 										<li><a href="#"> Asko Professional</a></li>
@@ -723,6 +728,107 @@
 							</div>
 							<div class="col-lg-9">
 								<div class="catalog-modal__menu-block">
+									<div class="catalog-modal__menu-block-item">
+										<div class="catalog-modal__title d-lg-none h4 row mb-4 align-items-center">
+											<div class="col"><a class="text-body" href="#"> Техника для кухни</a></div>
+											<div class="col-auto">
+												<div class="catalog-modal__close catalog-modal__close--catalog-mob-js">×
+												</div>
+											</div>
+										</div>
+										<ul>
+											<li>
+												<ul>
+													<li class="menu-title"><a class="h5" href="#">Встраиваемая посудомоечная машина</a>
+														<div class="catalog-modal__menu-img"><img src="img/prod-1.png" alt="" loading="lazy"/>
+														</div>
+													</li>
+												</ul>
+												<ul>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые духовые шкафы</a></li>
+													<li><a href="#"> Встраиваемые варочные панели</a></li>
+													<li><a href="#"> Встраиваемые кофемашины</a></li>
+												</ul>
+											</li>
+											<li>
+												<ul>
+													<li class="menu-title"><a class="h5" href="#">Встраиваемая посудомоечная машина</a>
+														<div class="catalog-modal__menu-img"><img src="img/prod-2.png" alt="" loading="lazy"/>
+														</div>
+													</li>
+												</ul>
+												<ul>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые духовые шкафы</a></li>
+													<li><a href="#"> Встраиваемые варочные панели</a></li>
+													<li><a href="#"> Встраиваемые кофемашины</a></li>
+												</ul>
+											</li>
+											<li>
+												<ul>
+													<li class="menu-title"><a class="h5" href="#">Встраиваемая посудомоечная машина</a>
+														<div class="catalog-modal__menu-img"><img src="img/prod-1.png" alt="" loading="lazy"/>
+														</div>
+													</li>
+												</ul>
+												<ul>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые духовые шкафы</a></li>
+													<li><a href="#"> Встраиваемые варочные панели</a></li>
+													<li><a href="#"> Встраиваемые кофемашины</a></li>
+												</ul>
+											</li>
+											<li>
+												<ul>
+													<li class="menu-title"><a class="h5" href="#">Встраиваемая посудомоечная машина</a>
+														<div class="catalog-modal__menu-img"><img src="img/prod-2.png" alt="" loading="lazy"/>
+														</div>
+													</li>
+												</ul>
+												<ul>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые духовые шкафы</a></li>
+													<li><a href="#"> Встраиваемые варочные панели</a></li>
+													<li><a href="#"> Встраиваемые кофемашины</a></li>
+												</ul>
+											</li>
+											<li>
+												<ul>
+													<li class="menu-title"><a class="h5" href="#">Встраиваемая посудомоечная машина</a>
+														<div class="catalog-modal__menu-img"><img src="img/prod-1.png" alt="" loading="lazy"/>
+														</div>
+													</li>
+												</ul>
+												<ul>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые духовые шкафы</a></li>
+													<li><a href="#"> Встраиваемые варочные панели</a></li>
+													<li><a href="#"> Встраиваемые кофемашины</a></li>
+												</ul>
+											</li>
+											<li>
+												<ul>
+													<li class="menu-title"><a class="h5" href="#">Встраиваемая посудомоечная машина</a>
+														<div class="catalog-modal__menu-img"><img src="img/prod-2.png" alt="" loading="lazy"/>
+														</div>
+													</li>
+												</ul>
+												<ul>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые холодильники</a></li>
+													<li><a href="#"> Встраиваемые духовые шкафы</a></li>
+													<li><a href="#"> Встраиваемые варочные панели</a></li>
+													<li><a href="#"> Встраиваемые кофемашины</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
 									<div class="catalog-modal__menu-block-item">
 										<div class="catalog-modal__title d-lg-none h4 row mb-4 align-items-center">
 											<div class="col"><a class="text-body" href="#"> Техника для кухни</a></div>

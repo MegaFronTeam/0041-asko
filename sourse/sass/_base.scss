@@ -607,3 +607,40 @@ ul {
 		background-color: #f8f9fa;
 	}
 }
+
+.btn-more {
+	color: $body-color;
+	--bs-btn-bg: #fff;
+	width: 220px;
+}
+
+.rew-btn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: $body-color;
+	padding: 18px 20px;
+	.icon {
+		color: $light;
+		font-size: 20px;
+		position: relative;
+		@include mt(1s);
+	}
+	&:hover {
+		.icon {
+			transform: rotateY(1turn);
+		}
+	}
+}
+
+.btn-circle {
+	@include media-breakpoint-up(lg) {
+		width: 48px !important;
+	}
+	// width: 48px !important;
+	aspect-ratio: 1;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -11,4 +11,7 @@
 9. <https://megafronteam.github.io/0041-asko/06-cabinet-2>
 10. <https://megafronteam.github.io/0041-asko/06-cabinet-4>
 11. <https://megafronteam.github.io/0041-asko/07-about>
+12. <https://megafronteam.github.io/0041-asko/08-doc>
+13. <https://megafronteam.github.io/0041-asko/09-rew>
+14. <https://megafronteam.github.io/0041-asko/06-cabinet-3>
 <!-- 5. <https://megafronteam.github.io/0041-asko/00-modal.html> -->
