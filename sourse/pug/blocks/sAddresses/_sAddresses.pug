@@ -17,7 +17,7 @@ mixin sAddresses(data)
 					+e.row.row
 						.col-lg-8.order-lg-last
 							.tabs
-								.tabs__caption
+								.tabs__caption.small
 									.tabs__btn.active На карте
 									.tabs__btn Вход
 									.tabs__btn Внутри
@@ -71,20 +71,20 @@ mixin sAddresses(data)
 						.col-lg-4
 							+e.caption
 								+e.group
-									.small.text-secondary.mb-4.d-none.d-lg-block Адрес
+									.small.text-secondary.mb-3.d-none.d-lg-block Адрес
 									div
 										+e.title(style="--icon-color: #894E35") 
 											+icon("metro")
 											| Курская
-									p г. Москва,  <br> Дмитровское шоссе, д.62, с.5
-									+e.icons.row.mb-4
+									p.mb-1 г. Москва,  <br> Дмитровское шоссе, д.62, с.5
+									+e.icons.row.mb-2.small
 										+e.icon--status.col-auto
 											+e.ball(style="background: #35BE73")
 											| Открыт
 										+e.icon--rating.col-auto
 											+img("img/parking.svg")
 											| Бесплатная парковка
-								+e.group.d-none.d-lg-block
+								+e.group.d-none.d-lg-block.small
 									+e.time
 										.mb-1
 											span.text-secondary Пн. - пт.: 
@@ -94,15 +94,15 @@ mixin sAddresses(data)
 											| 10:00 — 18:00
 								+e.group
 									.mb-4.d-none.d-lg-block
-										.text-secondary.mb-1 Телефон
+										.text-secondary.small Телефон
 										a.text-body.h6.fw-400(href="tel:+7(495)120-80-90") +7 (495) 120-80-90 
 									.mb-4.d-lg-none
-										.text-secondary.mb-1 Ежедневно с 10:00 до 21:00
+										.text-secondary.small Ежедневно с 10:00 до 21:00
 										a.text-body.h6.fw-400(href="tel:8(495)646-09-31") 8 (495) 646-09-31
 									.mb-4.d-lg-none
-										.text-secondary.mb-1 Звонок бесплатный
+										.text-secondary.small Звонок бесплатный
 										a.text-body.h6.fw-400(href="tel:8(800)555-17-98") 8 (800) 555-17-98
-								+e.group.d-none.d-lg-block
+								+e.group.d-none.d-lg-block.small
 									.text-secondary.mb-1 Мессенджеры
 									+e.chat(href="#")
 										+img("img/tg.png")

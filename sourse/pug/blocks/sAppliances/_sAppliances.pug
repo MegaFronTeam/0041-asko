@@ -1,18 +1,17 @@
 mixin sAppliances(data)
 	// start sAppliances
-	+b.SECTION.sAppliances.section#sAppliances&attributes(attributes)
+	+b.SECTION.sAppliances.section#sAppliances&attributes(attributes).d-none.d-lg-block
 		.container
 			+b.section-title
 				h2 Техника Asko
 			+e.slider-wrap
-				+e.slider-gal--js
+				+e.slider-gal--js.swiper
 					.swiper-wrapper
-						+e.slide.swiper-slide.bg-wrap
-							+img("img/gal-slide.jpg")
-						+e.slide.swiper-slide.bg-wrap
-							+img("img/gal-slide.jpg")
+							- for (var x = 0; x < 3; x++)
+								+e.slide.swiper-slide.bg-wrap
+									+img("img/gal-slide.jpg",'bg').img-bg
 				+e.caption
-					+e.slider-caption--js
+					+e.slider-caption--js.swiper
 						.swiper-wrapper
 							- for (var x = 0; x < 3; x++)
 								+e.slide.swiper-slide.bg-wrap

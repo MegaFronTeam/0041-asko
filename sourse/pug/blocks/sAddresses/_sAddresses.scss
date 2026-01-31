@@ -61,7 +61,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 6px;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 		.icon {
 			fill: var(--icon-color);
 		}
@@ -80,7 +80,7 @@
 	}
 
 	&__group {
-		margin-bottom: 30px;
+		margin-bottom: 25px;
 	}
 
 	&__chat {
@@ -96,16 +96,18 @@
 	&__btn {
 		width: 100%;
 		max-width: 260px;
+		margin-top: 40px;
+		padding-block: 10px;
 	}
 
 	.tabs {
 		&__caption {
 			display: flex;
 			@include media-breakpoint-up(sm) {
-				gap: 10px 30px;
+				gap: 10px 25px;
 			}
 			gap: 10px 20px;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 		&__btn {
 			@include mt;

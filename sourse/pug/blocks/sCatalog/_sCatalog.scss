@@ -381,6 +381,13 @@
 	}
 }
 
+.product-item--set {
+	.product-item {
+		&__title--sm {
+			font-size: 14px;
+		}
+	}
+}
 .icon-description {
 	display: flex;
 	flex-wrap: wrap;

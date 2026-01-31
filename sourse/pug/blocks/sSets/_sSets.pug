@@ -34,6 +34,8 @@ mixin sSets(data)
 											+e.head.row
 												.col
 													+e.promo.active Акция
+													+e.promo.active(style="background: linear-gradient(90deg, #fe9901 0%, #2ab8b8 100%);") Доставка завтра
+													+e.promo.active(style="background: linear-gradient(90deg, #2bb8b7 0%, #253abd 100%);") В шоу-руме
 												+e.head-btns.col-auto.row
 													.col-auto
 														+e.head-btn(href="#")
@@ -64,21 +66,20 @@ mixin sSets(data)
 														+icon("star")
 														| 4.8
 													+e.icon--comments.col-auto
-														+icon("chat")
+														+icon("chart")
 														| 4
 													+e.icon--status.col-auto
 														+e.ball(style="background: #35BE73")
 														| В наличии
-												.d-none.d-xl-block.mb-5
-													p Комплект Asko Classic 1 — это отличное решение для тех, кто ценит качество, функциональность и стильный дизайн. Произведенный в Словении, этот комплект обеспечивает все потребности.
-													+e.products.row
+													p.small Комплект Asko Classic 1 — это отличное решение для тех, кто ценит качество, функциональность и стильный дизайн. Произведенный в Словении, этот комплект обеспечивает.
+													+e.products.row.mb-2
 														.col-auto
-															+e.text Стиральная машина
-															+e.title
+															+e.text.mb-1.smallest Стиральная машина
+															+e.title--sm
 																a.text-body(href="#") Asco W2084.W/3
 														.col-auto
-															+e.text Сушильная машина
-															+e.title
+															+e.text.mb-1.smallest Сушильная машина
+															+e.title--sm
 																a.text-body(href="#") Asco T208C. W.
 												+e.footer.row
 													.col.d-xl-block.d-none
@@ -86,7 +87,7 @@ mixin sSets(data)
 															+e.price-row
 																+e.price-new 86 900 ₽
 																+e.price-old 89 000 ₽
-															+e.purchase
+															+e.purchase.mb-2
 																+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
 																+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
 													.col-xl-auto

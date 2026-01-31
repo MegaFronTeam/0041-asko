@@ -6,6 +6,9 @@
 	background-color: #fff;
 	.row {
 		position: relative;
+		@include media-breakpoint-up(lg) {
+			z-index: 101;
+		}
 	}
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(25)};

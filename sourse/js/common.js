@@ -231,6 +231,34 @@ function eventHandler() {
 		},
 	});
 
+	// sAppliances - связанные слайдеры (галерея управляет описанием)
+	const sAppliancesGalSlider = new Swiper(".sAppliances__slider-gal--js", {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: true,
+		// watchSlidesProgress: true,
+	});
+
+	const sAppliancesCaptionSlider = new Swiper(
+		".sAppliances__slider-caption--js",
+		{
+			slidesPerView: 1,
+			spaceBetween: 0,
+			loop: true,
+			navigation: {
+				nextEl: ".sAppliances .swiper-button-next",
+				prevEl: ".sAppliances .swiper-button-prev",
+			},
+			// thumb: {
+			// 	swiper: sAppliancesGalSlider,
+			// },
+		}
+	);
+
+	// Синхронизация слайдеров
+	sAppliancesGalSlider.controller.control = sAppliancesCaptionSlider;
+	sAppliancesCaptionSlider.controller.control = sAppliancesGalSlider;
+
 	const catBtnWrap = document.querySelector(".cat-btns--js");
 
 	if (catBtnWrap) {

@@ -1,38 +1,38 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			.mb-5.d-none.d-md-block
+			+e.logo.d-none.d-md-block
 				a(href="/")
 					+img("img/logo-footer.svg") 
 			.row
 				.col.d-none.d-xl-block
-					.small.text-secondary.mb-3 Каталог
+					.small.text-secondary.mb-2 Каталог
 					ul.h4
 						li: a(href="#")  Техника для кухни
 						li: a(href="#")  Уход за бельем
 						li: a(href="#")  Asko Professional
 						li: a(href="#")  Аксессуары
 				.col
-					.small.text-secondary.mb-3 Специальные предложения
+					.small.text-secondary.mb-2 Специальные предложения
 					ul
 						li: a(href="#") Акции
 						li: a(href="#") Подборки
 						li: a(href="#") Комплекты техники
 						li: a(href="#") Дизайнерские серии
-					.small.text-secondary.mb-3 Как купить
+					.small.text-secondary.mb-2 Как купить
 					ul
 						li: a(href="#") Оплата
 						li: a(href="#") Условия продажи
 						li: a(href="#") Кредит и рассрочка
 						li: a(href="#") Доставка
 				.col
-					.small.text-secondary.mb-3 Компания
+					.small.text-secondary.mb-2 Компания
 					ul
 						li: a(href="#") О компании
 						li: a(href="#") Шоу-рум
 						li: a(href="#") Магазины
 						li: a(href="#") Контакты
-					.small.text-secondary.mb-3 Сервис
+					.small.text-secondary.mb-2 Сервис
 					ul
 						li: a(href="#") Гарантия
 						li: a(href="#") Сервис
@@ -40,7 +40,7 @@ mixin footer()
 						li: a(href="#") Пожаловаться
 				+e.col-contact.col-md
 					.d-none.d-md-block
-						.small.text-secondary.mb-3 Контакты
+						.small.text-secondary.mb-2 Контакты
 						.mb-4
 							.topLine__location
 								img(src="img/gerb.svg", alt="")
@@ -53,7 +53,7 @@ mixin footer()
 						.small.text-secondary.mb-2 Звонок бесплатный
 						a.h4.fw-400(href="tel:8(800)004-0888")  8 (800) 004-0888
 					.mb-4
-						.small.text-secondary.mb-3 Мы в соцсетях
+						.small.text-secondary.mb-2 Мы в соцсетях
 					.mb-4.d-md-none
 						.small.text-secondary.mb-2 Для физических лиц
 						a.h4.fw-400(href="mailto:shop@asko-russia.ru") shop@asko-russia.ru
