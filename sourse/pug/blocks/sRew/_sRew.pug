@@ -8,7 +8,11 @@ mixin sRew(data)
 						h2 Отзывы об интернет-магазине Asko-Shop
 					.col-auto.d-none.d-md-block
 						a(href="#") Все отзывы о нас
-				
+			
+			.d-md-none
+				+b.card.card--link(href="#").mb-3.p-3
+					span.col Оставить отзыв о магазине
+					+icon("chart").m-0
 			+e.slider--js.swiper
 				.swiper-wrapper
 					- for (var x = 0; x < 6; x++)

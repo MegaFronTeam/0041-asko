@@ -1,0 +1,135 @@
+extends ../layout/main.pug
+
+include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCart/_sCart.pug
+include ../blocks/sCabinetAside/_sCabinetAside.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sRew/_sRew.pug
+block variables
+	- let  mainPage= '' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= "10 - Contact"
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		.section.pb-0
+			.container
+				h1.h2  Контактная информация
+		.section
+			.container
+				.row
+					.col-xl-9.col-lg-8
+						.card(style="margin-bottom: 1px;")
+							.row.mb-3.gy-4
+								.col
+									.topLine__location.h5.fw-400
+										img(src="img/gerb.svg", alt="")
+										| Москва
+								.col-xl-8
+									.text-secondary.small.mb-3 Сотрудники отдела поддержки клиентов asko-shop. ru рассматривают любой вопрос по заказу. Пожалуйста, свяжитесь с нами, если у вас возникнут претензии или предложения.
+									.row.gy-3
+										.col-md-6
+											.text-secondary.small Звонок бесплатный
+											a.text-body.h4.fw-400(href="tel:8 (800) 555-17-98")  8 (800) 555-17-98
+										.col-md-6
+											.text-secondary.small Отвечаем в течение дня
+											a.text-body.h4.fw-400(href="mailto:info@asko-market.ru")  info@asko-market.ru
+										.col-md-6
+											.text-secondary.small Ежедневно с 10:00 до 21:00
+											a.text-body.h4.fw-400(href="tel:8 (495) 646-09-31")  8 (495) 646-09-31
+						.card(style="margin-bottom: 1px;")
+							.row
+								.col-auto.small.text-secondary Мы в соцсетях
+								.col
+					.col
+						+sContentForm()
+		.row
+			.col-12
+				+sRew()
+				+b.sContact.section
+					.container
+						.row.gy-5.mb-5
+							+e.col.col-xl-6
+								h4.mb-3 Реквизиты
+								.card
+									table
+										tr
+											td.text-secondary Название
+											td ООО «Техносадов»
+											
+										tr
+											td.text-secondary Юр. адрес:
+											td 127474 г. Москва, ш. Дмитровское, д.62, строение 5, этаж 1, помещение X, офис 1
+										tr
+											td.text-secondary ОГРН
+											td 1187746800845
+										tr
+											td.text-secondary ИНН
+											td 7743273314
+										tr
+											td.text-secondary КПП
+											td 164785678
+										tr
+											td.text-secondary Банк
+											td Филиал №7701 Банка ВТБ (ПАО) г. Москва
+										tr
+											td.text-secondary Расч. счет
+											td 40702810037100000151
+										tr
+											td.text-secondary Корр. счет
+											td 30101810345250000745
+										tr
+											td.text-secondary БИК
+											td 044525745
+
+
+
+
+							+e.col.col-xl-6
+								h4.mb-3 Обратная связь
+								+form-wrap.card
+									.row
+										.col
+											label Ваше сообщение
+												sup.text-danger *
+										.col-9
+											+input("",'textarea')
+									.row
+										.col
+											label Имя
+												sup.text-danger *
+										.col-9
+											+input("",'text')
+									.row
+										.col
+											label E-mail
+												sup.text-danger *
+										.col-9
+											+input("",'email')
+									.row
+										.col
+											label Телефон
+												sup.text-danger *
+										.col-9
+											+input("",'tel')
+									.row
+										.col
+										.col-9
+											.row
+												.col
+													.small Нажимая кнопку «Заказать звонок» вы соглашаетесь с  
+														a(href="#") Политикой обработки персональных данных.
+												.col
+													button.btn.btn-success(type="submit" disabled).w-100.mb-2 Отправить
+
+
+			.col-12.order-md-first
+				+sAddresses
+	+parts('footer')

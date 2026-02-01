@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>10 - Contact</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/css/intlTelInput.css">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<div class="section pb-0">
+					<div class="container">
+						<h1 class="h2"> Контактная информация</h1>
+					</div>
+				</div>
+				<div class="section">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-9 col-lg-8">
+								<div class="card" style="margin-bottom: 1px;">
+									<div class="row mb-3 gy-4">
+										<div class="col">
+											<div class="topLine__location h5 fw-400"><img src="img/gerb.svg" alt="">Москва</div>
+										</div>
+										<div class="col-xl-8">
+											<div class="text-secondary small mb-3">Сотрудники отдела поддержки клиентов asko-shop. ru рассматривают любой вопрос по заказу. Пожалуйста, свяжитесь с нами, если у вас возникнут претензии или предложения.</div>
+											<div class="row gy-3">
+												<div class="col-md-6">
+													<div class="text-secondary small">Звонок бесплатный</div><a class="text-body h4 fw-400" href="tel:8 (800) 555-17-98"> 8 (800) 555-17-98</a>
+												</div>
+												<div class="col-md-6">
+													<div class="text-secondary small">Отвечаем в течение дня</div><a class="text-body h4 fw-400" href="mailto:info@asko-market.ru"> info@asko-market.ru</a>
+												</div>
+												<div class="col-md-6">
+													<div class="text-secondary small">Ежедневно с 10:00 до 21:00</div><a class="text-body h4 fw-400" href="tel:8 (495) 646-09-31"> 8 (495) 646-09-31</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card" style="margin-bottom: 1px;">
+									<div class="row">
+										<div class="col-auto small text-secondary">Мы в соцсетях</div>
+										<div class="col"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-wrap card mb-4">
+									<form>
+										<p>Бесплатная консультация</p>
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="+7 916 176-05-12"/>
+										</div>
+										<!-- +e.input-wrap-->
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Имя*"/>
+										</div>
+										<!-- +e.input-wrap-->
+										<button class="btn btn-success w-100 mb-2" type="submit" disabled="disabled">Отправить</button>
+										<div class="small text-secondary">Нажимая кнопку «Заказать звонок» вы соглашаетесь с  <a href="#">Политикой обработки персональных данных.</a></div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<!-- start sRew-->
+						<section class="sRew section" id="sRew">
+							<div class="container">
+								<div class="section-title">
+									<div class="row">
+										<div class="col">
+											<h2>Отзывы об интернет-магазине Asko-Shop</h2>
+										</div>
+										<div class="col-auto d-none d-md-block"><a href="#">Все отзывы о нас</a></div>
+									</div>
+								</div>
+								<div class="d-md-none">
+									<a class="card card card--link mb-3 p-3" href="#"><span class="col">Оставить отзыв о магазине</span>
+										<svg class="icon icon-chart  m-0">
+											<use xlink:href="img/svg/sprite.svg#chart"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="sRew__slider sRew__slider--js swiper">
+									<div class="swiper-wrapper">
+										<div class="sRew__slide swiper-slide">
+											<div class="rew-item card">
+												<div class="small text-secondary">11.05.2025</div>
+												<div class="row mb-3">
+													<div class="col">Соня</div>
+													<div class="col-auto">
+														<div class="stars-block" data-star="4">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+														</div>
+													</div>
+												</div>
+												<div class="rew-item__caption">
+													<p>Сейчас сложно найти технику из Европы, и Аско приятная неожиданность. У меня на старой квартире была варочная панель Аско, я еще узнала, что это мужское имя и в переводе означает "Ясень". Мы дома </p>
+												</div>
+												<div class="text-end"><a href="#">Отзыв полностью</a></div>
+											</div>
+										</div>
+										<div class="sRew__slide swiper-slide">
+											<div class="rew-item card">
+												<div class="small text-secondary">11.05.2025</div>
+												<div class="row mb-3">
+													<div class="col">Соня</div>
+													<div class="col-auto">
+														<div class="stars-block" data-star="4">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+														</div>
+													</div>
+												</div>
+												<div class="rew-item__caption">
+													<p>Сейчас сложно найти технику из Европы, и Аско приятная неожиданность. У меня на старой квартире была варочная панель Аско, я еще узнала, что это мужское имя и в переводе означает "Ясень". Мы дома </p>
+												</div>
+												<div class="text-end"><a href="#">Отзыв полностью</a></div>
+											</div>
+										</div>
+										<div class="sRew__slide swiper-slide">
+											<div class="rew-item card">
+												<div class="small text-secondary">11.05.2025</div>
+												<div class="row mb-3">
+													<div class="col">Соня</div>
+													<div class="col-auto">
+														<div class="stars-block" data-star="4">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+														</div>
+													</div>
+												</div>
+												<div class="rew-item__caption">
+													<p>Сейчас сложно найти технику из Европы, и Аско приятная неожиданность. У меня на старой квартире была варочная панель Аско, я еще узнала, что это мужское имя и в переводе означает "Ясень". Мы дома </p>
+												</div>
+												<div class="text-end"><a href="#">Отзыв полностью</a></div>
+											</div>
+										</div>
+										<div class="sRew__slide swiper-slide">
+											<div class="rew-item card">
+												<div class="small text-secondary">11.05.2025</div>
+												<div class="row mb-3">
+													<div class="col">Соня</div>
+													<div class="col-auto">
+														<div class="stars-block" data-star="4">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+														</div>
+													</div>
+												</div>
+												<div class="rew-item__caption">
+													<p>Сейчас сложно найти технику из Европы, и Аско приятная неожиданность. У меня на старой квартире была варочная панель Аско, я еще узнала, что это мужское имя и в переводе означает "Ясень". Мы дома </p>
+												</div>
+												<div class="text-end"><a href="#">Отзыв полностью</a></div>
+											</div>
+										</div>
+										<div class="sRew__slide swiper-slide">
+											<div class="rew-item card">
+												<div class="small text-secondary">11.05.2025</div>
+												<div class="row mb-3">
+													<div class="col">Соня</div>
+													<div class="col-auto">
+														<div class="stars-block" data-star="4">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+														</div>
+													</div>
+												</div>
+												<div class="rew-item__caption">
+													<p>Сейчас сложно найти технику из Европы, и Аско приятная неожиданность. У меня на старой квартире была варочная панель Аско, я еще узнала, что это мужское имя и в переводе означает "Ясень". Мы дома </p>
+												</div>
+												<div class="text-end"><a href="#">Отзыв полностью</a></div>
+											</div>
+										</div>
+										<div class="sRew__slide swiper-slide">
+											<div class="rew-item card">
+												<div class="small text-secondary">11.05.2025</div>
+												<div class="row mb-3">
+													<div class="col">Соня</div>
+													<div class="col-auto">
+														<div class="stars-block" data-star="4">
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+															<svg class="icon icon-star ">
+																<use xlink:href="img/svg/sprite.svg#star"></use>
+															</svg>
+														</div>
+													</div>
+												</div>
+												<div class="rew-item__caption">
+													<p>Сейчас сложно найти технику из Европы, и Аско приятная неожиданность. У меня на старой квартире была варочная панель Аско, я еще узнала, что это мужское имя и в переводе означает "Ясень". Мы дома </p>
+												</div>
+												<div class="text-end"><a href="#">Отзыв полностью</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sRew__row-control row">
+									<div class="col">
+										<div class="swiper-pagination"></div>
+									</div>
+									<div class="col-auto d-none d-md-block">
+										<div class="arrow-wrap">
+											<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+												<svg class="icon icon-chevron-left ">
+													<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+												</svg>
+											</div>
+											<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+												<svg class="icon icon-chevron-right ">
+													<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto d-md-none"><a href="#">Все отзывы о нас</a></div>
+								</div>
+							</div>
+						</section>
+						<!-- end sRew-->
+						<div class="sContact section">
+							<div class="container">
+								<div class="row gy-5 mb-5">
+									<div class="sContact__col col-xl-6">
+										<h4 class="mb-3">Реквизиты</h4>
+										<div class="card">
+											<table>
+												<tr>
+													<td class="text-secondary">Название</td>
+													<td>ООО «Техносадов»</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">Юр. адрес:</td>
+													<td>127474 г. Москва, ш. Дмитровское, д.62, строение 5, этаж 1, помещение X, офис 1</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">ОГРН</td>
+													<td>1187746800845</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">ИНН</td>
+													<td>7743273314</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">КПП</td>
+													<td>164785678</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">Банк</td>
+													<td>Филиал №7701 Банка ВТБ (ПАО) г. Москва</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">Расч. счет</td>
+													<td>40702810037100000151</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">Корр. счет</td>
+													<td>30101810345250000745</td>
+												</tr>
+												<tr>
+													<td class="text-secondary">БИК</td>
+													<td>044525745</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="sContact__col col-xl-6">
+										<h4 class="mb-3">Обратная связь</h4>
+										<div class="form-wrap card">
+											<form>
+												<div class="row">
+													<div class="col">
+														<label>Ваше сообщение<sup class="text-danger">*</sup></label>
+													</div>
+													<div class="col-9">
+														<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" name="textarea" placeholder=""></textarea>
+														</div>
+														<!-- +e.input-wrap-->
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<label>Имя<sup class="text-danger">*</sup></label>
+													</div>
+													<div class="col-9">
+														<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder=""/>
+														</div>
+														<!-- +e.input-wrap-->
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<label>E-mail<sup class="text-danger">*</sup></label>
+													</div>
+													<div class="col-9">
+														<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="email" name="email" type="email" placeholder=""/>
+														</div>
+														<!-- +e.input-wrap-->
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<label>Телефон<sup class="text-danger">*</sup></label>
+													</div>
+													<div class="col-9">
+														<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder=""/>
+														</div>
+														<!-- +e.input-wrap-->
+													</div>
+												</div>
+												<div class="row">
+													<div class="col"></div>
+													<div class="col-9">
+														<div class="row">
+															<div class="col">
+																<div class="small">Нажимая кнопку «Заказать звонок» вы соглашаетесь с  <a href="#">Политикой обработки персональных данных.</a></div>
+															</div>
+															<div class="col">
+																<button class="btn btn-success w-100 mb-2" type="submit" disabled>Отправить</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 order-md-first">
+						<!-- start sAddresses-->
+						<section class="sAddresses section" id="sAddresses">
+							<div class="container">
+								<div class="section-title d-none d-lg-block"> 
+									<h2>Фирменные Шоурумы Asko в Москве</h2>
+								</div>
+								<div class="cat-btns d-none d-lg-flex"> 
+									<div class="cat-btns__btn active" style="--icon-color: #894E35"> 
+										<svg class="icon icon-metro ">
+											<use xlink:href="img/svg/sprite.svg#metro"></use>
+										</svg>Курская
+									</div>
+									<div class="cat-btns__btn" style="--icon-color: #40C1F3">
+										<svg class="icon icon-metro ">
+											<use xlink:href="img/svg/sprite.svg#metro"></use>
+										</svg>Кутузовская
+									</div>
+								</div>
+								<div class="sAddresses__block">
+									<div class="sAddresses__head h5">Шоу-рум на Курской
+									</div>
+									<div class="sAddresses__body">
+										<div class="sAddresses__row row">
+											<div class="col-lg-8 order-lg-last">
+												<div class="tabs">
+													<div class="tabs__caption small">
+														<div class="tabs__btn active">На карте</div>
+														<div class="tabs__btn">Вход</div>
+														<div class="tabs__btn">Внутри</div>
+														<div class="tabs__btn">3D тур по шоу-руму</div>
+													</div>
+													<div class="tabs__wrap">
+														<div class="tabs__content active">
+															<div class="sAddresses__map">
+																<div id="map" data-mark="img/svg/mark.svg"></div>
+															</div>
+														</div>
+														<div class="tabs__content">2</div>
+														<div class="tabs__content">3</div>
+														<div class="tabs__content">4</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-4">
+												<div class="sAddresses__caption">
+													<div class="sAddresses__group">
+														<div class="small text-secondary mb-3 d-none d-lg-block">Адрес</div>
+														<div>
+															<div class="sAddresses__title" style="--icon-color: #894E35"> 
+																<svg class="icon icon-metro ">
+																	<use xlink:href="img/svg/sprite.svg#metro"></use>
+																</svg>Курская
+															</div>
+														</div>
+														<p class="mb-1">г. Москва,  <br> Дмитровское шоссе, д.62, с.5</p>
+														<div class="sAddresses__icons row mb-2 small">
+															<div class="sAddresses__icon sAddresses__icon--status col-auto">
+																<div class="sAddresses__ball" style="background: #35BE73">
+																</div>Открыт
+															</div>
+															<div class="sAddresses__icon sAddresses__icon--rating col-auto"><img src="img/parking.svg" alt="" loading="lazy"/>Бесплатная парковка
+															</div>
+														</div>
+													</div>
+													<div class="sAddresses__group d-none d-lg-block small">
+														<div class="sAddresses__time">
+															<div class="mb-1"><span class="text-secondary">Пн. - пт.: </span>9:00 — 20:00</div>
+															<div class="mb-1"><span class="text-secondary">Сб. - вс.: </span>10:00 — 18:00</div>
+														</div>
+													</div>
+													<div class="sAddresses__group">
+														<div class="mb-4 d-none d-lg-block">
+															<div class="text-secondary small">Телефон</div><a class="text-body h6 fw-400" href="tel:+7(495)120-80-90">+7 (495) 120-80-90 </a>
+														</div>
+														<div class="mb-4 d-lg-none">
+															<div class="text-secondary small">Ежедневно с 10:00 до 21:00</div><a class="text-body h6 fw-400" href="tel:8(495)646-09-31">8 (495) 646-09-31</a>
+														</div>
+														<div class="mb-4 d-lg-none">
+															<div class="text-secondary small">Звонок бесплатный</div><a class="text-body h6 fw-400" href="tel:8(800)555-17-98">8 (800) 555-17-98</a>
+														</div>
+													</div>
+													<div class="sAddresses__group d-none d-lg-block small">
+														<div class="text-secondary mb-1">Мессенджеры</div>
+														<a class="sAddresses__chat" href="#"><img src="img/tg.png" alt="" loading="lazy"/>Написать в Telegram
+														</a><br/>
+														<a class="sAddresses__chat" href="#"><img src="img/whatsap.png" alt="" loading="lazy"/>Написать в WhatsApp
+														</a>
+													</div>
+													<a class="sAddresses__btn btn btn-success d-none d-lg-block" href="#">Записаться на показ
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- end sAddresses-->
+					</div>
+				</div>
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<!--  start modals-->
+		<div id="modal-call" style="display: none">
+			<div class="modal-win">
+				<div class="form-wrap">
+					<form>
+						<div class="text-center">
+							<div class="form-wrap__title form-data h3 ttu">Обратный звонок
+							</div>
+							<p class="after-headline">Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут</p>
+						</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Ваше Имя" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Ваше телефон" required="required"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<button class="form-wrap__btn btn" type="submit">submit
+						</button>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+						<div class="form-wrap__policy">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- #modal-call-->
+		<!-- end modals-->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script>
+		<script src="libs/select2/js/i18n/ru.js"> </script>
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script><script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24/build/js/intlTelInput.min.js"></script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

@@ -1,13 +1,13 @@
 //- svg-sprite
 mixin icon(name,mod)
 	- mod = mod || ''
-	svg(class="icon icon-" + name + ' ' + mod)
+	svg(class="icon icon-" + name + ' ' + mod)&attributes(attributes)
 		use(xlink:href="img/svg/sprite.svg#" + name)
 //-/ svg-sprite
 
 //- svg-sprite
 mixin iconC(name,mod)
 	- mod = mod || ''
-	svg(class="iconC iconC-" + name + ' ' + mod)
+	svg(class="iconC iconC-" + name + ' ' + mod)&attributes(attributes)
 		use(xlink:href="img/svg/spriteC.svg#" + name)
 //-/ svg-sprite
