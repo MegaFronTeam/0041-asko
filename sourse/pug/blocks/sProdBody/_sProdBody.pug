@@ -77,7 +77,36 @@ mixin sProdBody(data)
 				.col.section.d-none.d-xl-block
 					+b.section-title
 							h4 Шоурум
-							.card.mb-5
+							.card.mb-5.p-0
+								.card__head.bg-wrap
+									+img("img/about.jpg",'bg').img-bg
+								.card__body
+									div
+										.sAddresses__title(style="--icon-color: #894E35") 
+											+icon("metro")
+											| Курская
+									p.mb-1 г. Москва,  <br> Дмитровское шоссе, д.62, с.5
+									.sAddresses__icons.row.mb-2.smallest
+										.sAddresses__icon.sAddresses__icon--status.col-auto
+											.sAddresses__ball(style="background: #35BE73")
+											| Открыт
+										.sAddresses__icon.sAddresses__icon--rating.col-auto
+											+img("img/parking.svg")
+											| Бесплатная парковка
+									.sAddresses__group.d-none.d-lg-block.small
+										.sAddresses__time
+											.mb-1
+												span.text-secondary Пн. - пт.: 
+												| 9:00 — 20:00
+											.mb-1
+												span.text-secondary Сб. - вс.: 
+												| 10:00 — 18:00
+									.sAddresses__group
+											a.text-body.h6.fw-400(href="tel:8(495)646-09-31") 8 (495) 646-09-31
+											br
+											a.text-body.h6.fw-400(href="mailto:info@tehnosadov.ru") info@tehnosadov.ru
+									a.sAddresses__btn.btn.btn-success(href="#").mt-0 Записаться на показ
+
 							a.card.p-0.mb-5.d-block.ovh(data-fancybox href="img/sert.jpg" data-caption="Сертификат")
 								+img("img/sert.jpg").res-i
 					+b.section-title
@@ -113,4 +142,5 @@ mixin sProdBody(data)
 										.col-lg-auto.text-primary Ответ:
 										.col 
 											p Добрый день! Сыпучий порошок и гель для стирки можно заливать в кювету, где указан значок корзины с 2-мя вертикальными палочками. Только, если вы будете использовать гель, то нужно заливать его в выдвинутую специальную шторку в этой кювете. Кондиционер для белья используется в кювете со значком «Цветочек».
+			+sReviews2
 	// end sProdBody

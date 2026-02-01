@@ -659,3 +659,30 @@
 		margin-left: auto;
 	}
 }
+
+.product-item--rew {
+	box-shadow: none;
+	border: 0.5px solid #c9d1e2;
+	@include media-breakpoint-up(md) {
+		padding: 15px;
+	}
+	.product-item {
+		&__purchase {
+			width: auto;
+			align-self: flex-end;
+			margin-bottom: rem(15);
+			margin-left: 20px;
+		}
+		&__icons {
+			margin-bottom: 0;
+		}
+		&__img-wrap {
+			aspect-ratio: 180/155;
+			margin-bottom: 10px;
+		}
+	}
+	.product-item__promo {
+		padding: 1px 4px;
+		line-height: 1.2;
+	}
+}

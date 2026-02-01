@@ -1,5 +1,36 @@
 include ../sSets/_sSets.pug
 
+mixin product-item-rew(i, t, p ,pr)
+	+b.ARTICLE.product-item--rew
+		+e.head.row
+			.col
+				+e.promo.active Акция
+		+e.img-wrap(href="#")
+			.img-wrap-center 
+				+img(`img/prod-${i}.png`)
+		+e.caption
+			+e.head.row
+				+e.price-row.d-block.col-auto
+					+e.price-old 89 000 ₽
+					+e.price-new 86 900 ₽
+				+e.purchase.col-auto
+					+e.purchase-img-wrap: img(src="img/purchase-i-1.png", alt="")
+					+e.purchase-img-wrap: img(src="img/purchase-i-2.svg", alt="")
+			+e.text.smallest.mb-0 Встраиваемая вытяжка
+			+e.title
+				a.text-body(href="#")  Asko CC4527S
+			+e.icons.row.mb-0.gx-2
+				+e.icon--rating.col-auto
+					+icon("star")
+					| 4.8
+				+e.icon--comments.col-auto
+					+icon("chart")
+					| 4
+				+e.icon--status.col-auto
+					+e.ball(style="background: #35BE73")
+					| В наличии
+	// /.product-item
+
 mixin product-item(i, t, p ,pr)
 	+b.ARTICLE.product-item
 		+e.head.row
@@ -208,7 +239,7 @@ mixin sCatalogAccessories03(h2)
 						h4.mb-0 Аксессуары
 					.col-auto.d-none.d-xl-block
 						a(href="#") Все аксессуары
-			+e.slider--2js.swiper.auto-slider-js
+			+e.slider--2js.swiper
 				.swiper-wrapper
 					- const wrapClass="swiper-slide"
 					+e.col--slide(class= wrapClass)

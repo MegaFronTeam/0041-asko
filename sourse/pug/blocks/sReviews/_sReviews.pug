@@ -2,8 +2,142 @@ mixin sReviews(data)
 	// start sReviews
 	+b.SECTION.sReviews.section#sReviews&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sReviews
-				
-			+e.row.row
+			+b.section-title
+				.row
+					.col
+						h2 Отзывы о товарах Asko
+					.col-auto.d-none.d-md-block
+						a(href="#") Все отзывы
+			.d-md-none
+				+b.card.card--link(href="#").mb-3.p-3
+					span.col Оставить отзыв
+					+icon("chart").m-0
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 1; x < 4; x++)
+						+e.slide.swiper-slide
+							+b.rew-item-prod.card
+								.d-none.d-md-block
+									+product-item-rew(x)
+								+b.rew-item
+									.small.text-secondary 11.05.2025
+									.h6.fw-400 Соня
+									+b.stars-block(data-star="4")
+										+icon("star")
+										+icon("star")
+										+icon("star")
+										+icon("star")
+										+icon("star")
+									.d-md-none
+										.small.text-secondary Модель
+										.prod-head.mb-2
+											+img(`img/prod-${x}.png`)
+											div.mt-1
+												.small.text-secondary Модель
+												| Asko CC4527S
+									.small.text-secondary Достоинства
+									p Цена и качество сборки
+									.small.text-secondary Недостатки
+									p Пока нет 
+									.small.text-secondary Отзыв
+									+e.caption
+										p Варочная панель Asko HI1995G стала отличным подарком для моей супруги на годовщину. Она давно хотела обновить нашу кухню, и этот подарок оказался именно тем
+									.d-md-none
+										.small.text-secondary Фото и видео
+										.prod-head.mb-2
+											+img(`img/prod-${x}.png`)
+											+img(`img/prod-${x}.png`)
+											+img(`img/prod-${x}.png`)
+										//- .text-end
+										//- 	a(href="#") Отзыв полностью
+			+e.row-control.row
+				.col
+					.swiper-pagination
+				.col-auto.d-none.d-md-block
+					.arrow-wrap
+						+arrow
+				.col-auto.d-md-none
+					a(href="#") Все отзывы
+	// end sReviews
+mixin sReviews2(data)
+	// start sReviews
+	+b.SECTION.sReviews.section#sReviews&attributes(attributes)
+		.container
+			+b.section-title
+				h4 Отзывы о товаре Аско WMC6743PB.T
+			.row
+				.col.order-xl-last
+					.card.text-white(style="background: linear-gradient(135deg, #437663 0%, #73864d 100%);").mb-3.p-3
+						.h5.fw-400 Средняя оценка
+						.star-result
+							+icon("star")
+							| 4.8
+					a.card.card--link(href="#").d-none.d-md-block.mb-3.p-3
+						.h5.fw-400 Все отзывы о товаре
+						.prod-head.mb-2
+							+img(`img/prod-1.png`)
+							div.mt-1
+								.small.text-secondary Встраиваемая посудомоечная машина
+								.h6.fw-400 Asko CC4527S
+
+					+b.card.card--link(href="#").mb-3.p-3
+						span.col Оставить отзыв
+						+icon("chart").m-0
+				.col-xxl-9.col-xl-8
+					+e.inner
+						+e.slider--2js.swiper
+							.swiper-wrapper
+								- for (var x = 1; x < 4; x++)
+									+e.slide.swiper-slide
+										+b.rew-item-prod.p-0.d-block
+
+											+e.head.mb-3.d-none.d-md-block
+												.h5.text-primary.fw-400  Фото и видео покупателей
+												.prod-head.mb-2
+													+img(`img/prod-${x}.png`)
+													+img(`img/prod-${x}.png`)
+													+img(`img/prod-${x}.png`)
+											+b.rew-item
+												.small.text-secondary 11.05.2025
+												.row
+													.col-xl-3
+														.h6.fw-400 Соня
+													.col
+														+b.stars-block(data-star="4")
+															+icon("star")
+															+icon("star")
+															+icon("star")
+															+icon("star")
+															+icon("star")
+												.row
+													.col-xl-3
+														.small.text-secondary Достоинства
+													.col
+														p Цена и качество сборки
+												.row
+													.col-xl-3
+														.small.text-secondary Недостатки
+													.col
+														p Пока нет 
+												.row
+													.col-xl-3
+														.small.text-secondary Отзыв
+													.col
+														p Варочная панель Asko HI1995G стала отличным подарком для моей супруги на годовщину. Она давно хотела обновить нашу кухню, и этот подарок оказался именно тем
+												.d-md-none
+													.small.text-secondary Фото и видео
+													.prod-head.mb-2
+														+img(`img/prod-${x}.png`)
+														+img(`img/prod-${x}.png`)
+														+img(`img/prod-${x}.png`)
+													//- .text-end
+													//- 	a(href="#") Отзыв полностью
+						+e.row-control.row
+							.col
+								.swiper-pagination
+							.col-auto.d-none.d-md-block
+								.arrow-wrap
+									+arrow
+							.col-auto.d-md-none
+								a(href="#") Все отзывы
 	// end sReviews

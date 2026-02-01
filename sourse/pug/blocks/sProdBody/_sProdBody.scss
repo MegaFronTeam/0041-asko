@@ -76,6 +76,9 @@
 		}
 	}
 
+	&__inner {
+		max-width: 780px;
+	}
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {

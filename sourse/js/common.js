@@ -109,8 +109,6 @@ function eventHandler() {
 				el: el.querySelector(" .swiper-pagination"),
 				type: "bullets",
 				clickable: true,
-				// renderBullet: function (index, className) {
-				// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
 				// }
 			},
 		});
@@ -522,6 +520,48 @@ function eventHandler() {
 	// Sync sliders
 	compareHeadSlider.controller.control = compareBodySlider;
 	compareBodySlider.controller.control = compareHeadSlider;
+
+	const swiper222 = document.querySelector(".sReviews__slider--js");
+	new Swiper(swiper222, {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		breakpoints: {
+			1200: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+		},
+		navigation: {
+			nextEl: ".sReviews .swiper-button-next",
+			prevEl: ".sReviews .swiper-button-prev",
+		},
+		pagination: {
+			el: ".sReviews .swiper-pagination",
+			type: "bullets",
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+	});
+
+	const swiper222ww = document.querySelector(".sReviews__slider--2js");
+	new Swiper(swiper222ww, {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		navigation: {
+			nextEl: ".sReviews .swiper-button-next",
+			prevEl: ".sReviews .swiper-button-prev",
+		},
+		pagination: {
+			el: ".sReviews .swiper-pagination",
+			type: "bullets",
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+	});
 
 	$(".compare-item").on("click", ".compare-item__group-title--js", function () {
 		$(this).toggleClass("active");

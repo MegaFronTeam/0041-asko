@@ -492,6 +492,13 @@ h2,
 	&__foot {
 		padding: var(--sp);
 	}
+	&__head.bg-wrap {
+		aspect-ratio: 3 /2;
+		border-radius: inherit;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		overflow: hidden;
+	}
 }
 
 ul {
