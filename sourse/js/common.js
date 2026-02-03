@@ -9,12 +9,49 @@ function eventHandler() {
 
 	function whenResize() {
 		JSCCommon.setFixedNav();
+		setCatalogModalHeight();
+	}
+
+	function setCatalogModalHeight() {
+		const catalogModalGroup = document.querySelector(
+			".catalog-modal__group--menu"
+		);
+
+		if (
+			!catalogModalGroup ||
+			!document.querySelector(".catalog-modal").classList.contains("active")
+		) {
+			return;
+		}
+
+		const promo = document.querySelector(".catalog-modal__group--promo");
+		const topNav = document.querySelector(".top-nav");
+		const topLine = document.querySelector(".topLine");
+		const windowHeight = window.innerHeight;
+
+		let offset = 0;
+		offset += promo ? promo.offsetHeight : 0;
+		if (topNav) {
+			offset += topNav.offsetHeight;
+
+			// Если top-nav не имеет класс fixed, добавляем высоту topLine
+			if (!topNav.classList.contains("fixed") && topLine) {
+				offset += topLine.offsetHeight;
+			}
+		}
+
+		const newHeight = offset;
+		catalogModalGroup.style.setProperty(
+			"--catalog-modal-offset",
+			newHeight + "px"
+		);
 	}
 
 	window.addEventListener(
 		"scroll",
 		() => {
 			JSCCommon.setFixedNav();
+			setCatalogModalHeight();
 		},
 		{passive: true}
 	);
@@ -425,6 +462,7 @@ function eventHandler() {
 		function () {
 			$(this).toggleClass("active");
 			$(".catalog-modal").toggleClass("active");
+			setCatalogModalHeight();
 		}
 	);
 
@@ -616,6 +654,16 @@ function eventHandler() {
 			updateHideBtnClass();
 		}
 	);
+
+	document
+		.querySelector(".catalog-modal__group--promo")
+		.addEventListener("click", e => {
+			const target = e.target.closest(".promo-item");
+			if (!target) {
+				document.querySelector(".promo-block").classList.toggle("active");
+				setCatalogModalHeight();
+			}
+		});
 }
 
 if (document.readyState !== "loading") {

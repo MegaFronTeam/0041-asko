@@ -124,6 +124,7 @@
 	}
 	display: flex;
 	flex-direction: column;
+	overscroll-behavior: contain;
 	&__head {
 		background: linear-gradient(0deg, #fff 0%, #e0e5ef 100%);
 		padding: 20px 10px 10px;
@@ -155,9 +156,9 @@
 	}
 	transition: transform 0.3s;
 	&__body {
-		overflow-y: auto;
-		overflow-x: hidden;
 		@include media-breakpoint-down(lg) {
+			overflow-y: auto;
+			overflow-x: hidden;
 			padding-bottom: 80px;
 			background-color: #fff;
 		}
@@ -442,6 +443,37 @@
 	li.active {
 		a {
 			color: $primary;
+		}
+	}
+}
+
+.catalog-modal__stock-toggle {
+	cursor: pointer;
+	.icon {
+		fill: none;
+		stroke: currentColor;
+		cursor: pointer;
+	}
+}
+.promo-block {
+	@include media-breakpoint-up(lg) {
+		@include mt;
+		&:not(.active) {
+			height: 45px;
+			overflow: hidden;
+		}
+	}
+}
+
+.catalog-modal {
+}
+.catalog-modal__group--menu {
+	@include media-breakpoint-up(lg) {
+		.catalog-modal__aside,
+		.catalog-modal__menu-block {
+			overflow-y: auto;
+			max-height: calc(100dvh - var(--catalog-modal-offset) - 3.75rem - 40px);
+			@include custom-scroll;
 		}
 	}
 }

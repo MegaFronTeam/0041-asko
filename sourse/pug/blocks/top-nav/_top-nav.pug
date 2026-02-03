@@ -165,7 +165,8 @@ mixin top-nav()
 					.container
 						.row.gy-3
 							.col-lg-3
-								.text-secondary Акции
+								+e.stock-toggle.text-secondary Акции
+									+icon("chevron-down")
 							.col-lg-9
 								.promo-block
 									.row
