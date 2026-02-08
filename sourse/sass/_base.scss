@@ -118,6 +118,12 @@ main {
 	margin-bottom: var(--sTPB);
 }
 
+.section-title-center {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 620px;
+}
+
 .mono {
 	font-family: $font-family-code;
 }
@@ -614,6 +620,11 @@ ul {
 		text-decoration: none;
 		background-color: #f8f9fa;
 	}
+}
+
+.card-img {
+	box-shadow: 0 10px 30px 0 rgba(38, 51, 77, 0.05);
+	border-radius: 16px;
 }
 
 .btn-more {

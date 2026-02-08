@@ -1,0 +1,66 @@
+// start .sEvents
+.sEvents {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	.section-title {
+	}
+	&__col {
+	}
+	&__item {
+	}
+
+	&__card {
+		box-shadow: 0 10px 30px 0 rgba(38, 51, 77, 0.05);
+		border-radius: 16px;
+		&::before {
+			content: "";
+			inset: 0;
+			position: absolute;
+			border-radius: inherit;
+			background: #1d273a;
+			opacity: 0.5;
+			z-index: 2;
+		}
+		color: #fff;
+		overflow: hidden;
+		@include media-breakpoint-up(lg) {
+			aspect-ratio: 1;
+		}
+		aspect-ratio: 38 / 26;
+		display: flex;
+		margin-bottom: 20px;
+		flex-direction: column;
+		&__body {
+		}
+	}
+	&__card-head {
+		position: relative;
+		z-index: 2;
+	}
+	&__card-body {
+		z-index: 2;
+		margin-top: auto;
+		max-width: 420px;
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sEvents

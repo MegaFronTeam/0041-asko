@@ -3,7 +3,7 @@ mixin sAddresses(data)
 	+b.SECTION.sAddresses.section#sAddresses&attributes(attributes)
 		.container
 			+b.section-title.d-none.d-lg-block  
-				h2 Фирменные Шоурумы Asko в Москве
+				h2= data || 'Фирменные Шоурумы Asko в Москве'
 			+b.cat-btns.d-none.d-lg-flex 
 				+e.btn.active(style="--icon-color: #894E35") 
 					+icon("metro")

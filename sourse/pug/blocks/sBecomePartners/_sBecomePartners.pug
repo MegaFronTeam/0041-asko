@@ -1,0 +1,31 @@
+mixin sBecomePartners(data)
+	// start sBecomePartners
+	+b.SECTION.sBecomePartners.section#sBecomePartners.bg-wrap&attributes(attributes)
+		+img("img/sBecomePartners-bg.jpg",'bg').img-bg
+		.container
+			+b.section-title.text-center
+				h2.h1 Станьте частью нашей эксклюзивной&nbsp;сети партнеров 
+			+b.labels
+				+e.item рестораторы
+				+e.item дизайнеры интерьера
+				+e.item дизайн-студии
+				+e.item архитекторы
+				+e.item девелоперы
+				+e.item бюро комплектаций
+			+e.row.row.gy-3.mb-5
+				mixin item(i,t,p)
+					+e.col.col-xl-3.col-sm-6
+						+e.item.card
+							.row.gy-1
+								.col.h6.fw-400!= t
+								.col-auto
+									+e.icon-wrap
+										+img(`img/svg/sBecomePartners-${i}.svg`)
+							.text-secondary!= p
+				+item("1","Лучшие партнерские условия","Индивидуальные программы сотрудничества на выгодных условиях.")
+				+item("2",`Встречи  <br> и мероприятия`, `Презентации и мастер-классы для дизайнеров, архитекторов и клиентов в нашем салоне.`)
+				+item("3",`Тест-драйв  техники`, `Приходи к&nbsp;нам в&nbsp;салон и&nbsp;попробуй любую технику в&nbsp;работе.`)
+				+item("4",`Постпродажная поддержка`, `Персональный подход к&nbsp;каждому клиенту до&nbsp;и&nbsp;после свершения сделки.`)
+			.text-center
+				a.btn.btn-outline-white(href="#") Подробнее о сотрудничестве
+	// end sBecomePartners

@@ -655,15 +655,34 @@ function eventHandler() {
 		}
 	);
 
-	document
-		.querySelector(".catalog-modal__group--promo")
-		.addEventListener("click", e => {
-			const target = e.target.closest(".promo-item");
-			if (!target) {
+	document.querySelector("body").addEventListener("click", e => {
+		const target = e.target.closest(".catalog-modal__group--promo .promo-item");
+		const target2 = e.target.closest(".catalog-modal__group--promo");
+		if (document.querySelector(".catalog-modal").classList.contains("active"))
+			if (!target && target2) {
 				document.querySelector(".promo-block").classList.toggle("active");
 				setCatalogModalHeight();
 			}
-		});
+	});
+
+	new Swiper(".sEvents__slider--js", {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+		},
+		pagination: {
+			el: ".sEvents .swiper-pagination",
+			type: "bullets",
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+	});
 }
 
 if (document.readyState !== "loading") {

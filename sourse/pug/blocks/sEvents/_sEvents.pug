@@ -1,0 +1,20 @@
+mixin sEvents(data)
+	// start sEvents
+	+b.SECTION.sEvents.section#sEvents&attributes(attributes)
+		.container
+			+b.section-title-center.text-center.mb-5
+				h2 Мероприятия для партнёров
+				.h6.fw-400 В шоу-румах мы часто проводим закрытые мероприятия для наших партнёров, презентации новых продуктов, консультации дизайнеров.
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 0; x < 2; x++)
+						+e.slide.swiper-slide
+							+e.card.card.bg-wrap
+								+img("img/show-room.jpg",'bg').img-bg
+								+e.card-head.h1.fw-400 07.05.
+								+e.card-body
+									h4.fw-400 Мероприятие для дизайнеров 
+									.d-none.d-lg-block
+										p Компания ОТЕЧЕСТВО совместно с Союзом дизайнеров и архитекторов при поддержке Третьяковской галереи объявляет о запуске конкурса предметного дизайна. Мы ищем современные интерьерные решения, которые переосмысливают традиции русского стиля, сочетая их с актуальными трендами.
+			.swiper-pagination
+	// end sEvents

@@ -14,20 +14,7 @@
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
-	.cat-btns {
-		&__btn {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			gap: 4px;
-			// &:not(.active) {
-			// 	color: #79859e;
-			// }
-		}
-		.icon {
-			fill: var(--icon-color);
-		}
-	}
+
 	.section-title {
 	}
 	&__col {
@@ -149,6 +136,15 @@
 		}
 	}
 
+	&--show-room {
+		h2 {
+			text-align: center;
+		}
+		.cat-btns {
+			justify-content: center;
+			margin-bottom: 40px;
+		}
+	}
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
@@ -173,3 +169,18 @@
 		}
 	}
 } // end.sAddresses
+
+.cat-btns {
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		// &:not(.active) {
+		// 	color: #79859e;
+		// }
+	}
+	.icon {
+		fill: var(--icon-color);
+	}
+}

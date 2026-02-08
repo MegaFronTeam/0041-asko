@@ -147,6 +147,7 @@
 		@include media-breakpoint-up(lg) {
 			visibility: hidden;
 			opacity: 0;
+			display: none;
 		}
 	}
 	@include media-breakpoint-up(lg) {
