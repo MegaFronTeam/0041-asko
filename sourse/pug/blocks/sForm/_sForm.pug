@@ -3,14 +3,42 @@ mixin sForm()
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sForm
-				
-			+e.row.row
-			+form-wrap
-				+input("",'')
-				+input("",'')
-				+input("",'')
-				+input("",'')
-				+e.btn.btn.btn-primary(type="submit") Submit
-				+policy
+				h2 Хотите связаться и&nbsp;что-то предложить?
+				.h6 Заполните форму обратной связи. <br> Мы обязательно ответим вам в ближайшее время.
+			+form-wrap.card
+				.row
+					.col
+						label Ваше сообщение
+							sup.text-danger *
+					.col-9
+						+input("",'textarea')
+				.row
+					.col
+						label Имя
+							sup.text-danger *
+					.col-9
+						+input("",'text')
+				.row
+					.col
+						label E-mail
+							sup.text-danger *
+					.col-9
+						+input("",'email')
+				.row
+					.col
+						label Телефон
+							sup.text-danger *
+					.col-9
+						+input("",'tel')
+				.row
+					.col
+					.col-9
+						.row
+							.col
+								.small Нажимая кнопку «Заказать звонок» вы соглашаетесь с  
+									a(href="#") Политикой обработки персональных данных.
+							.col
+								button.btn.btn-success(type="submit" disabled).w-100.mb-2 Отправить
+
+
 	// end sForm

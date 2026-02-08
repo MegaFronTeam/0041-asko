@@ -15,6 +15,9 @@ include ../blocks/sAppliances/_sAppliances.pug
 include ../blocks/sAbout/_sAbout.pug
 include ../blocks/sEvents/_sEvents.pug
 include ../blocks/sBecomePartners/_sBecomePartners.pug
+include ../blocks/sWhyBrand/_sWhyBrand.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sBecomePart/_sBecomePart.pug
 
 
 block variables
@@ -32,26 +35,27 @@ block pagecontent
 	main
 		.section.container
 			.section-title-center.text-center.mb-5
-				h1 Шоу-румы в Москве
+				h1 Сотрудничество 
 				.h6.fw-400 Мы предлагаем взаимовыгодное сотрудничество, направленное на создание уникальных решений под ваших клиентов. Наша компания предоставляет полный спектр услуг и возможностей, чтобы сделать вашу работу максимально комфортной и прибыльной.
-			+b.cat-btns.d-lg-flex.justify-content-center.mb-5
-				+e.btn.active(style="--icon-color: #894E35") 
-					+icon("metro")
-					| Курская
-				+e.btn(style="--icon-color: #40C1F3")
-					+icon("metro")
-					| Кутузовская
-		.section.pt-0.text-center
-			+img("img/show-room.jpg").res-i.card-img
+		+sBecomePartners12-1
+		+sWhyBrand
+		.section.container
+			h2.text-center С нами сотрудничают
+			+b.labels
+				+e.item рестораторы
+				+e.item дизайнеры интерьера
+				+e.item дизайн-студии
+				+e.item архитекторы
+				+e.item девелоперы
+				+e.item бюро комплектаций
+		+sBecomePart
 		.row
 			.col-12
-				.section-title-center.text-center.mb-5.container
-					h2 Ассортимент техники Asko
-					.h6.fw-400 В шоуруме представлены новинки и популярные модели бытовой техники Asko. Все приборы подключены. Можно ознакомиться не только с их внешним видом в интерьере, но и с функциями, доступными в демонстрационном режиме, оценить удобство интеграции в мебель и комфортную систему управления.
-				+sCategories
 				+sEvents
-				+sBecomePartners
-			.col-12.order-md-first
+
+			.col-12.order-md-last
+				+sForm
+			.col-12
 				+sAddresses("Как добраться?").sAddresses--show-room
 		
-	+parts('footer')
+	+parts('footer') 

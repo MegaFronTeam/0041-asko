@@ -1,0 +1,88 @@
+// start .sBecomePart
+.sBecomePart {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	.section-title {
+	}
+	&__col {
+	}
+	&__item {
+	}
+
+	&__inner {
+		position: relative;
+	}
+
+	.card {
+		color: #fff;
+		z-index: 2;
+		overflow: hidden;
+		padding: 0;
+		background: linear-gradient(10deg, #bd2539 0%, #1d273a 100%);
+		@include media-breakpoint-up(sm) {
+			background: linear-gradient(-99deg, #bd2539 0%, #1d273a 100%);
+			padding: 40px;
+			&::before {
+				content: "";
+				position: absolute;
+				left: 38%;
+				top: 0;
+				width: 62%;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					#5a263a 0%,
+					rgba(189, 37, 57, 0) 60.1%
+				);
+			}
+		}
+		img {
+			@include media-breakpoint-up(sm) {
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -1;
+				max-width: 62%;
+				height: 100%;
+			}
+			max-width: 100%;
+			object-fit: cover;
+		}
+	}
+	.card__body {
+		max-width: 400px;
+		@include media-breakpoint-down(sm) {
+			.btn {
+				width: 100%;
+			}
+		}
+		@include media-breakpoint-up(sm) {
+			padding: 0;
+		}
+		position: relative;
+		z-index: 2;
+		padding-bottom: 20px;
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sBecomePart
