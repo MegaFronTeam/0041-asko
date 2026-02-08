@@ -6,6 +6,8 @@ include ../blocks/sAddresses/_sAddresses.pug
 include ../blocks/sCategoriesSm/_sCategoriesSm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sSets/_sSets.pug
+include ../blocks/sReviews/_sReviews.pug
+
 block variables
 	- let  mainPage= '' 
 	- let  bg= 'main.jpg'
@@ -25,5 +27,6 @@ block pagecontent
 	+sPopular02.d-none.d-md-block
 	+sCategoriesSm
 	+sCatalog02
+	+sReviews3
 	+sAddresses.d-md-none
 	+parts('footer')

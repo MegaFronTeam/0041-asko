@@ -613,8 +613,12 @@ ul {
 	.icon {
 		font-size: 20px;
 		flex: 0 0 auto;
-		fill: #c9d1e2;
+		color: #c9d1e2;
 		margin-right: 15px;
+		&-chevron-right {
+			fill: none;
+			stroke: currentColor;
+		}
 	}
 	&:hover {
 		text-decoration: none;

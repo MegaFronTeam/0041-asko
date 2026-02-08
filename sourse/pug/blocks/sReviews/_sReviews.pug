@@ -141,3 +141,72 @@ mixin sReviews2(data)
 							.col-auto.d-md-none
 								a(href="#") Все отзывы
 	// end sReviews
+mixin sReviews3(data)
+	// start sReviews
+	hr.border-light
+	+b.SECTION.sReviews.section#sReviews&attributes(attributes)
+		.container
+			+b.section-title
+				h4 Отзывы о товарах Аско
+			.row
+				.col.order-xl-last
+					+b.card.card--link(href="#").mb-3.p-3
+						span.col Оставить отзыв
+						+icon("chart").m-0
+					+b.card.card--link(href="#").mb-3.p-3
+						span.col Все отзывы
+						+icon("chevron-right").m-0
+				.col-xxl-9.col-xl-8
+					+e.inner
+						- for (var x = 1; x < 4; x++)
+							+b.rew-item-prod.p-0.d-block
+
+								+e.head.mb-3.d-none.d-md-block
+								+b.rew-item
+									.small.text-secondary 11.05.2025
+									.row
+										.col-xl-3
+											.h6.fw-400 Соня
+										.col
+											+b.stars-block(data-star="4")
+												+icon("star")
+												+icon("star")
+												+icon("star")
+												+icon("star")
+												+icon("star")
+									.row
+										.col-xl-3
+											.small.text-secondary Модель
+										.col
+											.prod-head.mb-2
+												+img(`img/prod-1.png`)
+												div.mt-1
+													.small.text-secondary Встраиваемая посудомоечная машина
+													.h6.fw-400 Asko CC4527S
+									.row
+										.col-xl-3
+											.small.text-secondary Достоинства
+										.col
+											p Цена и качество сборки
+									.row
+										.col-xl-3
+											.small.text-secondary Недостатки
+										.col
+											p Пока нет 
+									.row
+										.col-xl-3
+											.small.text-secondary Отзыв
+										.col
+											p Варочная панель Asko HI1995G стала отличным подарком для моей супруги на годовщину. Она давно хотела обновить нашу кухню, и этот подарок оказался именно тем
+									.d-md-none
+										.small.text-secondary Фото и видео
+										.prod-head.mb-2
+											+img(`img/prod-${x}.png`)
+											+img(`img/prod-${x}.png`)
+											+img(`img/prod-${x}.png`)
+										//- .text-end
+										//- 	a(href="#") Отзыв полностью
+						+e.row-control.row
+							.col-auto.d-md-none
+								a(href="#") Все отзывы
+	// end sReviews

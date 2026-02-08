@@ -17,6 +17,15 @@
 	&__inner {
 		max-width: 780px;
 	}
+	.prod-head {
+		display: flex;
+		gap: 5px;
+		img {
+			aspect-ratio: 50 / 60;
+			width: 50px;
+			object-fit: contain;
+		}
+	}
 
 	@include media-breakpoint-up(xl) {
 	}
@@ -41,15 +50,7 @@
 		gap: 40px;
 	}
 	padding: 20px;
-	.prod-head {
-		display: flex;
-		gap: 5px;
-		img {
-			aspect-ratio: 50 / 60;
-			width: 50px;
-			object-fit: contain;
-		}
-	}
+
 	.rew-item {
 		max-width: none;
 	}
