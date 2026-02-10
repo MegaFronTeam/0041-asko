@@ -10,6 +10,12 @@
 .headerBlock {
 	--sPT: #{rem(0)};
 	--sPB: #{rem(30)};
+	p {
+		line-height: 140%;
+	}
+	.h1 {
+		line-height: 1;
+	}
 	@include media-breakpoint-up(xl) {
 		--sPT: #{rem(40)};
 	}
@@ -73,6 +79,11 @@
 		}
 	}
 
+	@include media-breakpoint-down(lg) {
+		&__body {
+			margin-bottom: 60px;
+		}
+	}
 	&__caption {
 		@include media-breakpoint-up(lg) {
 			color: #fff;
@@ -80,9 +91,9 @@
 			max-width: 460px;
 		}
 		@include media-breakpoint-down(lg) {
-			padding: 20px;
+			padding: 30px 20px;
 			background-color: #fff;
-			margin-top: -20px;
+			margin-top: -30px;
 			box-shadow: inset 0px 10px 30px rgba(38, 51, 77, 0.05);
 			border-radius: 16px 16px 0 0;
 		}
@@ -97,6 +108,11 @@
 
 	&__smallest {
 		font-size: 10px;
+		line-height: 1.2;
+		margin-top: 5px;
+		@include media-breakpoint-down(md) {
+			color: #79859e;
+		}
 	}
 
 	&__btn {
@@ -165,7 +181,15 @@
 
 	@include media-breakpoint-down(sm) {
 		.arrow-wrap {
-			right: 0;
+			right: 20px;
+			--slide-y: 30px;
+		}
+		.container {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&__head {
+			margin-bottom: 30px;
 		}
 	}
 

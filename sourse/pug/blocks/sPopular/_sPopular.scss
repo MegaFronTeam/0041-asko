@@ -28,8 +28,9 @@
 	}
 
 	.swiper-scrollbar {
-		height: 19px;
+		height: 1px;
 		width: 86px;
+		margin-top: 9px;
 	}
 
 	@include media-breakpoint-up(xl) {

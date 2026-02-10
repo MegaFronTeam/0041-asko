@@ -87,6 +87,11 @@
 	@include media-breakpoint-down(md) {
 	}
 	@include media-breakpoint-down(sm) {
+		&__col-logo {
+			img {
+				width: 118px;
+			}
+		}
 	}
 	@include media-breakpoint-down(xs) {
 	}

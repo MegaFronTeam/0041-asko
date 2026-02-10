@@ -1,27 +1,51 @@
 mixin sProdBody(data)
 	// start sProdBody
 	+b.sProdBody.section#sProdBody&attributes(attributes)
-		+e.head.d-none.d-lg-block
-			ul.container
-				li
-					a(href="#") Документы
-				li
-					a(href="#") Описание
-				li
-					a(href="#") Характеристики
-				li
-					a(href="#") Аксессуары
-				li
-					a(href="#") Частые вопросы
-				li
-					a(href="#") Отзывы
-						sup 13
+		+e.head--base.d-none.d-lg-block
+			.container
+				ul
+					li
+						a(href="#sProdDocs").active Документы
+					li
+						a(href="#sProdDesc") Описание
+					li
+						a(href="#sProdSpecs") Характеристики
+					li
+						a(href="#sProdAccessories") Аксессуары
+					li
+						a(href="#sProdFaq") Частые вопросы
+					li
+						a(href="#sReviews") Отзывы
+							sup 13
+		+e.head--fixed.d-none.d-lg-block
+
+			.container
+				.row
+					.col-xl-4.col-auto.top-nav__col-catalog
+						+e.prod
+							+img(src="img/prod-1.png", alt="")
+							+e.name Asko DSD544B
+					.col
+						ul
+							li
+								a(href="#sProdDocs").active Документы
+							li
+								a(href="#sProdDesc") Описание
+							li
+								a(href="#sProdSpecs") Характеристики
+							li
+								a(href="#sProdAccessories") Аксессуары
+							li
+								a(href="#sProdFaq") Частые вопросы
+							li
+								a(href="#sReviews") Отзывы
+									sup 13
 		.container
 				
 			+e.row.row
 				.col-xxl-9.col-xl-8
 					+e.inner
-						section.section.sContent
+						section.section.sContent#sProdDocs
 							+b.section-title
 								h4 Документы
 							+b.doc-row
@@ -39,7 +63,7 @@ mixin sProdBody(data)
 										.h6.fw-400 Схема встраивания
 										.small.text-secondary 2.3 MB 
 
-						section.section.sContent
+						section.section.sContent#sProdDesc
 							+b.section-title
 								h4 Описание DSD544B
 							p Встраиваемая посудомоечная машина Asko DSD544B рассчитана на загрузку 14 комплектов посуды. Пониженный уровень шума, инновационная система сушки и большое количество программ позволяют модели стать незаменимым помощником на современной кухне.
@@ -48,7 +72,7 @@ mixin sProdBody(data)
 								li Super Cleaning System™
 								li 9 Spray™
 								li Адаптивные зоны усиленной мойки Power zones
-						section.section.sContent
+						section.section.sContent#sProdSpecs
 							+b.section-title
 								h4 Характеристики Asko DSD544B
 							h5.text-primary.fw-400 Основные характеристики
@@ -73,7 +97,7 @@ mixin sProdBody(data)
 							.small.text-secondary.mb-3 
 								span.text-primary * 
 								| Все информационные материалы, представленные на Сайте, носят справочный характер и не могут в полной мере передавать достоверную информацию о свойствах, комплектации и характеристиках товара, включая цвета, размеры и формы. Фирма-производитель оставляет за собой право на внесение изменений в конструкцию, дизайн и комплектацию товара без предварительного уведомления. Перед оформлением Заказа Покупатель должен обратиться к Продавцу для уточнения свойств и характеристик Товара. Подробная информация о товаре указывается в инструкции и на упаковке товара. Используемое название в России: Аско
-						+sCatalogAccessories03
+						+sCatalogAccessories03()(id="sProdAccessories")
 				.col.section.d-none.d-xl-block
 					+b.section-title
 							h4 Шоурум
@@ -114,7 +138,7 @@ mixin sProdBody(data)
 							a.card.p-0.mb-5.d-block.ovh(href="#")
 								+img("img/stock.png").res-i
 
-			section.section
+			section.section#sProdFaq
 				+b.section-title
 					h4 Частые вопросы
 				.row

@@ -5,8 +5,8 @@ mixin sNews(data)
 			+b.section-title
 				.row
 					.col
-						h2 Новости и статьи о бытовой технике Asko
-					.col-auto
+						h2 Новости и&nbsp;статьи о&nbsp;бытовой технике Asko
+					.col-auto.d-none.d-md-block
 						a(href="#") Все новости
 				
 			+e.slider--js.swiper
@@ -26,5 +26,5 @@ mixin sNews(data)
 					.arrow-wrap
 						+arrow
 				.col-auto.d-md-none
-					a(href="#") Все новости
+					a(href="#").small Все новости
 	// end sNews

@@ -1,4 +1,11 @@
 // start .sNews
+.sNews {
+	&__slider {
+		@include media-breakpoint-down(md) {
+			margin-inline: -15px;
+		}
+	}
+}
 .sRew,
 .sReviews,
 .sNews {
@@ -15,9 +22,6 @@
 	&__col {
 	}
 	&__slider {
-		@include media-breakpoint-down(sm) {
-			margin-inline: -15px;
-		}
 		padding-bottom: 20px;
 	}
 	&__item {
@@ -54,7 +58,7 @@
 .news-item {
 	display: block;
 	color: $body-color;
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		aspect-ratio: 380 / 253;
 		color: #fff;
 		padding: 20px;

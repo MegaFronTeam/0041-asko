@@ -9,7 +9,7 @@ mixin sReviews(data)
 					.col-auto.d-none.d-md-block
 						a(href="#") Все отзывы
 			.d-md-none
-				+b.card.card--link(href="#").mb-3.p-3
+				+b.card.card--link(href="#").mb-2.p-3
 					span.col Оставить отзыв
 					+icon("chart").m-0
 			+e.slider--js.swiper
@@ -21,7 +21,7 @@ mixin sReviews(data)
 									+product-item-rew(x)
 								+b.rew-item
 									.small.text-secondary 11.05.2025
-									.h6.fw-400 Соня
+									+e.name.fw-400 Соня
 									+b.stars-block(data-star="4")
 										+icon("star")
 										+icon("star")
@@ -57,7 +57,7 @@ mixin sReviews(data)
 					.arrow-wrap
 						+arrow
 				.col-auto.d-md-none
-					a(href="#") Все отзывы
+					a(href="#").small Все отзывы
 	// end sReviews
 mixin sReviews2(data)
 	// start sReviews
@@ -72,7 +72,7 @@ mixin sReviews2(data)
 						.star-result
 							+icon("star")
 							| 4.8
-					a.card.card--link(href="#").d-none.d-md-block.mb-3.p-3
+					a.card.card--link(href="#").d-none.d-md-block.mb-2.p-3
 						.h5.fw-400 Все отзывы о товаре
 						.prod-head.mb-2
 							+img(`img/prod-1.png`)
@@ -80,7 +80,7 @@ mixin sReviews2(data)
 								.small.text-secondary Встраиваемая посудомоечная машина
 								.h6.fw-400 Asko CC4527S
 
-					+b.card.card--link(href="#").mb-3.p-3
+					+b.card.card--link(href="#").mb-2.p-3
 						span.col Оставить отзыв
 						+icon("chart").m-0
 				.col-xxl-9.col-xl-8
@@ -101,7 +101,7 @@ mixin sReviews2(data)
 												.small.text-secondary 11.05.2025
 												.row
 													.col-xl-3
-														.h6.fw-400 Соня
+														+e.name.fw-400 Соня
 													.col
 														+b.stars-block(data-star="4")
 															+icon("star")
@@ -150,10 +150,10 @@ mixin sReviews3(data)
 				h4 Отзывы о товарах Аско
 			.row
 				.col.order-xl-last
-					+b.card.card--link(href="#").mb-3.p-3
+					+b.card.card--link(href="#").mb-2.p-3
 						span.col Оставить отзыв
 						+icon("chart").m-0
-					+b.card.card--link(href="#").mb-3.p-3
+					+b.card.card--link(href="#").mb-2.p-3
 						span.col Все отзывы
 						+icon("chevron-right").m-0
 				.col-xxl-9.col-xl-8
@@ -169,7 +169,7 @@ mixin sReviews3(data)
 												.small.text-secondary 11.05.2025
 												.row
 													.col-xl-3
-														.h6.fw-400 Соня
+														+e.name.fw-400 Соня
 													.col
 														+b.stars-block(data-star="4")
 															+icon("star")

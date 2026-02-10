@@ -483,21 +483,45 @@
 				<!-- end sIcons-->
 				<!-- start sProdBody-->
 				<div class="sProdBody section" id="sProdBody">
-					<div class="sProdBody__head d-none d-lg-block">
-						<ul class="container">
-							<li><a href="#">Документы</a></li>
-							<li><a href="#">Описание</a></li>
-							<li><a href="#">Характеристики</a></li>
-							<li><a href="#">Аксессуары</a></li>
-							<li><a href="#">Частые вопросы</a></li>
-							<li><a href="#">Отзывы<sup>13</sup></a></li>
-						</ul>
+					<div class="sProdBody__head sProdBody__head--base d-none d-lg-block">
+						<div class="container">
+							<ul>
+								<li><a class="active" href="#sProdDocs">Документы</a></li>
+								<li><a href="#sProdDesc">Описание</a></li>
+								<li><a href="#sProdSpecs">Характеристики</a></li>
+								<li><a href="#sProdAccessories">Аксессуары</a></li>
+								<li><a href="#sProdFaq">Частые вопросы</a></li>
+								<li><a href="#sReviews">Отзывы<sup>13</sup></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="sProdBody__head sProdBody__head--fixed d-none d-lg-block">
+						<div class="container">
+							<div class="row">
+								<div class="col-xl-4 col-auto top-nav__col-catalog">
+									<div class="sProdBody__prod"><img src="img/prod-1.png" alt="" loading="lazy"/>
+										<div class="sProdBody__name">Asko DSD544B
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<ul>
+										<li><a class="active" href="#sProdDocs">Документы</a></li>
+										<li><a href="#sProdDesc">Описание</a></li>
+										<li><a href="#sProdSpecs">Характеристики</a></li>
+										<li><a href="#sProdAccessories">Аксессуары</a></li>
+										<li><a href="#sProdFaq">Частые вопросы</a></li>
+										<li><a href="#sReviews">Отзывы<sup>13</sup></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="container">
 						<div class="sProdBody__row row">
 							<div class="col-xxl-9 col-xl-8">
 								<div class="sProdBody__inner">
-									<section class="section sContent">
+									<section class="section sContent" id="sProdDocs">
 										<div class="section-title">
 											<h4>Документы</h4>
 										</div>
@@ -518,7 +542,7 @@
 											</a>
 										</div>
 									</section>
-									<section class="section sContent">
+									<section class="section sContent" id="sProdDesc">
 										<div class="section-title">
 											<h4>Описание DSD544B</h4>
 										</div>
@@ -530,7 +554,7 @@
 											<li>Адаптивные зоны усиленной мойки Power zones</li>
 										</ul>
 									</section>
-									<section class="section sContent">
+									<section class="section sContent" id="sProdSpecs">
 										<div class="section-title">
 											<h4>Характеристики Asko DSD544B</h4>
 										</div>
@@ -560,7 +584,7 @@
 										<div class="small text-secondary mb-3"> <span class="text-primary">* </span>Все информационные материалы, представленные на Сайте, носят справочный характер и не могут в полной мере передавать достоверную информацию о свойствах, комплектации и характеристиках товара, включая цвета, размеры и формы. Фирма-производитель оставляет за собой право на внесение изменений в конструкцию, дизайн и комплектацию товара без предварительного уведомления. Перед оформлением Заказа Покупатель должен обратиться к Продавцу для уточнения свойств и характеристик Товара. Подробная информация о товаре указывается в инструкции и на упаковке товара. Используемое название в России: Аско</div>
 									</section>
 									<!-- start sCatalog-->
-									<div class="sCatalog section">
+									<div class="sCatalog section" id="sProdAccessories">
 										<div class="container">
 											<div class="section-title">
 												<div class="row align-items-center">
@@ -1021,7 +1045,7 @@
 								</div>
 							</div>
 						</div>
-						<section class="section">
+						<section class="section" id="sProdFaq">
 							<div class="section-title">
 								<h4>Частые вопросы</h4>
 							</div>
@@ -1100,7 +1124,7 @@
 													<use xlink:href="img/svg/sprite.svg#star"></use>
 												</svg>4.8
 											</div>
-										</div><a class="card card--link d-none d-md-block mb-3 p-3" href="#">
+										</div><a class="card card--link d-none d-md-block mb-2 p-3" href="#">
 											<div class="h5 fw-400">Все отзывы о товаре</div>
 											<div class="prod-head mb-2"><img src="img/prod-1.png" alt="" loading="lazy"/>
 												<div class="mt-1">
@@ -1108,7 +1132,7 @@
 													<div class="h6 fw-400">Asko CC4527S</div>
 												</div>
 											</div></a>
-										<a class="card card card--link mb-3 p-3" href="#"><span class="col">Оставить отзыв</span>
+										<a class="card card card--link mb-2 p-3" href="#"><span class="col">Оставить отзыв</span>
 											<svg class="icon icon-chart  m-0">
 												<use xlink:href="img/svg/sprite.svg#chart"></use>
 											</svg>
@@ -1129,7 +1153,8 @@
 																<div class="small text-secondary">11.05.2025</div>
 																<div class="row">
 																	<div class="col-xl-3">
-																		<div class="h6 fw-400">Соня</div>
+																		<div class="rew-item__name fw-400">Соня
+																		</div>
 																	</div>
 																	<div class="col">
 																		<div class="stars-block" data-star="4">
@@ -1194,7 +1219,8 @@
 																<div class="small text-secondary">11.05.2025</div>
 																<div class="row">
 																	<div class="col-xl-3">
-																		<div class="h6 fw-400">Соня</div>
+																		<div class="rew-item__name fw-400">Соня
+																		</div>
 																	</div>
 																	<div class="col">
 																		<div class="stars-block" data-star="4">
@@ -1259,7 +1285,8 @@
 																<div class="small text-secondary">11.05.2025</div>
 																<div class="row">
 																	<div class="col-xl-3">
-																		<div class="h6 fw-400">Соня</div>
+																		<div class="rew-item__name fw-400">Соня
+																		</div>
 																	</div>
 																	<div class="col">
 																		<div class="stars-block" data-star="4">
@@ -1416,13 +1443,19 @@
 											</div>
 											<div class="sAddresses__group">
 												<div class="mb-4 d-none d-lg-block">
-													<div class="text-secondary small">Телефон</div><a class="text-body h6 fw-400" href="tel:+7(495)120-80-90">+7 (495) 120-80-90 </a>
+													<div class="text-secondary small">Телефон</div>
+													<a class="sAddresses__contact-link text-body h6 fw-400" href="tel:+7(495)120-80-90">+7 (495) 120-80-90 
+													</a>
 												</div>
 												<div class="mb-4 d-lg-none">
-													<div class="text-secondary small">Ежедневно с 10:00 до 21:00</div><a class="text-body h6 fw-400" href="tel:8(495)646-09-31">8 (495) 646-09-31</a>
+													<div class="text-secondary small">Ежедневно с 10:00 до 21:00</div>
+													<a class="sAddresses__contact-link text-body h6 fw-400" href="tel:8(495)646-09-31">8 (495) 646-09-31
+													</a>
 												</div>
 												<div class="mb-4 d-lg-none">
-													<div class="text-secondary small">Звонок бесплатный</div><a class="text-body h6 fw-400" href="tel:8(800)555-17-98">8 (800) 555-17-98</a>
+													<div class="text-secondary small">Звонок бесплатный</div>
+													<a class="sAddresses__contact-link text-body h6 fw-400" href="tel:8(800)555-17-98">8 (800) 555-17-98
+													</a>
 												</div>
 											</div>
 											<div class="sAddresses__group d-none d-lg-block small">

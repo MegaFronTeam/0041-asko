@@ -3,26 +3,81 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	
-	&__row{
+
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
-	.section-title{
-		
+	.section-title {
 	}
-	&__col{
-		
+	&__col {
 	}
-	&__item{
-		
+	&__item {
 	}
 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	&__inner {
+		@include media-breakpoint-down(md) {
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+			&::before {
+				content: "";
+				height: 50%;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				position: absolute;
+				background: linear-gradient(
+					180deg,
+					rgba(247, 248, 250, 0) 0%,
+					#f7f8fa 100%
+				);
+			}
+			&.active {
+				height: auto;
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__toggle {
+		margin-top: 20px;
+		border: 0;
+		background: none;
+		padding: 0;
+		gap: 8px;
+		text-align: center;
+		&:active {
+			color: var(--bs-primary);
+		}
+		&.active {
+			transform: rotate(180deg);
+		}
+		color: #79859e;
+		font-weight: 500;
+		text-align: center;
+		.icon {
+			font-size: 10px;
+			fill: none;
+			stroke: currentColor;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sAbout

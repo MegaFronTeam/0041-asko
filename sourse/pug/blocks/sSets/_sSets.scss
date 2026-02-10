@@ -1,8 +1,10 @@
 // start .sSets
 .sSets {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
+	@include media-breakpoint-down(md) {
+		--sPB: 0;
+		--sTPB: 0;
+	}
 	&__block {
 		@include media-breakpoint-down(sm) {
 			margin-inline: -15px;
@@ -40,8 +42,9 @@
 	}
 	&__item {
 	}
-	&__slide {
-		width: auto;
+	.swiper-slide {
+		// width: auto;
+		height: auto;
 	}
 	&__slider {
 		// overflow: visible;
@@ -68,7 +71,7 @@
 
 	.cat-btns {
 		&__btn {
-			display: none;
+			// display: none;
 		}
 	}
 
@@ -88,8 +91,14 @@
 	}
 } // end.sSets
 
-@include media-breakpoint-up(xl) {
-	.product-item--set {
+.product-item--set {
+	@include media-breakpoint-down(lg) {
+		padding: 10px;
+		.product-item__icons {
+			margin-bottom: 0;
+		}
+	}
+	@include media-breakpoint-up(xl) {
 		display: grid;
 		grid-template-columns: 240px 1fr;
 		gap: 20px;

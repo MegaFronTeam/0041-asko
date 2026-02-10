@@ -71,8 +71,8 @@ mixin sSets(data)
 													+e.icon--status.col-auto
 														+e.ball(style="background: #35BE73")
 														| В наличии
-													p.small Комплект Asko Classic 1 — это отличное решение для тех, кто ценит качество, функциональность и стильный дизайн. Произведенный в Словении, этот комплект обеспечивает.
-													+e.products.row.mb-2
+													p.small.d-none.d-md-block Комплект Asko Classic 1 — это отличное решение для тех, кто ценит качество, функциональность и стильный дизайн. Произведенный в Словении, этот комплект обеспечивает.
+													+e.products.row.mb-2.d-none.d-lg-flex
 														.col-auto
 															+e.text.mb-1.smallest Стиральная машина
 															+e.title--sm
@@ -98,7 +98,7 @@ mixin sSets(data)
 								.col
 									.swiper-pagination
 								.col-auto
-									a.text-white(href="#") Все комплекты
+									a.text-white(href="#").small Все комплекты
 	// end sSets
 mixin sSets02(data)
 	// start sSets
@@ -184,5 +184,5 @@ mixin sSets02(data)
 							.arrow-wrap
 								+arrow
 						.col-auto.d-xl-none
-							a.text-white(href="#") Все комплекты
+							a.text-white(href="#").small Все комплекты
 	// end sSets

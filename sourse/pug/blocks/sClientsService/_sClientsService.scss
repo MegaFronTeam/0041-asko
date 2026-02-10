@@ -10,7 +10,10 @@
 
 	&__row {
 		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: var(--bs-gutter-x);
+		@include media-breakpoint-up(md) {
+			--bs-gutter-y: var(--bs-gutter-x);
+		}
+		--bs-gutter-y: 10px;
 	}
 	.section-title {
 	}
@@ -24,7 +27,9 @@
 		border-radius: 16px;
 		@include mt;
 		&:hover {
-			translate: 0 -2%;
+			@include media-breakpoint-up(md) {
+				translate: 0 -2%;
+			}
 		}
 
 		.icon-wrap {
@@ -73,7 +78,9 @@
 		}
 	}
 	&__title {
-		font-size: 18px;
+		@include media-breakpoint-up(sm) {
+			font-size: 18px;
+		}
 	}
 
 	@include media-breakpoint-up(xl) {
@@ -89,5 +96,11 @@
 	@include media-breakpoint-only(xl) {
 	}
 	@include media-breakpoint-down(xl) {
+	}
+	@include media-breakpoint-down(sm) {
+		p,
+		.text-secondary {
+			font-size: 14px;
+		}
 	}
 } // end.sClientsService

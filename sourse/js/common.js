@@ -12,6 +12,89 @@ function eventHandler() {
 		setCatalogModalHeight();
 	}
 
+	function initProdBodyNav() {
+		const prodBody = document.querySelector(".sProdBody");
+		if (!prodBody) return;
+		const head = prodBody.querySelector(".sProdBody__head--base");
+		const fixedHead = prodBody.querySelector(".sProdBody__head--fixed");
+		const linkSelector =
+			'.sProdBody__head--base a[href^="#"], .sProdBody__head--fixed a[href^="#"]';
+		const links = Array.from(prodBody.querySelectorAll(linkSelector));
+		const sectionIds = Array.from(
+			new Set(
+				links
+					.map(link => link.getAttribute("href"))
+					.filter(href => href && href.startsWith("#"))
+			)
+		);
+		const sections = sectionIds
+			.map(id => document.querySelector(id))
+			.filter(Boolean);
+		if (!sections.length) return;
+
+		const linkMap = new Map();
+		sectionIds.forEach(id => {
+			linkMap.set(
+				id,
+				links.filter(link => link.getAttribute("href") === id)
+			);
+		});
+
+		let lastActiveId = null;
+		const getOffset = () =>
+			fixedHead && fixedHead.classList.contains("active")
+				? fixedHead.offsetHeight - 80
+				: 0;
+
+		const setActive = id => {
+			if (!id || id === lastActiveId) return;
+			lastActiveId = id;
+			linkMap.forEach((group, key) => {
+				group.forEach(link => link.classList.toggle("active", key === id));
+			});
+		};
+
+		const updateFixedState = () => {
+			if (!head || !fixedHead) return;
+			const headBottom = head.getBoundingClientRect().bottom;
+			fixedHead.classList.toggle("active", headBottom <= 0);
+		};
+
+		const updateActiveByScroll = () => {
+			const offset = getOffset() + 160;
+			const scrollPos = window.scrollY + offset;
+			let current = sections[0];
+			sections.forEach(section => {
+				if (section.offsetTop <= scrollPos) current = section;
+			});
+			setActive(`#${current.id}`);
+		};
+
+		const onScroll = () => {
+			updateFixedState();
+			updateActiveByScroll();
+		};
+
+		window.addEventListener("scroll", onScroll, {passive: true});
+		window.addEventListener("resize", onScroll, {passive: true});
+		onScroll();
+
+		links.forEach(link => {
+			link.addEventListener("click", event => {
+				const id = link.getAttribute("href");
+				if (!id || !id.startsWith("#")) return;
+				const target = document.querySelector(id);
+				if (!target) return;
+				event.preventDefault();
+				const offset = getOffset() + 160;
+				const top =
+					target.getBoundingClientRect().top + window.scrollY - offset + 1;
+				window.scrollTo({top, behavior: "smooth"});
+				setActive(id);
+			});
+		});
+	}
+
 	function setCatalogModalHeight() {
 		const catalogModalGroup = document.querySelector(
 			".catalog-modal__group--menu"
@@ -58,6 +141,7 @@ function eventHandler() {
 	window.addEventListener("resize", whenResize, {passive: true});
 
 	whenResize();
+	initProdBodyNav();
 
 	let defaultSl = {
 		spaceBetween: 0,
@@ -179,7 +263,8 @@ function eventHandler() {
 		freeMode: true,
 		scrollbar: {
 			el: ".sPopular .swiper-scrollbar",
-			hide: true,
+			draggable: true,
+			// hide: true,
 		},
 	});
 
@@ -682,6 +767,11 @@ function eventHandler() {
 			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
 			// }
 		},
+	});
+
+	$(".sAbout__toggle--js").on("click", function () {
+		$(this).toggleClass("active");
+		$(".sAbout__inner").toggleClass("active");
 	});
 }
 

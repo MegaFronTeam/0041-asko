@@ -6,7 +6,7 @@ mixin sVideoAbout(data)
 				.row
 					.col
 						h2 Видео о товарах Asko
-					.col-auto
+					.col-auto.d-none.d-md-block
 						a(href="#") Все видео
 				
 			+e.slider--js.swiper
@@ -22,5 +22,5 @@ mixin sVideoAbout(data)
 				.col
 					.swiper-pagination
 				.col-auto
-					a(href="#") Все видео
+					a(href="#").small Все видео
 	// end sVideoAbout
