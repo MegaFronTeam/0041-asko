@@ -12,7 +12,7 @@
 	max-width: 100%;
 	position: relative;
 	width: rem(500);
-	// min-height: 100%; 
+	// min-height: 100%;
 	padding: 40px;
 
 	.modal-content {
@@ -50,7 +50,7 @@ a {
 	top: 0;
 	text-decoration: none;
 	text-align: center;
-	opacity: .65; // padding: 0 0 18px 10px;
+	opacity: 0.65; // padding: 0 0 18px 10px;
 	// color: #fff;
 	font-style: normal;
 	font-size: 28px;
@@ -100,77 +100,155 @@ a {
 		}
 	}
 }
+.f-html {
+	padding: 0;
+	background: transparent;
+}
 
+.modal-win--adv {
+	border-radius: 16px;
+	overflow: hidden;
+	background: transparent;
+	max-width: 620px;
+	width: 100%;
+	padding: 0;
+	.modal-win {
+		&__head {
+			aspect-ratio: 62 / 30;
+			position: relative;
+		}
+		&__body {
+			margin-top: -20px;
+			border-radius: 16px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+	.icon-description__item {
+		width: rem(39.16);
+		svg {
+		}
+	}
+}
 
-// 
-@include media-breakpoint-up(xl) {}
+.prod-text {
+	vertical-align: bottom;
+	font-size: 14px;
+	margin-bottom: 15px;
+	margin-top: 40px;
+	img {
+		width: 14px;
+		height: 20px;
+		object-fit: contain;
+		display: inline-block !important;
+		margin-right: 3px;
+		position: relative;
+		top: -2px;
+	}
+}
 
-@include media-breakpoint-up(lg) {}
+.mx-334 {
+	max-width: 334px;
+}
+//
+@include media-breakpoint-up(xl) {
+}
 
-@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {
+}
 
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {
+}
 
-@include media-breakpoint-up(xs) {}
+@include media-breakpoint-up(sm) {
+}
 
-// 
-@include media-breakpoint-between(md, xl) {}
+@include media-breakpoint-up(xs) {
+}
 
-// 
-@include media-breakpoint-only(xs) {}
+//
+@include media-breakpoint-between(md, xl) {
+}
 
-@include media-breakpoint-only(sm) {}
+//
+@include media-breakpoint-only(xs) {
+}
 
-@include media-breakpoint-only(md) {}
+@include media-breakpoint-only(sm) {
+}
 
-@include media-breakpoint-only(lg) {}
+@include media-breakpoint-only(md) {
+}
 
-@include media-breakpoint-only(xl) {}
+@include media-breakpoint-only(lg) {
+}
 
-// 
-@include media-breakpoint-down(xl) {}
+@include media-breakpoint-only(xl) {
+}
 
-@include media-breakpoint-down(lg) {}
+//
+@include media-breakpoint-down(xl) {
+}
 
-@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(lg) {
+}
 
-@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(md) {
+}
+
+@include media-breakpoint-down(sm) {
+}
 
 @include media-breakpoint-down(xs) {
-
 	.fancybox__container {
 		width: 100% !important;
-		min-height: 100%; 
+		min-height: 100%;
 		transform: none !important;
 	}
 }
 
-
-
 .fancybox-throwOutUp {
-  animation: 0.25s ease both fancybox-throwOutUp;
+	animation: 0.25s ease both fancybox-throwOutUp;
 }
 
 .fancybox-throwOutDown {
-  animation: 0.25s ease both fancybox-throwOutDown;
+	animation: 0.25s ease both fancybox-throwOutDown;
 }
 
 @keyframes fancybox-throwOutUp {
-  from {
-    transform: translate3d(0, -5%, 0);
-    opacity: 0;
-  }
-	
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
+	from {
+		transform: translate3d(0, -5%, 0);
+		opacity: 0;
+	}
 
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
 }
 
 @keyframes fancybox-throwOutDown {
-  to {
-    transform: translate3d(0, 10%, 0);
-    opacity: 0;
-  }
+	to {
+		transform: translate3d(0, 10%, 0);
+		opacity: 0;
+	}
+}
+
+.f-button.is-close-button {
+	--f-close-button-width: 30px;
+	--f-close-button-height: 30px;
+	--f-close-button-color: var(--bs-primary);
+	--f-close-button-hover-color: #var(--bs-primary);
+	--f-close-button-bg: #fff;
+	--f-close-button-hover-bg: #fff;
+	--f-close-button-active-bg: #fff;
+	border-radius: 50%;
+	@include media-breakpoint-up(sm) {
+		--f-close-button-width: 40px;
+		--f-close-button-height: 40px;
+		top: calc((var(--f-button-height) / 2) * -1);
+		right: calc((var(--f-button-height) / 2) * -1);
+	}
+	top: 8px;
+	right: 8px;
 }

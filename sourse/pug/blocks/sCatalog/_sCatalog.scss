@@ -415,7 +415,7 @@
 		border-radius: 8px;
 		cursor: pointer;
 		@include mt;
-		&:not(:hover) {
+		&:not(.active):not(:hover) {
 			color: $secondary;
 			svg {
 				* {
@@ -427,9 +427,10 @@
 			@include mt;
 			width: 100%;
 			// height: 100%;
-			max-width: 90%;
-			max-height: 90%;
+			max-width: 75%;
+			max-height: 75%;
 		}
+		&.active,
 		&:hover {
 			border-color: $primary;
 		}
