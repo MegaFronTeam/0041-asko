@@ -71,6 +71,9 @@
 
 	&__head {
 		--bs-gutter-x: 0;
+		.row {
+			--bs-gutter-y: 0;
+		}
 	}
 	&__head-btns {
 		--bs-gutter-x: 5px;
