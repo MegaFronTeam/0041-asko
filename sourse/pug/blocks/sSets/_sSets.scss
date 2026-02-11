@@ -2,7 +2,7 @@
 .sSets {
 	// --sPT: #{rem()};
 	@include media-breakpoint-down(md) {
-		--sPB: 0;
+		// --sPB: 0;
 		--sTPB: 0;
 	}
 	&__block {
