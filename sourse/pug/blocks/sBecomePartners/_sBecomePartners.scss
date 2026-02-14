@@ -1,4 +1,9 @@
 // start .sBecomePartners
+.section + .sBecomePartners {
+	@include media-breakpoint-down(xl) {
+		padding-top: 0;
+	}
+}
 .sBecomePartners {
 	position: relative;
 	&.bg-wrap {

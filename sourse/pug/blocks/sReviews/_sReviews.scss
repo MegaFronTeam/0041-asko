@@ -53,6 +53,12 @@
 
 	.rew-item {
 		max-width: none;
+		@include media-breakpoint-down(lg) {
+			padding: 20px;
+			box-shadow: 0 10px 30px 0 rgba(38, 51, 77, 0.05);
+			background: #fff;
+			border-radius: 16px;
+		}
 	}
 	&__head {
 		.prod-head {

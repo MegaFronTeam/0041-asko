@@ -358,11 +358,12 @@ mixin sCatalog02(h2)
 					+filter()
 				.col-xl-9
 					+catalog-head()
-						+e.filter-list
-							+e.filter-item Classic
-							+e.filter-item 1200
-							+e.filter-item--reset Сбросить
-					.row.gy-4.mb-4
+						.d-none.d-xl-block
+							+e.filter-list
+								+e.filter-item Classic
+								+e.filter-item 1200
+								+e.filter-item--reset Сбросить
+					.section.row.gy-4.mb-4
 						- const wrapClass="col-xl-4 col-6"
 						+e.col(class= wrapClass)
 							+product-item(`1`,``,``,``) 
@@ -371,7 +372,7 @@ mixin sCatalog02(h2)
 						+e.col(class= wrapClass)
 							+product-item(`3`,``,``,``) 
 					+sSets02()
-					.row.gy-4.mb-4
+					.section.row.gy-4.mb-4
 						+e.col(class= wrapClass)
 							+product-item(`1`,``,``,``) 
 						+e.col(class= wrapClass)
@@ -380,91 +381,93 @@ mixin sCatalog02(h2)
 							+product-item(`3`,``,``,``)
 					+sCatalogAccessories
 					.section
-						.row.gy-4.gx-0
+						.row.gy-4
 							- for (var x = 0; x < 2; x++)
-								+b.ARTICLE.product-item--horizontal
-									+e.head.row
-										.col
-											+e.promo.active Акция
-										+e.head-btns.col-auto.row
-											.col-auto
-												+e.head-btn(href="#")
-													+icon("burger")
-													+e.small-icon
-														+icon("plus")
-														+icon("check")
-											.col-auto
-												+e.head-btn(href="#")
-													+icon("heart")
-									+e.img-wrap(href="#")
-										//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
-										.img-wrap-center 
-											+img(`img/prod-set.png`)
-									+e.caption
-										div
-											+e.head.d-lg-none
-												+e.price-row
-													+e.price-new 86 900 ₽
-													+e.price-old 89 000 ₽
-												+e.purchase
-													+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
-													+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
-											+e.text--lg Комплект
-											+e.title--lg
-												a.text-body(href="#")  Аsco Classik №1
-											+e.icons.row
-												+e.icon--rating.col-auto
-													+icon("star")
-													| 4.8
-												+e.icon--comments.col-auto
-													+icon("chart")
-													| 4
-												+e.icon--status.col-auto
-													+e.ball(style="background: #35BE73")
-													| В наличии
-											ul.d-none.d-md-block
-												li 
-													span.text-secondary Установка: 
-													| отдельностоящая
-												li 
-													span.text-secondary Высота, см: 
-													| 85
-												li 
-													span.text-secondary Глубина, см: 
-													| 58.5
-												li 
-													span.text-secondary Скорость отжима, об/мин: 
-													| 1400
-												li 
-													span.text-secondary Максимальная загрузка, кг: 
-													| 8
-												li 
-													span.text-secondary Количество программ: 
-													| 16
-												li 
-													span.text-secondary Скорость отжима, об/мин: 
-													| 1400
-												li 
-													span.text-secondary Максимальная загрузка, кг: 
-													| 8
-										+e.caption-inner
-											.d-none.d-md-block
-												+icon-description()
-											.d-none.d-lg-block.mb-lg-1.mb-5
-												p Комплект Asko Classic 1 — это отличное решение для тех, кто ценит качество, функциональность и стильный дизайн. Произведенный в Словении, этот комплект обеспечивает все потребности.
+								.col-md-12.col-6
+									+b.ARTICLE.product-item--horizontal
+										+e.head.row
+											.col
+												+e.promo.active Акция
+											+e.head-btns.col-auto.row
+												.col-auto
+													+e.head-btn(href="#")
+														+icon("burger")
+														+e.small-icon
+															+icon("plus")
+															+icon("check")
+												.col-auto
+													+e.head-btn(href="#")
+														+icon("heart")
+										+e.img-wrap(href="#")
+											//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
+											.img-wrap-center 
+												+img(`img/prod-set.png`)
+										+e.caption
+											div
+												+e.head.d-lg-none
+													+e.price-row
+														+e.price-new 86 900 ₽
+														+e.price-old 89 000 ₽
+													+e.purchase
+														+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
+														+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
+												+e.text--lg Комплект
+												+e.title--lg
+													a.text-body(href="#")  Аsco Classik №1
+												+e.icons.row
+													+e.icon--rating.col-auto
+														+icon("star")
+														| 4.8
+													+e.icon--comments.col-auto
+														+icon("chart")
+														| 4
+													+e.icon--status.col-auto
+														+e.ball(style="background: #35BE73")
+														| В наличии
+												ul.d-none.d-md-block
+													li 
+														span.text-secondary Установка: 
+														| отдельностоящая
+													li 
+														span.text-secondary Высота, см: 
+														| 85
+													li 
+														span.text-secondary Глубина, см: 
+														| 58.5
+													li 
+														span.text-secondary Скорость отжима, об/мин: 
+														| 1400
+													li 
+														span.text-secondary Максимальная загрузка, кг: 
+														| 8
+													li 
+														span.text-secondary Количество программ: 
+														| 16
+													li 
+														span.text-secondary Скорость отжима, об/мин: 
+														| 1400
+													li 
+														span.text-secondary Максимальная загрузка, кг: 
+														| 8
+											+e.caption-inner
+												.d-none.d-md-block
+													+icon-description()
+												.d-none.d-lg-block.mb-lg-1.mb-5
+													p Комплект Asko Classic 1 — это отличное решение для тех, кто ценит качество, функциональность и стильный дизайн. Произведенный в Словении, этот комплект обеспечивает все потребности.
 
-											+e.footer.row.gy-2
-												.col.d-lg-block.d-none
-													+e.head
-														+e.price-row
-															+e.price-new 86 900 ₽
-															+e.price-old 89 000 ₽
-														+e.purchase
-															+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
-															+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
-												.col-xxl-auto.align-self-end
-													+e.btn.btn.btn-success(href='#')
-														span В корзину
+												+e.footer.row.gy-2
+													.col.d-lg-block.d-none
+														+e.head
+															+e.price-row
+																+e.price-new 86 900 ₽
+																+e.price-old 89 000 ₽
+															+e.purchase
+																+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
+																+e.purchase-img-wrap: img(src="img/purchase-2.svg", alt="")
+													.col-xxl-auto.align-self-end
+														+e.btn.btn.btn-success(href='#')
+															span В корзину
+					+pugin
 	// end sCatalog
 mixin sCatalog06(h2)
 	- const wrapClass="col-xl-3 col-lg-4 col-6"

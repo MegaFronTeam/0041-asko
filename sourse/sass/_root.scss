@@ -2,10 +2,6 @@
 	--animate-delay: 1.2s;
 	--bs-body-font-size: #{$em-base};
 
-	--sPT: #{rem(80 * 0.5)};
-	--sPB: #{rem(90 * 0.5)};
-	--sTPB: #{rem(40 * 0.5)};
-
 	--fancybox-content-color: var(--bs-body-color);
 	--swiperArrowSize: #{rem(48)};
 	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
@@ -26,6 +22,9 @@
 	//  --carousel-button-svg-stroke-width: 2.5;
 	//  --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0/ 0.4));
 
+	--sPT: #{rem(20)};
+	--sPB: #{rem(20)};
+	--sTPB: #{rem(20)};
 	@include media-breakpoint-up(md) {
 		--sPT: #{rem(30)};
 		--sPB: #{rem(30)};

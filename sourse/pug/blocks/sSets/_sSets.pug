@@ -9,8 +9,8 @@ mixin sSets(data)
 						p Выберите готовый или соберите комплект техники для
 					.col
 						+b.cat-btns
-							+e.btn.active Советуем
-							+e.btn Новинка
+							+e.btn.active Прачечная
+							+e.btn Кухня
 			+e.block.bg-wrap
 				+img("img/set-bg.jpg",'bg').img-bg
 				+e.row.row
@@ -107,7 +107,7 @@ mixin sSets02(data)
 			+b.section-title
 				.row
 					.col
-						h4 Комплекты техники
+						h4 Выгодные комплекты
 					.col-auto.d-none.d-xl-block
 						a(href="#") Все комплекты
 			+e.slider--js.swiper
@@ -177,12 +177,12 @@ mixin sSets02(data)
 											+e.btn.btn.btn-success(href='#')
 												span В корзину
 			+e.footer.mt-4
-					.row
+					.row.gy-0
 						.col.align-self-center
 							.swiper-pagination
 						.col-auto.d-xl-block.d-none
 							.arrow-wrap
 								+arrow
 						.col-auto.d-xl-none
-							a.text-white(href="#").small Все комплекты
+							a(href="#").small Все комплекты
 	// end sSets

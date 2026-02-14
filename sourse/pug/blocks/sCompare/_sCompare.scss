@@ -1,6 +1,6 @@
 // start .sCompare
 .sCompare {
-	// --sPT: #{rem()};
+	--sPT: #{rem(0)};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
 	@include media-breakpoint-up(sm) {
@@ -111,6 +111,10 @@
 		.sCompare__slide--fixed {
 			pointer-events: none;
 		}
+	}
+
+	&__toggle-block {
+		pointer-events: none;
 	}
 
 	@include media-breakpoint-up(xl) {

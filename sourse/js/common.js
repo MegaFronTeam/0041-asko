@@ -773,6 +773,11 @@ function eventHandler() {
 		$(this).toggleClass("active");
 		$(".sAbout__inner").toggleClass("active");
 	});
+
+	$(".property-item__toggle--js").on("click", function () {
+		$(this).toggleClass("active");
+		$(this).next().slideToggle();
+	});
 }
 
 if (document.readyState !== "loading") {

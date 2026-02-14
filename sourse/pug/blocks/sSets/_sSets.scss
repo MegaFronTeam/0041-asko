@@ -1,8 +1,12 @@
 // start .sSets
+.sCatalog + .sSets {
+	@include media-breakpoint-down(md) {
+		// --sPT: 0;
+	}
+}
 .sSets {
 	// --sPT: #{rem()};
 	@include media-breakpoint-down(md) {
-		// --sPB: 0;
 		--sTPB: 0;
 	}
 	&__block {

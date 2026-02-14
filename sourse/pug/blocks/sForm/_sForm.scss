@@ -2,7 +2,9 @@
 .sForm {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	--sTPB: #{rem(60)};
+	@include media-breakpoint-up(md) {
+		--sTPB: #{rem(60)};
+	}
 	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
@@ -56,6 +58,12 @@
 	@include media-breakpoint-down(md) {
 	}
 	@include media-breakpoint-down(sm) {
+		.h6 {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 300px;
+			// font-size: 16px;
+		}
 	}
 	@include media-breakpoint-down(xs) {
 	}

@@ -31,12 +31,12 @@
 	}
 	--px: 30px;
 	&__head {
-		padding: 20px 0;
+		padding: 20px 0 30px;
 		@include media-breakpoint-up(lg) {
 			padding: 20px var(--px);
 			border-bottom: 1px solid #c9d1e2;
+			font-weight: 400;
 		}
-		font-weight: 400;
 		margin: 0;
 	}
 	&__body {
@@ -94,7 +94,7 @@
 				gap: 10px 25px;
 			}
 			gap: 10px 20px;
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 		}
 		&__btn {
 			@include mt;

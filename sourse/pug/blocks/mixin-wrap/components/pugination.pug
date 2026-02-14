@@ -25,26 +25,22 @@ mixin pugin()
 	//- 			a.page-link(href='#') 
 	//- 				i(class="fas fa-chevron-right")
 	.pagination-wrapper
+		mixin li(n)
+			li
+				if n
+					a.page-numbers(href='#')= n 
+				else
+					block
+		+li()
+			span.prev.page-numbers( )
+				+icon("chevron-left")
 		ul.page-numbers
-			mixin li(n)
-				li
-					if n
-						a.page-numbers(href='#')= n 
-					else
-						block
-			+li()
-				span.prev.page-numbers( )
-					img(src="img/svg/prev.svg", alt="")
-			+li()
-				span.prev.page-numbers( )
-					img(src="img/svg/prev-double.svg", alt="")
 			+li()
 				span.page-numbers.current  1
-			- for (var x = 1; x < 5; x++)
+			- for (var x = 2; x < 4; x++)
 				+li(x)
-			+li()
-				a.next.page-numbers(href='#')
-					img(src="img/svg/next.svg", alt="")
-			+li()
-				a.next.page-numbers(href='#')
-					img(src="img/svg/next-double.svg", alt="")
+			+li("...")
+			+li("13")
+		+li()
+			a.next.page-numbers(href='#')
+				+icon("chevron-right")

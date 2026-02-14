@@ -4,41 +4,41 @@ mixin sForm()
 		.container
 			+b.section-title.text-center
 				h2 Хотите связаться и&nbsp;что-то предложить?
-				.h6 Заполните форму обратной связи. <br> Мы обязательно ответим вам в ближайшее время.
+				.h6.fw-400 Заполните форму обратной связи. <br> Мы&nbsp;обязательно ответим вам в&nbsp;ближайшее время.
 			+form-wrap.card
-				.row
+				.row.gy-2
 					.col
 						label Ваше сообщение
 							sup.text-danger *
-					.col-9
+					.col-sm-9
 						+input("",'textarea')
-				.row
+				.row.gy-2
 					.col
 						label Имя
 							sup.text-danger *
-					.col-9
+					.col-sm-9
 						+input("",'text')
-				.row
+				.row.gy-2
 					.col
 						label E-mail
 							sup.text-danger *
-					.col-9
+					.col-sm-9
 						+input("",'email')
-				.row
+				.row.gy-2
 					.col
 						label Телефон
 							sup.text-danger *
-					.col-9
+					.col-sm-9
 						+input("",'tel')
-				.row
+				.row.gy-2
 					.col
-					.col-9
+					.col-sm-9
 						.row
 							.col
+								button.btn.btn-success(type="submit" ).w-100.mb-2 Отправить
+							.col-md.order-md-first
 								.small Нажимая кнопку «Заказать звонок» вы соглашаетесь с  
 									a(href="#") Политикой обработки персональных данных.
-							.col
-								button.btn.btn-success(type="submit" disabled).w-100.mb-2 Отправить
 
 
 	// end sForm

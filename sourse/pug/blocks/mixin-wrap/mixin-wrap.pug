@@ -73,9 +73,9 @@ mixin country-prod()
 			+img('img/flag-2.svg')
 			+e.title Произведено <br> в Словении
 
-mixin sContentForm()
-	+form-wrap.card.mb-4
-		p Бесплатная консультация
+mixin sContentForm(t="Бесплатная консультация")
+	+form-wrap.card
+		p= t
 		+input("+7 916 176-05-12",'tel')
 		+input("Имя*",'text')
 		button.btn.btn-success(type="submit" disabled).w-100.mb-2 Отправить

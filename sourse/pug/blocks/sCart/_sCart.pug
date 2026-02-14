@@ -313,11 +313,11 @@ mixin sCart(data)
 	// end sCart
 mixin sCart05(data)
 	// start sCart
-	+b.SECTION.sCart.section#sCart&attributes(attributes)
+	+b.SECTION.sCart.section#sCart&attributes(attributes).pt-0
 		.container
 			+e.row.row 
 				.col-lg-8.col-xxl-9.mb-3
-					.row
+					.row.mb-2
 						.col
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
 								<path d="M10.2679 3C11.0377 1.66667 12.9623 1.66667 13.7321 3L20.6603 15C21.4301 16.3333 20.4678 18 18.9282 18H5.0718C3.5322 18 2.56995 16.3333 3.33975 15L10.2679 3Z" fill="#E5AC1A" />
@@ -346,13 +346,14 @@ mixin sCart05(data)
 						+b.cart-item.card.p-0
 							.card__head
 								h5.fw-400.mb-4 Покупатель
-								.row
+								.row.gy-3
 									.col-auto.text-secondary Тип плательщика
-									.col.row.gy-3
-										.col-auto
-											+in-c("radio", 'Физическое лицо')(checked=true)
-										.col-auto
-											+in-c("radio", 'Юридическое лицо')
+									.col-md
+										.row.gy-3
+											.col-sm-auto
+												+in-c("radio", 'Физическое лицо')(checked=true)
+											.col-sm-auto
+												+in-c("radio", 'Юридическое лицо')
 									
 							.card__body
 								.row.mb-3
@@ -449,7 +450,7 @@ mixin sCart05(data)
 	// end sCart
 mixin sCart05-2(data)
 	// start sCart
-	+b.SECTION.sCart.section#sCart&attributes(attributes)
+	+b.SECTION.sCart.section#sCart&attributes(attributes).pt-0
 		.container
 			+e.row.row 
 				.col-lg-8.col-xxl-9
@@ -716,7 +717,7 @@ mixin sCart05-3(data)
 	// end sCart
 mixin sCart05-6(data)
 	// start sCart
-	+b.sCart#sCart&attributes(attributes)
+	+b.sCart#sCart&attributes(attributes).pt-0
 		.container
 			+e.row.row 
 				.col-xxl-9

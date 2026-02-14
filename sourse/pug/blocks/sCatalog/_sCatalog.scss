@@ -26,6 +26,7 @@
 
 	&__row-control {
 		margin-top: 20px;
+		--bs-gutter-y: 0;
 		// padding-bottom: 20px;
 		@include media-breakpoint-up(md) {
 			.swiper-pagination {
@@ -302,15 +303,21 @@
 	}
 }
 
+.swiper-slide .cat-btns {
+	flex-wrap: wrap;
+}
 .cat-btns {
 	display: flex;
-	flex-wrap: wrap;
+	@include media-breakpoint-up(md) {
+		flex-wrap: wrap;
+	}
 	gap: em(10);
 	overflow-x: auto;
 	margin-bottom: 20px;
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-inline: -15px;
+	font-size: 18px;
 	&.swiper {
 		overflow: visible;
 	}
@@ -319,13 +326,16 @@
 		margin-right: em(10);
 	}
 	@include media-breakpoint-down(md) {
-		font-size: 14px;
+		font-size: 16px;
 	}
 	&__btn {
 		color: #79859e;
 		border: 0.6px solid #c9d1e2;
 		background-color: #fff;
-		padding: em(12) em(20);
+		padding: em(10) em(20);
+		@include media-breakpoint-down(md) {
+			padding: em(8) em(20);
+		}
 		border-radius: 100px;
 		cursor: pointer;
 		&:hover,

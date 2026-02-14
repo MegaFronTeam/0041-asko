@@ -18,13 +18,15 @@ block pagecontent
 	main
 		.section.pb-0
 			.container
-				.row.section-title
-					.col
-						.row
-							.col-auto
-								h1.h2.mb-0 Сравнение
-							.col-auto.mt-2
-								+in-c("checkbox",'Показывать только отличия').custom-input--square
+				.row.section-title 
+					.col-lg-auto
+						h1.h2.mb-md-0 Сравнение
+					.col.mt-2
+						label.custom-input.form-check
+							input(class="custom-input__input form-check-input custom-input custom-input--square", name="checkbox", type="checkbox")
+							span(class="custom-input__text form-check-label").d-none.d-md-block Показывать только отличия
+							span(class="custom-input__text form-check-label").d-md-none Только отличия
+
 					.col-auto.align-items-center.mt-2
 						+b.btn-remove-all() Удалить все
 							<svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
