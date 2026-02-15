@@ -1,9 +1,16 @@
 mixin sWhyBrand(data)
 	// start sWhyBrand
 	+b.SECTION.sWhyBrand.section#sWhyBrand&attributes(attributes)
-		.container.smallest.text-secondary.mb-3 Примеры техники ASKO в интерьере
-		+img("img/sWhyBrand-img.jpg").head-img.res-i
 		.container
+			.smallest.text-secondary.mb-3 Примеры техники ASKO в интерьере
+			+b.content-slider-wrap
+					+b.content-slider--js.swiper
+						.swiper-wrapper
+							- for (var x = 0; x < 3; x++)
+								.swiper-slide
+									+img("img/sWhyBrand-img.jpg").head-img.res-i
+					
+					.swiper-pagination.text-md-start.text-center.d-md-none.my-3
 			+b.section-title.text-center
 				+img("img/logo-lg.png").logo-img.res-i
 				h2 Почему ASKO?

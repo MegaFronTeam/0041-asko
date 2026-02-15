@@ -603,6 +603,33 @@ function eventHandler() {
 			$("body ").toggleClass("fixed");
 		}
 	);
+
+	// Intersection Observer для отслеживания видимости кнопки фильтра
+	const filterToggle = document.querySelector(".filter-toggle--js");
+	const filterToggleFixed = document.querySelector(".filter-toggle--fixed");
+
+	if (filterToggle && filterToggleFixed) {
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					// Если элемент вышел из зоны видимости сверху (scrolled past top)
+					// entry.isIntersecting будет false, и boundingClientRect.top будет отрицательным
+					if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+						filterToggleFixed.classList.add("active");
+					} else {
+						filterToggleFixed.classList.remove("active");
+					}
+				});
+			},
+			{
+				threshold: 0, // Проверяем с самого края видимости
+				rootMargin: "0px", // Проверяем точно по границе viewport
+			}
+		);
+
+		observer.observe(filterToggle);
+	}
+
 	$(".product-accordion").on("click", function (e) {
 		const target = e.target.closest(
 			".product-accordion__img-wrap, .product-accordion__title"
@@ -769,6 +796,26 @@ function eventHandler() {
 		},
 	});
 
+	const sliderWrap = document.querySelectorAll(".content-slider-wrap");
+
+	if (sliderWrap.length) {
+		sliderWrap.forEach(el => {
+			new Swiper(el.querySelector(".content-slider--js"), {
+				slidesPerView: 1,
+				spaceBetween: 0,
+				navigation: {
+					nextEl: el.querySelector(".swiper-button-next"),
+					prevEl: el.querySelector(".swiper-button-prev"),
+				},
+				pagination: {
+					el: el.querySelector(".swiper-pagination"),
+					type: "bullets",
+					clickable: true,
+				},
+			});
+		});
+	}
+
 	$(".sAbout__toggle--js").on("click", function () {
 		$(this).toggleClass("active");
 		$(".sAbout__inner").toggleClass("active");
@@ -777,6 +824,24 @@ function eventHandler() {
 	$(".property-item__toggle--js").on("click", function () {
 		$(this).toggleClass("active");
 		$(this).next().slideToggle();
+	});
+
+	$(".sCategories__head").on("click", function () {
+		$(".sCategories__item.active")
+			.removeClass("active")
+			.find(".sCategories__head")
+			.next()
+			.slideUp();
+		$(this).next().slideToggle();
+		$(this).parent().toggleClass("active");
+	});
+
+	$(".sCategories__caption").on("click", function (e) {
+		const innerEl = e.target.closest("a");
+		if (!this.parentElement.classList.contains("active") || innerEl) return;
+		$(this).next().slideToggle();
+		$(this).parent().toggleClass("active");
+		$(this).slideUp();
 	});
 }
 

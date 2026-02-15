@@ -2,7 +2,9 @@
 .sWhyBrand {
 	// --sPT: #{rem()};
 	--sPB: #{rem(0)};
-	--sTPB: #{rem(80)};
+	@include media-breakpoint-up(md) {
+		--sTPB: #{rem(80)};
+	}
 
 	&__row {
 		// --bs-gutter-x: #{rem()};
@@ -16,6 +18,9 @@
 		text-align: center;
 	}
 	.section-title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	&__col {
 	}
@@ -35,6 +40,13 @@
 	.logo-img {
 		margin-top: -90px;
 		margin-bottom: 1rem;
+		position: relative;
+		z-index: 3;
+		@include media-breakpoint-down(md) {
+			order: 1;
+			margin-top: 1rem;
+			width: 100px;
+		}
 	}
 	&__item {
 		@include media-breakpoint-up(xl) {

@@ -1,13 +1,14 @@
 mixin sCategories(data)
 	// start sCategories
-	+b.sCategories.section#sCategories&attributes(attributes).d-none.d-lg-block
+	+b.sCategories.section#sCategories&attributes(attributes)
 		.container
 			+e.row.row
 				mixin item(i,t)
 					+e.col.col-xl-4.col-lg-6
 						+e.item
-							+img(`img/cat-${i}.jpg`, 'bg').img-bg
-							+e.title= t
+							+e.head
+								+img(`img/cat-${i}.jpg`, 'bg').img-bg
+								+e.title= t
 							+e.caption
 								.row
 									.col
@@ -21,7 +22,7 @@ mixin sCategories(data)
 											li: a(href="#") Холодильная камера
 											li: a(href="#") Винный шкаф
 										a.btn.btn-outline-white(href="#") Смотреть всё
-									.col-auto
+									.col-auto.d-none.d-md-block
 										+img('img/cat.png')
 				+item(1,'Стиральные машины')
 				+item(2,'Холодильники')

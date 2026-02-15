@@ -11,10 +11,20 @@ mixin sContent06()
 								.col.h5.fw-400 Шоу-рум на Курской
 								.col-auto
 									a.text-body(href="#")  Подробнее
-							+img("img/about.jpg")
-							.row.d-md-none
-								.col-auto.ms-auto
-									a(href="#").small Подробнее
+							+b.content-slider-wrap
+								+b.content-slider--js.swiper
+									.swiper-wrapper
+										- for (var x = 0; x < 3; x++)
+											.swiper-slide
+												+img("img/about.jpg")
+								+e.row-control.row
+									.col
+										.swiper-pagination
+									.col-auto.d-none.d-md-block
+										.arrow-wrap
+											+arrow
+									.col-auto.d-md-none
+										a(href="#").small Подробнее
 						h4 Чем мы можем быть вам полезны
 						p Удобная и быстрая доставка. Мы понимаем, что ваше время ценно, поэтому предлагаем быструю доставку заказов к дому. Можете быть уверены, что покупка прибудет к вам вовремя.
 						ul

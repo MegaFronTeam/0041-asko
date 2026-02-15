@@ -693,3 +693,17 @@ ul {
 		}
 	}
 }
+
+.content-slider-wrap {
+	&__row-control {
+		align-items: center;
+	}
+	.arrow-wrap {
+		position: relative;
+		bottom: auto;
+		right: auto;
+	}
+	.swiper-pagination {
+		text-align: left;
+	}
+}

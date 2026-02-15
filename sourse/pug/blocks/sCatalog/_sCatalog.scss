@@ -654,9 +654,6 @@
 .filter-toggle {
 	display: flex;
 	align-items: center;
-	width: calc(100% - 30px);
-	left: 15px;
-	position: fixed;
 	height: 48px;
 	background-color: $primary;
 	color: #fff;
@@ -665,11 +662,24 @@
 	font-size: 18px;
 	gap: 10px;
 	padding-inline: 20px;
-	z-index: 100;
-	@include media-breakpoint-up(lg) {
-		bottom: 10px;
+	z-index: 99;
+	width: 100%;
+	&--fixed {
+		left: 15px;
+		width: calc(100% - 30px);
+		position: fixed;
+		@include media-breakpoint-up(lg) {
+			bottom: 10px;
+		}
+		bottom: 70px;
+		transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+		&:not(.active) {
+			visibility: hidden;
+			pointer-events: none;
+			opacity: 0;
+			transform: translateY(200%);
+		}
 	}
-	bottom: 70px;
 	&__count {
 		width: 24px;
 		height: 24px;

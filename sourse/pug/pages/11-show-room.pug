@@ -41,11 +41,23 @@ block pagecontent
 			//- 	+e.btn(style="--icon-color: #40C1F3")
 			//- 		+icon("metro")
 			//- 		| Кутузовская
-		.section.pt-0.text-center
-			+img("img/show-room.jpg").res-i.card-img
+		.section.pt-0.text-center.container
+			+b.content-slider-wrap
+				+b.content-slider--js.swiper
+					.swiper-wrapper
+						- for (var x = 0; x < 3; x++)
+							.swiper-slide
+								+img("img/show-room.jpg").res-i.card-img
+				
+				+e.row-control.row.mt-3
+					.col
+						.swiper-pagination.text-md-start.text-center
+					.col-auto.d-none.d-md-block
+						.arrow-wrap
+							+arrow
 		.row
 			.col-12
-				.section-title-center.text-center.mb-5.container
+				.section-title-center.text-center.mb-sm-5.container
 					h2 Ассортимент техники Asko
 					.h6.fw-400 В шоуруме представлены новинки и популярные модели бытовой техники Asko. Все приборы подключены. Можно ознакомиться не только с их внешним видом в интерьере, но и с функциями, доступными в демонстрационном режиме, оценить удобство интеграции в мебель и комфортную систему управления.
 				+sCategories
