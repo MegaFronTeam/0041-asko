@@ -823,7 +823,7 @@ function eventHandler() {
 
 	$(".property-item__toggle--js").on("click", function () {
 		$(this).toggleClass("active");
-		$(this).next().fadeToggle();
+		$(this).next().slideToggle();
 	});
 
 	$(".sCategories__head").on("click", function () {
@@ -832,14 +832,14 @@ function eventHandler() {
 			.find(".sCategories__head")
 			.next()
 			.slideUp();
-		$(this).next().fadeToggle();
+		$(this).next().slideToggle();
 		$(this).parent().toggleClass("active");
 	});
 
 	$(".sCategories__caption").on("click", function (e) {
 		const innerEl = e.target.closest("a");
 		if (!this.parentElement.classList.contains("active") || innerEl) return;
-		$(this).next().fadeToggle();
+		$(this).next().slideToggle();
 		$(this).parent().toggleClass("active");
 		$(this).slideUp();
 	});
