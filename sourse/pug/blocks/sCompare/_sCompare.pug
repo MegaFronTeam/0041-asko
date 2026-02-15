@@ -5,9 +5,9 @@ mixin sCompare(data)
 			+e.head
 				+e.slider--head-js.swiper
 					<!-- Fixed slide to keep titles aligned. В идеале сюда выводить карточку, в которой больше  всего текста   -->
-					+e.slide--fixed.swiper-slide
-						+b.compare-item--head
-							+product-item-compare(1)
+					//- +e.slide--fixed.swiper-slide
+					//- 	+b.compare-item--head
+					//- 		+product-item-compare(1)
 					.swiper-wrapper
 						- for (var y = 0; y < 2; y++)
 							- for (var x = 1; x <= 5; x++)
@@ -20,7 +20,7 @@ mixin sCompare(data)
 			+e.row-control.row
 				.col
 					.swiper-scrollbar
-				.col-auto.d-none.d-lg-flex
+				.col-auto.d-none.d-xl-block
 					.arrow-wrap
 						+arrow
 			+e.body
@@ -91,5 +91,14 @@ mixin sCompare(data)
 													
 												+e.group-text Конденсационная
 													+info()
-
+			+e.fixed-slider-wrap
+				+e.fixed-slider-block
+					+e.slider--fixed-js.swiper
+						.swiper-wrapper
+							- for (var y = 0; y < 2; y++)
+								- for (var x = 1; x <= 5; x++)
+									+e.slide--head.swiper-slide(style=`--order-index: ${(y*5 + x)}`)
+										+b.compare-item--fixed
+											+product-item-compare-sm(x)
+					.swiper-scrollbar
 	// end sCompare

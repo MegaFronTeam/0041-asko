@@ -643,7 +643,6 @@ function eventHandler() {
 	// Compare sliders with sync
 	const compareHeadSlider = new Swiper(".sCompare__slider--head-js", {
 		slidesPerView: "auto",
-		freeMode: true,
 		watchSlidesProgress: true,
 		scrollbar: {
 			el: ".sCompare .swiper-scrollbar",
@@ -655,21 +654,146 @@ function eventHandler() {
 		},
 	});
 
+	// Compare sliders with sync
+	const compareHeadSliderFixed = new Swiper(".sCompare__slider--fixed-js", {
+		slidesPerView: "auto",
+		scrollbar: {
+			el: ".sCompare__fixed-slider-block .swiper-scrollbar",
+			draggable: true,
+		},
+	});
+
 	const compareBodySlider = new Swiper(".sCompare__slider--body-js", {
 		slidesPerView: "auto",
-		freeMode: true,
-		thumbr: {
-			swiper: compareHeadSlider,
-		},
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
 		},
 	});
 
-	// Sync sliders
-	compareHeadSlider.controller.control = compareBodySlider;
-	compareBodySlider.controller.control = compareHeadSlider;
+	// Sync sliders (head, fixed head, and body) without recursive controller loops
+	const compareSliders = [
+		compareHeadSlider,
+		compareHeadSliderFixed,
+		compareBodySlider,
+	];
+	let isCompareSyncing = false;
+
+	const syncCompareTranslate = source => {
+		if (isCompareSyncing) return;
+		isCompareSyncing = true;
+		compareSliders.forEach(slider => {
+			if (slider !== source) {
+				slider.setTranslate(source.translate);
+				slider.updateActiveIndex();
+				slider.updateSlidesClasses();
+			}
+		});
+		isCompareSyncing = false;
+	};
+
+	const syncCompareTransition = (source, duration) => {
+		if (isCompareSyncing) return;
+		isCompareSyncing = true;
+		compareSliders.forEach(slider => {
+			if (slider !== source) {
+				slider.setTransition(duration);
+			}
+		});
+		isCompareSyncing = false;
+	};
+
+	compareSliders.forEach(slider => {
+		slider.on("setTranslate", () => syncCompareTranslate(slider));
+		slider.on("setTransition", (s, duration) =>
+			syncCompareTransition(slider, duration)
+		);
+	});
+
+	// Fixed compare slider behavior
+	const compareSection = document.querySelector(".sCompare");
+	const compareHead = compareSection?.querySelector(".sCompare__head");
+	const compareFixedWrap = compareSection?.querySelector(
+		".sCompare__fixed-slider-wrap"
+	);
+	const compareFixedBlock = compareSection?.querySelector(
+		".sCompare__fixed-slider-block"
+	);
+
+	const getNumber = value => {
+		const parsed = parseFloat(value);
+		return Number.isFinite(parsed) ? parsed : 0;
+	};
+
+	let compareFixedBottom = 0;
+	if (compareFixedBlock) {
+		compareFixedBottom = getNumber(
+			window.getComputedStyle(compareFixedBlock).bottom
+		);
+	}
+
+	const updateCompareFixedSlider = () => {
+		if (!compareHead || !compareFixedWrap || !compareFixedBlock) return;
+
+		const blockHeight = compareFixedBlock.offsetHeight;
+		if (blockHeight) {
+			compareFixedWrap.style.height = `${blockHeight}px`;
+		}
+
+		const headRect = compareHead.getBoundingClientRect();
+		const headVisible =
+			headRect.bottom > 0 && headRect.top < window.innerHeight;
+
+		if (headVisible) {
+			compareFixedBlock.style.transform = "translateY(100%)";
+			compareFixedBlock.style.position = "";
+			compareFixedBlock.style.top = "";
+			compareFixedBlock.style.bottom = "";
+			compareFixedBlock.style.left = "";
+			compareFixedBlock.style.width = "";
+			return;
+		}
+
+		compareFixedBlock.style.transform = "translateY(0)";
+
+		const wrapRect = compareFixedWrap.getBoundingClientRect();
+		const fixedTop = window.innerHeight - compareFixedBottom - blockHeight;
+
+		if (wrapRect.top <= fixedTop) {
+			compareFixedBlock.style.position = "absolute";
+			compareFixedBlock.style.top = "0";
+			compareFixedBlock.style.bottom = "auto";
+			compareFixedBlock.style.left = "0";
+			compareFixedBlock.style.width = "100%";
+			compareFixedBlock.classList.add("at-bottom");
+		} else {
+			compareFixedBlock.style.position = "fixed";
+			compareFixedBlock.style.top = "auto";
+			compareFixedBlock.style.bottom = `${compareFixedBottom}px`;
+			compareFixedBlock.style.left = "0";
+			compareFixedBlock.style.width = "100%";
+			compareFixedBlock.classList.remove("at-bottom");
+		}
+	};
+
+	let compareFixedTicking = false;
+	const onCompareFixedScroll = () => {
+		if (compareFixedTicking) return;
+		compareFixedTicking = true;
+		window.requestAnimationFrame(() => {
+			updateCompareFixedSlider();
+			compareFixedTicking = false;
+		});
+	};
+
+	window.addEventListener("scroll", onCompareFixedScroll, {passive: true});
+	window.addEventListener("resize", onCompareFixedScroll, {passive: true});
+	document.addEventListener("click", event => {
+		if (event.target.closest(".compare-item__group-title--js")) {
+			updateCompareFixedSlider();
+		}
+	});
+	updateCompareFixedSlider();
 
 	const swiper222 = document.querySelector(".sReviews__slider--js");
 	new Swiper(swiper222, {

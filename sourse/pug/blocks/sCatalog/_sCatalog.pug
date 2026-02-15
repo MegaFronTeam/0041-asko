@@ -166,6 +166,19 @@ mixin product-item-compare(i, t, p ,pr)
 						span.d-none.d-lg-inline +
 	// /.product-item
 
+mixin product-item-compare-sm(i, t, p ,pr)
+	+b.ARTICLE.product-item--ac-sm
+		.row
+			.col-auto
+				+e.img-wrap(href="#")
+					//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
+					.img-wrap-center 
+						+img(`img/prod-${i}.png`)
+			.col
+				.smallest.text-secondary Встраиваемая вытяжка
+				a.text-body(href="#")  Asko CC4527S
+	// /.product-item
+
 mixin sCatalog(h2)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
