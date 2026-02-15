@@ -138,9 +138,6 @@
 			display: flex;
 			flex-direction: column;
 		}
-		&__row-control {
-			// order: 2;
-		}
 	}
 } // end.sCompare
 
@@ -150,8 +147,6 @@
 			margin-right: 20px;
 		}
 		margin-right: 10px;
-	}
-	&__group {
 	}
 	&__group-title {
 		white-space: nowrap;

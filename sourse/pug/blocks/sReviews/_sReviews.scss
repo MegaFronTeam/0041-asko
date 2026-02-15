@@ -98,3 +98,56 @@
 	font-size: 18px;
 	// font-weight: 400;
 }
+
+.rew-item__hidden-text-toggle {
+	cursor: pointer;
+	color: $primary;
+	font-size: 14px;
+	margin-top: 10px;
+	@include media-breakpoint-up(md) {
+		text-align: right;
+	}
+	text-align: center;
+	.icon {
+		font-size: 10px;
+		fill: none;
+		@include media-breakpoint-up(md) {
+			stroke: #c9d1e2;
+		}
+		stroke: currentColor;
+		transition: transform 0.3s ease;
+		margin-left: 5px;
+		position: relative;
+	}
+	&.active {
+		.icon {
+			stroke: $primary;
+			transform: rotate(180deg);
+		}
+	}
+}
+.rew-item__middle-hidden-text {
+	&.need-hide {
+		&:not(.active) {
+			max-height: 110px;
+			@include media-breakpoint-up(md) {
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 30%;
+					background: linear-gradient(
+						180deg,
+						rgba(247, 248, 250, 0) 0%,
+						#f7f8fa 100%
+					);
+				}
+			}
+		}
+		transition: max-height 0.3s ease;
+		overflow: hidden;
+		position: relative;
+	}
+}

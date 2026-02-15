@@ -967,8 +967,15 @@ function eventHandler() {
 		$(this).parent().toggleClass("active");
 		$(this).slideUp();
 	});
-}
 
+	$(".rew-item__hidden-text-toggle--js").on("click", function () {
+		$(this).toggleClass("active");
+		$(this)
+			.parent()
+			.find(".rew-item__middle-hidden-text")
+			.toggleClass("active");
+	});
+}
 if (document.readyState !== "loading") {
 	eventHandler();
 } else {

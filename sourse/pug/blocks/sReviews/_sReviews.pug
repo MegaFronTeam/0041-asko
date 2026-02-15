@@ -123,15 +123,18 @@ mixin sReviews2(data)
 													.col-xl-3
 														.small.text-secondary Отзыв
 													.col
-														p Варочная панель Asko HI1995G стала отличным подарком для моей супруги на годовщину. Она давно хотела обновить нашу кухню, и этот подарок оказался именно тем
-												.d-md-none
-													.small.text-secondary Фото и видео
-													.prod-head.mb-2
-														+img(`img/prod-${x}.png`)
-														+img(`img/prod-${x}.png`)
-														+img(`img/prod-${x}.png`)
-													//- .text-end
-													//- 	a(href="#") Отзыв полностью
+														+e.middle-hidden-text.need-hide
+															p Варочная панель Asko HI1995G стала отличным подарком для моей супруги на годовщину. Она давно хотела обновить нашу кухню, и этот подарок оказался именно тем
+															p Варочная панель Asko HI1995G стала отличным подарком для моей супруги на годовщину. Она давно хотела обновить нашу кухню, и этот подарок оказался именно тем
+															.d-md-none
+																.small.text-secondary Фото и видео
+																.prod-head.mb-2
+																	+img(`img/prod-${x}.png`)
+																	+img(`img/prod-${x}.png`)
+																	+img(`img/prod-${x}.png`)
+														+e.hidden-text-toggle--js
+															span.d-none.d-sm-inline Отзыв полностью
+															+icon("chevron-down")
 						+e.row-control.row.align-items-center
 							.col
 								.swiper-pagination
