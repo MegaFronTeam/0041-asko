@@ -428,14 +428,14 @@
 		border-radius: 8px;
 		cursor: pointer;
 		@include mt;
-		&:not(.active):not(:hover) {
-			color: $secondary;
-			svg {
-				* {
-					fill: currentColor !important;
-				}
-			}
-		}
+		// &:not(.active):not(:hover) {
+		// 	color: $secondary;
+		// 	svg {
+		// 		* {
+		// 			fill: currentColor !important;
+		// 		}
+		// 	}
+		// }
 		svg {
 			@include mt;
 			width: 100%;

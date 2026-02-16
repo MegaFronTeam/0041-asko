@@ -38,6 +38,9 @@
 		position: relative;
 		max-height: rem(540);
 	}
+	.sProdHead__slider-sm {
+		height: 100%;
+	}
 	--thumb-w: #{rem(60)};
 
 	.swiper-slide {
