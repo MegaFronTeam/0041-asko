@@ -844,8 +844,11 @@ function eventHandler() {
 	});
 
 	$(".compare-item").on("click", ".compare-item__group-title--js", function () {
-		$(this).toggleClass("active");
+		const indexThis = $(this).index();
 		const index = $(this).parent().index();
+		$(
+			`.compare-item__group:nth-child(${index + 1}) .compare-item__group-title--js:nth-child(${indexThis + 1})`
+		).toggleClass("active");
 		$(
 			`.compare-item__group:nth-child(${index + 1}) .compare-item__toggle-block`
 		).slideToggle();

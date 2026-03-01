@@ -105,6 +105,20 @@
 		position: relative;
 		z-index: 4;
 	}
+	&__body {
+		position: relative;
+	}
+	.sCompare__slide--title {
+		position: absolute;
+		left: 0;
+		top: 0;
+		--show-title: 1;
+		pointer-events: none;
+		.sCompare__td-flex {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
@@ -132,11 +146,18 @@
 		}
 		margin-right: 10px;
 	}
+	position: relative;
 	&__group-title {
 		white-space: nowrap;
 		margin-bottom: 20px;
 		cursor: pointer;
+		position: sticky;
+		left: 0;
+		top: 0;
 		z-index: 100;
+		opacity: var(--show-title, 0);
+		// visibility: var(--show-title, hidden);
+		// pointer-events: var(--show-title, none);
 		.icon {
 			position: relative;
 			fill: none;
@@ -154,6 +175,9 @@
 		color: $primary;
 		margin-bottom: 10px;
 		white-space: nowrap;
+		opacity: var(--show-title, 0);
+		visibility: var(--show-title, hidden);
+		// pointer-events: var(--show-title, none);
 	}
 	&__group-text {
 		border-bottom: 1px solid #e1e5eb;

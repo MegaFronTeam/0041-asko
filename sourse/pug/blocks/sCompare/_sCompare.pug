@@ -4,10 +4,6 @@ mixin sCompare(data)
 		.container
 			+e.head
 				+e.slider--head-js.swiper
-					<!-- Fixed slide to keep titles aligned. В идеале сюда выводить карточку, в которой больше  всего текста   -->
-					//- +e.slide--fixed.swiper-slide
-					//- 	+b.compare-item--head
-					//- 		+product-item-compare(1)
 					.swiper-wrapper
 						+e.slide--head.swiper-slide
 							+e.tr-flex
@@ -38,7 +34,41 @@ mixin sCompare(data)
 											block
 										else
 											= p
+				mixin innerGrT(t,p)
+					+e.group-sub-title= t
+					.sCompare__tr-flex
+						.sCompare__td-flex
+							+e.group-text
+								if block
+									block
+								else
+									= p
 				+e.slider--body-js.swiper
+					+e.slide--title.swiper-slide
+						+b.compare-item--body
+							+e.group
+								+e.group-title--js.h4: span Основные характеристики
+									+icon("chevron-down")
+								+e.toggle-block
+									+innerGrT("Тип", "Бытовая")
+									+innerGrT("Тип сушки", "Конденсационная")
+									+innerGrT("Тип загрузки", "Фронтальная")
+									+innerGrT("Дверца", "Фронтальная перенавешиваемая со стеклом")
+									+innerGrT("Подсветка барабана")
+										img(src="img/true.svg", alt="")
+										img(src="img/false.svg", alt="")
+							+e.group
+								+e.group-title--js.visibility-el.h4: span Безопасность
+									+icon("chevron-down")
+								+e.toggle-block
+									+innerGr("Подсветка барабана")
+										img(src="img/true.svg", alt="")
+										img(src="img/false.svg", alt="")
+									+innerGr("Подготовлена для подключения к внешним дозировочным системам")
+										img(src="img/true.svg", alt="")
+									+innerGr("Конденсационная")
+										img(src="img/true.svg", alt="")
+										+info()
 					.swiper-wrapper
 						+e.slide.swiper-slide
 							+b.compare-item--body
