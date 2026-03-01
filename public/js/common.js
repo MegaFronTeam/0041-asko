@@ -644,6 +644,8 @@ function eventHandler() {
 	const compareHeadSlider = new Swiper(".sCompare__slider--head-js", {
 		slidesPerView: "auto",
 		watchSlidesProgress: true,
+		freeMode: true,
+		watchOverflow: true,
 		scrollbar: {
 			el: ".sCompare .swiper-scrollbar",
 			draggable: true,
@@ -657,6 +659,8 @@ function eventHandler() {
 	// Compare sliders with sync
 	const compareHeadSliderFixed = new Swiper(".sCompare__slider--fixed-js", {
 		slidesPerView: "auto",
+		freeMode: true,
+		watchOverflow: true,
 		scrollbar: {
 			el: ".sCompare__fixed-slider-block .swiper-scrollbar",
 			draggable: true,
@@ -665,6 +669,8 @@ function eventHandler() {
 
 	const compareBodySlider = new Swiper(".sCompare__slider--body-js", {
 		slidesPerView: "auto",
+		freeMode: true,
+		watchOverflow: true,
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
@@ -871,18 +877,18 @@ function eventHandler() {
 		"click",
 		".compare-item__btn-switch-index--js",
 		function () {
-			const index = $(this).parents(".sCompare__slide").index();
+			const index = $(this).parents(".sCompare__td-flex").index();
 			const orderIndex = $(this)
-				.parents(".sCompare__slide")
+				.parents(".sCompare__td-flex")
 				.css("--order-index");
 
 			console.log(index, orderIndex);
 
-			$(`.sCompare__slide[style*="--order-index: ${+orderIndex + 1}"]`).css({
+			$(`.sCompare__td-flex[style*="--order-index: ${+orderIndex + 1}"]`).css({
 				"--order-index": +orderIndex,
 			});
 
-			$(`.sCompare__slide:nth-child(${index + 1})`).css({
+			$(`.sCompare__td-flex:nth-child(${index + 1})`).css({
 				"--order-index": +orderIndex + 1,
 			});
 
