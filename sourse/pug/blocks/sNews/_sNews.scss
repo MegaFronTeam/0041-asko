@@ -57,7 +57,9 @@
 
 .news-item {
 	display: block;
-	color: $body-color;
+	&:not(:hover) {
+		color: var(--bs-body-color);
+	}
 	@include media-breakpoint-down(md) {
 		aspect-ratio: 380 / 253;
 		color: #fff;
@@ -76,7 +78,7 @@
 			background: linear-gradient(
 				180deg,
 				rgba(80, 108, 160, 0) 50.2%,
-				#1d273a 100%
+				var(--bs-body-color) 100%
 			);
 		}
 	}

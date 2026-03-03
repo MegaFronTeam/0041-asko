@@ -25,7 +25,7 @@
 	}
 	a {
 		&:not(:hover) {
-			color: #000;
+			color: #fff;
 		}
 		display: block;
 		padding: rem(20) calc(var(--bs-gutter-x) / 2);

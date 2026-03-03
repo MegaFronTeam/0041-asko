@@ -6,12 +6,12 @@
 	--swiperArrowSize: #{rem(48)};
 	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
 	--swiperBorderColorDef: #fff;
-	--swiperColorDef: var(--bs-secondary);
+	--swiperColorDef: var(--bs-primary);
 	--swiperBgDef: #ffffff;
 
-	--swiperBorderColorDefHover: #fff;
-	--swiperColorDefHover: var(--bs-primary);
-	--swiperBgDefHover: #ffffff;
+	--swiperBorderColorDefHover: var(--bs-primary);
+	--swiperColorDefHover: #fff;
+	--swiperBgDefHover: var(--bs-primary);
 
 	//  --carousel-button-width: 48px;
 	//  --carousel-button-height: 48px;

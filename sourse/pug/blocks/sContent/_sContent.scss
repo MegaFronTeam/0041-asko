@@ -105,6 +105,9 @@
 		width: 34px;
 		cursor: pointer;
 		@include mt;
+		img {
+			max-width: 100%;
+		}
 		@include media-breakpoint-down(sm) {
 			position: absolute;
 			left: 30px;
@@ -240,6 +243,6 @@
 		fill: none;
 		stroke: currentColor;
 		font-size: 20px;
-		color: #c9d1e2;
+		color: #d5cdc4;
 	}
 }

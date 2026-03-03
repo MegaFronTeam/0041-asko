@@ -7,7 +7,7 @@
 .sBecomePartners {
 	position: relative;
 	&.bg-wrap {
-		background: #1d273a;
+		background: var(--bs-body-color);
 		&::before {
 			@include media-breakpoint-down(xl) {
 				content: "";
@@ -21,7 +21,7 @@
 				background: linear-gradient(
 					180deg,
 					rgba(29, 39, 58, 0) 0%,
-					#1d273a 67.88%
+					var(--bs-body-color) 67.88%
 				);
 			}
 		}
@@ -109,7 +109,11 @@
 		flex-wrap: wrap;
 	}
 	&__item {
-		background: linear-gradient(90deg, #bd2539 0%, #1d273a 100%);
+		background: linear-gradient(
+			90deg,
+			var(--bs-primary) 0%,
+			var(--bs-body-color) 100%
+		);
 		padding: em(3) em(12);
 		@include media-breakpoint-up(lg) {
 			font-size: 24px;

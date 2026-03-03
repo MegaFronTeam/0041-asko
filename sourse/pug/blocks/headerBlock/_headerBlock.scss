@@ -54,7 +54,7 @@
 				height: 100%;
 				background: linear-gradient(
 					90deg,
-					#1d273a 0%,
+					var(--bs-body-color) 0%,
 					rgba(29, 39, 58, 0) 100%
 				);
 			}
@@ -111,7 +111,7 @@
 		line-height: 1.2;
 		margin-top: 5px;
 		@include media-breakpoint-down(md) {
-			color: #79859e;
+			color: var(--bs-secondary);
 		}
 	}
 
@@ -127,8 +127,9 @@
 		@include media-breakpoint-up(lg) {
 			min-width: 200px;
 			background: none;
-			border-color: #fff;
+			color: #fff;
 		}
+		border-color: var(--bs-primary);
 	}
 
 	@include media-breakpoint-up(xxl) {
@@ -208,7 +209,7 @@
 	--swiperArrowPosition: 0;
 	z-index: 3;
 	@include media-breakpoint-down(lg) {
-		--swiperBorderColorDef: #c9d1e2;
-		--swiperBorderColorDefHover: #c9d1e2;
+		--swiperBorderColorDef: #d5cdc4;
+		--swiperBorderColorDefHover: #d5cdc4;
 	}
 }

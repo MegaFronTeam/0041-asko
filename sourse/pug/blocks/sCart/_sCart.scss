@@ -194,7 +194,7 @@
 		align-items: center;
 		// padding: 4px 0 0;
 		--bs-gutter-x: 0;
-		border-bottom: 1px solid #c9d1e2;
+		border-bottom: 1px solid #d5cdc4;
 		max-width: 390px;
 		@include media-breakpoint-up(md) {
 			margin-left: 20px;
@@ -288,7 +288,7 @@
 			bottom: 0;
 			width: 100%;
 			height: 1px;
-			background-color: #c9d1e2;
+			background-color: #d5cdc4;
 			z-index: -1;
 		}
 	}
@@ -472,7 +472,7 @@
 	&__block {
 		display: flex;
 		gap: 10px;
-		border: 0.5px solid #c9d1e2;
+		border: 0.5px solid #d5cdc4;
 		border-radius: 12px;
 		padding: rem(15) rem(20);
 		color: $secondary;
@@ -509,7 +509,7 @@
 	&__block {
 		display: flex;
 		gap: 10px;
-		border: 0.5px solid #c9d1e2;
+		border: 0.5px solid #d5cdc4;
 		border-radius: 100px;
 		padding: rem(10);
 		color: $secondary;
@@ -568,7 +568,7 @@
 .order-final-item {
 	position: relative;
 	padding: rem(20);
-	border: 1px solid #c9d1e2;
+	border: 1px solid #d5cdc4;
 	background-color: #fff;
 	border-radius: 16px;
 	@include media-breakpoint-up(lg) {
@@ -580,7 +580,7 @@
 		top: rem(20);
 		right: rem(20);
 		padding: 0;
-		color: #c9d1e2;
+		color: #d5cdc4;
 		&:hover {
 			color: $primary;
 		}
@@ -593,7 +593,7 @@
 	&__icon-wrap {
 		.icon {
 			font-size: 1rem;
-			color: #79859e;
+			color: var(--bs-secondary);
 		}
 	}
 }
@@ -652,7 +652,7 @@
 		align-items: center;
 		padding: 20px 20px;
 		.icon {
-			stroke: #c9d1e2;
+			stroke: #d5cdc4;
 			fill: none;
 			position: relative;
 			font-size: 12px;

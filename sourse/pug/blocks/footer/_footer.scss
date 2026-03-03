@@ -1,6 +1,7 @@
 .footer {
 	margin-top: auto;
-	background-color: #fff;
+	background-color: var(--bs-body-color);
+	color: #fff;
 	// --sPT: #{rem()};
 	--sPB: #{rem(0)};
 	// --sTPB: #{rem()};
@@ -18,7 +19,9 @@
 		height: auto;
 	}
 	a {
-		color: $body-color;
+		&:not(:hover) {
+			color: #fff;
+		}
 		font-weight: normal;
 	}
 	ul {
@@ -34,7 +37,7 @@
 	}
 	&__bottom {
 		@include media-breakpoint-up(md) {
-			border-top: 1px solid #c9d1e2;
+			border-top: 1px solid #d5cdc4;
 		}
 		padding-block: 20px;
 		@include media-breakpoint-down(md) {

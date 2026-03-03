@@ -134,7 +134,7 @@
 		}
 	}
 	&__promo {
-		border: 1px solid #c9d1e2;
+		border: 1px solid #d5cdc4;
 		font-size: 14px;
 		@include media-breakpoint-down(md) {
 			font-size: 12px;
@@ -148,7 +148,7 @@
 		&:hover,
 		&.active {
 			color: #fff;
-			background: linear-gradient(90deg, #bd2539 0%, #ff9a00 100%);
+			background: linear-gradient(90deg, var(--bs-primary) 0%, #ff9a00 100%);
 			border-color: transparent;
 		}
 	}
@@ -329,8 +329,8 @@
 		font-size: 16px;
 	}
 	&__btn {
-		color: #79859e;
-		border: 0.6px solid #c9d1e2;
+		color: var(--bs-body-color);
+		border: 0.6px solid #d5cdc4;
 		background-color: #fff;
 		padding: em(10) em(20);
 		@include media-breakpoint-down(md) {
@@ -340,11 +340,11 @@
 		cursor: pointer;
 		&:hover,
 		&.active {
-			color: $body-color;
+			color: var(--bs-primary);
 		}
 	}
 	sup {
-		color: $primary;
+		color: var(--bs-primary);
 	}
 }
 
@@ -422,7 +422,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: 1px solid #c9d1e2;
+		border: 1px solid #d5cdc4;
 		width: rem(30);
 		aspect-ratio: 1;
 		border-radius: 8px;
@@ -516,7 +516,7 @@
 
 .filter-item {
 	&:not(:last-child) {
-		border-bottom: 1px solid #c9d1e2;
+		border-bottom: 1px solid #d5cdc4;
 	}
 	&__head {
 		line-height: 1.2;
@@ -573,7 +573,7 @@
 		height: rem(48);
 		box-shadow: 0 10px 30px 0 rgba(38, 51, 77, 0.05);
 		border-radius: 12px;
-		color: #c9d1e2;
+		color: #d5cdc4;
 		&.active {
 			color: $primary;
 		}
@@ -624,7 +624,7 @@
 			width: 24px;
 			height: 24px;
 			border-radius: 50%;
-			border: 1px solid #c9d1e2;
+			border: 1px solid #d5cdc4;
 			right: -20px;
 			background-color: #fff;
 			position: absolute;
@@ -698,7 +698,7 @@
 
 .product-item--rew {
 	box-shadow: none;
-	border: 0.5px solid #c9d1e2;
+	border: 0.5px solid #d5cdc4;
 	@include media-breakpoint-up(md) {
 		padding: 15px;
 	}
@@ -725,7 +725,7 @@
 
 .product-item--ac-sm {
 	padding: 10px !important;
-	border: 0.5px solid #c9d1e2;
+	border: 0.5px solid #d5cdc4;
 	border-radius: 12px;
 	box-shadow: none;
 	.row {

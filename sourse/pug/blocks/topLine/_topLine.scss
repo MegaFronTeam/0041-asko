@@ -3,7 +3,8 @@
 	--sPT: #{rem(10)};
 	--sPB: #{rem(10)};
 	text-align: center;
-	background-color: #fff;
+	background-color: var(--bs-body-color);
+	color: #fff;
 	.row {
 		position: relative;
 		@include media-breakpoint-up(lg) {
@@ -51,7 +52,9 @@
 	&__phone-link {
 		font-weight: 500;
 		font-size: rem(20);
-		color: $body-color;
+		&:not(:hover) {
+			color: #fff;
+		}
 	}
 	@include media-breakpoint-up(xl) {
 	}
@@ -128,10 +131,10 @@
 				border-radius: 50%;
 				width: 8px;
 				height: 8px;
-				right: 0;
-				bottom: rem(8);
+				right: rem(-2);
+				bottom: rem(6);
 				position: absolute;
-				background-color: #e62a43;
+				background-color: var(--bs-primary);
 			}
 		}
 		&:hover {
@@ -147,7 +150,7 @@
 				width: 40px;
 				height: 40px;
 				border-radius: 50%;
-				border: 1px solid #c9d1e2;
+				border: 1px solid #d5cdc4;
 				opacity: 0;
 			}
 			&:not(.active) {

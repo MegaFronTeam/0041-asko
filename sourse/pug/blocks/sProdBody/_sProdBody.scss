@@ -32,7 +32,7 @@
 
 	&__head,
 	&__head--fixed {
-		border-bottom: 1px solid #c9d1e2;
+		border-bottom: 1px solid #d5cdc4;
 		background-color: $body-bg;
 		left: 0;
 		.row {
@@ -71,8 +71,8 @@
 			opacity 0.25s ease,
 			visibility 0.25s ease;
 		z-index: 10;
-		border-top: 0.5px solid #c9d1e2;
-		border-bottom: 0.5px solid #c9d1e2;
+		border-top: 0.5px solid #d5cdc4;
+		border-bottom: 0.5px solid #d5cdc4;
 		background-color: #fff;
 		&:not(.active) {
 			transform: translateY(-100%);
@@ -107,7 +107,7 @@
 			}
 		}
 		td {
-			border-bottom: 1px solid #c9d1e2;
+			border-bottom: 1px solid #d5cdc4;
 			&:nth-child(2) {
 				text-align: right;
 			}
@@ -161,8 +161,8 @@
 
 .property-item {
 	@include media-breakpoint-down(md) {
-		border-top: 1px solid #c9d1e2;
-		border-bottom: 1px solid #c9d1e2;
+		border-top: 1px solid #d5cdc4;
+		border-bottom: 1px solid #d5cdc4;
 		margin-bottom: -1px;
 	}
 	&__content {
@@ -185,7 +185,7 @@
 				display: none;
 			}
 			fill: none;
-			stroke: #c9d1e2;
+			stroke: #d5cdc4;
 			stroke-width: 1;
 			transition: transform 0.25s ease;
 			font-size: 10px;

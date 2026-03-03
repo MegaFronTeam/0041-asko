@@ -34,7 +34,7 @@
 		padding: 20px 0 30px;
 		@include media-breakpoint-up(lg) {
 			padding: 20px var(--px);
-			border-bottom: 1px solid #c9d1e2;
+			border-bottom: 1px solid #d5cdc4;
 			font-weight: 400;
 		}
 		margin: 0;
@@ -180,7 +180,7 @@
 		justify-content: center;
 		gap: 4px;
 		// &:not(.active) {
-		// 	color: #79859e;
+		// 	color: var(--bs-secondary);
 		// }
 	}
 	.icon {

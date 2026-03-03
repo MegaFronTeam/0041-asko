@@ -2,13 +2,14 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
+	color: #fff;
 	@include media-breakpoint-down(lg) {
 		position: fixed;
 		bottom: 0;
 	}
 	@include media-breakpoint-up(lg) {
-		background-color: #fff;
-		border-top: 0.6px solid #c9d1e2;
+		background-color: var(--bs-body-color);
+		border-top: 0.6px solid #d5cdc4;
 		position: absolute;
 		top: 100%;
 	}
@@ -91,7 +92,7 @@
 				inset: 0;
 				// z-index: 2;
 				box-shadow: 0 -10px 30px 0 rgba(38, 51, 77, 0.1);
-				background-color: #fff;
+				background-color: var(--bs-body-color);
 			}
 		}
 		.icons-block__item--catalog-js {
@@ -315,7 +316,7 @@
 			right: 0;
 			top: 0;
 			transform: none;
-			border: 1px solid #c9d1e2;
+			border: 1px solid #d5cdc4;
 			width: 24px;
 			height: 24px;
 			font-size: 14px;
@@ -408,7 +409,7 @@
 			a {
 				width: 100%;
 				&:not(.btn-success) {
-					border: 0.5px solid #c9d1e2;
+					border: 0.5px solid #d5cdc4;
 					border-radius: 100px;
 					display: flex;
 					justify-content: center;

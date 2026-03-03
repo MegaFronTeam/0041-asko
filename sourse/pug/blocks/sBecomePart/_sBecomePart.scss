@@ -24,9 +24,17 @@
 		z-index: 2;
 		overflow: hidden;
 		padding: 0;
-		background: linear-gradient(10deg, #bd2539 0%, #1d273a 100%);
+		background: linear-gradient(
+			10deg,
+			var(--bs-primary) 0%,
+			var(--bs-primary) 100%
+		);
 		@include media-breakpoint-up(sm) {
-			background: linear-gradient(-99deg, #bd2539 0%, #1d273a 100%);
+			background: linear-gradient(
+				-99deg,
+				var(--bs-primary) 0%,
+				var(--bs-primary) 100%
+			);
 			padding: 40px;
 			&::before {
 				content: "";
@@ -37,7 +45,7 @@
 				height: 100%;
 				background: linear-gradient(
 					90deg,
-					#5a263a 0%,
+					var(--bs-primary) 0%,
 					rgba(189, 37, 57, 0) 60.1%
 				);
 			}

@@ -36,7 +36,7 @@
 	input {
 		color: inherit;
 		text-align: center;
-		border: 1px solid #c9d1e2;
+		border: 1px solid #d5cdc4;
 		height: rem(40);
 		width: rem(60);
 		border-radius: 8px;
@@ -48,7 +48,7 @@
 		position: relative;
 		border-radius: 50%;
 		background: none !important;
-		border: 1px solid #c9d1e2;
+		border: 1px solid #d5cdc4;
 		box-shadow: none !important;
 		outline: none !important;
 		background: transparent;
@@ -79,18 +79,19 @@
 	position: relative;
 	padding: 0;
 	position: absolute;
-	padding-top: calc(var(--sPT) + 4px);
+	// margin-top: calc(var(--sPT) + 4px);
 	z-index: 101;
 	background-color: #fff;
+	border-radius: 12px;
 	@include media-breakpoint-up(xxl) {
 		--left: 14%;
-		top: calc(var(--sPT) * -1);
+		// top: calc(var(--sPT) * 1 - 4px);
 	}
 
 	@include media-breakpoint-up(xl) {
 		--left: 15%;
 		--right: -26%;
-		top: calc(var(--sPT) * -1 + 1px);
+		// top: calc(var(--sPT) * -1 + 1px);
 	}
 
 	left: var(--left);
@@ -102,7 +103,7 @@
 	form {
 		border-radius: 12px;
 		padding-right: 4px;
-		border: 0.5px solid #c9d1e2;
+		border: 0.5px solid #d5cdc4;
 		display: flex;
 		align-items: center;
 		gap: 12px;
@@ -238,7 +239,7 @@
 			background-color: #fff;
 
 			border-width: 1px;
-			border-color: #c9d1e2;
+			border-color: #d5cdc4;
 			//border: 1px solid $gray-600!important;
 		}
 	}
@@ -314,7 +315,7 @@
 		}
 	}
 	.irs--round {
-		border: 0.5px solid #c9d1e2;
+		border: 0.5px solid #d5cdc4;
 		border-radius: 20px;
 		padding-left: rem(4);
 		padding-right: rem(4);
@@ -369,7 +370,7 @@
 
 .dd-group {
 	&__item {
-		border-bottom: 1px solid #c9d1e2;
+		border-bottom: 1px solid #d5cdc4;
 	}
 	&__head {
 		padding-block: rem(20);

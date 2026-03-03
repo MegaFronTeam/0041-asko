@@ -23,7 +23,7 @@
 			inset: 0;
 			position: absolute;
 			border-radius: inherit;
-			background: #1d273a;
+			background: var(--bs-body-color);
 			opacity: 0.5;
 			z-index: 2;
 		}

@@ -451,7 +451,11 @@ iframe {
 }
 
 .btn-gradient {
-	background: linear-gradient(90deg, #1d273a 0%, #bd2539 100%);
+	background: linear-gradient(
+		90deg,
+		var(--bs-body-color) 0%,
+		var(--bs-primary) 100%
+	);
 
 	&:hover {
 		background: linear-gradient(90deg, #a61f33 0%, #c72435 100%);
@@ -459,8 +463,7 @@ iframe {
 }
 .btn-outline-white {
 	--bs-btn-color: #fff;
-	--bs-btn-border-width: var(--bs-border-width);
-	--bs-btn-border-color: var(--bs-btn-color);
+	--bs-btn-border-color: var(--bs-success);
 	--bs-btn-hover-border-color: var(--bs-success);
 	--bs-btn-hover-bg: var(--bs-success);
 	--bs-btn-active-border-color: var(--bs-success);
@@ -533,7 +536,7 @@ ul {
 	justify-content: center;
 	height: rem(20);
 	font-size: rem(12);
-	border: 1px solid #c9d1e2;
+	border: 1px solid #d5cdc4;
 	border-radius: 50%;
 	&:hover {
 		background-color: #f8f9fa;
@@ -547,7 +550,7 @@ ul {
 .promocode-block {
 	position: relative;
 	input {
-		border: 0.5px solid #c9d1e2;
+		border: 0.5px solid #d5cdc4;
 		border-radius: 12px;
 		width: 100%;
 		padding: rem(12) rem(100) rem(12) rem(16);
@@ -574,15 +577,20 @@ ul {
 
 .btn {
 	--bs-btn-disabled-color: #fff;
-	--bs-btn-disabled-bg: #c9d1e2;
-	--bs-btn-disabled-border-color: #c9d1e2;
+	--bs-btn-disabled-bg: #d5cdc4;
+	--bs-btn-disabled-border-color: #d5cdc4;
 	opacity: 1;
+}
+
+.btn-success,
+.btn-primary {
+	--bs-btn-color: #fff;
 }
 
 .table-bdb {
 	width: 100%;
 	td {
-		border-bottom: 1px solid #c9d1e2;
+		border-bottom: 1px solid #d5cdc4;
 	}
 	td:last-child {
 		text-align: right;
@@ -614,7 +622,7 @@ ul {
 	.icon {
 		font-size: 20px;
 		flex: 0 0 auto;
-		color: #c9d1e2;
+		color: #d5cdc4;
 		margin-right: 15px;
 		&-chevron-right {
 			fill: none;
@@ -689,7 +697,7 @@ ul {
 	label {
 		@include media-breakpoint-down(sm) {
 			font-size: 14px;
-			color: #79859e;
+			color: var(--bs-secondary);
 		}
 	}
 }
@@ -706,4 +714,10 @@ ul {
 	.swiper-pagination {
 		text-align: left;
 	}
+}
+
+.btn-light {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: var(--bs-body-color);
+	--bs-btn-border-color: var(--bs-body-color);
 }
