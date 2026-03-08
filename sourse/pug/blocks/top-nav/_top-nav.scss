@@ -290,8 +290,9 @@
 			&.h5 {
 				margin-bottom: 10px;
 				position: relative;
-				&:not(:hover) {
-					color: $body-color;
+				color: $body-color;
+				&:hover {
+					color: $primary;
 				}
 			}
 		}

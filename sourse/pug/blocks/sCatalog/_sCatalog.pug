@@ -215,7 +215,7 @@ mixin catalog-head()
 		block
 		.row.align-items-end
 			.col-auto
-				.smallest.text-secondary Сортировка
+				.smallest.text-secondary.mb-2 Сортировка
 				+input("Цена по возрастанию", "select")
 			.col
 			.col-auto
@@ -228,6 +228,7 @@ mixin catalog-head()
 					+e.BUTTON.btn--mob.btn.btn-light 
 					+e.BUTTON.btn--mob.btn.btn-light.active
 mixin filter()
+
 	+b.filter-block
 		+e.head.d-xl-none
 			| Фильтр параметров
@@ -301,6 +302,7 @@ mixin sCatalog02(h2)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
 		.container
+			.smallest.text-secondary.mb-2 Фильтр
 			.row
 				.col-xl-3
 					+filter()
@@ -311,7 +313,7 @@ mixin sCatalog02(h2)
 								+e.filter-item Classic
 								+e.filter-item 1200
 								+e.filter-item--reset Сбросить
-					.section.row.gy-4.mb-4
+					.section.row.gy-4.mb-4.pt-0
 						- const wrapClass="col-xl-4 col-6"
 						+e.col(class= wrapClass)
 							+product-item(`1`,``,``,``) 
