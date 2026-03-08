@@ -158,6 +158,13 @@
 	@include media-breakpoint-only(xl) {
 	}
 	@include media-breakpoint-down(md) {
+		&__caption {
+			color: #fff;
+			background-color: var(--bs-body-color);
+			.text-body {
+				--bs-body-color-rgb: 255, 255, 255;
+			}
+		}
 		&__contact-link {
 			font-size: 24px;
 		}

@@ -4,21 +4,8 @@ mixin sProdHead(data)
 		.container
 			+e.row.row.gy-3
 				.col-xl-6.col-lg-5
-					.product-item__head.row.mb-3.d-lg-none
-						.col
-							.product-item__promo.active Акция
-							.product-item__promo.active Акция
-							.product-item__promo.active Акция
-						.product-item__head-btns.col-auto.row
-							.col-auto
-								.product-item__head-btn(href="#")
-									+icon("burger")
-									.product-item__small-icon
-										+icon("plus")
-										+icon("check")
-							.col-auto
-								.product-item__head-btn(href="#")
-									+icon("heart")
+					.d-lg-none
+						+prod-head()
 					+e.slider-wrap
 						+e.slider-sm-wrap.d-none.d-md-block
 							+e.slider-sm.swiper
@@ -46,21 +33,8 @@ mixin sProdHead(data)
 											img(src=`img/prod-5.png`)
 				.col
 					+e.caption
-						.product-item__head.row.mb-5.d-none.d-lg-flex
-							.col
-								.product-item__promo.active Акция
-								.product-item__promo.active Акция
-								.product-item__promo.active Акция
-							.product-item__head-btns.col-auto.row
-								.col-auto
-									.product-item__head-btn(href="#")
-										+icon("burger")
-										.product-item__small-icon
-											+icon("plus")
-											+icon("check")
-								.col-auto
-									.product-item__head-btn(href="#")
-										+icon("heart")
+						.mb-5.d-none.d-lg-block
+							+prod-head()
 						.row.mb-4
 							.col-md-auto.order-md-last Артикул: 1670225
 							.col
@@ -90,7 +64,7 @@ mixin sProdHead(data)
 							.col-md.col-auto
 								.product-item__price-row.d-block
 									.product-item__price-old 89 000 ₽
-									.product-item__price-new 86 900 ₽
+									.product-item__price.text-primary 86 900 ₽
 							.col-md-12.product-item__purchase.order-md-last.col-auto
 								.product-item__purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
 								.product-item__purchase-img-wrap: img(src="img/purchase-2.svg", alt="")

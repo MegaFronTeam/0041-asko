@@ -125,6 +125,11 @@
 			stroke: currentColor;
 			stroke-width: 1;
 		}
+		svg {
+			[fill="#79859E"] {
+				fill: currentColor;
+			}
+		}
 		&.active {
 			&::before {
 				content: "";

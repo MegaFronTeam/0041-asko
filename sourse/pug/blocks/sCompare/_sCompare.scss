@@ -51,12 +51,12 @@
 				width: calc(55vw - 50%);
 				background: linear-gradient(
 					90deg,
-					rgba(#f7f8fa, 0.5) 0%,
-					rgba(#f7f8fa, 1) 80px
+					rgba($body-bg, 0.5) 0%,
+					rgba($body-bg, 1) 80px
 				);
 			}
 			width: 100px;
-			background: linear-gradient(90deg, rgba(#f7f8fa, 0), rgba(#f7f8fa, 1));
+			background: linear-gradient(90deg, rgba($body-bg, 0), rgba($body-bg, 1));
 		}
 	}
 	&__slider--head-js {

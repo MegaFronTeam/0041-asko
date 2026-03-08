@@ -106,11 +106,21 @@
 		display: grid;
 		grid-template-columns: 240px 1fr;
 		gap: 20px;
-		.product-item__btn {
-			width: 180px;
+		.product-item__img-wrap {
+			max-height: 100%;
+		}
+		.img-wrap-center {
+			align-items: flex-start;
 		}
 		.product-item__head {
 			grid-column: span 2;
+		}
+		.product-item__prices {
+			display: flex;
+			gap: 10px;
+		}
+		.product-item__price {
+			order: -1;
 		}
 	}
 }
