@@ -458,7 +458,11 @@ iframe {
 	);
 
 	&:hover {
-		background: linear-gradient(90deg, #a61f33 0%, #c72435 100%);
+		background: linear-gradient(
+			90deg,
+			var(--bs-body-color) 30%,
+			var(--bs-primary) 100%
+		);
 	}
 }
 .btn-outline-white {
