@@ -12,7 +12,8 @@
 	}
 	.section-title {
 	}
-	&__col {
+	&__col--slide {
+		height: auto;
 	}
 	&__item {
 	}
@@ -219,7 +220,10 @@
 		}
 	}
 	&__text {
-		margin-bottom: 10px;
+		min-height: 2.5em;
+		line-height: 1.2;
+		@include ell(2);
+		margin-bottom: 5px;
 		color: $secondary;
 		@include media-breakpoint-down(md) {
 			font-size: 12px;
@@ -241,6 +245,10 @@
 		gap: 10px;
 	}
 	&__title {
+		min-height: 2.5em;
+		line-height: 1.2;
+		@include ell(2);
+		margin-bottom: 5px;
 		@include media-breakpoint-up(sm) {
 			font-size: 20px;
 		}

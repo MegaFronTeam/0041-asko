@@ -43,14 +43,14 @@ mixin prod-img(i= 1)
 		.img-wrap-center 
 			+img(`img/prod-${i}.png`)
 
-mixin prod-caption()
-	.product-item__text Встраиваемая вытяжка
+mixin prod-caption(t="Встраиваемая вытяжка", p="Asko CC4527S", pr="4.8")
+	.product-item__text #{t}
 	.product-item__title
-		a.text-body(href="#")  Asko CC4527S
+		a.text-body(href="#")  #{p}
 	.product-item__icons.row.g-2
 		.product-item__icon.product-item__icon--rating.col-auto
 			+icon("star")
-			| 4.8
+			| #{pr}
 		.product-item__icon.product-item__icon--comments.col-auto
 			+icon("chart")
 			| 4
@@ -62,7 +62,7 @@ mixin prod-footer(h)
 		.col
 			.product-item__prices
 				.product-item__price-old 89 000 ₽
-				.product-item__price-new 86 900 ₽
+				.product-item__price.text-primary 86 900 ₽
 			.product-item__purchase
 				.product-item__purchase-img-wrap: img(src="img/purchase-1.png", alt="")
 				.product-item__purchase-img-wrap: img(src="img/purchase-2.png", alt="")
@@ -85,7 +85,7 @@ mixin product-item(i, t, p ,pr)
 		+prod-head()
 		+prod-img(i)
 		+e.caption
-			+prod-caption()
+			+prod-caption(t, p, pr)
 			+prod-footer()
 	// /.product-item
 
@@ -117,15 +117,15 @@ mixin sCatalog(h2)
 				.swiper-wrapper
 					- const wrapClass="swiper-slide"
 					+e.col--slide(class= wrapClass)
-						+product-item(`1`,``,``,``) 
+						+product-item(`1`,"Встраиваемая вытяжка Встраиваемая вытяжка", "Asko CC4527S Asko CC4527S ", "4.8") 
 					+e.col--slide(class= wrapClass)
-						+product-item(`2`,``,``,``) 
+						+product-item(`2`) 
 					+e.col--slide(class= wrapClass)
-						+product-item(`3`,``,``,``) 
+						+product-item(`3`) 
 					+e.col--slide(class= wrapClass)
-						+product-item(`4`,``,``,``)
+						+product-item(`4`)
 					+e.col--slide(class= wrapClass)
-						+product-item(`4`,``,``,``)
+						+product-item(`4`)
 			+e.row-control.row
 				.col
 					.swiper-pagination
@@ -147,15 +147,15 @@ mixin sCatalogAccessories(h2)
 				.swiper-wrapper
 					- const wrapClass="swiper-slide"
 					+e.col--slide(class= wrapClass)
-						+product-item(`1`,``,``,``) 
+						+product-item(`1`,"Встраиваемая вытяжка Встраиваемая вытяжка Встраиваемая вытяжка", "Asko CC4527S Asko CC4527S Встраиваемая вытяжка ", "4.8") 
 					+e.col--slide(class= wrapClass)
-						+product-item(`2`,``,``,``) 
+						+product-item(`2`) 
 					+e.col--slide(class= wrapClass)
-						+product-item(`3`,``,``,``) 
+						+product-item(`3`) 
 					+e.col--slide(class= wrapClass)
-						+product-item(`4`,``,``,``)
+						+product-item(`4`)
 					+e.col--slide(class= wrapClass)
-						+product-item(`4`,``,``,``)
+						+product-item(`4`)
 			+e.row-control.row
 				.col.align-self-center
 					.swiper-pagination.text-start
@@ -179,15 +179,15 @@ mixin sCatalogAccessories03(h2)
 				.swiper-wrapper
 					- const wrapClass="swiper-slide"
 					+e.col--slide(class= wrapClass)
-						+product-item(`1`,``,``,``) 
+						+product-item(`1`) 
 					+e.col--slide(class= wrapClass)
-						+product-item(`2`,``,``,``) 
+						+product-item(`2`) 
 					+e.col--slide(class= wrapClass)
-						+product-item(`3`,``,``,``) 
+						+product-item(`3`) 
 					+e.col--slide(class= wrapClass)
-						+product-item(`4`,``,``,``)
+						+product-item(`4`)
 					+e.col--slide(class= wrapClass)
-						+product-item(`4`,``,``,``)
+						+product-item(`4`)
 			+e.row-control.row
 				.col.align-self-center
 					.swiper-pagination.text-start
@@ -316,19 +316,19 @@ mixin sCatalog02(h2)
 					.section.row.gy-4.mb-4.pt-0
 						- const wrapClass="col-xl-4 col-6"
 						+e.col(class= wrapClass)
-							+product-item(`1`,``,``,``) 
+							+product-item(`1`, "Встраиваемая вытяжка Встраиваемая вытяжка Встраиваемая вытяжка", "Asko CC4527S Asko CC4527S Встраиваемая вытяжка ", "4.8") 
 						+e.col(class= wrapClass)
-							+product-item(`2`,``,``,``) 
+							+product-item(`2`) 
 						+e.col(class= wrapClass)
-							+product-item(`3`,``,``,``) 
+							+product-item(`3`) 
 					+sSets02()
 					.section.row.gy-4.mb-4
 						+e.col(class= wrapClass)
-							+product-item(`1`,``,``,``) 
+							+product-item(`1`) 
 						+e.col(class= wrapClass)
-							+product-item(`2`,``,``,``) 
+							+product-item(`2`) 
 						+e.col(class= wrapClass)
-							+product-item(`3`,``,``,``)
+							+product-item(`3`)
 					+sCatalogAccessories
 					.section
 						.row.gy-4
@@ -395,13 +395,13 @@ mixin sCatalog06(h2)
 				
 			.row.gy-4.mb-4
 				+e.col(class= wrapClass)
-					+product-item(`1`,``,``,``) 
+					+product-item(`1`) 
 				+e.col(class= wrapClass)
-					+product-item(`2`,``,``,``) 
+					+product-item(`2`) 
 				+e.col(class= wrapClass)
-					+product-item(`3`,``,``,``) 
+					+product-item(`3`) 
 				+e.col(class= wrapClass)
-					+product-item(`4`,``,``,``)
+					+product-item(`4`)
 				- for (var x = 0; x < 2; x++)
 					+e.col(class="col-12")
 						+b.ARTICLE.product-item--horizontal
@@ -426,7 +426,7 @@ mixin sCatalog06(h2)
 								div
 									+e.head.d-lg-none
 										+e.price-row
-											+e.price-new 86 900 ₽
+											+e.price.text-primary 86 900 ₽
 											+e.price-old 89 000 ₽
 										+e.purchase
 											+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
@@ -479,7 +479,7 @@ mixin sCatalog06(h2)
 										.col.d-lg-block.d-none
 											+e.head
 												+e.price-row
-													+e.price-new 86 900 ₽
+													+e.price 86 900 ₽
 													+e.price-old 89 000 ₽
 												+e.purchase
 													+e.purchase-img-wrap: img(src="img/purchase-1.svg", alt="")
@@ -493,11 +493,11 @@ mixin sCatalog06(h2)
 				h4 Вы смотрели
 			.row.gy-4.mb-4
 				+e.col(class= wrapClass)
-					+product-item(`1`,``,``,``) 
+					+product-item(`1`) 
 				+e.col(class= wrapClass)
-					+product-item(`2`,``,``,``) 
+					+product-item(`2`) 
 				+e.col(class= wrapClass)
-					+product-item(`3`,``,``,``) 
+					+product-item(`3`) 
 				+e.col(class= wrapClass)
-					+product-item(`4`,``,``,``)
+					+product-item(`4`)
 	// end sCatalog
