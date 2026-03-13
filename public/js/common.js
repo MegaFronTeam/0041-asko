@@ -984,6 +984,16 @@ function eventHandler() {
 			.find(".rew-item__middle-hidden-text")
 			.toggleClass("active");
 	});
+
+	$(".section__toggle-btn--js").on("click", function () {
+		$(this).toggleClass("active");
+		$(this)
+			.parents(".section[id]:not(.sProdBody)")
+			.find(".section__toggle-content")
+			.slideToggle(function () {
+				$(this).toggleClass("active");
+			});
+	});
 }
 if (document.readyState !== "loading") {
 	eventHandler();

@@ -172,30 +172,32 @@ mixin sCatalogAccessories03(h2)
 			+b.section-title
 				.row.align-items-center
 					.col
-						h4.mb-0 Аксессуары
+						h4.section__toggle-btn.section__toggle-btn--js.mb-0 Аксессуары
+							+icon("chevron-down")
 					.col-auto.d-none.d-xl-block
 						a(href="#") Все аксессуары
-			+e.slider--2js.swiper
-				.swiper-wrapper
-					- const wrapClass="swiper-slide"
-					+e.col--slide(class= wrapClass)
-						+product-item(`1`) 
-					+e.col--slide(class= wrapClass)
-						+product-item(`2`) 
-					+e.col--slide(class= wrapClass)
-						+product-item(`3`) 
-					+e.col--slide(class= wrapClass)
-						+product-item(`4`)
-					+e.col--slide(class= wrapClass)
-						+product-item(`4`)
-			+e.row-control.row
-				.col.align-self-center
-					.swiper-pagination.text-start
-				.col-auto.d-xl-block.d-none
-					.arrow-wrap
-						+arrow
-				.col-auto.d-xl-none
-					a(href="#") Все аксессуары
+			.section__toggle-content
+				+e.slider--2js.swiper
+					.swiper-wrapper
+						- const wrapClass="swiper-slide"
+						+e.col--slide(class= wrapClass)
+							+product-item(`1`) 
+						+e.col--slide(class= wrapClass)
+							+product-item(`2`) 
+						+e.col--slide(class= wrapClass)
+							+product-item(`3`) 
+						+e.col--slide(class= wrapClass)
+							+product-item(`4`)
+						+e.col--slide(class= wrapClass)
+							+product-item(`4`)
+				+e.row-control.row
+					.col.align-self-center
+						.swiper-pagination.text-start
+					.col-auto.d-xl-block.d-none
+						.arrow-wrap
+							+arrow
+					.col-auto.d-xl-none
+						a(href="#") Все аксессуары
 	// end sCatalog
 
 mixin icon-description()
