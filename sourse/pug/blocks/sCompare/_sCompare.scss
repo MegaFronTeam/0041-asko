@@ -161,7 +161,7 @@
 		.icon {
 			position: relative;
 			fill: none;
-			stroke: $primary;
+			stroke: var(--bs-primary);
 			font-size: 12px;
 			transform: scale(1, -1);
 		}
@@ -172,7 +172,7 @@
 		}
 	}
 	&__group-sub-title {
-		color: $primary;
+		color: var(--bs-primary);
 		margin-bottom: 10px;
 		white-space: nowrap;
 		opacity: var(--show-title, 0);
@@ -216,7 +216,7 @@
 }
 .swiper-scrollbar-drag {
 	border-radius: 20px;
-	background-color: $primary;
+	background-color: var(--bs-primary);
 	height: 3px;
 	top: -1px;
 	// translateY(-50%);

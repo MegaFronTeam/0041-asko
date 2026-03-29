@@ -101,7 +101,7 @@
 
 .rew-item__hidden-text-toggle {
 	cursor: pointer;
-	color: $primary;
+	color: var(--bs-primary);
 	font-size: 14px;
 	margin-top: 10px;
 	@include media-breakpoint-up(md) {
@@ -121,7 +121,7 @@
 	}
 	&.active {
 		.icon {
-			stroke: $primary;
+			stroke: var(--bs-primary);
 			transform: rotate(180deg);
 		}
 	}

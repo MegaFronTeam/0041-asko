@@ -41,7 +41,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		color: $primary;
+		color: var(--bs-primary);
 		margin-left: 10px;
 	}
 	li {
@@ -61,7 +61,7 @@
 			color: $body-color;
 		}
 		&.active {
-			color: $primary;
+			color: var(--bs-primary);
 		}
 		display: inline-flex;
 		align-items: center;

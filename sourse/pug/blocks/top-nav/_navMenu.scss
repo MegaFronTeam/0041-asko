@@ -86,7 +86,7 @@
 .toggle-menu-mobile {
 	& {
 		--h: #{em(2)};
-		--color: #{$primary};
+		--color: #{var(--bs-primary)};
 		--position: calc(var(--h) * 2);
 
 		display: block;

@@ -21,7 +21,7 @@
 	}
 
 	.mfp-close {
-		color: $primary;
+		color: var(--bs-primary);
 		font-size: 40px;
 		font-weight: 100;
 	}
@@ -91,7 +91,7 @@ a {
 
 .polite {
 	.link {
-		color: $primary;
+		color: var(--bs-primary);
 		cursor: pointer;
 		text-decoration: underline;
 

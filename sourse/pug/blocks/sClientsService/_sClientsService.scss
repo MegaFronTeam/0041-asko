@@ -64,7 +64,7 @@
 			position: absolute;
 			left: calc(var(--sp) - 10px);
 			font-size: 30px;
-			color: $primary;
+			color: var(--bs-primary);
 		}
 	}
 

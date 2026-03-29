@@ -40,7 +40,7 @@
 			content: var(--chevron-down);
 		}
 		&:hover {
-			color: $primary;
+			color: var(--bs-primary);
 		}
 	}
 
@@ -118,7 +118,7 @@
 		padding-block: rem(8);
 		cursor: pointer;
 		&:hover {
-			color: $primary;
+			color: var(--bs-primary);
 		}
 		.icon {
 			fill: none;
@@ -164,7 +164,7 @@
 				}
 			}
 			.icon-close2 {
-				color: $primary;
+				color: var(--bs-primary);
 			}
 			&.active {
 				&::after {

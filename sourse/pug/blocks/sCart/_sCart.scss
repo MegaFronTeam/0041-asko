@@ -480,8 +480,8 @@
 
 	&__block:hover,
 	input:checked + &__block {
-		color: $primary;
-		border-color: $primary;
+		color: var(--bs-primary);
+		border-color: var(--bs-primary);
 		cursor: pointer;
 	}
 	&__title {
@@ -518,8 +518,8 @@
 
 	&__block:hover,
 	input:checked + &__block {
-		color: $primary;
-		border-color: $primary;
+		color: var(--bs-primary);
+		border-color: var(--bs-primary);
 		cursor: pointer;
 	}
 	&__title {
@@ -582,7 +582,7 @@
 		padding: 0;
 		color: #d5cdc4;
 		&:hover {
-			color: $primary;
+			color: var(--bs-primary);
 		}
 		.icon {
 			fill: none;

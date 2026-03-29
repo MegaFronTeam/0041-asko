@@ -49,10 +49,10 @@
 				padding-block: rem(20);
 				&:hover,
 				&.active {
-					color: $primary;
+					color: var(--bs-primary);
 				}
 				sup {
-					color: $primary;
+					color: var(--bs-primary);
 				}
 			}
 		}
@@ -190,7 +190,7 @@
 		&.active {
 			svg {
 				transform: rotate(180deg);
-				stroke: $primary;
+				stroke: var(--bs-primary);
 			}
 		}
 	}
@@ -230,7 +230,7 @@
 	&.active {
 		svg {
 			transform: rotate(180deg);
-			stroke: $primary;
+			stroke: var(--bs-primary);
 		}
 	}
 }

@@ -151,7 +151,7 @@
 			}
 		}
 		&:hover {
-			color: $primary;
+			color: var(--bs-primary);
 		}
 		&:hover:not(.active) {
 			.icon-plus {
@@ -283,7 +283,7 @@
 	}
 	&__icons {
 		@include media-breakpoint-up(md) {
-			margin-bottom: 20px;
+			// margin-bottom: 20px;
 		}
 		// margin-bottom: 10px;
 		@include media-breakpoint-down(sm) {
@@ -399,9 +399,13 @@
 		display: grid;
 		grid-template-columns: 29% 1fr;
 		gap: 20px;
+		gap: 0 20px;
 	}
 	.product-item {
 		@include media-breakpoint-up(md) {
+			&__title {
+				min-height: 1px;
+			}
 			&__head {
 				grid-column: 2 / 3;
 			}
@@ -491,7 +495,7 @@
 		}
 		&.active,
 		&:hover {
-			border-color: $primary;
+			border-color: var(--bs-primary);
 		}
 	}
 }
@@ -546,7 +550,7 @@
 		justify-content: space-between;
 		.icon {
 			fill: none;
-			stroke: $primary;
+			stroke: var(--bs-primary);
 			font-size: 20px;
 		}
 	}
@@ -621,7 +625,7 @@
 		border-radius: 12px;
 		color: #d5cdc4;
 		&.active {
-			color: $primary;
+			color: var(--bs-primary);
 		}
 		.icon {
 			fill: none;
@@ -661,7 +665,7 @@
 		cursor: pointer;
 		color: #fff;
 		border-radius: 100px;
-		background: $primary;
+		background: var(--bs-primary);
 		padding: 2px 10px;
 		position: relative;
 		margin-right: 28px;
@@ -681,7 +685,7 @@
 			align-items: center;
 			@include mt;
 			&:hover {
-				color: $primary;
+				color: var(--bs-primary);
 			}
 		}
 		&--reset {
@@ -701,7 +705,7 @@
 	display: flex;
 	align-items: center;
 	height: 48px;
-	background-color: $primary;
+	background-color: var(--bs-primary);
 	color: #fff;
 	box-shadow: 0 10px 30px 0 rgba(38, 51, 77, 0.05);
 	border-radius: 12px;

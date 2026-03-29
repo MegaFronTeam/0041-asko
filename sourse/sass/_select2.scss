@@ -1,8 +1,8 @@
 .select2-container--default {
 	--multi-sp: #{rem(3)};
-	--border-focus: #{$primary};
+	--border-focus: #{var(--bs-primary)};
 
-	--selectable-bg: #{$primary};
+	--selectable-bg: #{var(--bs-primary)};
 	--selectable-color: #{#fff};
 	--selected-bg: #{$gray-400};
 	--selected-color: #{$body-color};
