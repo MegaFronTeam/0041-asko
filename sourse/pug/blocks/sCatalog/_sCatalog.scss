@@ -403,6 +403,7 @@
 	}
 	.product-item {
 		@include media-breakpoint-up(md) {
+			&__text,
 			&__title {
 				min-height: 1px;
 			}
