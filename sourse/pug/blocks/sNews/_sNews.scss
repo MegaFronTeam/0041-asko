@@ -57,8 +57,10 @@
 
 .news-item {
 	display: block;
-	&:not(:hover) {
-		color: var(--bs-body-color);
+	@include media-breakpoint-up(md) {
+		&:not(:hover) {
+			color: var(--bs-body-color);
+		}
 	}
 	@include media-breakpoint-down(md) {
 		aspect-ratio: 380 / 253;
@@ -86,13 +88,13 @@
 		position: relative;
 		z-index: 3;
 	}
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-up(md) {
 		.small {
 			color: $secondary;
 		}
 	}
 	&__img-wrap {
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(md) {
 			aspect-ratio: 3 / 2;
 			box-shadow: 0px 10px 30px rgba(38, 51, 77, 0.05);
 			display: block;
@@ -100,7 +102,7 @@
 			overflow: hidden;
 			margin-bottom: 20px;
 		}
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 			position: static;
 		}
 	}
