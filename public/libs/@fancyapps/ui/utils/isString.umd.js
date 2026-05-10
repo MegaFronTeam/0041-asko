@@ -1,1 +1,2 @@
-!/*! License details at fancyapps.com/license */function(e,i){"object"==typeof exports&&"undefined"!=typeof module?i(exports):"function"==typeof define&&define.amd?define(["exports"],i):i((e="undefined"!=typeof globalThis?globalThis:e||self).window=e.window||{})}(this,function(e){"use strict";e.isString=e=>"string"==typeof e});
+/*! License details at fancyapps.com/license */
+(function(e,t){typeof exports==`object`&&typeof module<`u`?t(exports):typeof define==`function`&&define.amd?define([`exports`],t):(e=typeof globalThis<`u`?globalThis:e||self,t(e.window=e.window||{}))})(this,function(e){Object.defineProperty(e,Symbol.toStringTag,{value:`Module`}),e.isString=e=>typeof e==`string`});

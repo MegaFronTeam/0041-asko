@@ -307,6 +307,28 @@ function eventHandler() {
 			// }
 		},
 	});
+
+	new Swiper(".sCategoriesSm__slider--js", {
+		slidesPerView: "auto",
+		spaceBetween: 10,
+		breakpoints: {
+			576: {
+				spaceBetween: 20,
+			},
+		},
+		navigation: {
+			nextEl: ".sCategoriesSm .swiper-button-next",
+			prevEl: ".sCategoriesSm .swiper-button-prev",
+		},
+		pagination: {
+			el: " .sCategoriesSm .swiper-pagination",
+			type: "bullets",
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+	});
 	new Swiper(".sRew__slider--js", {
 		slidesPerView: 1,
 		spaceBetween: 10,

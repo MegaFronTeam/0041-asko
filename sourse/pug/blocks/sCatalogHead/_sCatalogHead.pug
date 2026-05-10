@@ -1,3 +1,10 @@
+mixin sCatalogHead2(data)
+	// start sCatalogHead
+	+b.SECTION.sCatalogHead.section.pt-0#sCatalogHead&attributes(attributes)
+		picture
+			source(media="(min-width: 576px)", srcset="img/header-slide.jpg")
+			img(src="img/header-slide.jpg", alt="").res-i
+	// end sCatalogHead
 mixin sCatalogHead(data)
 	// start sCatalogHead
 	+b.SECTION.sCatalogHead.section#sCatalogHead&attributes(attributes)

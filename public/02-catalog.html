@@ -26,6 +26,13 @@
 			<script>addBlock(`header`)</script>
 			<div id="headerWrap"></div>
 			<main></main>
+			<!-- start sCatalogHead-->
+			<section class="sCatalogHead section pt-0" id="sCatalogHead">
+				<picture>
+					<source media="(min-width: 576px)" srcset="img/header-slide.jpg"/><img class="res-i" src="img/header-slide.jpg" alt=""/>
+				</picture>
+			</section>
+			<!-- end sCatalogHead-->
 			<div class="container py-2">
 				<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
 					<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
@@ -112,23 +119,60 @@
 			<div class="sCategoriesSm section" id="sCategoriesSm">
 				<div class="container">
 					<div class="mb-3 text-secondary small">Популярные подборки </div>
-					<div class="sCategoriesSm__row">
-						<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-1.png" alt="" loading="lazy"/>
-							<div class="sCategoriesSm-item__title">Отдельностоящие стиральные машины
+					<div class="sCategoriesSm__slider-wrap">
+						<div class="sCategoriesSm__slider sCategoriesSm__slider--js swiper">
+							<div class="swiper-wrapper">
+									<div class="sCategoriesSm__slide swiper-slide">
+										<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-1.png" alt="" loading="lazy"/>
+											<div class="sCategoriesSm-item__title">Отдельностоящие стиральные машины
+											</div>
+										</a>
+									</div>
+									<div class="sCategoriesSm__slide swiper-slide">
+										<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-2.png" alt="" loading="lazy"/>
+											<div class="sCategoriesSm-item__title">Стиральные машины с фронтальной загрузкой
+											</div>
+										</a>
+									</div>
+									<div class="sCategoriesSm__slide swiper-slide">
+										<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-3.png" alt="" loading="lazy"/>
+											<div class="sCategoriesSm-item__title">Маленькие стиральные машины с загрузкой 6-8 кг
+											</div>
+										</a>
+									</div>
+									<div class="sCategoriesSm__slide swiper-slide">
+										<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-4.png" alt="" loading="lazy"/>
+											<div class="sCategoriesSm-item__title">Большие стиральные машины с загрузкой 9-10 кг
+											</div>
+										</a>
+									</div>
+									<div class="sCategoriesSm__slide swiper-slide">
+										<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-4.png" alt="" loading="lazy"/>
+											<div class="sCategoriesSm-item__title">Большие стиральные машины с загрузкой 9-10 кг
+											</div>
+										</a>
+									</div>
 							</div>
-						</a>
-						<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-2.png" alt="" loading="lazy"/>
-							<div class="sCategoriesSm-item__title">Стиральные машины с фронтальной загрузкой
+						</div>
+					</div>
+					<div class="sCategoriesSm__row-control row d-none d-md-flex">
+						<div class="col">
+							<div class="swiper-pagination"></div>
+						</div>
+						<div class="col-auto">
+							<div class="arrow-wrap">
+								<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+									<svg class="icon icon-chevron-left ">
+										<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+									</svg>
+								</div>
+								<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+									<svg class="icon icon-chevron-right ">
+										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+									</svg>
+								</div>
 							</div>
-						</a>
-						<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-3.png" alt="" loading="lazy"/>
-							<div class="sCategoriesSm-item__title">Маленькие стиральные машины с загрузкой 6-8 кг
-							</div>
-						</a>
-						<a class="sCategoriesSm-item card" href="#"><img src="img/cat-sm-4.png" alt="" loading="lazy"/>
-							<div class="sCategoriesSm-item__title">Большие стиральные машины с загрузкой 9-10 кг
-							</div>
-						</a>
+						</div>
 					</div>
 				</div>
 			</div>

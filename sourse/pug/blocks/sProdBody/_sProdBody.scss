@@ -178,9 +178,9 @@
 		padding-bottom: 20px;
 		margin-bottom: 0;
 		.icon {
-			@include media-breakpoint-up(md) {
-				display: none;
-			}
+			// @include media-breakpoint-up(md) {
+			// 	display: none;
+			// }
 			fill: none;
 			stroke: #d5cdc4;
 			stroke-width: 1;
@@ -215,9 +215,6 @@
 	// 	}
 	// 	// padding-bottom: 0;
 	// }
-	@include media-breakpoint-up(md) {
-		pointer-events: none;
-	}
 	.icon {
 		fill: none;
 		stroke: #d5cdc4;
@@ -236,9 +233,6 @@
 }
 
 .section__toggle-content {
-	@include media-breakpoint-up(md) {
-		display: block !important;
-	}
 	display: none;
 	&.active {
 		display: block;
