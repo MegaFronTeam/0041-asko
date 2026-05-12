@@ -31,3 +31,20 @@ mixin sCategories(data)
 				+item(5,'Посудомоечные машины')
 				+item(6,'Сушильные машины')
 	// end sCategories
+mixin sCategories2(data)
+	// start sCategories
+	+b.sCategories.section#sCategories&attributes(attributes)
+		.container
+			+e.row.row
+				mixin item(i,t)
+					+e.col.col-lg-6&attributes(attributes)
+						+e.item(href="#")
+							+e.head
+								+img(`img/cat-${i}.jpg`, 'bg').img-bg
+								+e.title= t
+				+item(1,'Стиральные машины')
+				+item(2,'Холодильники')
+				+item(3,'Варочные панели').col-xl-4
+				+item(4,'Духовые шкафы').col-xl-4
+				+item(5,'Посудомоечные машины').col-xl-4
+	// end sCategories

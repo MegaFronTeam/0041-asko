@@ -3,6 +3,7 @@ extends ../layout/main.pug
 include ../blocks/sCatalogHead/_sCatalogHead.pug
 include ../blocks/sPopular/_sPopular.pug
 include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sCategories/_sCategories.pug
 include ../blocks/sCategoriesSm/_sCategoriesSm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sSets/_sSets.pug
@@ -24,10 +25,14 @@ block pagecontent
 	
 	+parts('header')
 	main
+	//- .container.py-2
+	//- 	+breadcrumb("Бытовая техника ASKO", 'Посудомоечные машины ASKO')
+	//- +sCatalogHead
 	+sCatalogHead2
-	.container.py-2
-		+breadcrumb("Бытовая техника ASKO", 'Посудомоечные машины ASKO')
-	+sCatalogHead
+	.section.section-title-center.text-center.container.pb-0
+		h2 Ассортимент техники Asko
+		.h6.fw-400 В шоуруме представлены новинки и популярные модели бытовой техники Asko. Все приборы подключены. Можно ознакомиться не только с их внешним видом в интерьере, но и с функциями, доступными в демонстрационном режиме, оценить удобство интеграции в мебель и комфортную систему управления.
+	+sCategories2
 	//- +sCatalogMainProd
 	//- +sCatalogMainAdv
 	+sPopular02.d-none.d-md-block
