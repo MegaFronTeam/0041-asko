@@ -200,6 +200,7 @@
 			font-size: 10px;
 		}
 		&.active {
+			color: var(--bs-primary);
 			svg {
 				transform: rotate(180deg);
 				stroke: var(--bs-primary);
