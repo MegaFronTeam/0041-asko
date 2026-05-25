@@ -1,0 +1,51 @@
+mixin sProgram(data)
+	// start sProgram
+	+b.SECTION.sProgram.section#sProgram&attributes(attributes)
+		.container
+			.row.gx-4.gy-5.align-items-start
+				// Card 1 — white, tour description + photo
+				.col-lg-3.col-sm-6
+					+e.item
+						+e.badge 1
+						+e.card.sProgram__card--white
+							+e.card-text
+								| Эксклюзивный тур по шоуруму и презентация флагманских линеек&nbsp;
+								strong ASKO Elements
+								|  и&nbsp;
+								strong Craft
+							+e.card-photo
+								img(src="img/program-card1-photo.jpg" alt="")
+								+e.card-photo-overlay
+
+				// Card 2 — dark, culinary show + title block below
+				.col-lg-3.col-sm-6
+					+e.item.sProgram__item--ring
+						+e.badge-wrap
+							+e.badge-ring
+							+e.badge 2
+						+e.card.sProgram__card--dark
+							+e.card-text.sProgram__card-text--light Кулинарное шоу от шеф-повара на премиальной технике бренда
+							+e.card-chef
+								img(src="img/frame.svg" alt="")
+					+e.subtitle В программе вечера
+
+				// Card 3 — white, designer privileges + diamond watermarks
+				.col-lg-3.col-sm-6
+					+e.item
+						+e.badge 3
+						+e.card.sProgram__card--white.sProgram__card--diamonds
+							+e.card-text Презентация специальной программы привилегий для дизайнеров и архитекторов
+							+e.diamond
+								img(src="img/diamonds.svg" alt="")
+
+				// Card 4 — photo bg, networking
+				.col-lg-3.col-sm-6
+					+e.item.sProgram__item--ring
+						+e.badge-wrap
+							+e.badge-ring
+							+e.badge 4
+						+e.card.sProgram__card--photo
+							img.sProgram__card-bg(src="img/program-card4-photo.jpg" alt="")
+							+e.card-photo-overlay
+							+e.card-text.sProgram__card-text--light Фуршет, легкая музыка и неформальный нетворкинг
+	// end sProgram

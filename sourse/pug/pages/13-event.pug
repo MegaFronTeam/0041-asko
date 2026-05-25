@@ -1,0 +1,47 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sIcons/_sIcons.pug
+include ../blocks/sCategories/_sCategories.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sSets/_sSets.pug
+include ../blocks/sPopular/_sPopular.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sVideoAbout/_sVideoAbout.pug
+include ../blocks/sClientsService/_sClientsService.pug
+include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sAppliances/_sAppliances.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sEvents/_sEvents.pug
+include ../blocks/sBecomePartners/_sBecomePartners.pug
+include ../blocks/sWhyBrand/_sWhyBrand.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sBecomePart/_sBecomePart.pug
+include ../blocks/sEventAbout/_sEventAbout.pug
+include ../blocks/sProgram/_sProgram.pug
+include ../blocks/sConfirm/_sConfirm.pug
+
+
+block variables
+	- let  mainPage= '' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= index.head.title
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		.section.container
+			.event-top
+				img.event-top__img(src="img/top-block-img.png" alt="Открытие шоу-рума ASKO в Алматы")
+		
+		+sEventAbout
+		+sProgram
+		+sConfirm
+	+sAddresses.d-md-none
+	+parts('footer') 

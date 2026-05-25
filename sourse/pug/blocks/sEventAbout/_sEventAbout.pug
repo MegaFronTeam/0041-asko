@@ -1,0 +1,37 @@
+mixin sEventAbout(data)
+	// start sEventAbout
+	+b.SECTION.sEventAbout.section#sEventAbout&attributes(attributes)
+		.container
+			+e.wrap
+				+e.card
+					+e.badge О событии
+					+e.content
+						h2.sEventAbout__title Пространство для дизайнеров, архитекторов и ценителей премиальной техники
+						.row.align-items-center
+							.col
+								p.sEventAbout__desc  Это не просто магазин, а вдохновляющее пространство для профессионалов, где вы сможете оценить эргономику и эстетику техники «в действии», а также обсудить новые возможности для ваших интерьерных проектов.
+							.col-auto
+								+e.quote Будем рады видеть вас среди наших гостей!
+					+e.photo
+						img(src="img/event-showroom.jpg" alt="Шоу-рум ASKO Алматы")
+						+e.photo-overlay
+
+			+e.details
+				+e.details-label
+					| Детали
+					br
+					| мероприятия:
+				+e.details-list
+					+e.detail
+						+e.icon
+							img(src="img/event-icon-calendar.svg" alt="")
+						+e.detail-text
+							span.sEventAbout__detail-label Когда:
+							span.sEventAbout__detail-value Пятница, 12 июня в 19:00
+					+e.detail
+						+e.icon
+							img(src="img/event-icon-location.svg" alt="")
+						+e.detail-text
+							span.sEventAbout__detail-label Где:
+							span.sEventAbout__detail-value Алматы, Назарная 176
+	// end sEventAbout

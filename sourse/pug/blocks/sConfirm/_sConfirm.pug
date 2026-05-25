@@ -1,0 +1,21 @@
+mixin sConfirm(data)
+	// start sConfirm
+	+b.SECTION.sConfirm.section#sConfirm&attributes(attributes)
+		.container
+			+e.inner
+				+e.left
+					h2.sConfirm__title Пожалуйста, подтвердите ваше участие до&nbsp;1&nbsp;июня
+					+e.divider
+						+e.divider-line
+						+e.divider-text Количество мест ограничено
+					p.sConfirm__tagline Будем рады видеть вас!
+				+e.mid
+					+e.calendar
+						img(src="img/frame2.svg" alt="")
+				+e.actions
+					a.sConfirm__btn.sConfirm__btn--filled(href="#") Подтвердить участие
+					a.sConfirm__btn.sConfirm__btn--outline(href="#") Написать в WhatsApp
+				+e.photo
+					img(src="img/confirm-photo.jpg" alt="")
+					+e.photo-fade
+	// end sConfirm
