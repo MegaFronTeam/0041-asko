@@ -1,17 +1,12 @@
-'use strict';
+import fs from 'node:fs'
+import readline from 'node:readline'
+import path from 'node:path'
+import { fillTemplate, isValidBlockName } from './lib/utils.js'
 
-import  fs from 'fs'
-import  colors from 'colors'
-import  readline from 'readline'
-// import { fileURLToPath } from 'url'
-import path  from 'path'
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
-const rl = readline.createInterface(process.stdin, process.stdout);
+const rl = readline.createInterface(process.stdin, process.stdout)
 
 // folder with all blocks
-const BLOCKS_DIR = path.join('sourse/pug/blocks');
+const BLOCKS_DIR = path.join('sourse/pug/blocks')
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,27 +18,27 @@ const fileSources = {
 		.container
 			+b.section-title.text-center
 				h2 {blockName}
-				
+
 			+e.row.row
 	// end {blockName}`,
 	scss: `// start .{blockName}
-.{blockName} \{
+.{blockName} {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	
+
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
 	.section-title{
-		
+
 	}
 	&__col{
-		
+
 	}
 	&__item{
-		
+
 	}
 
 	@include media-breakpoint-up(xl) {}
@@ -53,126 +48,145 @@ const fileSources = {
 	@include media-breakpoint-between(md, xl) {}
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
-} // end.{blockName}`
-	,
-	// js: `let {blockName}Vue = new Vue({
-	// 	el: '#{blockName}',
-	// 	data: {
-	// 		imgSRc: 'img/',
-	// 	},
-	// 	methods: { 
-	// 	},
-	// 	 created: function () { 
-	// 	},
-	// 	computed: {
-
-	// 	},
-	// })`
-};
+} // end.{blockName}`,
+}
 
 function validateBlockName(blockName) {
 	return new Promise((resolve, reject) => {
-		const isValid = /^(\d|\w|-)+$/.test(blockName);
+		const isValid = isValidBlockName(blockName)
 
 		if (isValid) {
-			resolve(isValid);
+			resolve(isValid)
 		} else {
-			const errMsg = (
+			const errMsg =
 				`ERR>>> An incorrect block name '${blockName}'\n` +
 				`ERR>>> A block name must include letters, numbers & the minus symbol.`
-			);
-			reject(errMsg);
+			reject(errMsg)
 		}
-	});
+	})
 }
 
 function directoryExist(blockPath, blockName) {
 	return new Promise((resolve, reject) => {
-		fs.stat(blockPath, notExist => {
+		fs.stat(blockPath, (notExist) => {
 			if (notExist) {
-				resolve();
+				resolve()
 			} else {
-				reject(`ERR>>> The block '${blockName}' already exists.`.red);
+				reject(`ERR>>> The block '${blockName}' already exists.`)
 			}
-		});
-	});
+		})
+	})
 }
 
 function createDir(dirPath) {
 	return new Promise((resolve, reject) => {
-		fs.mkdir(dirPath, err => {
+		fs.mkdir(dirPath, (err) => {
 			if (err) {
-				reject(`ERR>>> Failed to create a folder '${dirPath}'`.red);
+				reject(`ERR>>> Failed to create a folder '${dirPath}'`)
 			} else {
-				resolve();
+				resolve()
 			}
-		});
-	});
+		})
+	})
 }
 
+// Test stub template — co-located next to the block files.
+// Uses a relative path back to the shared render helper so the stub
+// works wherever the block lives inside sourse/pug/blocks/.
+const testStubSource = `import { describe, it, expect } from 'vitest'
+import { renderBlock } from '../../../tests/helpers/render-block.js'
+
+describe('{blockName} block', () => {
+	it('renders without throwing', () => {
+		expect(() => renderBlock('{blockName}')).not.toThrow()
+	})
+
+	it('matches HTML snapshot', () => {
+		const html = renderBlock('{blockName}')
+		expect(html).toMatchSnapshot()
+	})
+})
+`
+
 function createFiles(blocksPath, blockName) {
-	const promises = [];
-	Object.keys(fileSources).forEach(ext => {
-		const fileSource = fileSources[ext].replace(/\{blockName}/g, blockName);
-		const filename = `_${blockName}.${ext}`;
-		const filePath = path.join(blocksPath, filename);
+	const promises = []
+
+	// Pug + SCSS files (prefixed with _)
+	Object.keys(fileSources).forEach((ext) => {
+		const fileSource = fillTemplate(fileSources[ext], 'blockName', blockName)
+		const filename = `_${blockName}.${ext}`
+		const filePath = path.join(blocksPath, filename)
 
 		promises.push(
 			new Promise((resolve, reject) => {
-				fs.writeFile(filePath, fileSource, 'utf8', err => {
+				fs.writeFile(filePath, fileSource, 'utf8', (err) => {
 					if (err) {
-						reject(`ERR>>> Failed to create a file '${filePath}'`.red);
+						reject(`ERR>>> Failed to create a file '${filePath}'`)
 					} else {
-						resolve();
+						resolve()
 					}
-				});
-			})
-		);
-	});
+				})
+			}),
+		)
+	})
 
-	return Promise.all(promises);
+	// Test stub (bare name, not prefixed with _)
+	const testSource = fillTemplate(testStubSource, 'blockName', blockName)
+	const testFilePath = path.join(blocksPath, `${blockName}.test.js`)
+	promises.push(
+		new Promise((resolve, reject) => {
+			fs.writeFile(testFilePath, testSource, 'utf8', (err) => {
+				if (err) {
+					reject(`ERR>>> Failed to create a file '${testFilePath}'`)
+				} else {
+					resolve()
+				}
+			})
+		}),
+	)
+
+	return Promise.all(promises)
 }
 
 function getFiles(blockPath) {
 	return new Promise((resolve, reject) => {
 		fs.readdir(blockPath, (err, files) => {
 			if (err) {
-				reject(`ERR>>> Failed to get a file list from a folder '${blockPath}'`);
+				reject(`ERR>>> Failed to get a file list from a folder '${blockPath}'`)
 			} else {
-				resolve(files);
+				resolve(files)
 			}
-		});
-	});
+		})
+	})
 }
 
 function printErrorMessage(errText) {
-	console.log(errText);
-	rl.close();
+	console.log(errText)
+	rl.close()
 }
 
 // //////////////////////////////////////////////////////////////////////////
 
 function initMakeBlock(blockName) {
-	const blockPath = path.join(BLOCKS_DIR, blockName);
+	const blockPath = path.join(BLOCKS_DIR, blockName)
 
 	return validateBlockName(blockName)
 		.then(() => directoryExist(blockPath, blockName))
 		.then(() => createDir(blockPath))
 		.then(() => createFiles(blockPath, blockName))
 		.then(() => getFiles(blockPath))
-		.then(files => {
-			const line = '-'.repeat(48 + blockName.length);
-			console.log(line);
-			console.log(`The block has just been created in 'sourse/pug/blocks/${blockName}'`);
-			console.log(line);
+		.then((files) => {
+			const line = '-'.repeat(48 + blockName.length)
+			console.log(line)
+			console.log(`The block has just been created in 'sourse/pug/blocks/${blockName}'`)
+			console.log(line)
 
 			// Displays a list of files created
-			files.forEach(file => console.log(file.yellow));
+			files.forEach((file) => console.log(file))
 
-			rl.close();
-		});
+			rl.close()
+		})
 }
-
 
 // //////////////////////////////////////////////////////////////////////////
 //
@@ -183,19 +197,17 @@ function initMakeBlock(blockName) {
 const blockNameFromCli = process.argv
 	.slice(2)
 	// join all arguments to one string (to simplify the capture user input errors)
-	.join(' ');
-
+	.join(' ')
 
 // If the user pass the name of the block in the command-line options
 // that create a block. Otherwise - activates interactive mode
 if (blockNameFromCli !== '') {
-	initMakeBlock(blockNameFromCli).catch(printErrorMessage);
-}
-else {
-	rl.setPrompt('Block name: '.magenta);
-	rl.prompt();
+	initMakeBlock(blockNameFromCli).catch(printErrorMessage)
+} else {
+	rl.setPrompt('Block name: ')
+	rl.prompt()
 	rl.on('line', (line) => {
-		const blockName = line.trim();
-		initMakeBlock(blockName).catch(printErrorMessage);
-	});
+		const blockName = line.trim()
+		initMakeBlock(blockName).catch(printErrorMessage)
+	})
 }
