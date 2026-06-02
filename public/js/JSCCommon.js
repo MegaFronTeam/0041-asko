@@ -1,4 +1,3 @@
-"use strict";
 // import "../libs/jquery/jquery.min.js";
 // import "../libs/select2/js/select2.min.js";
 // import "../libs/select2/js/i18n/ru.js";
@@ -7,14 +6,14 @@
 
 class JSCCommon {
 	static toggleClass(elements, className) {
-		elements.forEach(el => el.classList.toggle(className));
+		elements.forEach((el) => el.classList.toggle(className))
 	}
 
 	static removeClass(elements, className) {
-		elements.forEach(el => el.classList.remove(className));
+		elements.forEach((el) => el.classList.remove(className))
 	}
 	static modalCall() {
-		const link = '[data-fancybox="modal"], .link-modal-js';
+		const link = '[data-fancybox="modal"], .link-modal-js'
 		// Fancybox.defaults.autoFocus = false;
 		// Fancybox.defaults.placeFocusBack = false;
 
@@ -24,42 +23,34 @@ class JSCCommon {
 			on: {
 				reveal: () => {
 					//html elements
-					let parent = document.querySelector(".timer-box-js-5");
-					if (!parent) return;
+					const parent = document.querySelector('.timer-box-js-5')
+					if (!parent) return
 
-					let days = parent.querySelector(".days");
-					let hours = parent.querySelector(".hours");
-					let minutes = parent.querySelector(".minutes");
-					let seconds = parent.querySelector(".seconds");
+					const days = parent.querySelector('.days')
+					const hours = parent.querySelector('.hours')
+					const minutes = parent.querySelector('.minutes')
+					const seconds = parent.querySelector('.seconds')
 
 					//date elements
-					let now = new Date();
+					const now = new Date()
 
 					// d === days.innerHtml + now.getDate... others the same way
-					let d = getTime(days, now.getDate());
-					let h = getTime(hours, now.getHours());
-					let m = getTime(minutes, now.getMinutes());
-					let s = getTime(seconds, now.getSeconds());
+					const d = getTime(days, now.getDate())
+					const h = getTime(hours, now.getHours())
+					const m = getTime(minutes, now.getMinutes())
+					const s = getTime(seconds, now.getSeconds())
 
 					//let targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s);
 					//force date
-					let targetDate = new Date(
+					const targetDate = new Date(
 						now.getFullYear(),
 						now.getMonth(),
 						now.getDate() + 1,
-						now.getHours()
-					);
+						now.getHours(),
+					)
 
 					//interval
-					tikTakReadOut(
-						parent,
-						targetDate,
-						ThisReadOutID,
-						days,
-						hours,
-						minutes,
-						seconds
-					);
+					tikTakReadOut(parent, targetDate, ThisReadOutID, days, hours, minutes, seconds)
 					var ThisReadOutID = window.setInterval(
 						tikTakReadOut.bind(
 							null,
@@ -69,61 +60,49 @@ class JSCCommon {
 							days,
 							hours,
 							minutes,
-							seconds
+							seconds,
 						),
-						1000
-					);
-					function tikTakReadOut(
-						parent,
-						targetDate,
-						ReadOutID,
-						days,
-						hours,
-						minutes,
-						seconds
-					) {
-						let now = new Date();
+						1000,
+					)
+					function tikTakReadOut(parent, targetDate, ReadOutID, days, hours, minutes, seconds) {
+						const now = new Date()
 						// let timeLeft = (targetDate - now) / 1000;
-						let timeLeft = (targetDate - now) / 1000;
+						let timeLeft = (targetDate - now) / 1000
 
 						if (timeLeft < 1) {
-							window.clearInterval(ReadOutID);
+							window.clearInterval(ReadOutID)
 							//to do something after timer ends
-							$(parent).fadeOut();
+							$(parent).fadeOut()
 						}
 
-						days.innerHTML = Math.floor(timeLeft / 60 / 60 / 24);
+						days.innerHTML = Math.floor(timeLeft / 60 / 60 / 24)
 						timeLeft =
-							(timeLeft / 60 / 60 / 24 - Math.floor(timeLeft / 60 / 60 / 24)) *
-							60 *
-							60 *
-							24;
+							(timeLeft / 60 / 60 / 24 - Math.floor(timeLeft / 60 / 60 / 24)) * 60 * 60 * 24
 
-						hours.innerHTML = Math.floor(timeLeft / 60 / 60);
-						timeLeft =
-							(timeLeft / 60 / 60 - Math.floor(timeLeft / 60 / 60)) * 60 * 60;
+						hours.innerHTML = Math.floor(timeLeft / 60 / 60)
+						timeLeft = (timeLeft / 60 / 60 - Math.floor(timeLeft / 60 / 60)) * 60 * 60
 
-						minutes.innerHTML = Math.floor(timeLeft / 60);
-						timeLeft = (timeLeft / 60 - Math.floor(timeLeft / 60)) * 60;
+						minutes.innerHTML = Math.floor(timeLeft / 60)
+						timeLeft = (timeLeft / 60 - Math.floor(timeLeft / 60)) * 60
 
-						seconds.innerHTML = Math.floor(timeLeft);
+						seconds.innerHTML = Math.floor(timeLeft)
 					}
 					function getTime(htmlEl, currentTimeItem) {
-						let timeItem = Number(htmlEl.innerHTML);
+						let timeItem = Number(htmlEl.innerHTML)
 						if (timeItem) {
-							timeItem += currentTimeItem;
+							timeItem += currentTimeItem
 						} else {
-							timeItem = currentTimeItem;
+							timeItem = currentTimeItem
 						}
-						return timeItem;
+						return timeItem
 					}
 				},
 			},
-		};
-		Fancybox.bind("[data-fancybox]", {
+		}
+		Fancybox.bind('[data-fancybox]', {
 			autoFocus: false,
 			placeFocusBack: false,
-		});
+		})
 		Fancybox.bind(link, {
 			arrows: false,
 			// // infobar: false,
@@ -136,65 +115,62 @@ class JSCCommon {
 			autoFocus: false,
 			groupAll: false,
 			groupAttr: false,
-			showClass: "fancybox-throwOutUp",
-			hideClass: "fancybox-throwOutDown",
+			showClass: 'fancybox-throwOutUp',
+			hideClass: 'fancybox-throwOutDown',
 			compact: false,
 			l10n: {
-				CLOSE: "Закрыть",
-				Escape: "Закрыть",
-				NEXT: "Вперед",
-				PREV: "Назад",
-				MODAL: "Вы можете закрыть это модальное окно с помощью клавиши ESC.",
-				ERROR: "Что-то пошло не так. Пожалуйста, повторите попытку позже",
-				IMAGE_ERROR: "Изображение не найдено",
-				ELEMENT_NOT_FOUND: "HTML-элемент не найден",
-				AJAX_NOT_FOUND: "Ошибка при загрузке AJAX: не найдено",
-				AJAX_FORBIDDEN: "Ошибка при загрузке AJAX: запрещено",
-				IFRAME_ERROR: "Ошибка загрузки iframe",
+				CLOSE: 'Закрыть',
+				Escape: 'Закрыть',
+				NEXT: 'Вперед',
+				PREV: 'Назад',
+				MODAL: 'Вы можете закрыть это модальное окно с помощью клавиши ESC.',
+				ERROR: 'Что-то пошло не так. Пожалуйста, повторите попытку позже',
+				IMAGE_ERROR: 'Изображение не найдено',
+				ELEMENT_NOT_FOUND: 'HTML-элемент не найден',
+				AJAX_NOT_FOUND: 'Ошибка при загрузке AJAX: не найдено',
+				AJAX_FORBIDDEN: 'Ошибка при загрузке AJAX: запрещено',
+				IFRAME_ERROR: 'Ошибка загрузки iframe',
 			},
-		});
+		})
 	}
 	// /modalCall
 
 	static toggleMenu() {
-		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
-		const menu = document.querySelector(".menu-mobile--js");
-		this.toggleClass(toggle, "on");
-		menu.classList.toggle("active");
-		this.toggleClass([document.body, document.querySelector("html")], "fixed");
+		const toggle = document.querySelectorAll('.toggle-menu-mobile--js')
+		const menu = document.querySelector('.menu-mobile--js')
+		JSCCommon.toggleClass(toggle, 'on')
+		menu.classList.toggle('active')
+		JSCCommon.toggleClass([document.body, document.querySelector('html')], 'fixed')
 	}
 	static closeMenu() {
-		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
-		const menu = document.querySelector(".menu-mobile--js");
-		this.removeClass(toggle, "on");
+		const toggle = document.querySelectorAll('.toggle-menu-mobile--js')
+		const menu = document.querySelector('.menu-mobile--js')
+		JSCCommon.removeClass(toggle, 'on')
 		if (menu) {
-			menu.classList.remove("active");
-			this.removeClass(
-				[document.body, document.querySelector("html")],
-				"fixed"
-			);
+			menu.classList.remove('active')
+			JSCCommon.removeClass([document.body, document.querySelector('html')], 'fixed')
 		}
 	}
 
 	static mobileMenu() {
 		document.addEventListener(
-			"click",
-			event => {
-				let container = event.target.closest(".menu-mobile--js");
-				let toggle = event.target.closest(".toggle-menu-mobile--js");
-				if (toggle) this.toggleMenu();
-				if (!container && !toggle) this.closeMenu();
+			'click',
+			(event) => {
+				const container = event.target.closest('.menu-mobile--js')
+				const toggle = event.target.closest('.toggle-menu-mobile--js')
+				if (toggle) JSCCommon.toggleMenu()
+				if (!container && !toggle) JSCCommon.closeMenu()
 			},
-			{passive: true}
-		);
+			{ passive: true },
+		)
 
 		window.addEventListener(
-			"resize",
+			'resize',
 			() => {
-				if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
+				if (window.matchMedia('(min-width: 992px)').matches) JSCCommon.closeMenu()
 			},
-			{passive: true}
-		);
+			{ passive: true },
+		)
 	}
 	// tabs  .
 	static tabsCostume(tab) {
@@ -238,84 +214,71 @@ class JSCCommon {
 		// 	})
 		// })
 
-		$("." + tab + "__caption").on(
-			"click",
-			"." + tab + "__btn:not(.active)",
-			function (e) {
-				$(this)
-					.addClass("active")
-					.siblings()
-					.removeClass("active")
-					.closest("." + tab)
-					.find("." + tab + "__content")
-					.hide()
-					.removeClass("active")
-					.eq($(this).index())
-					.fadeIn()
-					.addClass("active");
-			}
-		);
+		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+			$(this)
+				.addClass('active')
+				.siblings()
+				.removeClass('active')
+				.closest('.' + tab)
+				.find('.' + tab + '__content')
+				.hide()
+				.removeClass('active')
+				.eq($(this).index())
+				.fadeIn()
+				.addClass('active')
+		})
 	}
 	// /tabs
 
 	static inputMask() {
 		// mask for input
-		let InputTel = [].slice.call(
-			document.querySelectorAll('input[type="tel"]')
-		);
-		InputTel.forEach(element =>
-			element.setAttribute(
-				"pattern",
-				"[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"
-			)
-		);
-		Inputmask({mask: "+9(999)999-99-99", showMaskOnHover: false}).mask(
-			InputTel
-		);
+		const InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'))
+		InputTel.forEach((element) =>
+			element.setAttribute('pattern', '[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}'),
+		)
+		Inputmask({ mask: '+9(999)999-99-99', showMaskOnHover: false }).mask(InputTel)
 	}
 	// /inputMask
 	static sendForm() {
 		var gets = (function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
+			var a = window.location.search
+			var b = new Object()
+			var c
+			a = a.substring(1).split('&')
 			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
+				c = a[i].split('=')
+				b[c[0]] = c[1]
 			}
-			return b;
-		})();
+			return b
+		})()
 		// form
-		$(document).on("submit", "form", function (e) {
-			e.preventDefault();
-			const th = $(this);
-			var data = th.serialize();
-			th.find(".utm_source").val(decodeURIComponent(gets["utm_source"] || ""));
-			th.find(".utm_term").val(decodeURIComponent(gets["utm_term"] || ""));
-			th.find(".utm_medium").val(decodeURIComponent(gets["utm_medium"] || ""));
-			th.find(".utm_campaign").val(
-				decodeURIComponent(gets["utm_campaign"] || "")
-			);
+		$(document).on('submit', 'form', function (e) {
+			e.preventDefault()
+			const th = $(this)
+			var data = th.serialize()
+			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''))
+			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''))
+			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''))
+			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''))
 			$.ajax({
-				url: "action.php",
-				type: "POST",
+				url: 'action.php',
+				type: 'POST',
 				data: data,
 			})
 				.done(function (data) {
-					Fancybox.close();
-					Fancybox.show([{src: "#modal-thanks", type: "inline"}]);
+					Fancybox.close()
+					Fancybox.show([{ src: '#modal-thanks', type: 'inline' }])
 					// window.location.replace("/thanks.html");
 					setTimeout(function () {
 						// Done Functions
-						th.trigger("reset");
+						th.trigger('reset')
 						// $.magnificPopup.close();
 						// ym(53383120, 'reachGoal', 'zakaz');
 						// yaCounter55828534.reachGoal('zakaz');
-					}, 4000);
+					}, 4000)
 				})
-				.fail(function () {});
-		});
+				.fail(function () {})
+		})
 
 		// async function submitForm(event) {
 		// 	event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
@@ -349,49 +312,48 @@ class JSCCommon {
 	}
 	static heightWindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-		let vh = window.innerHeight * 0.01;
+		const vh = window.innerHeight * 0.01
 		// Then we set the value in the --vh custom property to the root of the document
-		document.documentElement.style.setProperty("--vh", `${vh}px`);
+		document.documentElement.style.setProperty('--vh', `${vh}px`)
 
 		// We listen to the resize event
 		window.addEventListener(
-			"resize",
+			'resize',
 			() => {
 				// We execute the same script as before
-				let vh = window.innerHeight * 0.01;
-				document.documentElement.style.setProperty("--vh", `${vh}px`);
+				const vh = window.innerHeight * 0.01
+				document.documentElement.style.setProperty('--vh', `${vh}px`)
 			},
-			{passive: true}
-		);
+			{ passive: true },
+		)
 	}
 	static animateScroll() {
-		$(document).on("click", " .menu li a, .scroll-link", function () {
-			const elementClick = $(this).attr("href");
+		$(document).on('click', ' .menu li a, .scroll-link', function () {
+			const elementClick = $(this).attr('href')
 			if (!document.querySelector(elementClick)) {
-				$(this).attr("href", "/" + elementClick);
+				$(this).attr('href', '/' + elementClick)
 			} else {
-				let destination = $(elementClick).offset().top;
-				$("html, body").animate({scrollTop: destination - 80}, 0);
-				return false;
+				const destination = $(elementClick).offset().top
+				$('html, body').animate({ scrollTop: destination - 80 }, 0)
+				return false
 			}
-		});
+		})
 	}
 	static getCurrentYear(el) {
-		let now = new Date();
-		let currentYear = document.querySelector(el);
-		if (currentYear) currentYear.innerText = now.getFullYear();
+		const now = new Date()
+		const currentYear = document.querySelector(el)
+		if (currentYear) currentYear.innerText = now.getFullYear()
 	}
 
 	static makeDDGroup() {
-		$(".dd-head-js").on("click", function () {
-			let clickedHead = this;
-			$(this).parent().toggleClass("active");
+		$('.dd-head-js').on('click', function () {
+			$(this).parent().toggleClass('active')
 			$(this)
 				.next()
 				.slideToggle(function () {
-					$(this).toggleClass("active");
-				});
-		});
+					$(this).toggleClass('active')
+				})
+		})
 		// let parents = document.querySelectorAll('.dd-group-js');
 		// for (let parent of parents) {
 		// 	if (parent) {
@@ -423,87 +385,82 @@ class JSCCommon {
 
 	static imgToSVG() {
 		const convertImages = (query, callback) => {
-			const images = document.querySelectorAll(query);
+			const images = document.querySelectorAll(query)
 
-			images.forEach(image => {
+			images.forEach((image) => {
 				fetch(image.src)
-					.then(res => res.text())
-					.then(data => {
-						const parser = new DOMParser();
-						const svg = parser
-							.parseFromString(data, "image/svg+xml")
-							.querySelector("svg");
+					.then((res) => res.text())
+					.then((data) => {
+						const parser = new DOMParser()
+						const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg')
 
-						if (image.id) svg.id = image.id;
-						if (image.className) svg.classList = image.classList;
+						if (image.id) svg.id = image.id
+						if (image.className) svg.classList = image.classList
 
-						image.parentNode.replaceChild(svg, image);
+						image.parentNode.replaceChild(svg, image)
 					})
 					.then(callback)
-					.catch(error => console.error(error));
-			});
-		};
+					.catch((error) => console.error(error))
+			})
+		}
 
-		convertImages(".img-svg-js");
+		convertImages('.img-svg-js')
 	}
 
 	static disabledBtn(
-		input = ".form-wrap__policy input",
-		btn = ".form-wrap__btn",
-		parent = ".form-wrap"
+		input = '.form-wrap__policy input',
+		btn = '.form-wrap__btn',
+		parent = '.form-wrap',
 	) {
-		$(document).on("change", input, function () {
-			let btnDisabled = $(this).parents(parent).find(btn);
+		$(document).on('change', input, function () {
+			const btnDisabled = $(this).parents(parent).find(btn)
 			if (this.checked) {
-				btnDisabled.removeAttr("disabled");
+				btnDisabled.removeAttr('disabled')
 			} else {
-				btnDisabled.attr("disabled", "disabled");
+				btnDisabled.attr('disabled', 'disabled')
 			}
-		});
+		})
 	}
 
 	static setScreen() {
-		var x = window.location.host;
-		let screenName;
-		if (document.body.dataset.bg)
-			screenName = "../screen/" + document.body.dataset.bg;
-		if (screenName && x.includes("localhost:30")) {
+		var x = window.location.host
+		let screenName
+		if (document.body.dataset.bg) screenName = '../screen/' + document.body.dataset.bg
+		if (screenName && x.includes('localhost:30')) {
 			document.body.insertAdjacentHTML(
-				"beforeend",
-				`<div class="pixel-perfect" style="--screen: url('${screenName}');"></div>`
-			);
+				'beforeend',
+				`<div class="pixel-perfect" style="--screen: url('${screenName}');"></div>`,
+			)
 		}
 	}
 
 	static setFixedNav() {
-		let topNav = document.querySelector(".top-nav  ");
-		if (!topNav) return;
-		window.scrollY > 200
-			? topNav.classList.add("fixed")
-			: topNav.classList.remove("fixed");
+		const topNav = document.querySelector('.top-nav  ')
+		if (!topNav) return
+		window.scrollY > 200 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed')
 	}
 
 	static customSelect() {
-		$(".custom-select-wrap").each(function () {
-			const self = $(this);
-			self.find(".custom-select-js").select2({
+		$('.custom-select-wrap').each(function () {
+			const self = $(this)
+			self.find('.custom-select-js').select2({
 				allowClear: false,
 				dropdownParent: self,
-			});
-		});
+			})
+		})
 	}
 
 	static init() {
-		this.modalCall();
-		this.tabsCostume("tabs");
-		this.mobileMenu();
+		JSCCommon.modalCall()
+		JSCCommon.tabsCostume('tabs')
+		JSCCommon.mobileMenu()
 		// this.inputMask();
 		// this.sendForm();
-		this.heightWindow();
-		this.makeDDGroup();
-		this.disabledBtn();
-		this.customSelect();
-		this.setScreen();
+		JSCCommon.heightWindow()
+		JSCCommon.makeDDGroup()
+		JSCCommon.disabledBtn()
+		JSCCommon.customSelect()
+		JSCCommon.setScreen()
 		// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 		// JSCCommon.animateScroll();
 

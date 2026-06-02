@@ -1,3 +1,8 @@
+//- ВНИМАНИЕ: этот миксин ссылается на img/@2x/<name>.<ext> и img/@2x/webp/<name>.webp,
+//- которые генерил старый gulp-sharp-responsive (удалён). Текущий image-пайплайн
+//- (optimizeImages + makeWebp) кладёт картинки ПЛОСКО: public/img/<name>.<ext> + <name>.webp,
+//- без @2x/. Сейчас +pic нигде не вызывается, поэтому ничего не сломано. Но ПЕРЕД
+//- использованием +pic — переписать пути на плоские (или вернуть генерацию @2x), иначе 404.
 - let webpImage= true
 - let webpFormat= (webpImage== true ? 'webp' : null)
 mixin pic(i, bg,  media)

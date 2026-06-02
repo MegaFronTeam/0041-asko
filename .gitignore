@@ -217,3 +217,8 @@ izo/
 
 sftp.json
 .idea/
+# Test / mutation / e2e artifacts
+test-results/
+playwright-report/
+.stryker-tmp/
+reports/
