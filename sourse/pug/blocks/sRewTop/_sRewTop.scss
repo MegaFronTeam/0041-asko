@@ -138,8 +138,9 @@
 	&__phone {
 		position: relative;
 		z-index: 1;
-		width: 200px;
-		margin: 30px auto 0;
+		width: 90%;
+		margin: 30px auto -30%;
+		will-change: transform;
 		filter: drop-shadow(-8.9px 0 17.8px var(--rt-phone-shadow))
 			drop-shadow(8.9px 0 17.8px var(--rt-phone-shadow));
 
@@ -155,7 +156,6 @@
 			left: 55%;
 			width: 21.8%;
 			margin: 0;
-			will-change: transform;
 		}
 	}
 }
