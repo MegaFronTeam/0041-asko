@@ -2,31 +2,24 @@
 .sRewCard {
 	--rc-bg: #fdfdfd;
 	--rc-text: #727b81;
-	--rc-photo-out: 132px;
+	--rc-photo-out: max(0px, calc(34% - 296px));
 
 	&__inner {
 		position: relative;
-		display: flex;
-		align-items: flex-start;
-		gap: 90px;
-		padding: 50px 50px 0;
-		margin-bottom: var(--rc-photo-out);
+		padding: 30px;
 		border-radius: 20px;
 		background: var(--rc-bg);
 
-		@include media-breakpoint-down(lg) {
-			--rc-photo-out: 0px;
-
-			flex-direction: column;
-			gap: 30px;
-			padding: 30px;
+		@include media-breakpoint-up(lg) {
+			padding: 70px 50px;
+			margin-bottom: var(--rc-photo-out);
 		}
 	}
 
 	&__photo {
-		flex: 0 0 44%;
+		width: 100%;
 		aspect-ratio: 540 / 428;
-		margin-bottom: calc(-1 * var(--rc-photo-out));
+		margin-bottom: 30px;
 		overflow: hidden;
 		border-radius: 20px;
 
@@ -37,61 +30,66 @@
 			object-fit: cover;
 		}
 
-		@include media-breakpoint-down(lg) {
-			flex: 0 0 auto;
-			width: 100%;
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			width: 42.9%;
 			margin-bottom: 0;
 		}
 	}
 
 	&__content {
-		flex: 0 0 auto;
-		width: 355px;
-		max-width: 100%;
-		padding-top: 20px;
+		width: 100%;
 
-		@include media-breakpoint-down(lg) {
-			width: 100%;
-			padding-top: 0;
+		@include media-breakpoint-up(lg) {
+			width: 355px;
+			max-width: 100%;
+			margin-left: 54.3%;
 		}
 	}
 
 	&__title {
 		margin: 0 0 20px;
-		font-size: 32px;
+		font-size: 24px;
 		font-weight: 500;
 		line-height: normal;
 
-		@include media-breakpoint-down(md) {
-			font-size: 24px;
+		@include media-breakpoint-up(md) {
+			font-size: 32px;
 		}
 	}
 
 	&__desc {
-		margin: 0 0 40px;
+		margin: 0 0 30px;
 		font-size: 16px;
 		line-height: 1.4;
 		color: var(--rc-text);
 
-		@include media-breakpoint-down(md) {
-			margin-bottom: 30px;
+		@include media-breakpoint-up(md) {
+			margin-bottom: 40px;
 		}
 	}
 
 	&__btn {
-		width: 260px;
+		width: 100%;
 
-		@include media-breakpoint-down(sm) {
-			width: 100%;
+		@include media-breakpoint-up(sm) {
+			width: 260px;
 		}
 	}
 
 	&__mark {
-		position: absolute;
-		top: 113px;
-		left: 80.6%;
-		width: 15.1%;
-		pointer-events: none;
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			top: 113px;
+			left: 80.6%;
+			display: block;
+			width: 15.1%;
+			pointer-events: none;
+		}
 
 		img {
 			display: block;
@@ -99,38 +97,28 @@
 			height: auto;
 			transform: rotate(15deg);
 		}
-
-		@include media-breakpoint-down(lg) {
-			display: none;
-		}
 	}
 
 	&--reverse {
 		--rc-bg: #{$white};
 
-		.sRewCard__inner {
-			flex-direction: row-reverse;
+		@include media-breakpoint-up(lg) {
+			.sRewCard__photo {
+				right: 50px;
+				left: auto;
+			}
 
-			@include media-breakpoint-down(lg) {
-				flex-direction: column;
+			.sRewCard__content {
+				margin-left: 58px;
+			}
+
+			.sRewCard__mark {
+				left: 34.7%;
 			}
 		}
 
-		.sRewCard__content {
-			margin-right: auto;
-			margin-left: 58px;
-
-			@include media-breakpoint-down(lg) {
-				margin-left: 0;
-			}
-		}
-
-		.sRewCard__mark {
-			left: 34.7%;
-
-			img {
-				transform: rotate(-15deg);
-			}
+		.sRewCard__mark img {
+			transform: rotate(-15deg);
 		}
 	}
 }
