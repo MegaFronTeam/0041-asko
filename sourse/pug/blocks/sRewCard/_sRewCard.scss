@@ -1,0 +1,125 @@
+// start .sRewCard
+.sRewCard {
+	--rc-bg: #fdfdfd;
+	--rc-text: #727b81;
+	--rc-photo-out: max(0px, calc(34% - 296px));
+
+	&__inner {
+		position: relative;
+		padding: 30px;
+		border-radius: 20px;
+		background: var(--rc-bg);
+
+		@include media-breakpoint-up(lg) {
+			padding: 70px 50px;
+			margin-bottom: var(--rc-photo-out);
+		}
+	}
+
+	&__photo {
+		width: 100%;
+		aspect-ratio: 540 / 428;
+		margin-bottom: 30px;
+		overflow: hidden;
+		border-radius: 20px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			width: 42.9%;
+			margin-bottom: 0;
+		}
+	}
+
+	&__content {
+		width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			width: 355px;
+			max-width: 100%;
+			margin-left: 54.3%;
+		}
+	}
+
+	&__title {
+		margin: 0 0 20px;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: normal;
+
+		@include media-breakpoint-up(md) {
+			font-size: 32px;
+		}
+	}
+
+	&__desc {
+		margin: 0 0 30px;
+		font-size: 16px;
+		line-height: 1.4;
+		color: var(--rc-text);
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__btn {
+		width: 100%;
+
+		@include media-breakpoint-up(sm) {
+			width: 260px;
+		}
+	}
+
+	&__mark {
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			top: 113px;
+			left: 80.6%;
+			display: block;
+			width: 15.1%;
+			pointer-events: none;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			transform: rotate(15deg);
+		}
+	}
+
+	&--reverse {
+		--rc-bg: #{$white};
+
+		@include media-breakpoint-up(lg) {
+			.sRewCard__photo {
+				right: 50px;
+				left: auto;
+			}
+
+			.sRewCard__content {
+				margin-left: 58px;
+			}
+
+			.sRewCard__mark {
+				left: 34.7%;
+			}
+		}
+
+		.sRewCard__mark img {
+			transform: rotate(-15deg);
+		}
+	}
+}
+// end .sRewCard

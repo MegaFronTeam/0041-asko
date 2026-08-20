@@ -1,0 +1,62 @@
+{
+	"customSyntax": "postcss-scss",
+	"plugins": ["stylelint-scss", "stylelint-declaration-strict-value"],
+	"rules": {
+		"color-no-invalid-hex": true,
+		"no-duplicate-at-import-rules": true,
+		"no-duplicate-selectors": [
+			true,
+			{
+				"severity": "warning",
+				"message": "LEGACY: Duplicate selector — refactor when touching this rule. Do not add new duplicate selectors."
+			}
+		],
+		"declaration-block-no-duplicate-properties": [
+			true,
+			{
+				"ignore": ["consecutive-duplicates-with-different-values"],
+				"severity": "warning",
+				"message": "LEGACY: Duplicate property — refactor when touching this block. Do not add new duplicate properties."
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": [
+				"sourse/pug/blocks/**/*.scss",
+				"sourse/sass/_base.scss",
+				"sourse/sass/_select2.scss"
+			],
+			"rules": {
+				"scale-unlimited/declaration-strict-value": [
+					["/color$/", "background", "fill", "stroke"],
+					{
+						"ignoreValues": [
+							"transparent",
+							"currentColor",
+							"inherit",
+							"unset",
+							"initial",
+							"none",
+							"0",
+							"0 0"
+						],
+						"ignoreFunctions": true,
+						"disableFix": true,
+						"severity": "warning",
+						"message": "Хардкод запрещён — используй var(--…) или SCSS-переменную (правило: %prop%)"
+					}
+				]
+			}
+		}
+	],
+	"ignoreFiles": [
+		"node_modules/**",
+		"public/**",
+		"sourse/sass/bourbon/**",
+		"sourse/sass/_sprite*.scss",
+		"sourse/sass/_spriteC*.scss",
+		"sourse/sass/templates/**",
+		"sourse/sass/custom-bootstrap.scss"
+	]
+}

@@ -1,5 +1,3 @@
-"use strict";
-
 // import Swiper from '../libs/swiper/swiper-bundle.min.mjs';
 // import JSCCommon from "./JSCCommon.js";
 
@@ -95,6 +93,39 @@ function eventHandler() {
 		});
 	}
 
+	function initRewTopParallax() {
+		const phone = document.querySelector(".sRewTop__phone");
+		if (!phone) return;
+
+		const inner = phone.closest(".sRewTop__inner");
+		if (!inner) return;
+		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+		const desktop = window.matchMedia("(min-width: 992px)");
+		let frame = null;
+
+		const update = () => {
+			frame = null;
+
+			const range = 240;
+			const rect = inner.getBoundingClientRect();
+			const progress =
+				(window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+			const shift = (Math.min(Math.max(progress, 0), 1) - 0.5) * range;
+			phone.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0)`;
+		};
+
+		const onScroll = () => {
+			if (frame) return;
+			frame = window.requestAnimationFrame(update);
+		};
+
+		window.addEventListener("scroll", onScroll, {passive: true});
+		window.addEventListener("resize", onScroll, {passive: true});
+		desktop.addEventListener("change", onScroll);
+		update();
+	}
+
 	function setCatalogModalHeight() {
 		const catalogModalGroup = document.querySelector(
 			".catalog-modal__group--menu"
@@ -142,8 +173,9 @@ function eventHandler() {
 
 	whenResize();
 	initProdBodyNav();
+	initRewTopParallax();
 
-	let defaultSl = {
+	const defaultSl = {
 		spaceBetween: 0,
 		lazy: {
 			loadPrevNext: true,
@@ -446,7 +478,7 @@ function eventHandler() {
 		return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
 	}
 	$(".range-wrap").each(function () {
-		let _this = $(this);
+		const _this = $(this);
 
 		var $range = _this.find(".slider-js");
 

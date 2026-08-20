@@ -1,4 +1,3 @@
-"use strict";
 // import "../libs/jquery/jquery.min.js";
 // import "../libs/select2/js/select2.min.js";
 // import "../libs/select2/js/i18n/ru.js";
@@ -24,26 +23,26 @@ class JSCCommon {
 			on: {
 				reveal: () => {
 					//html elements
-					let parent = document.querySelector(".timer-box-js-5");
+					const parent = document.querySelector(".timer-box-js-5");
 					if (!parent) return;
 
-					let days = parent.querySelector(".days");
-					let hours = parent.querySelector(".hours");
-					let minutes = parent.querySelector(".minutes");
-					let seconds = parent.querySelector(".seconds");
+					const days = parent.querySelector(".days");
+					const hours = parent.querySelector(".hours");
+					const minutes = parent.querySelector(".minutes");
+					const seconds = parent.querySelector(".seconds");
 
 					//date elements
-					let now = new Date();
+					const now = new Date();
 
 					// d === days.innerHtml + now.getDate... others the same way
-					let d = getTime(days, now.getDate());
-					let h = getTime(hours, now.getHours());
-					let m = getTime(minutes, now.getMinutes());
-					let s = getTime(seconds, now.getSeconds());
+					const d = getTime(days, now.getDate());
+					const h = getTime(hours, now.getHours());
+					const m = getTime(minutes, now.getMinutes());
+					const s = getTime(seconds, now.getSeconds());
 
 					//let targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s);
 					//force date
-					let targetDate = new Date(
+					const targetDate = new Date(
 						now.getFullYear(),
 						now.getMonth(),
 						now.getDate() + 1,
@@ -82,7 +81,7 @@ class JSCCommon {
 						minutes,
 						seconds
 					) {
-						let now = new Date();
+						const now = new Date();
 						// let timeLeft = (targetDate - now) / 1000;
 						let timeLeft = (targetDate - now) / 1000;
 
@@ -159,17 +158,20 @@ class JSCCommon {
 	static toggleMenu() {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
-		this.toggleClass(toggle, "on");
+		JSCCommon.toggleClass(toggle, "on");
 		menu.classList.toggle("active");
-		this.toggleClass([document.body, document.querySelector("html")], "fixed");
+		JSCCommon.toggleClass(
+			[document.body, document.querySelector("html")],
+			"fixed"
+		);
 	}
 	static closeMenu() {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
-		this.removeClass(toggle, "on");
+		JSCCommon.removeClass(toggle, "on");
 		if (menu) {
 			menu.classList.remove("active");
-			this.removeClass(
+			JSCCommon.removeClass(
 				[document.body, document.querySelector("html")],
 				"fixed"
 			);
@@ -180,10 +182,10 @@ class JSCCommon {
 		document.addEventListener(
 			"click",
 			event => {
-				let container = event.target.closest(".menu-mobile--js");
-				let toggle = event.target.closest(".toggle-menu-mobile--js");
-				if (toggle) this.toggleMenu();
-				if (!container && !toggle) this.closeMenu();
+				const container = event.target.closest(".menu-mobile--js");
+				const toggle = event.target.closest(".toggle-menu-mobile--js");
+				if (toggle) JSCCommon.toggleMenu();
+				if (!container && !toggle) JSCCommon.closeMenu();
 			},
 			{passive: true}
 		);
@@ -191,7 +193,8 @@ class JSCCommon {
 		window.addEventListener(
 			"resize",
 			() => {
-				if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
+				if (window.matchMedia("(min-width: 992px)").matches)
+					JSCCommon.closeMenu();
 			},
 			{passive: true}
 		);
@@ -260,7 +263,7 @@ class JSCCommon {
 
 	static inputMask() {
 		// mask for input
-		let InputTel = [].slice.call(
+		const InputTel = [].slice.call(
 			document.querySelectorAll('input[type="tel"]')
 		);
 		InputTel.forEach(element =>
@@ -349,7 +352,7 @@ class JSCCommon {
 	}
 	static heightWindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-		let vh = window.innerHeight * 0.01;
+		const vh = window.innerHeight * 0.01;
 		// Then we set the value in the --vh custom property to the root of the document
 		document.documentElement.style.setProperty("--vh", `${vh}px`);
 
@@ -358,7 +361,7 @@ class JSCCommon {
 			"resize",
 			() => {
 				// We execute the same script as before
-				let vh = window.innerHeight * 0.01;
+				const vh = window.innerHeight * 0.01;
 				document.documentElement.style.setProperty("--vh", `${vh}px`);
 			},
 			{passive: true}
@@ -370,21 +373,20 @@ class JSCCommon {
 			if (!document.querySelector(elementClick)) {
 				$(this).attr("href", "/" + elementClick);
 			} else {
-				let destination = $(elementClick).offset().top;
+				const destination = $(elementClick).offset().top;
 				$("html, body").animate({scrollTop: destination - 80}, 0);
 				return false;
 			}
 		});
 	}
 	static getCurrentYear(el) {
-		let now = new Date();
-		let currentYear = document.querySelector(el);
+		const now = new Date();
+		const currentYear = document.querySelector(el);
 		if (currentYear) currentYear.innerText = now.getFullYear();
 	}
 
 	static makeDDGroup() {
 		$(".dd-head-js").on("click", function () {
-			let clickedHead = this;
 			$(this).parent().toggleClass("active");
 			$(this)
 				.next()
@@ -453,7 +455,7 @@ class JSCCommon {
 		parent = ".form-wrap"
 	) {
 		$(document).on("change", input, function () {
-			let btnDisabled = $(this).parents(parent).find(btn);
+			const btnDisabled = $(this).parents(parent).find(btn);
 			if (this.checked) {
 				btnDisabled.removeAttr("disabled");
 			} else {
@@ -476,7 +478,7 @@ class JSCCommon {
 	}
 
 	static setFixedNav() {
-		let topNav = document.querySelector(".top-nav  ");
+		const topNav = document.querySelector(".top-nav  ");
 		if (!topNav) return;
 		window.scrollY > 200
 			? topNav.classList.add("fixed")
@@ -494,16 +496,16 @@ class JSCCommon {
 	}
 
 	static init() {
-		this.modalCall();
-		this.tabsCostume("tabs");
-		this.mobileMenu();
+		JSCCommon.modalCall();
+		JSCCommon.tabsCostume("tabs");
+		JSCCommon.mobileMenu();
 		// this.inputMask();
 		// this.sendForm();
-		this.heightWindow();
-		this.makeDDGroup();
-		this.disabledBtn();
-		this.customSelect();
-		this.setScreen();
+		JSCCommon.heightWindow();
+		JSCCommon.makeDDGroup();
+		JSCCommon.disabledBtn();
+		JSCCommon.customSelect();
+		JSCCommon.setScreen();
 		// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 		// JSCCommon.animateScroll();
 

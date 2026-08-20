@@ -1,6 +1,10 @@
 {
-  "presets": ["@babel/preset-env"],
-  "plugins": ["@babel/plugin-proposal-object-rest-spread",
-              "babel-plugin-root-import"
-  ]
+	"env": {
+		"test": {
+			"presets": [],
+			"plugins": []
+		}
+	},
+	"presets": [],
+	"plugins": []
 }

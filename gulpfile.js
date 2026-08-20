@@ -1,11 +1,9 @@
-"use strict";
-let publicPath = "public",
-	source = "sourse",
-	destSprite = "../_sprite.scss",
-	destSpriteC = "../_spriteC.scss";
+const publicPath = "public";
+const source = "sourse";
+const destSprite = "../_sprite.scss";
 
 import pkg from "gulp";
-const {gulp, src, dest, parallel, series, watch} = pkg;
+const {src, dest, parallel, series, watch, lastRun} = pkg;
 
 import {deleteAsync} from "del";
 import pug from "gulp-pug";
@@ -28,50 +26,48 @@ import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import nested from "postcss-nested";
 import pscss from "postcss-scss";
-// )({ scss: 'postcss-scss'}),
 import plumber from "gulp-plumber";
-import sharpResponsive from "gulp-sharp-responsive";
 import data from "gulp-data";
-import fs from "fs";
+import fs from "node:fs";
+import {spawn} from "node:child_process";
+import imagemin, {mozjpeg} from "gulp-imagemin";
+import imageminPngquant from "imagemin-pngquant";
+import webp from "gulp-webp";
 
-const dataFromFile = JSON.parse(fs.readFileSync(source + "/pug/content.json"));
+// Content is read per-task in data() callback; no top-level cache needed.
+
+// Paths config
+const imgSource = `${source}/img/**/*.{jpg,jpeg,png}`;
+const imgDest = `${publicPath}/img`;
+
 class gs {
 	static browsersync() {
 		browserSync.init({
 			server: {
 				baseDir: "./" + publicPath,
-				// middleware: bssi({ baseDir: './' + publicPath, ext: '.html' })б
 				serveStaticOptions: {
 					extensions: ["html"],
 				},
 			},
-			// ghostMode: { clicks: false },
-			// notify: false,
-			// online: true,
-			// tunnel: 'layouts', // Attempt to use the URL https://layouts.loca.lt
 		});
 	}
 
 	static pugFiles() {
-		return (
-			src([source + "/pug/pages/**/*.pug"])
-				.pipe(
-					data(function (file) {
-						return JSON.parse(fs.readFileSync(source + "/pug/content.json"));
-					})
-				)
-				.pipe(
-					pug({
-						pretty: true,
-						cache: true,
-						// locals: dataFromFile || {}
-					}).on("error", notify.onError())
-				)
-				.pipe(tabify(2, true))
-				// .pipe( urlBuilder() )
-				.pipe(dest(publicPath))
-				.on("end", browserSync.reload)
-		);
+		return src([source + "/pug/pages/**/*.pug"])
+			.pipe(
+				data(function (file) {
+					return JSON.parse(fs.readFileSync(source + "/pug/content.json"));
+				})
+			)
+			.pipe(
+				pug({
+					pretty: true,
+					cache: true,
+				}).on("error", notify.onError())
+			)
+			.pipe(tabify(2, true))
+			.pipe(dest(publicPath))
+			.on("end", browserSync.reload);
 	}
 
 	static cleanLibs() {
@@ -83,7 +79,6 @@ class gs {
 			npmDist({
 				copyUnminified: true,
 				excludes: [
-					// '*.map',
 					"src/**/*",
 					"./@babel/*",
 					"animate.css/source/",
@@ -99,7 +94,6 @@ class gs {
 					"swiper/cjs",
 					"swiper/bundle",
 					"swiper/vue",
-					// '*.mjs',
 					"swiper/modules",
 					"swiper/shared",
 					"swiper/types",
@@ -142,20 +136,28 @@ class gs {
 			.pipe(dest(publicPath + "/libs"));
 	}
 
+	static ensureLibs(done) {
+		const hasLibs =
+			fs.existsSync(publicPath + "/libs") &&
+			fs.readdirSync(publicPath + "/libs").length > 0;
+		if (hasLibs) {
+			done();
+			return;
+		}
+		return gs.copyLibs();
+	}
+
 	static watchStyle(file) {
 		const processors = [autoprefixer(), nested(), cssnano(), gcmq()];
-		return (
-			src(source + `/sass/${file}.scss`)
-				.pipe(sassGlob())
-				.pipe(sass.sync().on("error", sass.logError))
-				// .pipe(postcss(processors, { syntax: syntax }))
-				.pipe(postcss(processors, {syntax: pscss}))
-				// .pipe(gcmq())
-				.pipe(rename({suffix: ".min", prefix: ""}))
-				.pipe(dest(publicPath + "/css"))
-				.pipe(browserSync.stream())
-		);
+		return src(source + `/sass/${file}.scss`)
+			.pipe(sassGlob())
+			.pipe(sass.sync().on("error", sass.logError))
+			.pipe(postcss(processors, {syntax: pscss}))
+			.pipe(rename({suffix: ".min", prefix: ""}))
+			.pipe(dest(publicPath + "/css"))
+			.pipe(browserSync.stream());
 	}
+
 	static styles() {
 		const processors = [autoprefixer(), nested(), cssnano(), gcmq()];
 		return src(source + `/sass/main.scss`)
@@ -178,17 +180,11 @@ class gs {
 	}
 
 	static commonJs() {
-		return (
-			src([
-				source + "/js/**/*.js",
-				// sourse + '/pug/**/*.js',
-			])
-				// .pipe(babel())
-				// .pipe(tabify(2, true))
-				.pipe(dest(publicPath + "/js"))
-				.pipe(browserSync.stream())
-		);
+		return src([source + "/js/**/*.js"])
+			.pipe(dest(publicPath + "/js"))
+			.pipe(browserSync.stream());
 	}
+
 	static svg() {
 		return src("./" + source + "/svg/*.svg")
 			.pipe(plumber())
@@ -215,12 +211,10 @@ class gs {
 				svgSprite({
 					shape: {
 						dimension: {
-							// Set maximum dimensions
 							maxWidth: 500,
 							maxHeight: 500,
 						},
 						spacing: {
-							// Add padding
 							padding: 0,
 						},
 					},
@@ -248,45 +242,53 @@ class gs {
 			.pipe(dest(`${publicPath}/img/svg/`));
 	}
 
-	static cleanImg() {
-		const path = publicPath + "/img";
-		return deleteAsync([path + "/@*"]);
-	}
-
-	static img() {
-		const path1 = `${publicPath}/img/@1x/`;
-		const path2 = `${publicPath}/img/@2x/`;
-		const w50 = metadata => Math.ceil(metadata.width * 0.5);
-		return src(`${source}/img/*.{png,jpg,jpeg,webp,raw}`)
+	// sourse/img (raster, SVG excluded — that goes through the sprite pipeline)
+	// → optimized same-format copy in public/img. Reads from sourse, never
+	// re-compresses in place, so quality does not degrade across builds.
+	// IMPORTANT: never del public/img — the shop's real images live there.
+	static optimizeImages() {
+		return src(imgSource, {encoding: false, since: lastRun(gs.optimizeImages)})
+			.pipe(plumber())
 			.pipe(
-				sharpResponsive({
-					formats: [
-						// 2x
-						{
-							pngOptions: {quality: 90, progressive: true},
-							rename: {dirname: path2},
-						},
-						{
-							jpegOptions: {quality: 90, progressive: true},
-							rename: {dirname: path2},
-						},
-						{
-							format: "webp",
-							webpOptions: {quality: 100, progressive: true},
-							rename: {dirname: `${path2}webp/`},
-						},
-						// { format: "avif", avifOptions: { quality: 100, progressive: true }, rename: { dirname: `${path2}avif/` } },
-
-						// 1x
-						// { width: w50, pngOptions: { quality: 80, progressive: true }, rename: { dirname: path1 } },
-						// { width: w50, jpegOptions: { quality: 80, progressive: true }, rename: { dirname: path1 } },
-						// {width: w50, webpOptions: { quality: 100, progressive: true }, format: "webp", rename: { dirname: `${path1}webp/` } },
-						// { width: w50, avifOptions: { quality: 100, progressive: true }, format: "avif", rename: { dirname: `${path1}avif/` } },
-					],
-				})
+				imagemin([
+					mozjpeg({quality: 80, progressive: true}),
+					imageminPngquant({quality: [0.6, 0.8], strip: true}),
+				])
 			)
-			.pipe(dest(publicPath + "/img"));
+			.pipe(dest(imgDest));
 	}
+
+	// One .webp per raster source image (single size, no responsive variants).
+	static makeWebp() {
+		return src(imgSource, {encoding: false, since: lastRun(gs.makeWebp)})
+			.pipe(plumber())
+			.pipe(webp({quality: 80}))
+			.pipe(dest(imgDest));
+	}
+
+	// Validate authored HTML pages. Excludes non-UTF-8 legacy exports (if any).
+	// Fail-gate: exits non-zero on any html-validate error.
+	static validateHtml(done) {
+		const proc = spawn(
+			`npx html-validate ` +
+				`"${publicPath}/*.html" ` +
+				`"${publicPath}/modal/**/*.html" ` +
+				`"${publicPath}/parts/**/*.html"`,
+			{
+				stdio: "inherit",
+				shell: true,
+			}
+		);
+		proc.on("error", err => done(err));
+		proc.on("close", code => {
+			done(
+				code === 0
+					? undefined
+					: new Error(`html-validate found errors (exit ${code})`)
+			);
+		});
+	}
+
 	static startwatch() {
 		watch(
 			[
@@ -317,28 +319,36 @@ class gs {
 			gs.pugFiles
 		);
 		watch(source + "/svg/*.svg", {usePolling: true}, gs.svg);
-		// watch([sourse + '/js/libs.js'], { usePolling: true }, gs.scripts);
 		watch(source + "/sass/*.svg", {usePolling: true}, gs.svgCopy);
-
-		// watch(source + "/svgC/*.svg", {usePolling: true}, gs.svgC);
-		// watch(source + "/sass/*.svg", {usePolling: true}, gs.svgCopyC);
-
 		watch([source + "/js/*.js"], {usePolling: true}, gs.commonJs);
-		// watch(sourse + '/img', { usePolling: true }, gs.img);
+		watch(imgSource, {usePolling: true}, gs.images);
 	}
 }
-export let imgAll = series(gs.cleanImg, gs.img);
-export let libs = series(gs.cleanLibs, gs.copyLibs);
-export let sprite = series(gs.svg, gs.svgCopy);
-// export let sprite2 = series(gs.svgC, gs.svgCopyC);
-export let styles = parallel(gs.bootstrapStyles, gs.styles);
 
-export default series(
+gs.images = parallel(gs.optimizeImages, gs.makeWebp);
+
+export const libs = series(gs.cleanLibs, gs.copyLibs);
+export const sprite = series(gs.svg, gs.svgCopy);
+export const styles = parallel(gs.bootstrapStyles, gs.styles);
+export const images = gs.images;
+export const validate = gs.validateHtml;
+
+export const build = series(
 	gs.commonJs,
 	libs,
 	styles,
-	// imgAll,
 	parallel(sprite),
+	gs.images,
+	gs.pugFiles,
+	gs.validateHtml
+);
+
+export default series(
+	gs.commonJs,
+	gs.ensureLibs,
+	styles,
+	parallel(sprite),
+	gs.images,
 	gs.pugFiles,
 	parallel(gs.browsersync, gs.startwatch)
 );
