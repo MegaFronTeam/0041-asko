@@ -12,6 +12,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 		padding: 40px 30px;
+		overflow: hidden;
 		border-radius: 20px;
 		background: var(--rt-bg);
 
@@ -154,6 +155,7 @@
 			left: 55%;
 			width: 21.8%;
 			margin: 0;
+			will-change: transform;
 		}
 	}
 }

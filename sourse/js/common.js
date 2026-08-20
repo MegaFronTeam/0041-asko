@@ -87,6 +87,43 @@ function eventHandler() {
 		})
 	}
 
+	function initRewTopParallax() {
+		const phone = document.querySelector('.sRewTop__phone')
+		if (!phone) return
+
+		const inner = phone.closest('.sRewTop__inner')
+		if (!inner) return
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+		const range = 80
+		const desktop = window.matchMedia('(min-width: 992px)')
+		let frame = null
+
+		const update = () => {
+			frame = null
+
+			if (!desktop.matches) {
+				phone.style.transform = ''
+				return
+			}
+
+			const rect = inner.getBoundingClientRect()
+			const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+			const shift = (Math.min(Math.max(progress, 0), 1) - 0.5) * range
+			phone.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0)`
+		}
+
+		const onScroll = () => {
+			if (frame) return
+			frame = window.requestAnimationFrame(update)
+		}
+
+		window.addEventListener('scroll', onScroll, { passive: true })
+		window.addEventListener('resize', onScroll, { passive: true })
+		desktop.addEventListener('change', onScroll)
+		update()
+	}
+
 	function setCatalogModalHeight() {
 		const catalogModalGroup = document.querySelector('.catalog-modal__group--menu')
 
@@ -129,6 +166,7 @@ function eventHandler() {
 
 	whenResize()
 	initProdBodyNav()
+	initRewTopParallax()
 
 	const defaultSl = {
 		spaceBetween: 0,
