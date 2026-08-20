@@ -1,0 +1,14 @@
+mixin sRewCard(title, desc, btn, img, mark, alt)
+	// start sRewCard
+	+b.SECTION.sRewCard.section.pt-0&attributes(attributes)
+		.container
+			+e.inner
+				+e.photo
+					img(src=`img/${img}` alt=alt)
+				+e.content
+					h2.sRewCard__title!= title
+					p.sRewCard__desc!= desc
+					a.btn.btn-success.sRewCard__btn(href="#")= btn
+				+e.mark
+					img(src=`img/${mark}` alt="")
+	// end sRewCard

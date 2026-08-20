@@ -1,0 +1,23 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sAddresses/_sAddresses.pug
+include ../blocks/sRewTop/_sRewTop.pug
+include ../blocks/sRewCard/_sRewCard.pug
+
+block variables
+	- let  mainPage= ''
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= "09 - Отзывы 2"
+	title= title
+block pagecontent
+	+parts('header')
+	main
+		+sRewTop
+		+sRewCard("Вам всё понравилось?", "Расскажите, что вам особенно понравилось в нашей технике, обслуживании или работе сотрудников.", "Поблагодарить", "rew2-pos.jpg", "rew2-smile.png", "Довольный клиент на кухне с техникой ASKO")
+		+sRewCard("Что-то пошло не так?", "Расскажите о ситуации. <br> Мы внимательно рассмотрим ваше обращение и постараемся помочь.", "Пожаловаться", "rew2-neg.jpg", "rew2-question.png", "Клиент пишет обращение в ASKO").sRewCard--reverse
+		+sAddresses.d-md-none
+	+parts('footer')
