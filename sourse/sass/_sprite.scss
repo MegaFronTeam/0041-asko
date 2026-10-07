@@ -87,6 +87,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(10 / #{$h} *1em );
 }
+.icon-client {
+	$h: 23.25;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(19.192 / #{$h} *1em );
+}
 .icon-close {
 	$h: 20;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -146,6 +151,11 @@
 	$h: 21;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(22 / #{$h} *1em );
+}
+.icon-manager {
+	$h: 22.619;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
 }
 .icon-mark {
 	$h: 23;

@@ -1,0 +1,227 @@
+// start .sOfferTop
+.sOfferTop {
+	--ot-bg: #{$dark};
+	--ot-plate: #4a5359;
+	--ot-muted: #{$secondary};
+	--ot-accent: #{$primary};
+	--ot-pad: 30px 20px;
+	--ot-qr: 110px;
+	--sPT: 0;
+
+	&__wrap {
+		max-width: 1404px;
+		margin-inline: auto;
+		padding-inline: calc(var(--bs-gutter-x, 24px) * 0.5);
+	}
+
+	&__inner {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		padding: var(--ot-pad);
+		overflow: hidden;
+		border-radius: 20px;
+		background: var(--ot-bg);
+		color: #fff;
+	}
+
+	&__photo {
+		position: absolute;
+		inset: 0;
+		opacity: 0.35;
+		pointer-events: none;
+
+		img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: auto;
+			max-width: none;
+			height: 100%;
+		}
+	}
+
+	&__txt,
+	&__bottom {
+		position: relative;
+	}
+
+	&__txt {
+		max-width: 812px;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: inherit;
+	}
+
+	&__desc {
+		margin-bottom: 0;
+		font-size: 16px;
+		line-height: 1.6;
+		color: var(--ot-muted);
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		align-items: flex-start;
+	}
+
+	&__meta {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 100%;
+	}
+
+	&__persons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px 32px;
+		justify-content: space-between;
+	}
+
+	&__person {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+
+		.icon {
+			flex-shrink: 0;
+			font-size: 24px;
+			color: var(--ot-accent);
+		}
+	}
+
+	&__role {
+		font-size: 16px;
+		line-height: 1.3;
+		text-transform: uppercase;
+		color: var(--ot-accent);
+	}
+
+	&__name {
+		font-size: 20px;
+		line-height: 1;
+	}
+
+	&__plate {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		gap: 16px 24px;
+		margin-bottom: 0;
+		padding: 20px;
+		border-radius: 10px;
+		background: var(--ot-plate);
+
+		dt {
+			margin-bottom: 8px;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 1;
+			color: var(--ot-muted);
+		}
+
+		dd {
+			margin-bottom: 0;
+			font-size: 16px;
+			line-height: 1;
+		}
+	}
+
+	&__qr {
+		flex-shrink: 0;
+		width: var(--ot-qr);
+		height: var(--ot-qr);
+		background: #fff;
+		mask: url("../img/offer-qr.png") center / contain no-repeat;
+	}
+
+	@include media-breakpoint-up(sm) {
+		&__plate {
+			grid-template-columns: repeat(4, auto);
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		--ot-pad: 50px;
+		--ot-qr: 148px;
+
+		&__title {
+			font-size: 36px;
+		}
+
+		&__desc {
+			font-size: 18px;
+		}
+
+		&__role {
+			font-size: 20px;
+		}
+
+		&__name {
+			font-size: 24px;
+		}
+
+		&__plate {
+			padding: 20px 40px;
+
+			dt {
+				margin-bottom: 16px;
+				font-size: 16px;
+			}
+
+			dd {
+				font-size: 20px;
+			}
+		}
+
+		&__meta {
+			gap: 26px;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		--ot-pad: 70px;
+
+		&__inner {
+			gap: 48px;
+		}
+
+		&__photo {
+			opacity: 1;
+		}
+
+		&__bottom {
+			flex-direction: row;
+			gap: 60px;
+			align-items: flex-end;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		&__title {
+			margin-bottom: 20px;
+			font-size: 48px;
+		}
+
+		&__bottom {
+			gap: 90px;
+		}
+	}
+
+	@include media-breakpoint-up(xxl) {
+		--ot-pad: 100px;
+
+		&__inner {
+			min-height: 558px;
+		}
+	}
+} // end.sOfferTop

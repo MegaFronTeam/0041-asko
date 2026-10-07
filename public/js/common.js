@@ -1013,6 +1013,13 @@ function eventHandler() {
 		$(this).next().slideToggle();
 	});
 
+	$(".sOfferList__toggle--js").on("click", function () {
+		const item = $(this).closest(".sOfferList__item");
+		item.toggleClass("active");
+		$(this).attr("aria-expanded", item.hasClass("active"));
+		item.find(".sOfferList__body").slideToggle();
+	});
+
 	$(".sCategories__head").on("click", function () {
 		$(".sCategories__item.active")
 			.removeClass("active")

@@ -1,0 +1,200 @@
+// start .sOfferTotal
+.sOfferTotal {
+	--st-dark: #{$dark};
+	--st-accent: #{$primary};
+	--st-line: #545d63;
+	--st-card-pad: 24px 20px;
+	--st-sum-pad: 24px 20px;
+	--sPT: 40px;
+	--sPB: 40px;
+
+	&__row {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	&__col {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		min-width: 0;
+	}
+
+	&__card {
+		position: relative;
+		padding: var(--st-card-pad);
+		border-radius: 20px;
+		background: #fff;
+		font-size: 16px;
+		line-height: 1.4;
+
+		p {
+			margin-bottom: 7px;
+		}
+
+		ul {
+			padding-left: 27px;
+		}
+
+		li::marker {
+			color: $body-color;
+		}
+
+		p,
+		ul {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__card--terms {
+		padding-top: 50px;
+	}
+
+	&__badge {
+		position: absolute;
+		top: -26px;
+		left: 20px;
+		padding: 18px 22px 14px;
+		border-radius: 53px;
+		background: var(--st-accent);
+		font-size: 20px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	&__sum {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		padding: var(--st-sum-pad);
+		border-radius: 20px;
+		background: var(--st-dark);
+		color: #fff;
+	}
+
+	&__list {
+		margin-bottom: 0;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	&__line {
+		display: flex;
+		gap: 16px;
+		align-items: center;
+		justify-content: space-between;
+		padding-block: 16px;
+		border-bottom: 1px solid var(--st-line);
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+
+		dt {
+			font-weight: 400;
+		}
+
+		dd {
+			margin-bottom: 0;
+			font-weight: 700;
+			white-space: nowrap;
+		}
+	}
+
+	&__total {
+		display: flex;
+		gap: 16px;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 20px 20px 15px;
+		border-radius: 5px;
+		background: linear-gradient(90deg, #383d3f 0%, #a68168 100%);
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 1;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+	&__btn {
+		display: inline-flex;
+		gap: 12px;
+		align-items: center;
+		margin-top: 40px;
+		padding: 15px 30px 15px 26px;
+		border: 1px solid #d9d1c9;
+		border-radius: 100px;
+		background: #fff;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.2;
+		color: $body-color;
+		transition: border-color 0.25s ease;
+
+		&:hover {
+			border-color: var(--st-accent);
+			color: $body-color;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		--st-card-pad: 30px 40px;
+		--st-sum-pad: 40px;
+		--sPT: 60px;
+		--sPB: 80px;
+
+		&__card {
+			font-size: 18px;
+		}
+
+		&__card--terms {
+			padding-top: 50px;
+		}
+
+		&__badge {
+			left: 40px;
+		}
+
+		&__list {
+			padding-inline: 20px;
+			font-size: 18px;
+		}
+
+		&__total {
+			font-size: 24px;
+		}
+
+		&__btn {
+			margin-top: 60px;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		&__row {
+			flex-direction: row;
+			align-items: stretch;
+		}
+
+		&__col {
+			flex: 0 0 calc((100% - 40px) * 707 / 1220);
+		}
+
+		&__sum {
+			flex: 1 1 0;
+			min-width: 0;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		--sPT: 114px;
+	}
+} // end.sOfferTotal

@@ -1,0 +1,217 @@
+mixin offer-specs()
+	table
+		tr
+			td: span Вид
+			td: span Полноразмерная
+		tr
+			td: span Установка
+			td: span Встраиваемая
+		tr
+			td: span Тип встраивания
+			td: span Полностью
+		tr
+			td: span Автоматическое открывание двери по окончании программы
+			td: span 14
+		tr
+			td: span Цвет
+			td: span Титан
+
+mixin offer-body(item)
+	+e.body
+		+e.body-row
+			+e.gallery
+				each src in item.gallery
+					+e.gallery-img
+						+img(src)
+			+e.info.tabs
+				+e.nav.tabs__caption
+					.tabs__btn Документы
+					.tabs__btn.active Описание
+					.tabs__btn Характеристики
+					.tabs__btn Аксессуары
+					.tabs__btn Частые вопросы
+					.tabs__btn Отзывы
+						sup 13
+				.tabs__content
+					+b.doc-row
+						+b.doc-item.text-body(href="#")
+							div
+								img(src="img/doc-i.svg", alt="")
+							div
+								.h6.fw-400 Инструкция по эксплуатации на русском языке
+								.small.text-secondary 2.3 MB
+						+b.doc-item.text-body(href="#")
+							div
+								img(src="img/doc-i.svg", alt="")
+							div
+								.h6.fw-400 Схема встраивания
+								.small.text-secondary 2.3 MB
+				.tabs__content.active
+					h4.sOfferList__h Описание #{item.model}
+					p.sOfferList__text Встраиваемая посудомоечная машина Asko DSD544B рассчитана на загрузку 14 комплектов посуды. Пониженный уровень шума, инновационная система сушки и большое количество программ позволяют модели стать незаменимым помощником на современной кухне.
+					.property-item
+						h5.fw-400.property-item__toggle.property-item__toggle--js.active Ключевые преимущества
+							+icon("chevron-down")
+						.property-item__content.active
+							ul.sOfferList__ul
+								li Super Cleaning System™
+								li 9 Spray™
+								li Адаптивные зоны усиленной мойки Power zones
+				.tabs__content
+					h4.sOfferList__h Характеристики Asko #{item.model}
+					.property-item
+						h5.fw-400.property-item__toggle.property-item__toggle--js.active Основные характеристики
+							+icon("chevron-down")
+						.property-item__content.active
+							+offer-specs
+							.small.text-secondary.sOfferList__note
+								span.text-primary *
+								| Все информационные материалы, представленные на Сайте, носят справочный характер и не могут в полной мере передавать достоверную информацию о свойствах, комплектации и характеристиках товара, включая цвета, размеры и формы. Фирма-производитель оставляет за собой право на внесение изменений в конструкцию, дизайн и комплектацию товара без предварительного уведомления. Перед оформлением Заказа Покупатель должен обратиться к Продавцу для уточнения свойств и характеристик Товара. Подробная информация о товаре указывается в инструкции и на упаковке товара. Используемое название в России: Аско
+					.property-item
+						h5.fw-400.property-item__toggle.property-item__toggle--js Дополнительные характеристики
+							+icon("chevron-down")
+						.property-item__content
+							+offer-specs
+					.property-item
+						h5.fw-400.property-item__toggle.property-item__toggle--js Какие-то там характеристики
+							+icon("chevron-down")
+						.property-item__content
+							+offer-specs
+				.tabs__content
+					+e.accessories
+						+product-item-compare-sm(`2`)
+						+product-item-compare-sm(`3`)
+						+product-item-compare-sm(`4`)
+				.tabs__content
+					+ddGroup()
+						+ddGroupItem('Можно ли в данной модели менять направление открывания двери?', 'active')
+							.row.g-2
+								.col-lg-auto.text-primary Ответ:
+								.col
+									p Добрый день! Сыпучий порошок и гель для стирки можно заливать в кювету, где указан значок корзины с 2-мя вертикальными палочками. Только, если вы будете использовать гель, то нужно заливать его в выдвинутую специальную шторку в этой кювете. Кондиционер для белья используется в кювете со значком «Цветочек».
+						+ddGroupItem('Что нужно сделать перед первым использованием?')
+							.row.g-2
+								.col-lg-auto.text-primary Ответ:
+								.col
+									p Добрый день! Сыпучий порошок и гель для стирки можно заливать в кювету, где указан значок корзины с 2-мя вертикальными палочками. Только, если вы будете использовать гель, то нужно заливать его в выдвинутую специальную шторку в этой кювете. Кондиционер для белья используется в кювете со значком «Цветочек».
+				.tabs__content
+					+b.rew-item
+						.small.text-secondary 11.05.2025
+						.row
+							.col-xl-3
+								+e.name.fw-400 Соня
+							.col
+								+b.stars-block(data-star="4")
+									+icon("star")
+									+icon("star")
+									+icon("star")
+									+icon("star")
+									+icon("star")
+						.row
+							.col-xl-3
+								.small.text-secondary Достоинства
+							.col
+								p Цена и качество сборки
+						.row
+							.col-xl-3
+								.small.text-secondary Отзыв
+							.col
+								p Техника стала отличным подарком на годовщину. Давно хотели обновить кухню, и этот выбор оказался именно тем, что нужно.
+
+mixin offer-item(item)
+	+e.ARTICLE.item
+		+e.card
+			+e.main
+				+e.img-wrap
+					+img(item.img)(alt=item.title)
+				+e.caption
+					+e.cat= item.cat
+					+e.title= item.title
+					.product-item__icons.row.g-2
+						if item.rating
+							.product-item__icon.product-item__icon--rating.col-auto
+								+icon("star")
+								| #{item.rating}
+						.product-item__icon.product-item__icon--comments.col-auto
+							+icon("chart")
+							| 0
+					p.sOfferList__desc= item.desc
+					+e.prices
+						+e.price= item.price
+						+e.price-old= item.priceOld
+						+e.discount скидка 10%
+					.product-item__purchase
+						.product-item__purchase-img-wrap: img(src="img/purchase-1.png", alt="")
+						.product-item__purchase-img-wrap: img(src="img/purchase-2.png", alt="")
+			+e.aside
+				+e.totals
+					div
+						+e.label Количество
+						+e.value= item.amount
+					div
+						+e.label Сумма
+						+e.value= item.sum
+				dl.sOfferList__props
+					dt Артикул:
+					dd= item.article
+					dt Наличие:
+					dd В наличии · Поставка: 24.10.2026
+					dt Гарантия:
+					dd 12 месяца
+			button.sOfferList__toggle.sOfferList__toggle--js(type="button" aria-expanded="false" aria-label="Подробнее о товаре")
+				span
+					+icon("chevron-down")
+		+offer-body(item)
+
+mixin sOfferList(data)
+	-
+		const gallery = ["img/offer-gal-1.png", "img/offer-gal-2.png", "img/offer-gal-3.png"];
+		const items = [
+			{
+				img: "img/offer-prod-1.png",
+				cat: "Cушильная машина",
+				title: "Профессиональная сушильная машина Asko TDC1485VB.T",
+				model: "TDC1485VB.T",
+				rating: "4.8",
+				desc: "Профессиональная сушилка с загрузкой 8 кг. Уникальная система Butterfly Drying™ предотвращает сминание вещей. Надежность материалов и ресурс на 15 000 циклов для вашего бизнеса и дома. Сталь.",
+				price: "1 120 500 ₸",
+				priceOld: "1 245 000 ₸",
+				amount: "1",
+				sum: "1 120 500 ₸",
+				article: "738086",
+				gallery,
+			},
+			{
+				img: "img/offer-prod-2.png",
+				cat: "Аксессуары",
+				title: "Напольный ящик с выдвижной полкой Asko HP320T",
+				model: "HP320T",
+				rating: "4.8",
+				desc: "Напольный ящик Hidden Helpers™ в цвете титан. Создает дополнительное пространство для хранения и эргономичную высоту для стирки. Надежная стальная конструкция и безупречный скандинавский стиль.",
+				price: "314 100 ₸",
+				priceOld: "349 000 ₸",
+				amount: "2",
+				sum: "628 200 ₸",
+				article: "746316",
+				gallery,
+			},
+			{
+				img: "img/offer-prod-3.png",
+				cat: "Cушильная машина",
+				title: "Стиральная машина Asko W7124XXLW",
+				model: "W7124XXLW",
+				desc: "Стиральная машина серии Style+ загрузки 12 кг. Инновационная система Pro Wash™, автодозирование и полноцветный дисплей. Вершина шведского мастерства для безупречной стирки очень больших объемов белья.",
+				price: "1 656 000 ₸",
+				priceOld: "1 840 000 ₸",
+				amount: "1",
+				sum: "1 656 000 ₸",
+				article: "745903",
+				gallery,
+			},
+		];
+	// start sOfferList
+	+b.SECTION.sOfferList.section#sOfferList&attributes(attributes)
+		.container
+			each item in items
+				+offer-item(item)
+	// end sOfferList

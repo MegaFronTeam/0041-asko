@@ -1,0 +1,36 @@
+mixin sOfferTop(data)
+	// start sOfferTop
+	+b.SECTION.sOfferTop.section#sOfferTop&attributes(attributes)
+		+e.wrap
+			+e.inner
+				+e.photo
+					img(src="img/offer-top.png" alt="")
+				+e.txt
+					h1.sOfferTop__title Коммерческое предложение №201
+					p.sOfferTop__desc Официальный магазин премиальной бытовой техники ASKO в Казахстане
+				+e.bottom
+					+e.meta
+						+e.persons
+							+e.person
+								+icon("client")
+								span.sOfferTop__role клиент
+								span.sOfferTop__name Юлия
+							+e.person
+								+icon("manager")
+								span.sOfferTop__role менеджер
+								span.sOfferTop__name Ilia
+						dl.sOfferTop__plate
+							+e.cell
+								dt Телефон клиента
+								dd +77059807978
+							+e.cell
+								dt Действует до
+								dd 05.10.2026
+							+e.cell
+								dt Дата формирования
+								dd 05.10.2026
+							+e.cell
+								dt Позиций
+								dd 5
+					+e.qr(role="img" aria-label="QR-код коммерческого предложения")
+	// end sOfferTop

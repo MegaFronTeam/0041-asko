@@ -19,4 +19,5 @@
 17. <https://megafronteam.github.io/0041-asko/12-cooperation>
 18. <https://megafronteam.github.io/0041-asko/13-event>
 19. <https://megafronteam.github.io/0041-asko/09-rew-2>
+20. <https://megafronteam.github.io/0041-asko/14-offer>
 <!-- 5. <https://megafronteam.github.io/0041-asko/00-modal.html> -->

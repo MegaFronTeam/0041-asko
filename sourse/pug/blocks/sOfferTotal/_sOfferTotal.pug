@@ -1,0 +1,37 @@
+mixin sOfferTotal(data)
+	// start sOfferTotal
+	+b.SECTION.sOfferTotal.section#sOfferTotal&attributes(attributes)
+		.container
+			+e.row
+				+e.col
+					+e.card
+						p
+							strong В расчёте учтены все товары, указанные выше.
+						p Итоговая стоимость сформирована с учётом количества и скидки по каждой позиции.
+					+e.card--terms
+						+e.badge условия
+						ul
+							li Стоимость и наличие действительны на дату формирования предложения.
+							li Срок поставки уточняется менеджером при подтверждении заказа.
+							li Финальная стоимость рассчитывается с учетом количества и скидки по каждой позиции.
+				+e.sum
+					dl.sOfferTotal__list
+						+e.line
+							dt Позиций
+							dd 5
+						+e.line
+							dt Товаров, шт.
+							dd 7
+						+e.line
+							dt Стоимость без скидки
+							dd 6 335 000 ₸
+						+e.line
+							dt Скидка
+							dd -0 ₸
+					+e.total
+						span Итого
+						span 5 701 500 ₸
+			a.sOfferTotal__btn(href="#" download)
+				img(src="img/doc-i.svg" width="28" height="24" alt="")
+				| Скачать в PDF
+	// end sOfferTotal
